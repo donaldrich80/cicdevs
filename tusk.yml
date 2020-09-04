@@ -73,6 +73,7 @@ tasks:
     run:
       - command: sudo -i
       - command: curl -sL https://git.io/tusk | bash -s -- -b /usr/local/bin latest
+      - command: curl -o /usr/local/bin/gomplate -sSL https://github.com/hairyhenderson/gomplate/releases/download/v3.8.0/gomplate_linux-amd64; chmod 755 /usr/local/bin/gomplate
 
   template:
     usage: template
