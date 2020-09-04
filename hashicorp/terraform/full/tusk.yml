@@ -1,0 +1,42 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/terraform:full validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/terraform:full version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/terraform:full .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/terraform:full
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: aws --version
+          print: "\e[32mAws\e[0m"
+      - command:
+          exec: bash -version
+          print: "\e[32mBash\e[0m"
+      - command:
+          exec: terraform version
+          print: "\e[32mTerraform\e[0m"
+      - command:
+          exec: tflint --version
+          print: "\e[32mTflint\e[0m"
+      - command:
+          exec: tfsec --version
+          print: "\e[32mTfsec\e[0m"
+      - command:
+          exec: vault version
+          print: "\e[32mVault\e[0m"

@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:builder:go:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: builder/go
+  IMAGE_NAME: builder
+  IMAGE_TAG: go
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: builder/go
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:builder:go:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/builder:go
+    - docker run --rm donaldrich/builder:go config > $CI_PROJECT_DIR/.meta/snippets/config/builder-go.md || true
+    - docker run --rm donaldrich/builder:go validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-go.md || true
+    - docker image inspect donaldrich/builder:go | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-go.md
+    - docker history donaldrich/builder:go > $CI_PROJECT_DIR/.meta/snippets/layers/builder-go.md || true
+

@@ -1,0 +1,13 @@
+
+gossfile:
+  goss-base.yaml: {}
+command:
+  cargo:
+    exit-status: 0
+    exec: "cargo --version"
+  rustc:
+    exit-status: 0
+    exec: "rustc --version"
+  rustup:
+    exit-status: 0
+    exec: "rustup --version"

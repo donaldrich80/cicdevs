@@ -1,0 +1,38 @@
+description: Container for generating Hexo
+features:
+  - Hexo
+  - Node
+  - alpine
+site_label: latest
+image:
+  name: hexo
+  tag: latest
+  entrypoint: /bin/zsh
+commands:
+  hexo:
+    prefix: hexo
+    version: version
+    help: help
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  node:
+    prefix: npm
+    version: version
+    help: help
+  git:
+    prefix: git
+    version: version
+    help: help
+  nano:
+    prefix: nano
+    help: -h
+    version: -V
+references:
+  hexo:
+    docs: https://hexo.io/docs
+    site: https://hexo.io
+    github: hexojs/hexo
+links:
+  awesome-hexo-themes: https://awesomeopensource.com/projects/hexo-theme

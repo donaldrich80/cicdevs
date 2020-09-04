@@ -1,0 +1,36 @@
+---
+name: donaldrich/terraform:full
+usage: Terraform image with extras
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: aws --version
+          print: "\e[32mAws\e[0m"
+      - command:
+          exec: bash -version
+          print: "\e[32mBash\e[0m"
+      - command:
+          exec: terraform version
+          print: "\e[32mTerraform\e[0m"
+      - command:
+          exec: tflint --version
+          print: "\e[32mTflint\e[0m"
+      - command:
+          exec: tfsec --version
+          print: "\e[32mTfsec\e[0m"
+      - command:
+          exec: vault version
+          print: "\e[32mVault\e[0m"

@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:mkdocs:mkpdfs:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: site-gen/mkdocs/mkpdfs
+  IMAGE_NAME: mkdocs
+  IMAGE_TAG: mkpdfs
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: site-gen/mkdocs/mkpdfs
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:mkdocs:mkpdfs:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/mkdocs:mkpdfs
+    - docker run --rm donaldrich/mkdocs:mkpdfs config > $CI_PROJECT_DIR/.meta/snippets/config/mkdocs-mkpdfs.md || true
+    - docker run --rm donaldrich/mkdocs:mkpdfs validate > $CI_PROJECT_DIR/.meta/snippets/version/mkdocs-mkpdfs.md || true
+    - docker image inspect donaldrich/mkdocs:mkpdfs | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/mkdocs-mkpdfs.md
+    - docker history donaldrich/mkdocs:mkpdfs > $CI_PROJECT_DIR/.meta/snippets/layers/mkdocs-mkpdfs.md || true
+

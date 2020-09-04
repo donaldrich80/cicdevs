@@ -1,0 +1,14 @@
+
+command:
+  bash:
+    exit-status: 0
+    exec: "bash -version"
+  hashi-helper:
+    exit-status: 0
+    exec: "hashi-helper --version"
+  vault:
+    exit-status: 0
+    exec: "vault -version"
+  vault-sync:
+    exit-status: 0
+    exec: "vault-sync --version"

@@ -1,0 +1,16 @@
+description: Builder container with goland
+features:
+  - inherits all capabilities of builder:latest
+  - layering reduces size of extra features
+site_label: go
+image:
+  name: builder
+  tag: go
+  entrypoint: /usr/bin/zsh
+commands:
+  go:
+    prefix: go
+    version: version
+    help: help
+gossfile:
+  goss-base.yaml: {}

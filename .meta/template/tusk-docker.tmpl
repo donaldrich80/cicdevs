@@ -1,0 +1,32 @@
+---
+name: donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}
+{{- if has (datasource "data") "description" }}
+usage: {{ (datasource "data").description }}
+{{- end }}
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"
+
+{{- if has (datasource "data") "commands" }}
+{{- template "commands" -}}
+{{- end }}
+
+{{- define "commands" }}
+  version:
+    usage: check package versions
+    run:
+{{- range $i, $e := (datasource "data").commands }}
+      - command:
+          exec: {{ .prefix }} {{ .version }}
+          print: "\e[32m{{ strings.Title .prefix }}\e[0m"
+{{- end }}
+{{- end }}

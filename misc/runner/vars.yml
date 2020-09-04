@@ -1,0 +1,32 @@
+description: A simple, lightweight Alpine image for performing simple CI tasks
+features:
+  - git
+  - curl
+  - Hashicorp Vault
+  - ssh
+  - rsync
+image:
+  name: runner
+  tag: latest
+commands:
+  git:
+    prefix: git
+    version: --version
+  curl:
+    prefix: curl
+    version: --version
+  goss:
+    prefix: goss
+    version: --version
+  tusk:
+    prefix: tusk
+    version: --version
+  vault:
+    prefix: vault
+    version: -version
+  ssh:
+    prefix: ssh
+    version: -V
+  rsync:
+    prefix: rsync
+    version: --version

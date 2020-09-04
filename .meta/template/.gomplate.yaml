@@ -1,0 +1,21 @@
+inputFiles:
+  # - build.tmpl
+  # - tusk.tmpl
+  # - goss.tmpl
+  # - pipeline.tmpl
+  # - readme.tmpl
+  - index.tmpl
+outputFiles:
+  # - out/build.yml
+  # - out/tusk.yml
+  # - out/goss.yml
+  # - out/pipeline.yml
+  # - out/readme
+  - out/index.yml
+context:
+  data:
+    url: test-data.yml
+  command-index:
+    url: command-index.yml
+  path:
+    url: path.json

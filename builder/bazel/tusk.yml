@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:bazel validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:bazel version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/builder:bazel .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/builder:bazel
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: bazel version
+          print: "\e[32mBazel\e[0m"

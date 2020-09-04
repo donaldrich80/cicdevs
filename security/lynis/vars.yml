@@ -1,0 +1,15 @@
+image:
+  name: lynis
+  tag: latest
+# site_label: lynis
+commands:
+  bash:
+    prefix: bash
+    version: -version
+  lynis:
+    prefix: ./lynis
+    version: show options
+references:
+  lynis:
+    github: CISOfy/lynis
+    docs: https://cisofy.com/lynis

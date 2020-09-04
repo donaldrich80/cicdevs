@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:base:ubuntu:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: base/ubuntu
+  IMAGE_NAME: base
+  IMAGE_TAG: ubuntu
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: base/ubuntu
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:base:ubuntu:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/base:ubuntu
+    - docker run --rm donaldrich/base:ubuntu config > $CI_PROJECT_DIR/.meta/snippets/config/base-ubuntu.md || true
+    - docker run --rm donaldrich/base:ubuntu validate > $CI_PROJECT_DIR/.meta/snippets/version/base-ubuntu.md || true
+    - docker image inspect donaldrich/base:ubuntu | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/base-ubuntu.md
+    - docker history donaldrich/base:ubuntu > $CI_PROJECT_DIR/.meta/snippets/layers/base-ubuntu.md || true
+

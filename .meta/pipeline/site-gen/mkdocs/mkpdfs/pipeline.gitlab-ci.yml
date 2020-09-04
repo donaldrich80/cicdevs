@@ -1,0 +1,20 @@
+mkdocs:mkpdfs:
+  stage: build
+  trigger:
+    include: .meta/pipeline/site-gen/mkdocs/mkpdfs/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "site-gen/mkdocs/mkpdfs/Dockerfile"
+      - "site-gen/mkdocs/mkpdfs/goss.yaml"
+      - "site-gen/mkdocs/mkpdfs/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "mkdocs" && $TRIGGER_VAR2 == "mkpdfs"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "mkdocs" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

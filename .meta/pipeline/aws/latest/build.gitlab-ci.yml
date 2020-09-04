@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:aws:latest:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: aws/latest
+  IMAGE_NAME: aws
+  IMAGE_TAG: latest
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: aws/latest
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:aws:latest:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/aws:latest
+    - docker run --rm donaldrich/aws:latest config > $CI_PROJECT_DIR/.meta/snippets/config/aws-latest.md || true
+    - docker run --rm donaldrich/aws:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/aws-latest.md || true
+    - docker image inspect donaldrich/aws:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/aws-latest.md
+    - docker history donaldrich/aws:latest > $CI_PROJECT_DIR/.meta/snippets/layers/aws-latest.md || true
+

@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/runner:zsh validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/runner:zsh version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/runner:zsh .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/runner:zsh
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: zsh --version
+          print: "\e[32mZsh\e[0m"

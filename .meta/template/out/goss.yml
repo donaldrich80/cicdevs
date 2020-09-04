@@ -1,0 +1,50 @@
+
+gossfile:
+  goss-base.yaml: {}
+package:
+  bar:
+    installed: true
+  doo:
+    installed: true
+  foo:
+    installed: true
+command:
+  ansible:
+    exit-status: 0
+    exec: "ansible --version"
+  ansible-cmdb:
+    exit-status: 0
+    exec: "ansible-cmdb --version"
+  ansible-lint:
+    exit-status: 0
+    exec: "ansible-lint --version"
+  bash:
+    exit-status: 0
+    exec: "bash -version"
+  buildx:
+    exit-status: 0
+    exec: "docker buildx version"
+  curl:
+    exit-status: 0
+    exec: "curl --version"
+  docker-compose:
+    exit-status: 0
+    exec: "docker-compose version"
+  git:
+    exit-status: 0
+    exec: "git version"
+  molecule:
+    exit-status: 0
+    exec: "molecule --version"
+  pip:
+    exit-status: 0
+    exec: "pip3 -V"
+  python:
+    exit-status: 0
+    exec: "python --version"
+  ssh:
+    exit-status: 0
+    exec: "ssh -V"
+  vault:
+    exit-status: 0
+    exec: "vault version"

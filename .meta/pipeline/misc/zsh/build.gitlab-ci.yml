@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:runner:zsh:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: misc/zsh
+  IMAGE_NAME: runner
+  IMAGE_TAG: zsh
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: misc/zsh
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:runner:zsh:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/runner:zsh
+    - docker run --rm donaldrich/runner:zsh config > $CI_PROJECT_DIR/.meta/snippets/config/runner-zsh.md || true
+    - docker run --rm donaldrich/runner:zsh validate > $CI_PROJECT_DIR/.meta/snippets/version/runner-zsh.md || true
+    - docker image inspect donaldrich/runner:zsh | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/runner-zsh.md
+    - docker history donaldrich/runner:zsh > $CI_PROJECT_DIR/.meta/snippets/layers/runner-zsh.md || true
+

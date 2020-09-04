@@ -1,0 +1,72 @@
+description: Image with general retrieval, extraction, and building utilities. Designed for use as an intermediate container for multistage builds and artifact creation, but is small enough to be a suitable base image as well.
+features:
+  - ginstall.sh for easy install of certain applications
+  - Extract/Compress all formats
+  - CURL, wget, and git
+  - UPX for binary compression
+image:
+  name: builder
+  tag: latest
+  entrypoint: /usr/bin/zsh
+site_label: latest
+commands:
+  bash:
+    prefix: bash
+    version: -version
+    help: --help
+  wget:
+    prefix: wget
+    version: --version
+    help: --help
+  tar:
+    prefix: tar
+    version: --version
+    help: --help
+  curl:
+    prefix: curl
+    version: --version
+    help: --help
+  xz-utils:
+    prefix: xz
+    version: --version
+    help: --help
+  unzip:
+    prefix: unzip
+    version: -v
+    help: -h
+  ginstall.sh:
+    prefix: ginstall.sh
+    version: --version
+    help: --help
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  git:
+    prefix: git
+    version: version
+    help: help
+  make:
+    prefix: make
+    version: --version
+  less:
+    prefix: less
+    version: -V
+    help: --help
+  goss:
+    prefix: goss
+    version: --version
+  tusk:
+    prefix: tusk
+    version: --version
+  upx:
+    prefix: upx
+    help: --help
+    version: --version
+  openssl:
+    prefix: openssl
+    version: version
+    help: help
+references:
+  ginstall.sh:
+    github: whalehub/ginstall.sh

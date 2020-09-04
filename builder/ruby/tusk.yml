@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:ruby validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:ruby version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/builder:ruby .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/builder:ruby
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: ruby --version
+          print: "\e[32mRuby\e[0m"

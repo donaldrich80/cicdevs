@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:base:python-alpine:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: base/python/alpine
+  IMAGE_NAME: base
+  IMAGE_TAG: python-alpine
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: base/python/alpine
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:base:python-alpine:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/base:python-alpine
+    - docker run --rm donaldrich/base:python-alpine config > $CI_PROJECT_DIR/.meta/snippets/config/base-python-alpine.md || true
+    - docker run --rm donaldrich/base:python-alpine validate > $CI_PROJECT_DIR/.meta/snippets/version/base-python-alpine.md || true
+    - docker image inspect donaldrich/base:python-alpine | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/base-python-alpine.md
+    - docker history donaldrich/base:python-alpine > $CI_PROJECT_DIR/.meta/snippets/layers/base-python-alpine.md || true
+

@@ -1,0 +1,20 @@
+lynis:latest:
+  stage: build
+  trigger:
+    include: .meta/pipeline/security/lynis/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "security/lynis/Dockerfile"
+      - "security/lynis/goss.yaml"
+      - "security/lynis/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "lynis" && $TRIGGER_VAR2 == "latest"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "lynis" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

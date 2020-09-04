@@ -1,0 +1,33 @@
+image:
+  name: vault
+  tag: latest
+  entrypoint: /usr/bin/zsh
+  env: .env
+references:
+  vault:
+    github: hashicorp/vault
+    docs: https://www.vaultproject.io
+    dockerfile: hashicorp/docker-vault
+commands:
+  bash:
+    prefix: bash
+    version: -version
+  vault:
+    prefix: vault
+    version: -version
+  vault-sync:
+    prefix: vault-sync
+    version: --version
+  hashi-helper:
+    prefix: hashi-helper
+    version: --version
+    help: --help
+plugins:
+  vault-sync:
+    github: cloudwatt/vault-sync
+  hashi-helper:
+    github: seatgeek/hashi-helper
+  vault-unseal-docker:
+    github: blockloop/vault-unseal-docker
+links:
+  gites/awesome-vault-tools: https://github.com/gites/awesome-vault-tools

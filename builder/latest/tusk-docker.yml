@@ -1,0 +1,63 @@
+---
+name: donaldrich/builder:latest
+usage: Image with general retrieval, extraction, and building utilities. Designed for use as an intermediate container for multistage builds and artifact creation, but is small enough to be a suitable base image as well.
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: bash -version
+          print: "\e[32mBash\e[0m"
+      - command:
+          exec: curl --version
+          print: "\e[32mCurl\e[0m"
+      - command:
+          exec: ginstall.sh --version
+          print: "\e[32mGinstall.Sh\e[0m"
+      - command:
+          exec: git version
+          print: "\e[32mGit\e[0m"
+      - command:
+          exec: goss --version
+          print: "\e[32mGoss\e[0m"
+      - command:
+          exec: less -V
+          print: "\e[32mLess\e[0m"
+      - command:
+          exec: make --version
+          print: "\e[32mMake\e[0m"
+      - command:
+          exec: openssl version
+          print: "\e[32mOpenssl\e[0m"
+      - command:
+          exec: tar --version
+          print: "\e[32mTar\e[0m"
+      - command:
+          exec: tusk --version
+          print: "\e[32mTusk\e[0m"
+      - command:
+          exec: unzip -v
+          print: "\e[32mUnzip\e[0m"
+      - command:
+          exec: upx --version
+          print: "\e[32mUpx\e[0m"
+      - command:
+          exec: wget --version
+          print: "\e[32mWget\e[0m"
+      - command:
+          exec: xz --version
+          print: "\e[32mXz\e[0m"
+      - command:
+          exec: zsh --version
+          print: "\e[32mZsh\e[0m"

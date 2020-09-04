@@ -1,0 +1,8 @@
+image:
+  name: base
+  tag: ubuntu
+site_label: ubuntu
+commands:
+  bash:
+    prefix: bash
+    version: -version

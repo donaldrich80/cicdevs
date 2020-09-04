@@ -1,0 +1,33 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:rust validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:rust version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/builder:rust .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/builder:rust
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: cargo --version
+          print: "\e[32mCargo\e[0m"
+      - command:
+          exec: rustc --version
+          print: "\e[32mRustc\e[0m"
+      - command:
+          exec: rustup --version
+          print: "\e[32mRustup\e[0m"

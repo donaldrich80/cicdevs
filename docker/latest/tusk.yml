@@ -1,0 +1,75 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/docker:latest validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/docker:latest version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/docker:latest .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/docker:latest
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: docker buildx version
+          print: "\e[32mDocker Buildx\e[0m"
+      - command:
+          exec: curl --version
+          print: "\e[32mCurl\e[0m"
+      - command:
+          exec: dive --version
+          print: "\e[32mDive\e[0m"
+      - command:
+          exec: docker-compose version
+          print: "\e[32mDocker-Compose\e[0m"
+      - command:
+          exec: docker-slim --version
+          print: "\e[32mDocker-Slim\e[0m"
+      - command:
+          exec: dockfmt version
+          print: "\e[32mDockfmt\e[0m"
+      - command:
+          exec: git --version
+          print: "\e[32mGit\e[0m"
+      - command:
+          exec: gomplate --version
+          print: "\e[32mGomplate\e[0m"
+      - command:
+          exec: goss --version
+          print: "\e[32mGoss\e[0m"
+      - command:
+          exec: hadolint --version
+          print: "\e[32mHadolint\e[0m"
+      - command:
+          exec: jq --version
+          print: "\e[32mJq\e[0m"
+      - command:
+          exec: notary version
+          print: "\e[32mNotary\e[0m"
+      - command:
+          exec: shellcheck --version
+          print: "\e[32mShellcheck\e[0m"
+      - command:
+          exec: ssh -V
+          print: "\e[32mSsh\e[0m"
+      - command:
+          exec: tusk --version
+          print: "\e[32mTusk\e[0m"
+      - command:
+          exec: vault version
+          print: "\e[32mVault\e[0m"
+      - command:
+          exec: zsh --version
+          print: "\e[32mZsh\e[0m"

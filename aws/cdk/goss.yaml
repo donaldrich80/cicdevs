@@ -1,0 +1,6 @@
+
+command:
+  aws-cdk:
+    exit-status: 0
+    exec: "cdk --version"
+    timeout: 5000

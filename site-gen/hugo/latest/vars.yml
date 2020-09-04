@@ -1,0 +1,26 @@
+description: Container for generating Hugo sites
+features:
+  - Hugo
+  - Node
+  - Alpine
+image:
+  name: hugo
+  tag: latest
+  entrypoint: /bin/zsh
+commands:
+  hugo:
+    prefix: hugo
+    version: version
+    help: --help
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  node:
+    prefix: npm
+    version: version
+    help: help
+references:
+  hugo:
+    docs: https://gohugo.io
+    github: gohugoio/hugo

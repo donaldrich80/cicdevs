@@ -1,0 +1,15 @@
+description: Image for interacting with AWS cdk
+features:
+  - AWS cdk
+image:
+  name: aws
+  tag: cdk
+  entrypoint: /usr/bin/zsh
+commands:
+  aws-cdk:
+    prefix: cdk
+    help: help
+    version: --version
+    github: aws/aws-cdk
+    timeout: 5000
+    docs: https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#hello_world_tutorial

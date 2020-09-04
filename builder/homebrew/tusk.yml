@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:homebrew validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:homebrew version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/builder:homebrew .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/builder:homebrew
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: brew --version
+          print: "\e[32mBrew\e[0m"

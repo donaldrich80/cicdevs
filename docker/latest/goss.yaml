@@ -1,0 +1,53 @@
+
+command:
+  buildx:
+    exit-status: 0
+    exec: "docker buildx version"
+  curl:
+    exit-status: 0
+    exec: "curl --version"
+  dive:
+    exit-status: 0
+    exec: "dive --version"
+  docker-compose:
+    exit-status: 0
+    exec: "docker-compose version"
+  docker-slim:
+    exit-status: 0
+    exec: "docker-slim --version"
+  dockfmt:
+    exit-status: 0
+    exec: "dockfmt version"
+  git:
+    exit-status: 0
+    exec: "git --version"
+  gomplate:
+    exit-status: 0
+    exec: "gomplate --version"
+  goss:
+    exit-status: 0
+    exec: "goss --version"
+  hadolint:
+    exit-status: 0
+    exec: "hadolint --version"
+  jq:
+    exit-status: 0
+    exec: "jq --version"
+  notary:
+    exit-status: 0
+    exec: "notary version"
+  shellcheck:
+    exit-status: 0
+    exec: "shellcheck --version"
+  ssh:
+    exit-status: 0
+    exec: "ssh -V"
+  tusk:
+    exit-status: 0
+    exec: "tusk --version"
+  vault:
+    exit-status: 0
+    exec: "vault version"
+  zsh:
+    exit-status: 0
+    exec: "zsh --version"

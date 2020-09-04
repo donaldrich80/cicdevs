@@ -1,0 +1,20 @@
+docker:dind:
+  stage: build
+  trigger:
+    include: .meta/pipeline/docker/dind/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "docker/dind/Dockerfile"
+      - "docker/dind/goss.yaml"
+      - "docker/dind/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "docker" && $TRIGGER_VAR2 == "dind"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "docker" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

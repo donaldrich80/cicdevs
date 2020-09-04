@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:vault:latest:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: hashicorp/vault
+  IMAGE_NAME: vault
+  IMAGE_TAG: latest
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: hashicorp/vault
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:vault:latest:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/vault:latest
+    - docker run --rm donaldrich/vault:latest config > $CI_PROJECT_DIR/.meta/snippets/config/vault-latest.md || true
+    - docker run --rm donaldrich/vault:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/vault-latest.md || true
+    - docker image inspect donaldrich/vault:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/vault-latest.md
+    - docker history donaldrich/vault:latest > $CI_PROJECT_DIR/.meta/snippets/layers/vault-latest.md || true
+

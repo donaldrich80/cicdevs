@@ -1,0 +1,39 @@
+description: Container for generating a pdf from site
+features:
+  - mkpdfs
+  - mkdocs
+image:
+  name: mkdocs
+  tag: mkpdfs
+site_label: mkpdfs
+commands:
+  pip:
+    prefix: pip
+    version: --version
+  python:
+    prefix: python
+    version: --version
+  mkdocs:
+    prefix: mkdocs
+    version: --version
+packages:
+  gcc:
+  musl-dev:
+  jpeg-dev:
+  zlib-dev:
+  libffi-dev:
+  cairo-dev:
+  pango-dev:
+  gdk-pixbuf-dev:
+references:
+  mkdocs:
+    docs: https://www.mkdocs.org
+    github: mkdocs/mkdocs
+  mkpdfs:
+    github: comwes/mkpdfs-mkdocs-plugin
+    docs: https://comwes.github.io/mkpdfs-mkdocs-plugin
+gossfile:
+  goss-base.yaml:
+# plugins:
+#   weasyprint:
+#   mkdocs-pdf-export-plugin:

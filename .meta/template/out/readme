@@ -1,0 +1,47 @@
+---
+title: Latest
+path: tree/master
+source: base/alpine/Dockerfile
+---
+
+# ansible:latest
+
+## References
+
+### Docker
+
+* [:fontawesome-brands-docker: Docker](https://github.com/hashicorp/packer)
+
+* [:octicons-book-16: Docs](hashicorp/packer)
+
+* [:octicons-mark-github-16: hashicorp/docker](https://github.com/hashicorp/docker)
+
+### Packer
+
+* [:octicons-mark-github-16: hashicorp/packer](https://github.com/hashicorp/packer)
+
+## Plugins
+
+### Packer
+
+* [:octicons-mark-github-16: hashicorp/packer](https://github.com/hashicorp/packer)
+
+## Usage
+
+### Validate Services
+
+```sh
+docker pull donaldrich/ansible:latest && docker run -it --rm donaldrich/ansible:latest validate
+```
+
+### Check Versions
+
+```sh
+docker pull donaldrich/ansible:latest && docker run -it --rm donaldrich/ansible:latest version
+```
+
+### Inspect Layers
+
+```sh
+docker pull donaldrich/ansible:latest && dive donaldrich/ansible:latest version
+```

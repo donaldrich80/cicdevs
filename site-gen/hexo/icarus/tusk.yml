@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/hexo:icarus validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/hexo:icarus version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/hexo:icarus .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/hexo:icarus
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: hexo version
+          print: "\e[32mHexo\e[0m"

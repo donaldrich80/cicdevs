@@ -1,0 +1,31 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}
+
+{{- if has (datasource "data") "commands" }}
+{{- template "commands" }}
+{{- end }}
+
+{{- define "commands" }}
+  version:
+    usage: check package versions
+    run:
+{{- $default := (datasource "data").commands }}
+{{- $config := (datasource "command-index").commands }}
+{{- $merged := merge $config $default }}
+{{- range $i, $e := $merged }}
+      - command:
+          exec: {{ .prefix }} {{ .version }}
+          print: "\e[32m{{ strings.Title .prefix }}\e[0m"
+{{- end }}
+{{- end }}

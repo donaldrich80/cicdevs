@@ -1,0 +1,10 @@
+
+gossfile:
+  goss-base.yaml: {}
+command:
+  pip:
+    exit-status: 0
+    exec: "pip3 --version"
+  python:
+    exit-status: 0
+    exec: "python -V"

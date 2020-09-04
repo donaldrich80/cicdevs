@@ -1,0 +1,5 @@
+
+command:
+  buildx:
+    exit-status: 0
+    exec: "docker buildx version"

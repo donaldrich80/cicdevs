@@ -1,0 +1,23 @@
+
+command:
+  curl:
+    exit-status: 0
+    exec: "curl --version"
+  git:
+    exit-status: 0
+    exec: "git --version"
+  goss:
+    exit-status: 0
+    exec: "goss --version"
+  rsync:
+    exit-status: 0
+    exec: "rsync --version"
+  ssh:
+    exit-status: 0
+    exec: "ssh -V"
+  tusk:
+    exit-status: 0
+    exec: "tusk --version"
+  vault:
+    exit-status: 0
+    exec: "vault -version"

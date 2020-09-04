@@ -1,0 +1,20 @@
+hexo:butterfly:
+  stage: build
+  trigger:
+    include: .meta/pipeline/site-gen/hexo/butterfly/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "site-gen/hexo/butterfly/Dockerfile"
+      - "site-gen/hexo/butterfly/goss.yaml"
+      - "site-gen/hexo/butterfly/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "hexo" && $TRIGGER_VAR2 == "butterfly"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "hexo" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

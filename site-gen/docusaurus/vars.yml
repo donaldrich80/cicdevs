@@ -1,0 +1,32 @@
+description: Container for generating Docusaurus
+features:
+  - Docusaurus
+site_label: docusaurus
+image:
+  name: docusaurus
+  tag: latest
+  entrypoint: /bin/zsh
+commands:
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  node:
+    prefix: npm
+    version: version
+    help: help
+  git:
+    prefix: git
+    version: version
+    help: help
+  nano:
+    prefix: nano
+    help: -h
+    version: -V
+references:
+  docusaurus:
+    docs: https://docusaurus.io/docs/en/installation
+    site: https://docusaurus.io/en
+    github: facebook/docusaurus
+# links:
+#   awesome-hexo-themes: https://awesomeopensource.com/projects/hexo-theme

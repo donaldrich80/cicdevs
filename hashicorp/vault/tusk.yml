@@ -1,0 +1,36 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/vault:latest validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/vault:latest version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/vault:latest .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/vault:latest
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: bash -version
+          print: "\e[32mBash\e[0m"
+      - command:
+          exec: hashi-helper --version
+          print: "\e[32mHashi-Helper\e[0m"
+      - command:
+          exec: vault -version
+          print: "\e[32mVault\e[0m"
+      - command:
+          exec: vault-sync --version
+          print: "\e[32mVault-Sync\e[0m"

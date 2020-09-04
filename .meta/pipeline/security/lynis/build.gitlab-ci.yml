@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:lynis:latest:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: security/lynis
+  IMAGE_NAME: lynis
+  IMAGE_TAG: latest
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: security/lynis
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:lynis:latest:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/lynis:latest
+    - docker run --rm donaldrich/lynis:latest config > $CI_PROJECT_DIR/.meta/snippets/config/lynis-latest.md || true
+    - docker run --rm donaldrich/lynis:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/lynis-latest.md || true
+    - docker image inspect donaldrich/lynis:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/lynis-latest.md
+    - docker history donaldrich/lynis:latest > $CI_PROJECT_DIR/.meta/snippets/layers/lynis-latest.md || true
+

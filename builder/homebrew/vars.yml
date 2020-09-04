@@ -1,0 +1,21 @@
+description: Builder container with Homebrew
+features:
+  - inherits all capabilities of builder:latest
+  - layering reduces size of extra features
+site_label: homebrew
+image:
+  name: builder
+  tag: homebrew
+  entrypoint: /usr/bin/zsh
+references:
+  homebrew:
+    github: Homebrew/brew
+    docs: https://docs.brew.sh
+    site: https://brew.sh  
+commands:
+  homebrew:
+    prefix: brew
+    help: --help
+    version: --version
+gossfile:
+  goss-base.yaml: {}

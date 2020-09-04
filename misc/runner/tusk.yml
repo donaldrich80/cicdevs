@@ -1,0 +1,45 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/runner:latest validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/runner:latest version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/runner:latest .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/runner:latest
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: curl --version
+          print: "\e[32mCurl\e[0m"
+      - command:
+          exec: git --version
+          print: "\e[32mGit\e[0m"
+      - command:
+          exec: goss --version
+          print: "\e[32mGoss\e[0m"
+      - command:
+          exec: rsync --version
+          print: "\e[32mRsync\e[0m"
+      - command:
+          exec: ssh -V
+          print: "\e[32mSsh\e[0m"
+      - command:
+          exec: tusk --version
+          print: "\e[32mTusk\e[0m"
+      - command:
+          exec: vault -version
+          print: "\e[32mVault\e[0m"

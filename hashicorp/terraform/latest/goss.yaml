@@ -1,0 +1,35 @@
+
+command:
+  curl:
+    exit-status: 0
+    exec: "curl --version"
+  git:
+    exit-status: 0
+    exec: "git version"
+  jq:
+    exit-status: 0
+    exec: "jq --version"
+  nano:
+    exit-status: 0
+    exec: "nano --version"
+  sudo:
+    exit-status: 0
+    exec: "sudo --version"
+  terraform:
+    exit-status: 0
+    exec: "terraform version"
+  terrahelp:
+    exit-status: 0
+    exec: "terrahelp --version"
+  tflint:
+    exit-status: 0
+    exec: "tflint --version"
+  tfsec:
+    exit-status: 0
+    exec: "tfsec --version"
+  vault:
+    exit-status: 0
+    exec: "vault version"
+  zsh:
+    exit-status: 0
+    exec: "zsh --version"

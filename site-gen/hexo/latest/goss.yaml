@@ -1,0 +1,17 @@
+
+command:
+  git:
+    exit-status: 0
+    exec: "git version"
+  hexo:
+    exit-status: 0
+    exec: "hexo version"
+  nano:
+    exit-status: 0
+    exec: "nano -V"
+  node:
+    exit-status: 0
+    exec: "npm version"
+  zsh:
+    exit-status: 0
+    exec: "zsh --version"

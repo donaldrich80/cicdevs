@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:hugo:hello-friend:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: site-gen/hugo/hello-friend
+  IMAGE_NAME: hugo
+  IMAGE_TAG: hello-friend
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: site-gen/hugo/hello-friend
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:hugo:hello-friend:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/hugo:hello-friend
+    - docker run --rm donaldrich/hugo:hello-friend config > $CI_PROJECT_DIR/.meta/snippets/config/hugo-hello-friend.md || true
+    - docker run --rm donaldrich/hugo:hello-friend validate > $CI_PROJECT_DIR/.meta/snippets/version/hugo-hello-friend.md || true
+    - docker image inspect donaldrich/hugo:hello-friend | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/hugo-hello-friend.md
+    - docker history donaldrich/hugo:hello-friend > $CI_PROJECT_DIR/.meta/snippets/layers/hugo-hello-friend.md || true
+

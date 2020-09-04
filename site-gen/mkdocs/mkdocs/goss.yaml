@@ -1,0 +1,14 @@
+
+command:
+  mkdocs:
+    exit-status: 0
+    exec: "mkdocs --version"
+  pip:
+    exit-status: 0
+    exec: "pip --version"
+  python:
+    exit-status: 0
+    exec: "python --version"
+  tree:
+    exit-status: 0
+    exec: "tree --version"

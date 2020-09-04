@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/aws:cdk validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/aws:cdk version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/aws:cdk .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/aws:cdk
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: cdk --version
+          print: "\e[32mCdk\e[0m"

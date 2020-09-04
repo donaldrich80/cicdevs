@@ -1,0 +1,5 @@
+
+command:
+  aws-cli:
+    exit-status: 0
+    exec: "aws --version"

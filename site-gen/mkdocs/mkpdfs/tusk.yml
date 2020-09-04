@@ -1,0 +1,33 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/mkdocs:mkpdfs validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/mkdocs:mkpdfs version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/mkdocs:mkpdfs .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/mkdocs:mkpdfs
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: mkdocs --version
+          print: "\e[32mMkdocs\e[0m"
+      - command:
+          exec: pip --version
+          print: "\e[32mPip\e[0m"
+      - command:
+          exec: python --version
+          print: "\e[32mPython\e[0m"

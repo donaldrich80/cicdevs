@@ -1,0 +1,30 @@
+
+gossfile:
+  goss-base.yaml: {}
+package:
+  cairo-dev:
+    installed: true
+  gcc:
+    installed: true
+  gdk-pixbuf-dev:
+    installed: true
+  jpeg-dev:
+    installed: true
+  libffi-dev:
+    installed: true
+  musl-dev:
+    installed: true
+  pango-dev:
+    installed: true
+  zlib-dev:
+    installed: true
+command:
+  mkdocs:
+    exit-status: 0
+    exec: "mkdocs --version"
+  pip:
+    exit-status: 0
+    exec: "pip --version"
+  python:
+    exit-status: 0
+    exec: "python --version"

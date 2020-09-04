@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:builder:bazel:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: builder/bazel
+  IMAGE_NAME: builder
+  IMAGE_TAG: bazel
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: builder/bazel
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:builder:bazel:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/builder:bazel
+    - docker run --rm donaldrich/builder:bazel config > $CI_PROJECT_DIR/.meta/snippets/config/builder-bazel.md || true
+    - docker run --rm donaldrich/builder:bazel validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-bazel.md || true
+    - docker image inspect donaldrich/builder:bazel | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-bazel.md
+    - docker history donaldrich/builder:bazel > $CI_PROJECT_DIR/.meta/snippets/layers/builder-bazel.md || true
+

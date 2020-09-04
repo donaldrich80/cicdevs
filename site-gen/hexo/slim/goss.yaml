@@ -1,0 +1,11 @@
+
+command:
+  hexo:
+    exit-status: 0
+    exec: "hexo version"
+  node:
+    exit-status: 0
+    exec: "npm version"
+  zsh:
+    exit-status: 0
+    exec: "zsh --version"

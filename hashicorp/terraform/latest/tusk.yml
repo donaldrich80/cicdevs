@@ -1,0 +1,57 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/terraform:latest validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/terraform:latest version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/terraform:latest .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/terraform:latest
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: curl --version
+          print: "\e[32mCurl\e[0m"
+      - command:
+          exec: git version
+          print: "\e[32mGit\e[0m"
+      - command:
+          exec: jq --version
+          print: "\e[32mJq\e[0m"
+      - command:
+          exec: nano --version
+          print: "\e[32mNano\e[0m"
+      - command:
+          exec: sudo --version
+          print: "\e[32mSudo\e[0m"
+      - command:
+          exec: terraform version
+          print: "\e[32mTerraform\e[0m"
+      - command:
+          exec: terrahelp --version
+          print: "\e[32mTerrahelp\e[0m"
+      - command:
+          exec: tflint --version
+          print: "\e[32mTflint\e[0m"
+      - command:
+          exec: tfsec --version
+          print: "\e[32mTfsec\e[0m"
+      - command:
+          exec: vault version
+          print: "\e[32mVault\e[0m"
+      - command:
+          exec: zsh --version
+          print: "\e[32mZsh\e[0m"

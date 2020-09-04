@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:go validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:go version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/builder:go .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/builder:go
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: go version
+          print: "\e[32mGo\e[0m"

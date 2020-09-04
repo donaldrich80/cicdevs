@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:ansible:latest:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: ansible/latest
+  IMAGE_NAME: ansible
+  IMAGE_TAG: latest
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: ansible/latest
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:ansible:latest:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/ansible:latest
+    - docker run --rm donaldrich/ansible:latest config > $CI_PROJECT_DIR/.meta/snippets/config/ansible-latest.md || true
+    - docker run --rm donaldrich/ansible:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/ansible-latest.md || true
+    - docker image inspect donaldrich/ansible:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/ansible-latest.md
+    - docker history donaldrich/ansible:latest > $CI_PROJECT_DIR/.meta/snippets/layers/ansible-latest.md || true
+

@@ -1,0 +1,38 @@
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/{{ (datasource "data").image.name }}/{{ (datasource "data").image.tag }}?color=blue&label=donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/{{ (datasource "data").image.name }}/{{ (datasource "data").image.tag }})
+
+
+## Configuration
+
+
+-v "$(pwd)":"$(pwd)" \
+```
+--8<--
+config/{{ (datasource "data").image.tag }}.md
+--8<--
+```
+
+## Info
+
+??? info ""
+
+    === "Image"
+        ```json
+        --8<--
+        image-info/{{ (datasource "data").image.tag }}.md
+        --8<--
+        ```
+
+    === "Layers"
+        ```md
+        --8<--
+        layers/{{ (datasource "data").image.tag }}.md
+        --8<--
+        ```
+
+--8<--
+description/{{ (datasource "data").image.tag }}.md
+--8<--
+
+--8<--
+version/{{ (datasource "data").image.name }}-docker.md
+--8<--

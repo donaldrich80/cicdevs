@@ -1,0 +1,24 @@
+---
+name: donaldrich/builder:python
+usage: Builder image with Python and pip.
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: pip3 --version
+          print: "\e[32mPip3\e[0m"
+      - command:
+          exec: python -V
+          print: "\e[32mPython\e[0m"

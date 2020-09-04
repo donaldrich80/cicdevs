@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:hexo:latest:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: site-gen/hexo/latest
+  IMAGE_NAME: hexo
+  IMAGE_TAG: latest
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: site-gen/hexo/latest
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:hexo:latest:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/hexo:latest
+    - docker run --rm donaldrich/hexo:latest config > $CI_PROJECT_DIR/.meta/snippets/config/hexo-latest.md || true
+    - docker run --rm donaldrich/hexo:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/hexo-latest.md || true
+    - docker image inspect donaldrich/hexo:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/hexo-latest.md
+    - docker history donaldrich/hexo:latest > $CI_PROJECT_DIR/.meta/snippets/layers/hexo-latest.md || true
+

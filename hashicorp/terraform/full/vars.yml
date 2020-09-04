@@ -1,0 +1,39 @@
+description: Terraform image with extras
+features:
+  - inherits all capabilities from donaldrich/terraform:latest
+  - Docker
+  - AWS cli
+site_label: full
+image:
+  name: terraform
+  tag: full
+  docker-sock:
+  user: terraform
+  entrypoint: /usr/bin/zsh
+  env: .env
+reference:
+  terraform:
+    github: hashicorp/terraform
+    docs: https://www.terraform.io/docs
+commands:
+  bash:
+    prefix: bash
+    version: -version
+  vault:
+    prefix: vault
+    version: version
+  terraform:
+    prefix: terraform
+    version: version
+  aws-cli:
+    prefix: aws
+    help: help
+    version: --version
+  tflint:
+    prefix: tflint
+    version: --version
+  tfsec:
+    prefix: tfsec
+    version: --version
+links:
+  awesome-terraform: https://github.com/shuaibiyy/awesome-terraform

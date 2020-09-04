@@ -1,0 +1,8 @@
+
+gossfile:
+  goss-base.yaml: {}
+command:
+  bazel:
+    exit-status: 0
+    exec: "bazel version"
+    timeout: 10000

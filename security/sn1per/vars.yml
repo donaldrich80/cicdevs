@@ -1,0 +1,8 @@
+image:
+  name: sn1per
+  tag: latest
+# site_label: sn1per
+commands:
+  bash:
+    prefix: bash
+    version: -version

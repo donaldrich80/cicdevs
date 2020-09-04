@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:docker:latest:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: docker/latest
+  IMAGE_NAME: docker
+  IMAGE_TAG: latest
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: docker/latest
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:docker:latest:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/docker:latest
+    - docker run --rm donaldrich/docker:latest config > $CI_PROJECT_DIR/.meta/snippets/config/docker-latest.md || true
+    - docker run --rm donaldrich/docker:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/docker-latest.md || true
+    - docker image inspect donaldrich/docker:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/docker-latest.md
+    - docker history donaldrich/docker:latest > $CI_PROJECT_DIR/.meta/snippets/layers/docker-latest.md || true
+

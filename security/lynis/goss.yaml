@@ -1,0 +1,8 @@
+
+command:
+  bash:
+    exit-status: 0
+    exec: "bash -version"
+  lynis:
+    exit-status: 0
+    exec: "./lynis show options"

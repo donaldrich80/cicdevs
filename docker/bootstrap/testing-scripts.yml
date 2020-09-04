@@ -1,0 +1,31 @@
+.docker:script:test:registry:self:
+  script:
+    - docker pull hello-world
+    - docker tag hello-world $CI_REGISTRY_IMAGE/hello-world:latest
+    - docker push $CI_REGISTRY_IMAGE/hello-world:latest
+
+.docker:script:test:registry:dockerhub:
+  script:
+    - docker pull hello-world
+    - docker tag hello-world $DOCKERHUB_USER/hello-world
+    - docker push $DOCKERHUB_USER/hello-world
+
+.docker:script:test:vault:config:
+  script:
+    - cat /root/.docker/config.json
+    - cat /etc/docker-credential-vault-login/config.hcl
+    - echo $DCVL_CONFIG_FILE
+    - echo $DCVL_LOG_DIR
+
+.docker:dev:test-deps:
+  script:
+    - docker version
+    - docker buildx version
+    - vault version
+    - which docker-credential-vault-login
+    - echo $BUILDKIT_HOST
+    - echo $DOCKER_BUILDKIT
+    - echo $DOCKER_CHANNEL
+    - echo $DOCKER_VERSION
+    - cat /root/.docker/config.json
+    - cat /etc/docker-credential-vault-login/config.hcl

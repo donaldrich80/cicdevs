@@ -1,0 +1,20 @@
+terraform:latest:
+  stage: build
+  trigger:
+    include: .meta/pipeline/hashicorp/terraform/latest/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "hashicorp/terraform/latest/Dockerfile"
+      - "hashicorp/terraform/latest/goss.yaml"
+      - "hashicorp/terraform/latest/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "terraform" && $TRIGGER_VAR2 == "latest"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "terraform" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

@@ -1,0 +1,39 @@
+---
+name: donaldrich/runner:latest
+usage: A simple, lightweight Alpine image for performing simple CI tasks
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: curl --version
+          print: "\e[32mCurl\e[0m"
+      - command:
+          exec: git --version
+          print: "\e[32mGit\e[0m"
+      - command:
+          exec: goss --version
+          print: "\e[32mGoss\e[0m"
+      - command:
+          exec: rsync --version
+          print: "\e[32mRsync\e[0m"
+      - command:
+          exec: ssh -V
+          print: "\e[32mSsh\e[0m"
+      - command:
+          exec: tusk --version
+          print: "\e[32mTusk\e[0m"
+      - command:
+          exec: vault -version
+          print: "\e[32mVault\e[0m"

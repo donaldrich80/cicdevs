@@ -1,0 +1,9 @@
+{{/* {{ index (datasource "data") "commands" | data.ToYAML }}
+{{ $default := index (datasource "data") "commands" }}
+{{- $config := (datasource "command-index").commands }}
+{{- merge $config $default | data.ToYAML }}
+{{- $merged := merge $config $default }} */}}
+
+{{ range $i, $city := (datasource "data").commands }}
+{{ add 1 $i }}:{{ include (datasource "command-index") }}
+{{ end }}

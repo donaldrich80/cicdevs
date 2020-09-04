@@ -1,0 +1,27 @@
+description: Docz
+image:
+  name: docz
+  tag: latest
+  entrypoint: /bin/zsh
+commands:
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  node:
+    prefix: npm
+    version: version
+    help: help
+  git:
+    prefix: git
+    version: version
+    help: help
+  nano:
+    prefix: nano
+    help: -h
+    version: -V
+references:
+  docz:
+    docs: https://www.docz.site/docs/getting-started
+    site: https://www.docz.site/
+    github: hexojs/hexo

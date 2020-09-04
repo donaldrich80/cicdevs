@@ -1,0 +1,61 @@
+description: Container for generating documentation site using mkdocs
+features:
+  - mkdocs for site generation
+  - "theme included: mkdocs-material"
+  - mkdocs-material theme
+  - Useful plugins installed (see below)
+  - tree, for file tree generation
+site_label: latest
+image:
+  name: mkdocs
+  tag: latest
+commands:
+  pip:
+    prefix: pip
+    version: --version
+    help: --help
+  python:
+    prefix: python
+    version: --version
+    help: --help
+  mkdocs:
+    prefix: mkdocs
+    version: --version
+    help: --help
+  tree:
+    prefix: tree
+    help: --help
+    version: --version
+# packages:
+#   gcc:
+#   musl-dev:
+#   jpeg-dev:
+#   zlib-dev:
+#   libffi-dev:
+#   cairo-dev:
+#   pango-dev:
+#   gdk-pixbuf-dev:
+references:
+  mkdocs:
+    docs: https://www.mkdocs.org
+    github: mkdocs/mkdocs
+  mkdocs-material:
+    docs: https://squidfunk.github.io/mkdocs-material
+    github: squidfunk/mkdocs-material
+plugins:
+  mkdocs-minify-plugin:
+    github: byrnereese/mkdocs-minify-plugin
+  mkdocs-awesome-pages-plugin:
+    github: lukasgeiter/mkdocs-awesome-pages-plugin
+  mkdocs-simple-plugin:
+    docs: https://www.allisonthackston.com/mkdocs-simple-plugin
+    github: athackst/mkdocs-simple-plugin
+  # markdown-include:
+  # mkdocs-exclude:
+  # mkdocs-macros-plugin:
+  # mkdocs-markdownextradata-plugin:
+  mkdocs-mermaid-plugin:
+    github: fralau/mkdocs-mermaid2-plugin
+  # mkdocs-diagrams:
+  # mkdocs-git-revision-date-localized-plugin:
+  #

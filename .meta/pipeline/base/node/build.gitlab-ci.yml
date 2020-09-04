@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:base:node:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: base/node
+  IMAGE_NAME: base
+  IMAGE_TAG: node
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: base/node
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:base:node:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/base:node
+    - docker run --rm donaldrich/base:node config > $CI_PROJECT_DIR/.meta/snippets/config/base-node.md || true
+    - docker run --rm donaldrich/base:node validate > $CI_PROJECT_DIR/.meta/snippets/version/base-node.md || true
+    - docker image inspect donaldrich/base:node | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/base-node.md
+    - docker history donaldrich/base:node > $CI_PROJECT_DIR/.meta/snippets/layers/base-node.md || true
+

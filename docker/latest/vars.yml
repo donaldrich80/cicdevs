@@ -1,0 +1,121 @@
+description: Image primarily intentended for developing Dockerfiles, building images, and running other Docker containers.
+features:
+  - BuildX
+  - Docker-compose
+  - Hashicorp Vault
+  - Notary
+  - Dockerfile linting
+  - Gomplate templating
+  - CURL, jq, git, SSH
+image:
+  name: docker
+  tag: latest
+  entrypoint: /bin/zsh
+  env: .env
+  docker-sock:
+site_label: latest
+references:
+  dockfmt:
+    github: jessfraz/dockfmt
+  docker-compose:
+    description: Define and run multi-container applications with Docker
+    github: docker/compose
+    docs: https://docs.docker.com/compose
+  buildx:
+    description: Docker CLI plugin for extended build capabilities with BuildKit
+    github: docker/buildx
+    docs: https://docs.docker.com/buildx
+  notary:
+    github: theupdateframework/notary
+    docs: https://docs.docker.com/notary
+  dive:
+    description: A tool for exploring each layer in a docker image
+    github: wagoodman/dive
+  docker-slim:
+    description: Minify and Secure Docker containers
+    github: docker-slim/docker-slim
+  hadolint:
+    description: Dockerfile linter, validate inline bash, written in Haskell
+    github: hadolint/hadolint
+#   link: https://codefresh.io/docker-tutorial/announcing-docker-buildkit-support/
+commands:
+  # docker:
+  #   prefix: docker
+  #   version: version
+  #   github: docker/docker-ce
+  # docker-machine:
+  #   prefix: docker-machine
+  #   version: version
+  #   github: docker/machine
+  dockfmt:
+    prefix: dockfmt
+    help: -h
+    version: version
+  docker-compose:
+    prefix: docker-compose
+    version: version
+    help: --help
+  buildx:
+    prefix: docker buildx
+    version: version
+    help: --help
+  notary:
+    prefix: notary
+    version: version
+    help: --help
+  dive:
+    prefix: dive
+    help: --help
+    version: --version
+  docker-slim:
+    prefix: docker-slim
+    help: --help
+    version: --version
+  hadolint:
+    prefix: hadolint
+    help: --help
+    version: --version
+  zsh:
+    prefix: zsh
+    version: --version
+  vault:
+    prefix: vault
+    version: version
+  curl:
+    prefix: curl
+    version: --version
+    help: --help
+  git:
+    prefix: git
+    version: --version
+  jq:
+    prefix: jq
+    version: --version
+  gomplate:
+    prefix: gomplate
+    version: --version
+    help: --help
+  shellcheck:
+    prefix: shellcheck
+    version: --version
+    help: --help
+  goss:
+    prefix: goss
+    version: --version
+    help: --help
+  tusk:
+    prefix: tusk
+    version: --version
+  ssh:
+    prefix: ssh
+    version: -V
+file:
+  /usr/local/bin/dgoss:
+    exists: true
+links:
+  awesome-docker: https://awesome-docker.netlify.app
+# [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/docker/latest?color=blue&label=docker&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/docker)
+
+# [![Docker Pulls](https://img.shields.io/docker/pulls/donaldrich/docker?color=blue&label=docker%20pulls&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/docker)
+
+# [![hh](https://img.shields.io/docker/stars/donaldrich/docker.svg?style=flat-square&logo=docker)](https://hub.docker.com/r/donaldrich/docker)

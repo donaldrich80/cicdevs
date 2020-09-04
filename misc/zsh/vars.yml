@@ -1,0 +1,31 @@
+description: Image for testing, developing, and efficiently packaging the ZSH shell bundle for other images. This image will probably not be very useful as a CI/CD executor.
+features:
+  - ZSH
+  - Oh-my-zsh
+  - Powerlevel 10k
+  - Nano, with syntax highlighting
+image:
+  name: runner
+  tag: zsh
+  entrypoint: /usr/bin/zsh
+commands:
+  zsh:
+    prefix: zsh
+    version: --version
+plugins:
+  zsh-autosuggestions:
+    github: zsh-users/zsh-autosuggestions
+  zsh-completions: 
+    github: zsh-users/zsh-completions
+  ansible-zsh:
+    github: sparsick/ansible-zsh
+  zsh-syntax-highlighting:
+    github: zsh-users/zsh-syntax-highlighting
+  zsh-interactive-cd:
+    github: changyuheng/zsh-interactive-cd
+  zsh-history-substring-search:
+    github: zsh-users/zsh-history-substring-search
+links:
+  global-omz: https://stackoverflow.com/questions/31624649/how-can-i-get-a-secure-system-wide-oh-my-zsh-configuration
+  zsh-in-docker: https://github.com/deluan/zsh-in-docker
+  awesome-zsh-plugins: https://github.com/unixorn/awesome-zsh-plugins

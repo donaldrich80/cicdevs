@@ -1,0 +1,30 @@
+description: Container for generating Hexo
+features:
+  - Hexo
+  - Node
+  - Slim
+site_label: slim
+image:
+  name: hexo
+  tag: slim
+  entrypoint: /usr/bin/zsh
+commands:
+  hexo:
+    prefix: hexo
+    version: version
+    help: help
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  node:
+    prefix: npm
+    version: version
+    help: help
+references:
+  hexo:
+    docs: https://hexo.io/docs
+    site: https://hexo.io
+    github: hexojs/hexo
+links:
+  awesome-hexo-themes: https://awesomeopensource.com/projects/hexo-theme

@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/docker:bootstrap validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/docker:bootstrap version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/docker:bootstrap .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/docker:bootstrap
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: docker buildx version
+          print: "\e[32mDocker Buildx\e[0m"

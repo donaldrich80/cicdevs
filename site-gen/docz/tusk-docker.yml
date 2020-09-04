@@ -1,0 +1,30 @@
+---
+name: donaldrich/docz:latest
+usage: Docz
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: git version
+          print: "\e[32mGit\e[0m"
+      - command:
+          exec: nano -V
+          print: "\e[32mNano\e[0m"
+      - command:
+          exec: npm version
+          print: "\e[32mNpm\e[0m"
+      - command:
+          exec: zsh --version
+          print: "\e[32mZsh\e[0m"

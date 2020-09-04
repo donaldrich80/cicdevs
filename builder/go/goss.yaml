@@ -1,0 +1,7 @@
+
+gossfile:
+  goss-base.yaml: {}
+command:
+  go:
+    exit-status: 0
+    exec: "go version"

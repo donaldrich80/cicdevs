@@ -1,0 +1,9 @@
+image:
+  name: base
+  tag: alpine
+  entrypoint: /bin/zsh
+site_label: alpine
+commands:
+  bash:
+    prefix: bash
+    version: -version

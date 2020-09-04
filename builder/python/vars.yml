@@ -1,0 +1,19 @@
+description: Builder image with Python and pip.
+features:
+  - Python
+site_label: python
+image:
+  name: builder
+  tag: python
+  entrypoint: /usr/bin/zsh
+commands:
+  python:
+    prefix: python
+    version: -V
+    help: -h
+  pip:
+    prefix: pip3
+    version: --version
+    help: --help
+gossfile:
+  goss-base.yaml:

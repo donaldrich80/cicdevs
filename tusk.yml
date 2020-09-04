@@ -1,0 +1,98 @@
+---
+name: mycli
+usage: A custom aliased command-line application
+
+options:
+  build-dir:
+    usage: Folder containing Dockerfile
+
+tasks:
+  build:
+    usage: build image
+    run: docker build --pull --rm -f "${build-dir}/Dockerfile" -t donaldrich/function:test "${build-dir}"
+
+  analyze:
+    usage: analyze built image
+    run: dive donaldrich/function:test
+
+  prune:
+    usage: analyze built image
+    run: docker system prune --all --force
+
+  test:
+    usage: image requirements goss
+    options:
+      validate:
+        usage: validate
+        short: v
+      render:
+        usage: render
+        short: r
+      debug:
+        usage: debug
+        short: d
+    run:
+      - when: validate
+        command: goss --vars vars.yaml validate
+      - when: render
+        command: goss --vars vars.yaml render
+      - when: debug
+        command: goss --vars vars.yaml render --debug
+
+  # repo:
+  #   usage: repo
+  #   options:
+  #     check:
+  #       usage: check imtegrity
+  #       short: c
+  #     pull:
+  #       usage: pull from master
+  #       short: r
+  #     push:
+  #       usage: push to master
+  #       short: d
+  #   run:
+  #     - when: check
+  #       command: docker run -it --rm --name=gitleaks -v $PWD:/code zricethezav/gitleaks -v --repo-path=/code
+
+  clean:
+    usage: template
+    run:
+      - command: rm -r .meta/pipeline | true
+      - command: rm -r docs/ansible | true
+      - command: rm -r docs/base | true
+      - command: rm -r docs/builder | true
+      - command: rm -r docs/docker | true
+      - command: rm -r docs/hashicorp | true
+      - command: rm -r docs/misc | true
+      - command: rm -r docs/security | true
+      - command: rm -r docs/site-gen | true
+
+  dependency:
+    usage: template
+    run:
+      - command: sudo -i
+      - command: curl -sL https://git.io/tusk | bash -s -- -b /usr/local/bin latest
+
+  template:
+    usage: template
+    run:
+      - command: ./run-all.sh
+
+  regenerate:
+    run:
+      - task: clean
+      - task: template
+
+  repo-update:
+    run:
+      - command: git add .
+      - command: git commit -m "repo template regenerate"
+      - command: git push origin master      
+      
+  repo:
+    usage: check package versions
+    run:
+      - task: clean
+      - task: template
+      - task: repo-update

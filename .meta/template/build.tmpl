@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: {{ (datasource "path").path }}
+  IMAGE_NAME: {{ (datasource "data").image.name }}
+  IMAGE_TAG: {{ (datasource "data").image.tag }}
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: {{ (datasource "path").path }}
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}
+    - docker run --rm donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} config > $CI_PROJECT_DIR/.meta/snippets/config/{{ (datasource "data").image.name }}-{{ (datasource "data").image.tag }}.md || true
+    - docker run --rm donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} validate > $CI_PROJECT_DIR/.meta/snippets/version/{{ (datasource "data").image.name }}-{{ (datasource "data").image.tag }}.md || true
+    - docker image inspect donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/{{ (datasource "data").image.name }}-{{ (datasource "data").image.tag }}.md
+    - docker history donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} > $CI_PROJECT_DIR/.meta/snippets/layers/{{ (datasource "data").image.name }}-{{ (datasource "data").image.tag }}.md || true
+

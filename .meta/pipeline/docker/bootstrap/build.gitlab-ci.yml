@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:docker:bootstrap:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: docker/bootstrap
+  IMAGE_NAME: docker
+  IMAGE_TAG: bootstrap
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: docker/bootstrap
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:docker:bootstrap:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/docker:bootstrap
+    - docker run --rm donaldrich/docker:bootstrap config > $CI_PROJECT_DIR/.meta/snippets/config/docker-bootstrap.md || true
+    - docker run --rm donaldrich/docker:bootstrap validate > $CI_PROJECT_DIR/.meta/snippets/version/docker-bootstrap.md || true
+    - docker image inspect donaldrich/docker:bootstrap | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/docker-bootstrap.md
+    - docker history donaldrich/docker:bootstrap > $CI_PROJECT_DIR/.meta/snippets/layers/docker-bootstrap.md || true
+

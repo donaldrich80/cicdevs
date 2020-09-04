@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:builder:python:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: builder/python
+  IMAGE_NAME: builder
+  IMAGE_TAG: python
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: builder/python
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:builder:python:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/builder:python
+    - docker run --rm donaldrich/builder:python config > $CI_PROJECT_DIR/.meta/snippets/config/builder-python.md || true
+    - docker run --rm donaldrich/builder:python validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-python.md || true
+    - docker image inspect donaldrich/builder:python | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-python.md
+    - docker history donaldrich/builder:python > $CI_PROJECT_DIR/.meta/snippets/layers/builder-python.md || true
+

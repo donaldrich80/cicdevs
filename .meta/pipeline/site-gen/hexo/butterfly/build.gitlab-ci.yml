@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:hexo:butterfly:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: site-gen/hexo/butterfly
+  IMAGE_NAME: hexo
+  IMAGE_TAG: butterfly
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: site-gen/hexo/butterfly
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:hexo:butterfly:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/hexo:butterfly
+    - docker run --rm donaldrich/hexo:butterfly config > $CI_PROJECT_DIR/.meta/snippets/config/hexo-butterfly.md || true
+    - docker run --rm donaldrich/hexo:butterfly validate > $CI_PROJECT_DIR/.meta/snippets/version/hexo-butterfly.md || true
+    - docker image inspect donaldrich/hexo:butterfly | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/hexo-butterfly.md
+    - docker history donaldrich/hexo:butterfly > $CI_PROJECT_DIR/.meta/snippets/layers/hexo-butterfly.md || true
+

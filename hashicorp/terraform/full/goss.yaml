@@ -1,0 +1,20 @@
+
+command:
+  aws-cli:
+    exit-status: 0
+    exec: "aws --version"
+  bash:
+    exit-status: 0
+    exec: "bash -version"
+  terraform:
+    exit-status: 0
+    exec: "terraform version"
+  tflint:
+    exit-status: 0
+    exec: "tflint --version"
+  tfsec:
+    exit-status: 0
+    exec: "tfsec --version"
+  vault:
+    exit-status: 0
+    exec: "vault version"

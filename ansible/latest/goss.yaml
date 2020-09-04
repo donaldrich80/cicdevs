@@ -1,0 +1,38 @@
+
+command:
+  ansible:
+    exit-status: 0
+    exec: "ansible --version"
+  ansible-cmdb:
+    exit-status: 0
+    exec: "ansible-cmdb --version"
+  ansible-console:
+    exit-status: 0
+    exec: "ansible-console --version"
+  ansible-lint:
+    exit-status: 0
+    exec: "ansible-lint --version"
+  bash:
+    exit-status: 0
+    exec: "bash -version"
+  curl:
+    exit-status: 0
+    exec: "curl --version"
+  git:
+    exit-status: 0
+    exec: "git version"
+  molecule:
+    exit-status: 0
+    exec: "molecule --version"
+  pip:
+    exit-status: 0
+    exec: "pip3 -V"
+  python:
+    exit-status: 0
+    exec: "python --version"
+  rsync:
+    exit-status: 0
+    exec: "rsync --version"
+  ssh:
+    exit-status: 0
+    exec: "ssh -V"

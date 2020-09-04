@@ -1,0 +1,21 @@
+description: Builder container with bazel
+features:
+  - inherits all capabilities of builder:latest
+  - layering reduces size of extra features
+site_label: bazel
+image:
+  name: builder
+  tag: bazel
+  entrypoint: /usr/bin/zsh
+commands:
+  bazel:
+    prefix: bazel
+    version: version
+    timeout: 10000
+    help: help
+references:
+  bazel:
+    docs: https://docs.bazel.build
+    github: bazelbuild/bazel
+gossfile:
+  goss-base.yaml: {}

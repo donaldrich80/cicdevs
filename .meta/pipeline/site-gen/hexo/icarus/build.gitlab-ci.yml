@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:hexo:icarus:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: site-gen/hexo/icarus
+  IMAGE_NAME: hexo
+  IMAGE_TAG: icarus
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: site-gen/hexo/icarus
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:hexo:icarus:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/hexo:icarus
+    - docker run --rm donaldrich/hexo:icarus config > $CI_PROJECT_DIR/.meta/snippets/config/hexo-icarus.md || true
+    - docker run --rm donaldrich/hexo:icarus validate > $CI_PROJECT_DIR/.meta/snippets/version/hexo-icarus.md || true
+    - docker image inspect donaldrich/hexo:icarus | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/hexo-icarus.md
+    - docker history donaldrich/hexo:icarus > $CI_PROJECT_DIR/.meta/snippets/layers/hexo-icarus.md || true
+

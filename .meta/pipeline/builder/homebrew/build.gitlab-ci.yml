@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:builder:homebrew:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: builder/homebrew
+  IMAGE_NAME: builder
+  IMAGE_TAG: homebrew
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: builder/homebrew
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:builder:homebrew:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/builder:homebrew
+    - docker run --rm donaldrich/builder:homebrew config > $CI_PROJECT_DIR/.meta/snippets/config/builder-homebrew.md || true
+    - docker run --rm donaldrich/builder:homebrew validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-homebrew.md || true
+    - docker image inspect donaldrich/builder:homebrew | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-homebrew.md
+    - docker history donaldrich/builder:homebrew > $CI_PROJECT_DIR/.meta/snippets/layers/builder-homebrew.md || true
+

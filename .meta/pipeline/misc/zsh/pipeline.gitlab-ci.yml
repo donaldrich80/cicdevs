@@ -1,0 +1,20 @@
+runner:zsh:
+  stage: build
+  trigger:
+    include: .meta/pipeline/misc/zsh/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "misc/zsh/Dockerfile"
+      - "misc/zsh/goss.yaml"
+      - "misc/zsh/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "runner" && $TRIGGER_VAR2 == "zsh"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "runner" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

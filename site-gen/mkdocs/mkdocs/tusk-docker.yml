@@ -1,0 +1,30 @@
+---
+name: donaldrich/mkdocs:latest
+usage: Container for generating documentation site using mkdocs
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: mkdocs --version
+          print: "\e[32mMkdocs\e[0m"
+      - command:
+          exec: pip --version
+          print: "\e[32mPip\e[0m"
+      - command:
+          exec: python --version
+          print: "\e[32mPython\e[0m"
+      - command:
+          exec: tree --version
+          print: "\e[32mTree\e[0m"

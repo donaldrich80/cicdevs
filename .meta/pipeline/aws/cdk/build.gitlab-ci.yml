@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:aws:cdk:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: aws/cdk
+  IMAGE_NAME: aws
+  IMAGE_TAG: cdk
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: aws/cdk
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:aws:cdk:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/aws:cdk
+    - docker run --rm donaldrich/aws:cdk config > $CI_PROJECT_DIR/.meta/snippets/config/aws-cdk.md || true
+    - docker run --rm donaldrich/aws:cdk validate > $CI_PROJECT_DIR/.meta/snippets/version/aws-cdk.md || true
+    - docker image inspect donaldrich/aws:cdk | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/aws-cdk.md
+    - docker history donaldrich/aws:cdk > $CI_PROJECT_DIR/.meta/snippets/layers/aws-cdk.md || true
+

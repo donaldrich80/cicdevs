@@ -1,0 +1,146 @@
+include:
+  - local: '/testing-scripts.yml'
+
+.bootstrap:vars:
+  variables:
+    DOCKER_BUILD_DIR: docker/bootstrap
+    IMAGE_ALIAS: docker
+    IMAGE_NAME: docker
+    IMAGE_TAG: latest
+    DOCKERFILE: Dockerfile
+    GIT_STRATEGY: clone
+
+.bootstrap:rules:
+  rules:
+    # - if: '$CI_PIPELINE_SOURCE == "push"'
+      # changes:
+      # - "docker/dev/*"
+      # when: on_success
+    - if: '$TRIGGER_VAR1 == "bootstrap"'
+      when: never
+    # - if: '$TRIGGER_VAR1 == $IMAGE_ALIAS && $TRIGGER_VAR2 == $IMAGE_TAG'
+    #   when: on_success
+    # - if: '$TRIGGER_VAR1 != $IMAGE_ALIAS || $TRIGGER_VAR2 != $IMAGE_TAG'
+    #   when: never
+
+clean:pre:
+  image: docker:stable
+  stage: .pre
+  script:
+    - docker image rmi --force $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG; exit 0
+    - docker image rmi --force donaldrich/$IMAGE_NAME:$IMAGE_TAG; exit 0
+    - docker image rmi --force $CI_REGISTRY_IMAGE/docker-runner:bootstrap; exit 0
+    # - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+    # - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+    # - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
+  allow_failure: true
+  # when: always
+
+build:boostrapper:
+  image: docker:latest
+  stage: lint
+  services:
+    - docker:dind
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+  script:
+    - docker build -t "$CI_REGISTRY_IMAGE/docker-runner:bootstrap" .
+    - docker push "$CI_REGISTRY_IMAGE/docker-runner:bootstrap"
+
+build:push:candidate:
+  image: $CI_REGISTRY_IMAGE/docker-runner:bootstrap
+  stage: build
+  variables:
+    DOCKER_BUILD_DIR: docker/dev
+    IMAGE_ALIAS: docker
+    IMAGE_NAME: docker-runner
+    IMAGE_TAG: dev
+    DOCKERFILE: Dockerfile
+    GIT_STRATEGY: clone
+  services:
+    - docker:stable-dind
+  before_script:
+    - echo $CI_REGISTRY_IMAGE
+    - echo $IMAGE_TAG
+    - echo $IMAGE_NAME
+    - echo $DOCKERFILE
+    - echo $DOCKER_BUILD_DIR
+    - echo $DOCKER_HOST
+    - echo $DOCKER_TLS_CERTDIR
+    - echo $DOCKER_CLI_EXPERIMENTAL
+    - echo $DOCKER_DRIVER
+  script:
+    - docker context create default_tls
+    - docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
+    - docker buildx inspect --bootstrap
+    - docker buildx ls
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+    - >
+      docker buildx build
+      --push
+      --progress auto
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-testing
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_DIR
+
+test:deps:
+  image: $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-testing
+  variables:
+    GIT_STRATEGY: none
+  stage: test
+  extends:
+    - .docker:dev:script:deps
+    - .docker:dev:vars
+    - .docker:dev:rules
+
+test:self:registry:
+  image: $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-testing
+  variables:
+    GIT_STRATEGY: none
+  stage: test
+  extends:
+    - .docker:script:test:registry:self
+    - .docker:dev:vars
+    - .docker:dev:rules
+
+test:hub:registry:
+  image: $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-testing
+  variables:
+    GIT_STRATEGY: none
+  stage: test
+  extends:
+    - .docker:script:test:registry:dockerhub
+    - .docker:dev:vars
+    - .docker:dev:rules
+
+test:config:
+  image: $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-testing
+  variables:
+    GIT_STRATEGY: none
+  stage: test
+  extends:
+    - .docker:script:test:vault:config
+    - .docker:dev:vars
+    - .docker:dev:rules
+
+docker:dev:push:
+  variables:
+    GIT_STRATEGY: none
+  extends:
+    - .push:to:dockerhub
+    - .docker:dev:vars
+    - .docker:dev:rules
+  # needs: ["docker:dev:test"]
+
+clean:post:
+  image: docker:stable
+  stage: .pre
+  script:
+    - docker image rmi --force $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG; exit 0
+    - docker image rmi --force donaldrich/$IMAGE_NAME:$IMAGE_TAG; exit 0
+    - docker image rmi --force $CI_REGISTRY_IMAGE/docker-runner:bootstrap; exit 0
+    # - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+    # - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+    # - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
+  allow_failure: true
+  # when: always

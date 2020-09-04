@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:hexo:slim:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: site-gen/hexo/slim
+  IMAGE_NAME: hexo
+  IMAGE_TAG: slim
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: site-gen/hexo/slim
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:hexo:slim:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/hexo:slim
+    - docker run --rm donaldrich/hexo:slim config > $CI_PROJECT_DIR/.meta/snippets/config/hexo-slim.md || true
+    - docker run --rm donaldrich/hexo:slim validate > $CI_PROJECT_DIR/.meta/snippets/version/hexo-slim.md || true
+    - docker image inspect donaldrich/hexo:slim | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/hexo-slim.md
+    - docker history donaldrich/hexo:slim > $CI_PROJECT_DIR/.meta/snippets/layers/hexo-slim.md || true
+

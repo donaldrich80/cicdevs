@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# printf "\e[32mDocker: \e[0m";
+# docker version;
+
+echo "okay"

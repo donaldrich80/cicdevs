@@ -1,0 +1,20 @@
+aws:cdk:
+  stage: build
+  trigger:
+    include: .meta/pipeline/aws/cdk/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "aws/cdk/Dockerfile"
+      - "aws/cdk/goss.yaml"
+      - "aws/cdk/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "aws" && $TRIGGER_VAR2 == "cdk"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "aws" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

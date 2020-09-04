@@ -1,0 +1,18 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/ansible:latest .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/ansible:latest
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: 

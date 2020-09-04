@@ -1,0 +1,7 @@
+
+gossfile:
+  goss-base.yaml: {}
+command:
+  homebrew:
+    exit-status: 0
+    exec: "brew --version"

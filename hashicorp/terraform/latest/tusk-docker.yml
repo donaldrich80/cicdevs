@@ -1,0 +1,51 @@
+---
+name: donaldrich/terraform:latest
+usage: A lightweight image for developing and running Terraform plans.
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: curl --version
+          print: "\e[32mCurl\e[0m"
+      - command:
+          exec: git version
+          print: "\e[32mGit\e[0m"
+      - command:
+          exec: jq --version
+          print: "\e[32mJq\e[0m"
+      - command:
+          exec: nano --version
+          print: "\e[32mNano\e[0m"
+      - command:
+          exec: sudo --version
+          print: "\e[32mSudo\e[0m"
+      - command:
+          exec: terraform version
+          print: "\e[32mTerraform\e[0m"
+      - command:
+          exec: terrahelp --version
+          print: "\e[32mTerrahelp\e[0m"
+      - command:
+          exec: tflint --version
+          print: "\e[32mTflint\e[0m"
+      - command:
+          exec: tfsec --version
+          print: "\e[32mTfsec\e[0m"
+      - command:
+          exec: vault version
+          print: "\e[32mVault\e[0m"
+      - command:
+          exec: zsh --version
+          print: "\e[32mZsh\e[0m"

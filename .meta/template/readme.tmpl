@@ -1,0 +1,185 @@
+---
+{{- if has (datasource "data") "site_label" }}
+title: {{ strings.Title (datasource "data").image.tag }}
+{{- else }}
+title: {{ strings.Title (datasource "data").image.name }}
+{{- end }}
+path: tree/master
+source: {{ (datasource "path").path }}/Dockerfile
+---
+
+{{ if has (datasource "data") "site_label" -}}
+# donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}
+{{- else }}
+# donaldrich/{{ (datasource "data").image.name }}
+{{- end }}
+
+{{- if has (datasource "data") "description" }}
+{{ template "description" }}
+{{- end }}
+
+{{- if has (datasource "data") "features" }}
+{{ template "features" }}
+{{- end }}
+
+## Develop in Docker
+
+### Command
+
+```sh
+docker pull donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}
+docker run -it --rm \
+--hostname={{ (datasource "data").image.name }} \
+{{- if has (datasource "data").image "docker-sock" }}
+-v /var/run/docker.sock:/var/run/docker.sock \
+{{- end }}
+-v "$(pwd)":"/work" -w "/work" \
+{{- if has (datasource "data").image "env" }}
+--env-file=$HOME/{{ (datasource "data").image.env }} \
+{{- end }}
+{{- if has (datasource "data").image "entrypoint" }}
+--entrypoint="{{ (datasource "data").image.entrypoint }}" \
+{{- else }}
+--entrypoint="/bin/sh" \
+{{- end }}
+--net="host" \
+donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}
+```
+
+{{- if has (datasource "data") "references" }}
+{{- template "references" -}}
+{{- end }}
+
+{{- if has (datasource "data") "links" }}
+{{- template "links" -}}
+{{- end }}
+
+{{- if has (datasource "data") "plugins" }}
+{{- template "plugins" -}}
+{{- end }}
+
+## Inspect Container
+
+???+ info "Container Check"
+
+    === "Validate Services"
+        ```sh
+        docker pull donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} && docker run -it --rm --entrypoint="tusk" donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} validate
+        ```
+
+    === "Check Versions"
+        ```sh
+        docker pull donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} && docker run -it --rm --entrypoint="tusk" donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} version
+        ```
+
+    === "Inspect Layers"
+        ```sh
+        docker pull donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} && dive donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}
+        ```
+
+{{- define "references" }}
+
+## References
+
+{{- range $name, $links := (datasource "data").references }}
+
+### {{ strings.Title $name }}
+
+{{- range $name, $links := $links}}
+{{- if eq $name "description"}}
+
+{{$links}}
+
+{{- end}}
+{{- if eq $name "github"}}
+
+* [:octicons-mark-github-16: GitHub](https://github.com/{{$links}})
+
+{{- end}}
+{{- if eq $name "docs"}}
+
+* [:octicons-book-16: Docs]({{$links}})
+
+{{- end}}
+{{- if eq $name "docker"}}
+
+* [:fontawesome-brands-docker: Docker]({{$links}})
+
+{{- end}}
+{{- if eq $name "quay"}}
+
+* [:fontawesome-brands-docker: Quay](https://quay.io/{{$links}})
+
+{{- end}}
+{{- if eq $name "site"}}
+
+* [:octicons-browser-16: Site]({{$links}})
+
+{{- end}}
+{{- if eq $name "link"}}
+
+* [$name]({{$links}})
+
+{{- end}}
+{{- end}}
+{{- end }}
+{{- end }}
+
+{{- define "plugins" }}
+
+## Plugins
+
+{{- range $name, $links := (datasource "data").plugins }}
+
+### {{ strings.Title $name }}
+
+{{- range $name, $links := $links}}
+{{- if eq $name "github"}}
+
+* [:octicons-mark-github-16: {{$links}}](https://github.com/{{$links}})
+
+{{- end}}
+{{- if eq $name "docs"}}
+
+* [:octicons-book-16: Docs]({{$links}})
+
+{{- end}}
+{{- if eq $name "docker"}}
+
+* [:fontawesome-brands-docker: Docker]({{$links}})
+
+{{- end}}
+{{- if eq $name "link"}}
+
+* [$name]({{$links}})
+
+{{- end}}
+{{- end}}
+{{- end }}
+{{- end }}
+
+{{- define "description" }}
+## Description
+
+### Purpose
+
+{{ (datasource "data").description }}
+{{- end }}
+
+{{- define "features" }}
+### Features
+{{- range (datasource "data").features }}
+
+* {{.}}
+
+{{- end }}
+{{- end }}
+{{- define "links" }}
+## Links
+
+{{- range $name, $links := (datasource "data").links }}
+
+* [:octicons-book-16: {{$name}}]({{$links}})
+
+{{- end }}
+{{- end }}

@@ -1,0 +1,31 @@
+image:
+  name: ansible
+  tag: latest
+tests:
+plugins:
+  packer:
+    github: hashicorp/packer
+references:
+  packer:
+    github: hashicorp/packer
+  docker:
+    github: hashicorp/docker
+    docs: hashicorp/packer
+    docker: https://github.com/hashicorp/packer
+packages:
+  foo:
+    # command: foo
+    # help: help
+    # filter: true
+  bar:
+    # command: bar
+    # help: help
+    # filter: true
+  doo:
+    # command:
+    # help: help
+commands:
+  - docker-compose
+  - buildx
+gossfile:
+  goss-base.yaml:

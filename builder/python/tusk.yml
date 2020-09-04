@@ -1,0 +1,30 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:python validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/builder:python version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/builder:python .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/builder:python
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: pip3 --version
+          print: "\e[32mPip3\e[0m"
+      - command:
+          exec: python -V
+          print: "\e[32mPython\e[0m"

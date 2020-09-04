@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:builder:ruby:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: builder/ruby
+  IMAGE_NAME: builder
+  IMAGE_TAG: ruby
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: builder/ruby
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:builder:ruby:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/builder:ruby
+    - docker run --rm donaldrich/builder:ruby config > $CI_PROJECT_DIR/.meta/snippets/config/builder-ruby.md || true
+    - docker run --rm donaldrich/builder:ruby validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-ruby.md || true
+    - docker image inspect donaldrich/builder:ruby | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-ruby.md
+    - docker history donaldrich/builder:ruby > $CI_PROJECT_DIR/.meta/snippets/layers/builder-ruby.md || true
+

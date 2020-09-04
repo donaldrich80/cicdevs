@@ -1,0 +1,11 @@
+
+command:
+  git:
+    exit-status: 0
+    exec: "git version"
+  nano:
+    exit-status: 0
+    exec: "nano -V"
+  zsh:
+    exit-status: 0
+    exec: "zsh --version"

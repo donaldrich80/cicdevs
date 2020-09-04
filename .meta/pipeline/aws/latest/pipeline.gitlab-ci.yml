@@ -1,0 +1,20 @@
+aws:latest:
+  stage: build
+  trigger:
+    include: .meta/pipeline/aws/latest/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "aws/latest/Dockerfile"
+      - "aws/latest/goss.yaml"
+      - "aws/latest/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "aws" && $TRIGGER_VAR2 == "latest"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "aws" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

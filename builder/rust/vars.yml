@@ -1,0 +1,21 @@
+description: Builder container with Rust added
+features:
+  - inherits all capabilities of builder:latest
+  - layering reduces size of extra features.
+site_label: rust
+image:
+  name: builder
+  tag: rust
+  entrypoint: /usr/bin/zsh
+commands:
+  rustup:
+    prefix: rustup
+    version: --version
+  cargo:
+    prefix: cargo
+    version: --version
+  rustc:
+    prefix: rustc
+    version: --version
+gossfile:
+  goss-base.yaml:

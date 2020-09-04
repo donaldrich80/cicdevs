@@ -1,0 +1,7 @@
+
+gossfile:
+  goss-base.yaml: {}
+command:
+  ruby:
+    exit-status: 0
+    exec: "ruby --version"

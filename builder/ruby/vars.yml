@@ -1,0 +1,16 @@
+description: Builder container with Ruby added
+features:
+  - inherits all capabilities of builder:latest
+  - layering reduces size of extra features.
+site_label: ruby
+image:
+  name: builder
+  tag: ruby
+  entrypoint: /usr/bin/zsh
+commands:
+  ruby:
+    prefix: ruby
+    version: --version
+    help: --help
+gossfile:
+  goss-base.yaml:

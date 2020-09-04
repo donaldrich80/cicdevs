@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/aws:latest validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/aws:latest version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/aws:latest .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/aws:latest
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: aws --version
+          print: "\e[32mAws\e[0m"

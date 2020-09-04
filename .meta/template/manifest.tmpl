@@ -1,0 +1,17 @@
+repos:
+
+{{- range $i, $e := (datasource "data").repos }}
+  - remotes:
+      - name: origin
+        url: ssh://git@gitlab.donavanaldrich.com:4321/donaldrich/{{ $i }}
+      - name: gitlab
+        url: ssh://git@gitlab.com/donaldrich/{{ $i }}
+      - name: github
+        url: ssh://git@github.com/donaldrich80/{{ $i }}
+{{- if has $e "folder" }}
+    dest: {{ .folder }}/{{ $i }}
+{{- else }}
+    dest: {{ $i }}
+{{- end }}
+    branch: master
+{{- end }}

@@ -1,0 +1,29 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: templates/default.yml
+  - local: .meta/pipelines.gitlab-ci.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/repo/auto-push.yml
+
+cache:
+  untracked: true
+  paths:
+    - .meta/snippets
+
+stages:
+  - pre
+  - lint
+  - debug
+  - builder
+  - dependency
+  - build
+  - push
+  - deploy
+  - documentation
+  - post
+
+variables:
+  DISABLE_LINTING: "true"
+  DISABLE_SAST: "true"
+  DISABLE_GOSS: "true"
+  PUSHOVER_ID: $CI_PROJECT_TITLE

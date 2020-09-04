@@ -1,0 +1,18 @@
+description: Container for generating Hexo
+features:
+  - Hexo
+  - Node
+  - Alpine
+site_label: icarus
+image:
+  name: hexo
+  tag: icarus
+commands:
+  hexo:
+    prefix: hexo
+    version: version
+#     help: --help
+# references:
+#   hugo:
+#     docs: https://gohugo.io
+#     github: gohugoio/hugo

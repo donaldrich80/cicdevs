@@ -1,0 +1,62 @@
+
+package:
+  ca-certificates:
+    installed: true
+  curl:
+    installed: true
+  dosfstools:
+    installed: true
+  gdisk:
+    installed: true
+  git:
+    installed: true
+  kpartx:
+    installed: true
+  libarchive-tools:
+    installed: true
+  parted:
+    installed: true
+  psmisc:
+    installed: true
+  python3:
+    installed: true
+  qemu-user-static:
+    installed: true
+  qemu-utils:
+    installed: true
+  sudo:
+    installed: true
+  unzip:
+    installed: true
+  xz-utils:
+    installed: true
+  zsh:
+    installed: true
+command:
+  curl:
+    exit-status: 0
+    exec: "curl --version"
+  goss:
+    exit-status: 0
+    exec: "goss --version"
+  packer:
+    exit-status: 0
+    exec: "packer version"
+  sudo:
+    exit-status: 0
+    exec: "sudo -V"
+  tusk:
+    exit-status: 0
+    exec: "tusk --version"
+  unzip:
+    exit-status: 0
+    exec: "unzip -v"
+  vault:
+    exit-status: 0
+    exec: "vault version"
+  xz-utils:
+    exit-status: 0
+    exec: "xz --version"
+  zsh:
+    exit-status: 0
+    exec: "zsh --version"

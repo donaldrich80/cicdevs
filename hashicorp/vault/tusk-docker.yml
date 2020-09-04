@@ -1,0 +1,29 @@
+---
+name: donaldrich/vault:latest
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: bash -version
+          print: "\e[32mBash\e[0m"
+      - command:
+          exec: hashi-helper --version
+          print: "\e[32mHashi-Helper\e[0m"
+      - command:
+          exec: vault -version
+          print: "\e[32mVault\e[0m"
+      - command:
+          exec: vault-sync --version
+          print: "\e[32mVault-Sync\e[0m"

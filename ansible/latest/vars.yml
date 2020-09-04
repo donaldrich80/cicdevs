@@ -1,0 +1,77 @@
+description: Image for developing and executing Ansible playbooks
+features:
+  - Ansible
+  - Ansible-lint
+  - Develop and test roles with Molecule
+  - Retrieve Hashicorp Vault secrets in playbooks
+  - SSH capable
+image:
+  name: ansible
+  tag: latest
+  entrypoint: /usr/bin/zsh
+commands:
+  bash:
+    prefix: bash
+    version: -version
+    help: -help
+  python:
+    prefix: python
+    version: --version
+  pip:
+    prefix: pip3
+    version: -V
+  ansible:
+    prefix: ansible
+    version: --version
+    help: --help
+    docs: https://docs.ansible.com/ansible/latest/index.html
+  ansible-console:
+    prefix: ansible-console
+    version: --version
+    help: -h
+  ansible-lint:
+    prefix: ansible-lint
+    version: --version
+    github: ansible/ansible-lint
+    docs: https://ansible-lint.readthedocs.io
+  molecule:
+    prefix: molecule
+    version: --version
+    quay: ansible/molecule:latest
+    docs: https://molecule.readthedocs.io
+    github: ansible-community/molecule
+  curl:
+    prefix: curl
+    version: --version
+  git:
+    prefix: git
+    version: version
+  ansible-cmdb:
+    prefix: ansible-cmdb
+    version: --version
+  ssh:
+    prefix: ssh
+    version: -V
+  rsync:
+    prefix: rsync
+    version: --version
+    help: --help
+links:
+  writing-ansible-playbooks-for-new-terraform-servers: https://victorops.com/blog/writing-ansible-playbooks-for-new-terraform-servers
+references:
+  ansible:
+    docs: https://docs.ansible.com/ansible/latest/index.html
+  ansible-lint:
+    description: "Best practices checker for Ansible"
+    github: ansible/ansible-lint
+    docs: https://ansible-lint.readthedocs.io
+  molecule:
+    description: "Molecule aids in the development and testing of Ansible roles"
+    docs: https://molecule.readthedocs.io
+    github: ansible-community/molecule
+  mitogen:
+    github: dw/mitogen
+    docs: https://mitogen.networkgenomics.com/ansible_detailed.html
+plugins:
+  ansible-modules-hashivault:
+    github: ansible-modules-hashivault

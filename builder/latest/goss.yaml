@@ -1,0 +1,47 @@
+
+command:
+  bash:
+    exit-status: 0
+    exec: "bash -version"
+  curl:
+    exit-status: 0
+    exec: "curl --version"
+  ginstall.sh:
+    exit-status: 0
+    exec: "ginstall.sh --version"
+  git:
+    exit-status: 0
+    exec: "git version"
+  goss:
+    exit-status: 0
+    exec: "goss --version"
+  less:
+    exit-status: 0
+    exec: "less -V"
+  make:
+    exit-status: 0
+    exec: "make --version"
+  openssl:
+    exit-status: 0
+    exec: "openssl version"
+  tar:
+    exit-status: 0
+    exec: "tar --version"
+  tusk:
+    exit-status: 0
+    exec: "tusk --version"
+  unzip:
+    exit-status: 0
+    exec: "unzip -v"
+  upx:
+    exit-status: 0
+    exec: "upx --version"
+  wget:
+    exit-status: 0
+    exec: "wget --version"
+  xz-utils:
+    exit-status: 0
+    exec: "xz --version"
+  zsh:
+    exit-status: 0
+    exec: "zsh --version"

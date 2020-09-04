@@ -1,0 +1,5 @@
+
+command:
+  zsh:
+    exit-status: 0
+    exec: "zsh --version"
