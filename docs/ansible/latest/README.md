@@ -94,3 +94,8 @@ Molecule aids in the development and testing of Ansible roles
         ```sh
         docker pull donaldrich/ansible:latest && dive donaldrich/ansible:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/ansible:latest && docker history donaldrich/ansible:latest
+        ```

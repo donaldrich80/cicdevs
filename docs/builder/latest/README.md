@@ -60,3 +60,8 @@ donaldrich/builder:latest
         ```sh
         docker pull donaldrich/builder:latest && dive donaldrich/builder:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/builder:latest && docker history donaldrich/builder:latest
+        ```

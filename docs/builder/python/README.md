@@ -48,3 +48,8 @@ donaldrich/builder:python
         ```sh
         docker pull donaldrich/builder:python && dive donaldrich/builder:python
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/builder:python && docker history donaldrich/builder:python
+        ```

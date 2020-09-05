@@ -44,3 +44,8 @@ donaldrich/docker:bootstrap
         ```sh
         docker pull donaldrich/docker:bootstrap && dive donaldrich/docker:bootstrap
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/docker:bootstrap && docker history donaldrich/docker:bootstrap
+        ```

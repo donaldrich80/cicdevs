@@ -58,3 +58,8 @@ donaldrich/builder:bazel
         ```sh
         docker pull donaldrich/builder:bazel && dive donaldrich/builder:bazel
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/builder:bazel && docker history donaldrich/builder:bazel
+        ```

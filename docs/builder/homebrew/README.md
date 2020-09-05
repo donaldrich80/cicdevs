@@ -60,3 +60,8 @@ donaldrich/builder:homebrew
         ```sh
         docker pull donaldrich/builder:homebrew && dive donaldrich/builder:homebrew
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/builder:homebrew && docker history donaldrich/builder:homebrew
+        ```

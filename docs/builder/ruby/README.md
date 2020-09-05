@@ -50,3 +50,8 @@ donaldrich/builder:ruby
         ```sh
         docker pull donaldrich/builder:ruby && dive donaldrich/builder:ruby
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/builder:ruby && docker history donaldrich/builder:ruby
+        ```

@@ -70,3 +70,8 @@ Packer is a tool for creating identical machine images for multiple platforms fr
         ```sh
         docker pull donaldrich/packer:latest && dive donaldrich/packer:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/packer:latest && docker history donaldrich/packer:latest
+        ```

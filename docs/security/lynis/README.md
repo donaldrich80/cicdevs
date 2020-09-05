@@ -47,3 +47,8 @@ donaldrich/lynis:latest
         ```sh
         docker pull donaldrich/lynis:latest && dive donaldrich/lynis:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/lynis:latest && docker history donaldrich/lynis:latest
+        ```

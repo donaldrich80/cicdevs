@@ -64,3 +64,8 @@ donaldrich/mkdocs:mkpdfs
         ```sh
         docker pull donaldrich/mkdocs:mkpdfs && dive donaldrich/mkdocs:mkpdfs
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/mkdocs:mkpdfs && docker history donaldrich/mkdocs:mkpdfs
+        ```

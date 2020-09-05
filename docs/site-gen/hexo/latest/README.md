@@ -65,3 +65,8 @@ donaldrich/hexo:latest
         ```sh
         docker pull donaldrich/hexo:latest && dive donaldrich/hexo:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/hexo:latest && docker history donaldrich/hexo:latest
+        ```

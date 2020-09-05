@@ -88,3 +88,8 @@ donaldrich/runner:zsh
         ```sh
         docker pull donaldrich/runner:zsh && dive donaldrich/runner:zsh
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/runner:zsh && docker history donaldrich/runner:zsh
+        ```
