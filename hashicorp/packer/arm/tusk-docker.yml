@@ -1,5 +1,6 @@
 ---
-name: donaldrich/packer:latest
+name: donaldrich/packer:arm
+usage: An image for cross-architechure Packer ARM builds
 
 tasks:
   validate:

@@ -1,5 +1,6 @@
 ---
 name: donaldrich/vault:latest
+usage: An image to read and write secrets from Hashicorp Vault
 
 tasks:
   validate:

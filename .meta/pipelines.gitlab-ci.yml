@@ -32,6 +32,7 @@ include:
   - local: .meta/pipeline/security/lynis/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/ansible/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/hashicorp/vault/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/hashicorp/packer/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/hashicorp/packer/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/hashicorp/packer/arm/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/hashicorp/terraform/full/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/hashicorp/terraform/latest/pipeline.gitlab-ci.yml

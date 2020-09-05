@@ -1,0 +1,48 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:packer:latest:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: hashicorp/packer/latest
+  IMAGE_NAME: packer
+  IMAGE_TAG: latest
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: hashicorp/packer/latest
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:packer:latest:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+#      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  script:
+    - docker pull donaldrich/packer:latest
+    - docker run --rm donaldrich/packer:latest config > $CI_PROJECT_DIR/.meta/snippets/config/packer-latest.md || true
+    - docker run --rm donaldrich/packer:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/packer-latest.md || true
+    - docker image inspect donaldrich/packer:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/packer-latest.md
+    - docker history donaldrich/packer:latest > $CI_PROJECT_DIR/.meta/snippets/layers/packer-latest.md || true
+
