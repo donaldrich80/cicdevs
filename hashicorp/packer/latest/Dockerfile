@@ -9,7 +9,7 @@ RUN apt-get update -y \
             # curl \
             # unzip \
             zsh \
-            # sudo \
+            sudo \
             nano \
             # xz-utils \
             # qemu-user-static \
