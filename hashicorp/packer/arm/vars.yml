@@ -1,6 +1,10 @@
+description: An image for cross-architechure Packer ARM builds
+features:
+  - Packer
+  - ZSH
 image:
   name: packer
-  tag: latest
+  tag: arm
   entrypoint: /usr/bin/zsh
 references:
   packer:

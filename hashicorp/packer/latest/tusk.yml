@@ -1,0 +1,51 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/packer:latest validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/packer:latest version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/packer:latest .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/packer:latest
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: curl --version
+          print: "\e[32mCurl\e[0m"
+      - command:
+          exec: goss --version
+          print: "\e[32mGoss\e[0m"
+      - command:
+          exec: packer version
+          print: "\e[32mPacker\e[0m"
+      - command:
+          exec: sudo -V
+          print: "\e[32mSudo\e[0m"
+      - command:
+          exec: tusk --version
+          print: "\e[32mTusk\e[0m"
+      - command:
+          exec: unzip -v
+          print: "\e[32mUnzip\e[0m"
+      - command:
+          exec: vault version
+          print: "\e[32mVault\e[0m"
+      - command:
+          exec: xz --version
+          print: "\e[32mXz\e[0m"
+      - command:
+          exec: zsh --version
+          print: "\e[32mZsh\e[0m"
