@@ -52,3 +52,8 @@ donaldrich/hexo:icarus
         ```sh
         docker pull donaldrich/hexo:icarus && dive donaldrich/hexo:icarus
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/hexo:icarus && docker history donaldrich/hexo:icarus
+        ```

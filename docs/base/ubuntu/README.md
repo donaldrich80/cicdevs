@@ -38,3 +38,8 @@ donaldrich/base:ubuntu
         ```sh
         docker pull donaldrich/base:ubuntu && dive donaldrich/base:ubuntu
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/base:ubuntu && docker history donaldrich/base:ubuntu
+        ```

@@ -57,3 +57,8 @@ donaldrich/runner:latest
         ```sh
         docker pull donaldrich/runner:latest && dive donaldrich/runner:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/runner:latest && docker history donaldrich/runner:latest
+        ```

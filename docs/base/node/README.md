@@ -56,3 +56,8 @@ donaldrich/base:node
         ```sh
         docker pull donaldrich/base:node && dive donaldrich/base:node
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/base:node && docker history donaldrich/base:node
+        ```

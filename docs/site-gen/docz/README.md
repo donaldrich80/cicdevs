@@ -55,3 +55,8 @@ donaldrich/docz:latest
         ```sh
         docker pull donaldrich/docz:latest && dive donaldrich/docz:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/docz:latest && docker history donaldrich/docz:latest
+        ```

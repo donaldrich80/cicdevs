@@ -50,3 +50,8 @@ donaldrich/builder:rust
         ```sh
         docker pull donaldrich/builder:rust && dive donaldrich/builder:rust
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/builder:rust && docker history donaldrich/builder:rust
+        ```

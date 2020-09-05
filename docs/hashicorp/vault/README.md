@@ -65,3 +65,8 @@ donaldrich/vault:latest
         ```sh
         docker pull donaldrich/vault:latest && dive donaldrich/vault:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/vault:latest && docker history donaldrich/vault:latest
+        ```

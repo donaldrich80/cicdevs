@@ -49,3 +49,8 @@ donaldrich/aws:cdk
         ```sh
         docker pull donaldrich/aws:cdk && dive donaldrich/aws:cdk
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/aws:cdk && docker history donaldrich/aws:cdk
+        ```

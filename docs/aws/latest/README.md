@@ -49,3 +49,8 @@ donaldrich/aws:latest
         ```sh
         docker pull donaldrich/aws:latest && dive donaldrich/aws:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/aws:latest && docker history donaldrich/aws:latest
+        ```
