@@ -76,7 +76,13 @@ donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag
         ```sh
         docker pull donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} && dive donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}
         ```
+    === "See Layer Info"
 
+        ```sh
+        docker pull donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} && docker history donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}
+        ```
+        
+        
 {{- define "references" }}
 
 ## References
