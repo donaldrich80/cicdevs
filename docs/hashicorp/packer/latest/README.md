@@ -1,11 +1,22 @@
 ---
-title: Packer
+title: Latest
 path: tree/master
-source: hashicorp/packer/Dockerfile
+source: hashicorp/packer/latest/Dockerfile
 ---
 
+# donaldrich/packer:latest
 
-# donaldrich/packer
+## Description
+
+### Purpose
+
+A lightweight image for running Hashicorp Packer builds.
+
+### Features
+
+* Packer
+
+* ZSH
 
 ## Develop in Docker
 
@@ -37,16 +48,6 @@ Packer is a tool for creating identical machine images for multiple platforms fr
 * [:octicons-book-16: awesome-packer](https://github.com/dawitnida/awesome-packer)
 
 ## Plugins
-
-### Packer-Builder-Arm
-
-* [:fontawesome-brands-docker: Docker](mkaczanowski/packer-builder-arm)
-
-* [:octicons-mark-github-16: mkaczanowski/packer-builder-arm](https://github.com/mkaczanowski/packer-builder-arm)
-
-### Packer-Builder-Arm-Image
-
-* [:octicons-mark-github-16: solo-io/packer-builder-arm-image](https://github.com/solo-io/packer-builder-arm-image)
 
 ### Packer-Provisioner-Goss
 

@@ -6,19 +6,19 @@ tasks:
 
   image-validate:
     usage: build docker image
-    run: docker run -it --rm donaldrich/packer:latest validate
+    run: docker run -it --rm donaldrich/packer:arm validate
 
   image-version:
     usage: build docker image
-    run: docker run -it --rm donaldrich/packer:latest version
+    run: docker run -it --rm donaldrich/packer:arm version
 
   build:
     usage: build docker image
-    run: docker build --pull --rm -t donaldrich/packer:latest .
+    run: docker build --pull --rm -t donaldrich/packer:arm .
 
   dive:
     usage: inspect docker image
-    run: dive donaldrich/packer:latest
+    run: dive donaldrich/packer:arm
   version:
     usage: check package versions
     run:

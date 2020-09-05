@@ -7,6 +7,18 @@ source: hashicorp/vault/Dockerfile
 
 # donaldrich/vault
 
+## Description
+
+### Purpose
+
+An image to read and write secrets from Hashicorp Vault
+
+### Features
+
+* Vault
+
+* ZSH
+
 ## Develop in Docker
 
 ### Command
