@@ -39,6 +39,11 @@ docs:hugo:hello-friend:
 #      command: ["--experimental"]
   retry: 2
   stage: documentation
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: /certs/client
+    DOCKER_TLS_CERTDIR: /certs
   script:
     - docker pull donaldrich/hugo:hello-friend
     - docker run --rm donaldrich/hugo:hello-friend config > $CI_PROJECT_DIR/.meta/snippets/config/hugo-hello-friend.md || true
