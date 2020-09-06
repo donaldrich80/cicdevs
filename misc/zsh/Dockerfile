@@ -1,6 +1,6 @@
 FROM ubuntu AS builder
 
-RUN apt-get update -y && apt-get -y install locales libcap2 zsh zsh-common wget nano unzip tree
+RUN apt-get update -y && apt-get -y install locales libcap2 zsh zsh-common wget nano unzip tree bat less
 
 ENV HOME /zsh
 
@@ -23,7 +23,7 @@ RUN sh -c "$(wget -O- https://raw.githubusercontent.com/deluan/zsh-in-docker/mas
 
 COPY --from=donaldrich/function:fzf /usr/local/bin/fzf /usr/local/bin/fzf
 
-COPY --from=donaldrich/function:bat /usr/local/bin/bat /usr/local/bin/bat
+# COPY --from=donaldrich/function:bat /usr/local/bin/bat /usr/local/bin/bat
 
 RUN ( find . -type d -name ".git" \
  && find . -name ".gitignore" \
