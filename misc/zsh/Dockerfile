@@ -23,9 +23,11 @@ RUN sh -c "$(wget -O- https://raw.githubusercontent.com/deluan/zsh-in-docker/mas
 
 COPY --from=donaldrich/function:fzf /usr/local/bin/fzf /usr/local/bin/fzf
 
-# RUN ( find . -type d -name ".git" \
-#  && find . -name ".gitignore" \
-  # && find . -name ".gitmodules" ) | xargs rm -rf
+COPY --from=donaldrich/function:bat /usr/local/bin/bat /usr/local/bin/bat
+
+RUN ( find . -type d -name ".git" \
+ && find . -name ".gitignore" \
+ && find . -name ".gitmodules" ) | xargs rm -rf
 
 RUN mkdir -p /zsh/.local/share
 RUN mkdir /zsh/LS_COLORS && curl -L https://api.github.com/repos/trapd00r/LS_COLORS/tarball/master | tar xzf - --directory=/zsh/LS_COLORS --strip=1

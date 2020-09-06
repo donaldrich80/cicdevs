@@ -48,5 +48,3 @@ RUN goss validate
 
 COPY ./tusk-docker.yml ./tusk.yml
 RUN tusk
-
-# ENTRYPOINT ["tusk"]
