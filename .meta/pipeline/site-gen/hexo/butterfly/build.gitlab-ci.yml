@@ -39,6 +39,11 @@ docs:hexo:butterfly:
 #      command: ["--experimental"]
   retry: 2
   stage: documentation
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: /certs/client
+    DOCKER_TLS_CERTDIR: /certs
   script:
     - docker pull donaldrich/hexo:butterfly
     - docker run --rm donaldrich/hexo:butterfly config > $CI_PROJECT_DIR/.meta/snippets/config/hexo-butterfly.md || true

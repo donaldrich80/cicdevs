@@ -39,6 +39,11 @@ docs:base:python-slim:
 #      command: ["--experimental"]
   retry: 2
   stage: documentation
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: /certs/client
+    DOCKER_TLS_CERTDIR: /certs
   script:
     - docker pull donaldrich/base:python-slim
     - docker run --rm donaldrich/base:python-slim config > $CI_PROJECT_DIR/.meta/snippets/config/base-python-slim.md || true

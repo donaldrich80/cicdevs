@@ -39,6 +39,11 @@ docs:hexo:slim:
 #      command: ["--experimental"]
   retry: 2
   stage: documentation
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: /certs/client
+    DOCKER_TLS_CERTDIR: /certs
   script:
     - docker pull donaldrich/hexo:slim
     - docker run --rm donaldrich/hexo:slim config > $CI_PROJECT_DIR/.meta/snippets/config/hexo-slim.md || true
