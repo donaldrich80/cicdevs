@@ -50,4 +50,3 @@ docs:base:ubuntu:
     - docker run --rm donaldrich/base:ubuntu validate > $CI_PROJECT_DIR/.meta/snippets/version/base-ubuntu.md || true
     - docker image inspect donaldrich/base:ubuntu | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/base-ubuntu.md
     - docker history donaldrich/base:ubuntu > $CI_PROJECT_DIR/.meta/snippets/layers/base-ubuntu.md || true
-

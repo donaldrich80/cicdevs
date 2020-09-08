@@ -50,4 +50,3 @@ docs:ansible:latest:
     - docker run --rm donaldrich/ansible:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/ansible-latest.md || true
     - docker image inspect donaldrich/ansible:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/ansible-latest.md
     - docker history donaldrich/ansible:latest > $CI_PROJECT_DIR/.meta/snippets/layers/ansible-latest.md || true
-

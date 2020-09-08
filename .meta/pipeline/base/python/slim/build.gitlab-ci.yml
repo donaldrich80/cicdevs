@@ -50,4 +50,3 @@ docs:base:python-slim:
     - docker run --rm donaldrich/base:python-slim validate > $CI_PROJECT_DIR/.meta/snippets/version/base-python-slim.md || true
     - docker image inspect donaldrich/base:python-slim | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/base-python-slim.md
     - docker history donaldrich/base:python-slim > $CI_PROJECT_DIR/.meta/snippets/layers/base-python-slim.md || true
-

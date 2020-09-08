@@ -50,4 +50,3 @@ docs:packer:latest:
     - docker run --rm donaldrich/packer:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/packer-latest.md || true
     - docker image inspect donaldrich/packer:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/packer-latest.md
     - docker history donaldrich/packer:latest > $CI_PROJECT_DIR/.meta/snippets/layers/packer-latest.md || true
-

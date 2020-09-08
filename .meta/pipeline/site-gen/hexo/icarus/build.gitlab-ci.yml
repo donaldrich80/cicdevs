@@ -50,4 +50,3 @@ docs:hexo:icarus:
     - docker run --rm donaldrich/hexo:icarus validate > $CI_PROJECT_DIR/.meta/snippets/version/hexo-icarus.md || true
     - docker image inspect donaldrich/hexo:icarus | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/hexo-icarus.md
     - docker history donaldrich/hexo:icarus > $CI_PROJECT_DIR/.meta/snippets/layers/hexo-icarus.md || true
-

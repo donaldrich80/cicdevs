@@ -19,8 +19,8 @@ IMAGE               CREATED             CREATED BY                              
 <missing>           7 days ago          COPY /usr/local/bin/goss /usr/local/bin/goss…   12.3MB              buildkit.dockerfile.v0
 <missing>           8 days ago          RUN /bin/sh -c apt-get update         && apt…   327MB               buildkit.dockerfile.v0
 <missing>           8 days ago          ENV DEBIAN_FRONTEND=noninteractive              0B                  buildkit.dockerfile.v0
-<missing>           2 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B                  
-<missing>           2 weeks ago         /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B                  
-<missing>           2 weeks ago         /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B                
-<missing>           2 weeks ago         /bin/sh -c [ -z "$(apt-get indextargets)" ]     987kB               
-<missing>           2 weeks ago         /bin/sh -c #(nop) ADD file:7d9bbf45a5b2510d4…   63.2MB              
+<missing>           2 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B
+<missing>           2 weeks ago         /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B
+<missing>           2 weeks ago         /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B
+<missing>           2 weeks ago         /bin/sh -c [ -z "$(apt-get indextargets)" ]     987kB
+<missing>           2 weeks ago         /bin/sh -c #(nop) ADD file:7d9bbf45a5b2510d4…   63.2MB

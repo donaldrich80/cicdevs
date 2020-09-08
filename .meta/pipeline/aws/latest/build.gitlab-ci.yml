@@ -50,4 +50,3 @@ docs:aws:latest:
     - docker run --rm donaldrich/aws:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/aws-latest.md || true
     - docker image inspect donaldrich/aws:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/aws-latest.md
     - docker history donaldrich/aws:latest > $CI_PROJECT_DIR/.meta/snippets/layers/aws-latest.md || true
-

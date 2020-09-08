@@ -50,4 +50,3 @@ docs:docusaurus:latest:
     - docker run --rm donaldrich/docusaurus:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/docusaurus-latest.md || true
     - docker image inspect donaldrich/docusaurus:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/docusaurus-latest.md
     - docker history donaldrich/docusaurus:latest > $CI_PROJECT_DIR/.meta/snippets/layers/docusaurus-latest.md || true
-

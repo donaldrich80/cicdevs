@@ -50,4 +50,3 @@ docs:aws:cdk:
     - docker run --rm donaldrich/aws:cdk validate > $CI_PROJECT_DIR/.meta/snippets/version/aws-cdk.md || true
     - docker image inspect donaldrich/aws:cdk | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/aws-cdk.md
     - docker history donaldrich/aws:cdk > $CI_PROJECT_DIR/.meta/snippets/layers/aws-cdk.md || true
-

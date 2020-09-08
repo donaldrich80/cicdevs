@@ -50,4 +50,3 @@ docs:packer:arm:
     - docker run --rm donaldrich/packer:arm validate > $CI_PROJECT_DIR/.meta/snippets/version/packer-arm.md || true
     - docker image inspect donaldrich/packer:arm | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/packer-arm.md
     - docker history donaldrich/packer:arm > $CI_PROJECT_DIR/.meta/snippets/layers/packer-arm.md || true
-

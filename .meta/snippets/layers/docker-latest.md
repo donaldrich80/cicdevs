@@ -26,16 +26,16 @@ IMAGE               CREATED             CREATED BY                              
 <missing>           44 hours ago        COPY /usr/local/bin/goss /usr/local/bin/goss…   12.3MB              buildkit.dockerfile.v0
 <missing>           44 hours ago        COPY ./config.json /root/.docker/ # buildkit    46B                 buildkit.dockerfile.v0
 <missing>           44 hours ago        RUN /bin/sh -c apk add --no-cache curl git c…   20.9MB              buildkit.dockerfile.v0
-<missing>           7 weeks ago         /bin/sh -c #(nop)  CMD ["sh"]                   0B                  
-<missing>           7 weeks ago         /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B                  
-<missing>           7 weeks ago         /bin/sh -c mkdir /certs /certs/client && chm…   0B                  
-<missing>           7 weeks ago         /bin/sh -c #(nop)  ENV DOCKER_TLS_CERTDIR=/c…   0B                  
-<missing>           7 weeks ago         /bin/sh -c #(nop) COPY file:5b18768029dab817…   1.85kB              
-<missing>           7 weeks ago         /bin/sh -c #(nop) COPY file:abb137d24130e7fa…   587B                
-<missing>           7 weeks ago         /bin/sh -c set -eux;   apkArch="$(apk --prin…   200MB               
-<missing>           7 weeks ago         /bin/sh -c #(nop)  ENV DOCKER_VERSION=19.03.…   0B                  
-<missing>           2 months ago        /bin/sh -c #(nop)  ENV DOCKER_CHANNEL=stable    0B                  
-<missing>           2 months ago        /bin/sh -c [ ! -e /etc/nsswitch.conf ] && ec…   17B                 
-<missing>           2 months ago        /bin/sh -c apk add --no-cache   ca-certifica…   5.24MB              
-<missing>           2 months ago        /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B                  
-<missing>           2 months ago        /bin/sh -c #(nop) ADD file:c92c248239f8c7b9b…   5.57MB              
+<missing>           7 weeks ago         /bin/sh -c #(nop)  CMD ["sh"]                   0B
+<missing>           7 weeks ago         /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B
+<missing>           7 weeks ago         /bin/sh -c mkdir /certs /certs/client && chm…   0B
+<missing>           7 weeks ago         /bin/sh -c #(nop)  ENV DOCKER_TLS_CERTDIR=/c…   0B
+<missing>           7 weeks ago         /bin/sh -c #(nop) COPY file:5b18768029dab817…   1.85kB
+<missing>           7 weeks ago         /bin/sh -c #(nop) COPY file:abb137d24130e7fa…   587B
+<missing>           7 weeks ago         /bin/sh -c set -eux;   apkArch="$(apk --prin…   200MB
+<missing>           7 weeks ago         /bin/sh -c #(nop)  ENV DOCKER_VERSION=19.03.…   0B
+<missing>           2 months ago        /bin/sh -c #(nop)  ENV DOCKER_CHANNEL=stable    0B
+<missing>           2 months ago        /bin/sh -c [ ! -e /etc/nsswitch.conf ] && ec…   17B
+<missing>           2 months ago        /bin/sh -c apk add --no-cache   ca-certifica…   5.24MB
+<missing>           2 months ago        /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
+<missing>           2 months ago        /bin/sh -c #(nop) ADD file:c92c248239f8c7b9b…   5.57MB

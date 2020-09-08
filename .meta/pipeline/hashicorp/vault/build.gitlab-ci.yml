@@ -50,4 +50,3 @@ docs:vault:latest:
     - docker run --rm donaldrich/vault:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/vault-latest.md || true
     - docker image inspect donaldrich/vault:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/vault-latest.md
     - docker history donaldrich/vault:latest > $CI_PROJECT_DIR/.meta/snippets/layers/vault-latest.md || true
-

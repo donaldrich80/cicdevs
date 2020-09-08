@@ -50,4 +50,3 @@ docs:runner:zsh:
     - docker run --rm donaldrich/runner:zsh validate > $CI_PROJECT_DIR/.meta/snippets/version/runner-zsh.md || true
     - docker image inspect donaldrich/runner:zsh | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/runner-zsh.md
     - docker history donaldrich/runner:zsh > $CI_PROJECT_DIR/.meta/snippets/layers/runner-zsh.md || true
-

@@ -50,4 +50,3 @@ docs:terraform:latest:
     - docker run --rm donaldrich/terraform:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/terraform-latest.md || true
     - docker image inspect donaldrich/terraform:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/terraform-latest.md
     - docker history donaldrich/terraform:latest > $CI_PROJECT_DIR/.meta/snippets/layers/terraform-latest.md || true
-

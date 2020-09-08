@@ -50,4 +50,3 @@ docs:base:alpine:
     - docker run --rm donaldrich/base:alpine validate > $CI_PROJECT_DIR/.meta/snippets/version/base-alpine.md || true
     - docker image inspect donaldrich/base:alpine | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/base-alpine.md
     - docker history donaldrich/base:alpine > $CI_PROJECT_DIR/.meta/snippets/layers/base-alpine.md || true
-

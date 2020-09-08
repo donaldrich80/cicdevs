@@ -50,4 +50,3 @@ docs:sn1per:latest:
     - docker run --rm donaldrich/sn1per:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/sn1per-latest.md || true
     - docker image inspect donaldrich/sn1per:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/sn1per-latest.md
     - docker history donaldrich/sn1per:latest > $CI_PROJECT_DIR/.meta/snippets/layers/sn1per-latest.md || true
-

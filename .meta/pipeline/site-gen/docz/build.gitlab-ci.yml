@@ -50,4 +50,3 @@ docs:docz:latest:
     - docker run --rm donaldrich/docz:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/docz-latest.md || true
     - docker image inspect donaldrich/docz:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/docz-latest.md
     - docker history donaldrich/docz:latest > $CI_PROJECT_DIR/.meta/snippets/layers/docz-latest.md || true
-

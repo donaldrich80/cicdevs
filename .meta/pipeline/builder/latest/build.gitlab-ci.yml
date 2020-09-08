@@ -50,4 +50,3 @@ docs:builder:latest:
     - docker run --rm donaldrich/builder:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-latest.md || true
     - docker image inspect donaldrich/builder:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-latest.md
     - docker history donaldrich/builder:latest > $CI_PROJECT_DIR/.meta/snippets/layers/builder-latest.md || true
-

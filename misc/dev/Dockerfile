@@ -100,4 +100,4 @@ ENV DEBIAN_FRONTEND=dialog
 # Define the default command to run
 CMD bash -c "minio server ${MINIO_VOLUMES} &" \
   && sh -c "while sleep 1000; do :; done"
-  
+
