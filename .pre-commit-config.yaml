@@ -11,9 +11,9 @@ repos:
 #         name: Check X
 #         entry: ./run-all.sh
 #         language: script
--   repo: local
-    hooks:
-      -   id: gitleaks
-          name: zricethezav/gitleaks
-          language: docker_image
-          entry: -v /tmp/:/code/ zricethezav/gitleaks -v --repo-path=/code
+#-   repo: local
+ #   hooks:
+  #    -   id: gitleaks
+   #       name: zricethezav/gitleaks
+    #    language: docker_image
+     #     entry: -v /tmp/:/code/ zricethezav/gitleaks -v --repo-path=/code
