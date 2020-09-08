@@ -7,9 +7,9 @@ features:
   - git
 image:
   name: base
-  tag: node-alpine
+  tag: node.alpine
   entrypoint: /bin/zsh
-site_label: node
+site_label: alpine
 commands:
   zsh:
     prefix: zsh
