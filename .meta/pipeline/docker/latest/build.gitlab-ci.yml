@@ -50,4 +50,3 @@ docs:docker:latest:
     - docker run --rm donaldrich/docker:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/docker-latest.md || true
     - docker image inspect donaldrich/docker:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/docker-latest.md
     - docker history donaldrich/docker:latest > $CI_PROJECT_DIR/.meta/snippets/layers/docker-latest.md || true
-

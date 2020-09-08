@@ -50,4 +50,3 @@ docs:docker:bootstrap:
     - docker run --rm donaldrich/docker:bootstrap validate > $CI_PROJECT_DIR/.meta/snippets/version/docker-bootstrap.md || true
     - docker image inspect donaldrich/docker:bootstrap | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/docker-bootstrap.md
     - docker history donaldrich/docker:bootstrap > $CI_PROJECT_DIR/.meta/snippets/layers/docker-bootstrap.md || true
-

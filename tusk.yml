@@ -89,8 +89,8 @@ tasks:
     run:
       - command: git add .
       - command: git commit -m "repo template regenerate"
-      - command: git push origin master      
-      
+      - command: git push origin master
+
   repo:
     usage: check package versions
     run:

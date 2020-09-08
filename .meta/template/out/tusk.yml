@@ -15,4 +15,4 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: 
+          exec:

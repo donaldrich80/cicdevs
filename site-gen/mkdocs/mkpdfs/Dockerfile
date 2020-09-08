@@ -5,7 +5,7 @@ RUN apk --update --upgrade add gcc musl-dev jpeg-dev zlib-dev libffi-dev cairo-d
 RUN apk add --no-cache msttcorefonts-installer fontconfig
 RUN update-ms-fonts
 
-    
+
 
 RUN pip install --no-cache-dir \
 # mkpdfs-mkdocs \

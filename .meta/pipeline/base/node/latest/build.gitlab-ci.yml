@@ -8,7 +8,7 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/lint/docker.yml
 
-build:base:node-alpine:
+build:base:node:
   extends:
     - .dockerhub:monoarch:push
 
@@ -23,14 +23,14 @@ stages:
   - notify
 
 variables:
-  DOCKER_BUILD_DIR: base/node
+  DOCKER_BUILD_DIR: base/node/latest
   IMAGE_NAME: base
-  IMAGE_TAG: node-alpine
+  IMAGE_TAG: node
   DOCKERFILE: Dockerfile
-  DOCKER_BUILD_CONTEXT: base/node
+  DOCKER_BUILD_CONTEXT: base/node/latest
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
 
-docs:base:node-alpine:
+docs:base:node:
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
@@ -45,9 +45,8 @@ docs:base:node-alpine:
     DOCKER_CERT_PATH: /certs/client
     DOCKER_TLS_CERTDIR: /certs
   script:
-    - docker pull donaldrich/base:node-alpine
-    - docker run --rm donaldrich/base:node-alpine config > $CI_PROJECT_DIR/.meta/snippets/config/base-node-alpine.md || true
-    - docker run --rm donaldrich/base:node-alpine validate > $CI_PROJECT_DIR/.meta/snippets/version/base-node-alpine.md || true
-    - docker image inspect donaldrich/base:node-alpine | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/base-node-alpine.md
-    - docker history donaldrich/base:node-alpine > $CI_PROJECT_DIR/.meta/snippets/layers/base-node-alpine.md || true
-
+    - docker pull donaldrich/base:node
+    - docker run --rm donaldrich/base:node config > $CI_PROJECT_DIR/.meta/snippets/config/base-node.md || true
+    - docker run --rm donaldrich/base:node validate > $CI_PROJECT_DIR/.meta/snippets/version/base-node.md || true
+    - docker image inspect donaldrich/base:node | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/base-node.md
+    - docker history donaldrich/base:node > $CI_PROJECT_DIR/.meta/snippets/layers/base-node.md || true

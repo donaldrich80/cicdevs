@@ -15,7 +15,7 @@ commands:
 plugins:
   zsh-autosuggestions:
     github: zsh-users/zsh-autosuggestions
-  zsh-completions: 
+  zsh-completions:
     github: zsh-users/zsh-completions
   ansible-zsh:
     github: sparsick/ansible-zsh

@@ -50,4 +50,3 @@ docs:builder:bazel:
     - docker run --rm donaldrich/builder:bazel validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-bazel.md || true
     - docker image inspect donaldrich/builder:bazel | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-bazel.md
     - docker history donaldrich/builder:bazel > $CI_PROJECT_DIR/.meta/snippets/layers/builder-bazel.md || true
-

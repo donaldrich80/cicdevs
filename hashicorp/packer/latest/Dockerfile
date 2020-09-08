@@ -77,4 +77,3 @@ COPY ./tusk-docker.yml ./tusk.yml
 ENV DEBIAN_FRONTEND dialog
 
 # ENTRYPOINT ["tusk"]
-

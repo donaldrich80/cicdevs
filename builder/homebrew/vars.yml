@@ -11,7 +11,7 @@ references:
   homebrew:
     github: Homebrew/brew
     docs: https://docs.brew.sh
-    site: https://brew.sh  
+    site: https://brew.sh
 commands:
   homebrew:
     prefix: brew

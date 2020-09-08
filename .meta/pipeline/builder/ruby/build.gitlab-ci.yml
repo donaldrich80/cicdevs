@@ -50,4 +50,3 @@ docs:builder:ruby:
     - docker run --rm donaldrich/builder:ruby validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-ruby.md || true
     - docker image inspect donaldrich/builder:ruby | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-ruby.md
     - docker history donaldrich/builder:ruby > $CI_PROJECT_DIR/.meta/snippets/layers/builder-ruby.md || true
-

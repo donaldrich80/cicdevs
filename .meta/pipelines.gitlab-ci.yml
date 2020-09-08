@@ -23,7 +23,9 @@ include:
   - local: .meta/pipeline/builder/python/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/builder/rust/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/builder/homebrew/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/node/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/node/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/node/slim/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/node/alpine/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/ubuntu/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/slim/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/alpine/pipeline.gitlab-ci.yml

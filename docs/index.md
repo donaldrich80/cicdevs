@@ -28,7 +28,7 @@ You can utilize a `.env` file at the root of you home directory to pass envirome
 
 ### ZSH shell
 
-If applicable, the default "Develop in Docker" command will use the ZSH prompt as the entrypoint. This brings functionality such as autocomplete, syntax highlighting, etc intended to add convienience to prompt usage.  
+If applicable, the default "Develop in Docker" command will use the ZSH prompt as the entrypoint. This brings functionality such as autocomplete, syntax highlighting, etc intended to add convienience to prompt usage.
 
 !!! info
     This entrypoint can be modified if neccesary. and isn't added to containers which don't make sense to develop in.
@@ -40,7 +40,7 @@ If applicable, the default "Develop in Docker" command will use the ZSH prompt a
 A task runner is integrated into these containers which adds unlimited functionality. Go to image description to see an example of how to accomplish this.
 
 !!! info
-    Custom task files can be bound to the containers to override the default tasks. 
+    Custom task files can be bound to the containers to override the default tasks.
 
 This functionality is implemented using tusk.
 

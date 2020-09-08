@@ -50,4 +50,3 @@ docs:lynis:latest:
     - docker run --rm donaldrich/lynis:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/lynis-latest.md || true
     - docker image inspect donaldrich/lynis:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/lynis-latest.md
     - docker history donaldrich/lynis:latest > $CI_PROJECT_DIR/.meta/snippets/layers/lynis-latest.md || true
-

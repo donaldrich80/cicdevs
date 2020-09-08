@@ -50,4 +50,3 @@ docs:runner:latest:
     - docker run --rm donaldrich/runner:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/runner-latest.md || true
     - docker image inspect donaldrich/runner:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/runner-latest.md
     - docker history donaldrich/runner:latest > $CI_PROJECT_DIR/.meta/snippets/layers/runner-latest.md || true
-

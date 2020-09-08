@@ -50,4 +50,3 @@ docs:builder:homebrew:
     - docker run --rm donaldrich/builder:homebrew validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-homebrew.md || true
     - docker image inspect donaldrich/builder:homebrew | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-homebrew.md
     - docker history donaldrich/builder:homebrew > $CI_PROJECT_DIR/.meta/snippets/layers/builder-homebrew.md || true
-

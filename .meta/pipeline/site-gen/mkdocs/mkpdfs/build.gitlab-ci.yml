@@ -50,4 +50,3 @@ docs:mkdocs:mkpdfs:
     - docker run --rm donaldrich/mkdocs:mkpdfs validate > $CI_PROJECT_DIR/.meta/snippets/version/mkdocs-mkpdfs.md || true
     - docker image inspect donaldrich/mkdocs:mkpdfs | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/mkdocs-mkpdfs.md
     - docker history donaldrich/mkdocs:mkpdfs > $CI_PROJECT_DIR/.meta/snippets/layers/mkdocs-mkpdfs.md || true
-

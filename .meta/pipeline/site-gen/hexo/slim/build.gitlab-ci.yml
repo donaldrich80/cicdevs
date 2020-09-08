@@ -50,4 +50,3 @@ docs:hexo:slim:
     - docker run --rm donaldrich/hexo:slim validate > $CI_PROJECT_DIR/.meta/snippets/version/hexo-slim.md || true
     - docker image inspect donaldrich/hexo:slim | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/hexo-slim.md
     - docker history donaldrich/hexo:slim > $CI_PROJECT_DIR/.meta/snippets/layers/hexo-slim.md || true
-

@@ -50,4 +50,3 @@ docs:hexo:latest:
     - docker run --rm donaldrich/hexo:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/hexo-latest.md || true
     - docker image inspect donaldrich/hexo:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/hexo-latest.md
     - docker history donaldrich/hexo:latest > $CI_PROJECT_DIR/.meta/snippets/layers/hexo-latest.md || true
-

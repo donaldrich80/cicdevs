@@ -50,4 +50,3 @@ docs:hexo:butterfly:
     - docker run --rm donaldrich/hexo:butterfly validate > $CI_PROJECT_DIR/.meta/snippets/version/hexo-butterfly.md || true
     - docker image inspect donaldrich/hexo:butterfly | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/hexo-butterfly.md
     - docker history donaldrich/hexo:butterfly > $CI_PROJECT_DIR/.meta/snippets/layers/hexo-butterfly.md || true
-

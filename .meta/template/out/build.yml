@@ -28,4 +28,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: base/alpine
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-

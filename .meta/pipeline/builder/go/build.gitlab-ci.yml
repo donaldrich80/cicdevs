@@ -50,4 +50,3 @@ docs:builder:go:
     - docker run --rm donaldrich/builder:go validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-go.md || true
     - docker image inspect donaldrich/builder:go | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-go.md
     - docker history donaldrich/builder:go > $CI_PROJECT_DIR/.meta/snippets/layers/builder-go.md || true
-

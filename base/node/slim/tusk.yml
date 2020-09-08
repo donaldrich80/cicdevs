@@ -6,19 +6,19 @@ tasks:
 
   image-validate:
     usage: build docker image
-    run: docker run -it --rm donaldrich/base:node validate
+    run: docker run -it --rm donaldrich/base:node.slim validate
 
   image-version:
     usage: build docker image
-    run: docker run -it --rm donaldrich/base:node version
+    run: docker run -it --rm donaldrich/base:node.slim version
 
   build:
     usage: build docker image
-    run: docker build --pull --rm -t donaldrich/base:node .
+    run: docker build --pull --rm -t donaldrich/base:node.slim .
 
   dive:
     usage: inspect docker image
-    run: dive donaldrich/base:node
+    run: dive donaldrich/base:node.slim
   version:
     usage: check package versions
     run:

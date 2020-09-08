@@ -50,4 +50,3 @@ docs:builder:rust:
     - docker run --rm donaldrich/builder:rust validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-rust.md || true
     - docker image inspect donaldrich/builder:rust | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-rust.md
     - docker history donaldrich/builder:rust > $CI_PROJECT_DIR/.meta/snippets/layers/builder-rust.md || true
-

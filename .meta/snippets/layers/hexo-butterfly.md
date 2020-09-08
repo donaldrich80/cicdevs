@@ -10,13 +10,13 @@ IMAGE               CREATED             CREATED BY                              
 <missing>           4 hours ago         COPY /root/.zshrc /root/.zshrc # buildkit       1.21kB              buildkit.dockerfile.v0
 <missing>           4 hours ago         COPY /zsh/ /zsh/ # buildkit                     7.73MB              buildkit.dockerfile.v0
 <missing>           4 hours ago         RUN /bin/sh -c apt-get update &&   apt-get i…   139MB               buildkit.dockerfile.v0
-<missing>           7 days ago          /bin/sh -c #(nop)  CMD ["node"]                 0B                  
-<missing>           7 days ago          /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B                  
-<missing>           7 days ago          /bin/sh -c #(nop) COPY file:238737301d473041…   116B                
-<missing>           7 days ago          /bin/sh -c set -ex   && savedAptMark="$(apt-…   9.55MB              
-<missing>           7 days ago          /bin/sh -c #(nop)  ENV YARN_VERSION=1.22.4      0B                  
-<missing>           7 days ago          /bin/sh -c ARCH= && dpkgArch="$(dpkg --print…   102MB               
-<missing>           7 days ago          /bin/sh -c #(nop)  ENV NODE_VERSION=14.8.0      0B                  
-<missing>           2 weeks ago         /bin/sh -c groupadd --gid 1000 node   && use…   333kB               
-<missing>           2 weeks ago         /bin/sh -c #(nop)  CMD ["bash"]                 0B                  
-<missing>           2 weeks ago         /bin/sh -c #(nop) ADD file:16a1ddc40c95b14f8…   55.3MB              
+<missing>           7 days ago          /bin/sh -c #(nop)  CMD ["node"]                 0B
+<missing>           7 days ago          /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B
+<missing>           7 days ago          /bin/sh -c #(nop) COPY file:238737301d473041…   116B
+<missing>           7 days ago          /bin/sh -c set -ex   && savedAptMark="$(apt-…   9.55MB
+<missing>           7 days ago          /bin/sh -c #(nop)  ENV YARN_VERSION=1.22.4      0B
+<missing>           7 days ago          /bin/sh -c ARCH= && dpkgArch="$(dpkg --print…   102MB
+<missing>           7 days ago          /bin/sh -c #(nop)  ENV NODE_VERSION=14.8.0      0B
+<missing>           2 weeks ago         /bin/sh -c groupadd --gid 1000 node   && use…   333kB
+<missing>           2 weeks ago         /bin/sh -c #(nop)  CMD ["bash"]                 0B
+<missing>           2 weeks ago         /bin/sh -c #(nop) ADD file:16a1ddc40c95b14f8…   55.3MB

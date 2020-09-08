@@ -81,8 +81,8 @@ donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag
         ```sh
         docker pull donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }} && docker history donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag }}
         ```
-        
-        
+
+
 {{- define "references" }}
 
 ## References
