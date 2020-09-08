@@ -11,9 +11,14 @@ repos:
 #         name: Check X
 #         entry: ./run-all.sh
 #         language: script
--   repo: local
+# -   repo: local
+#     hooks:
+#       -   id: gitleaks
+#           name: zricethezav/gitleaks
+#           language: docker_image
+#           entry: -v /tmp/:/code/ zricethezav/gitleaks -v --repo-path=/code
+      
+-   repo: https://github.com/prettier/prettier
+    rev: master
     hooks:
-      -   id: gitleaks
-          name: zricethezav/gitleaks
-          language: docker_image
-          entry: -v /tmp/:/code/ zricethezav/gitleaks -v --repo-path=/code
+      - id: prettier
