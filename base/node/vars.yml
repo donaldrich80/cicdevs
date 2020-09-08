@@ -1,13 +1,13 @@
 description: Image for use as Node base or sandbox
 features:
-  - Nods
+  - Node
   - alpine
   - zsh
   - nano
   - git
 image:
   name: base
-  tag: node
+  tag: node-alpine
   entrypoint: /bin/zsh
 site_label: node
 commands:
