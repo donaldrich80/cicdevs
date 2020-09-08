@@ -6,6 +6,8 @@ repos:
         exclude: mkdocs.yml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+      - id: mixed-line-ending
+        args: ["--fixed=no"]
   # -   repo: local
   #     hooks:
   #     -   id: check-x
