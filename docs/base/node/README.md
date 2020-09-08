@@ -1,10 +1,10 @@
 ---
-title: Node
+title: Node-Alpine
 path: tree/master
 source: base/node/Dockerfile
 ---
 
-# donaldrich/base:node
+# donaldrich/base:node-alpine
 
 ## Description
 
@@ -14,7 +14,7 @@ Image for use as Node base or sandbox
 
 ### Features
 
-* Nods
+* Node
 
 * alpine
 
@@ -29,13 +29,13 @@ Image for use as Node base or sandbox
 ### Command
 
 ```sh
-docker pull donaldrich/base:node
+docker pull donaldrich/base:node-alpine
 docker run -it --rm \
 --hostname=base \
 -v "$(pwd)":"/work" -w "/work" \
 --entrypoint="/bin/zsh" \
 --net="host" \
-donaldrich/base:node
+donaldrich/base:node-alpine
 ```
 
 ## Inspect Container
@@ -44,20 +44,20 @@ donaldrich/base:node
 
     === "Validate Services"
         ```sh
-        docker pull donaldrich/base:node && docker run -it --rm --entrypoint="tusk" donaldrich/base:node validate
+        docker pull donaldrich/base:node-alpine && docker run -it --rm --entrypoint="tusk" donaldrich/base:node-alpine validate
         ```
 
     === "Check Versions"
         ```sh
-        docker pull donaldrich/base:node && docker run -it --rm --entrypoint="tusk" donaldrich/base:node version
+        docker pull donaldrich/base:node-alpine && docker run -it --rm --entrypoint="tusk" donaldrich/base:node-alpine version
         ```
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/base:node && dive donaldrich/base:node
+        docker pull donaldrich/base:node-alpine && dive donaldrich/base:node-alpine
         ```
     === "See Layer Info"
 
         ```sh
-        docker pull donaldrich/base:node && docker history donaldrich/base:node
+        docker pull donaldrich/base:node-alpine && docker history donaldrich/base:node-alpine
         ```

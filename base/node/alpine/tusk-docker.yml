@@ -1,5 +1,5 @@
 ---
-name: donaldrich/base:node
+name: donaldrich/base:node-alpine
 usage: Image for use as Node base or sandbox
 
 tasks:
