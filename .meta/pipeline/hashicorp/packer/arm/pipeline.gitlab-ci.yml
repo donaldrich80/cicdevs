@@ -1,0 +1,20 @@
+packer:arm:
+  stage: build
+  trigger:
+    include: .meta/pipeline/hashicorp/packer/arm/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "hashicorp/packer/arm/Dockerfile"
+      - "hashicorp/packer/arm/goss.yaml"
+      - "hashicorp/packer/arm/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "packer" && $TRIGGER_VAR2 == "arm"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "packer" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

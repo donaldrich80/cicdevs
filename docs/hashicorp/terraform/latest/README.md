@@ -108,3 +108,8 @@ Static analysis powered security scanner for your terraform code
         ```sh
         docker pull donaldrich/terraform:latest && dive donaldrich/terraform:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/terraform:latest && docker history donaldrich/terraform:latest
+        ```

@@ -52,3 +52,8 @@ donaldrich/hexo:butterfly
         ```sh
         docker pull donaldrich/hexo:butterfly && dive donaldrich/hexo:butterfly
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/hexo:butterfly && docker history donaldrich/hexo:butterfly
+        ```

@@ -39,6 +39,11 @@ docs:builder:ruby:
 #      command: ["--experimental"]
   retry: 2
   stage: documentation
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: /certs/client
+    DOCKER_TLS_CERTDIR: /certs
   script:
     - docker pull donaldrich/builder:ruby
     - docker run --rm donaldrich/builder:ruby config > $CI_PROJECT_DIR/.meta/snippets/config/builder-ruby.md || true

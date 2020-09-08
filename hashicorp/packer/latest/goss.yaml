@@ -1,0 +1,21 @@
+
+package:
+  ca-certificates:
+    installed: true
+  git:
+    installed: true
+  zsh:
+    installed: true
+command:
+  goss:
+    exit-status: 0
+    exec: "goss --version"
+  packer:
+    exit-status: 0
+    exec: "packer version"
+  tusk:
+    exit-status: 0
+    exec: "tusk --version"
+  zsh:
+    exit-status: 0
+    exec: "zsh --version"

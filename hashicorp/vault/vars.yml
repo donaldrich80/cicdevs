@@ -1,3 +1,7 @@
+description: An image to read and write secrets from Hashicorp Vault
+features:
+  - Vault
+  - ZSH
 image:
   name: vault
   tag: latest

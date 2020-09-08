@@ -39,3 +39,8 @@ donaldrich/sn1per:latest
         ```sh
         docker pull donaldrich/sn1per:latest && dive donaldrich/sn1per:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/sn1per:latest && docker history donaldrich/sn1per:latest
+        ```

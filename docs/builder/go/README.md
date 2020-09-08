@@ -50,3 +50,8 @@ donaldrich/builder:go
         ```sh
         docker pull donaldrich/builder:go && dive donaldrich/builder:go
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/builder:go && docker history donaldrich/builder:go
+        ```

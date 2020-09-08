@@ -54,3 +54,8 @@ donaldrich/base:python-alpine
         ```sh
         docker pull donaldrich/base:python-alpine && dive donaldrich/base:python-alpine
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/base:python-alpine && docker history donaldrich/base:python-alpine
+        ```

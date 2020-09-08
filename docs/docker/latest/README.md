@@ -111,3 +111,8 @@ Dockerfile linter, validate inline bash, written in Haskell
         ```sh
         docker pull donaldrich/docker:latest && dive donaldrich/docker:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/docker:latest && docker history donaldrich/docker:latest
+        ```

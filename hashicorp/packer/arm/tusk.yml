@@ -1,17 +1,24 @@
 ---
-name: donaldrich/packer:latest
-
 tasks:
   validate:
-    usage: goss validation of installed packages
+    usage: validate image
     run: goss validate --color --format documentation
 
-  environment:
-    usage: print env variables
-    run:
-      - command:
-          exec: printenv
-          print: "\e[32mprintenv\e[0m"
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/packer:arm validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/packer:arm version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/packer:arm .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/packer:arm
   version:
     usage: check package versions
     run:

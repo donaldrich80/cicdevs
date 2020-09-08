@@ -66,3 +66,8 @@ donaldrich/hugo:hello-friend
         ```sh
         docker pull donaldrich/hugo:hello-friend && dive donaldrich/hugo:hello-friend
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/hugo:hello-friend && docker history donaldrich/hugo:hello-friend
+        ```

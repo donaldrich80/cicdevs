@@ -90,3 +90,8 @@ donaldrich/mkdocs:latest
         ```sh
         docker pull donaldrich/mkdocs:latest && dive donaldrich/mkdocs:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/mkdocs:latest && docker history donaldrich/mkdocs:latest
+        ```

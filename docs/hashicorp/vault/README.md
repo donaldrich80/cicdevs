@@ -7,6 +7,18 @@ source: hashicorp/vault/Dockerfile
 
 # donaldrich/vault
 
+## Description
+
+### Purpose
+
+An image to read and write secrets from Hashicorp Vault
+
+### Features
+
+* Vault
+
+* ZSH
+
 ## Develop in Docker
 
 ### Command
@@ -64,4 +76,9 @@ donaldrich/vault:latest
     === "Inspect Layers"
         ```sh
         docker pull donaldrich/vault:latest && dive donaldrich/vault:latest
+        ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/vault:latest && docker history donaldrich/vault:latest
         ```

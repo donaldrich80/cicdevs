@@ -65,3 +65,8 @@ donaldrich/hexo:slim
         ```sh
         docker pull donaldrich/hexo:slim && dive donaldrich/hexo:slim
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/hexo:slim && docker history donaldrich/hexo:slim
+        ```

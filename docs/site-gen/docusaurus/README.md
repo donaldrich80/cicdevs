@@ -58,3 +58,8 @@ donaldrich/docusaurus:latest
         ```sh
         docker pull donaldrich/docusaurus:latest && dive donaldrich/docusaurus:latest
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/docusaurus:latest && docker history donaldrich/docusaurus:latest
+        ```

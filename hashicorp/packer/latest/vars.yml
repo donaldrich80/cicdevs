@@ -1,0 +1,82 @@
+description: A lightweight image for running Hashicorp Packer builds.
+features:
+  - Packer
+  - ZSH
+site_label: latest
+image:
+  name: packer
+  tag: latest
+  entrypoint: /usr/bin/zsh
+references:
+  packer:
+    description: "Packer is a tool for creating identical machine images for multiple platforms from a single source configuration."
+    github: hashicorp/packer
+    site: https://www.packer.io
+    docs: https://www.packer.io/docs
+    guide: https://www.packer.io/guides
+links:
+  awesome-packer: https://github.com/dawitnida/awesome-packer
+plugins:
+  packer-provisioner-goss:
+    description: "Goss Provisioner for Packer"
+    github: YaleUniversity/packer-provisioner-goss
+  # packer-builder-arm-image:
+  #   description: "Packer plugin for ARM images"
+  #   github: solo-io/packer-builder-arm-image
+  #   quay: solo-io/packer-builder-arm-image:v0.1.6
+  # packer-builder-arm:
+  #   description: "Packer plugin to build ARM images"
+  #   github: mkaczanowski/packer-builder-arm
+  #   docker: mkaczanowski/packer-builder-arm
+  #   dockerfile: https://github.com/mkaczanowski/packer-builder-arm/blob/master/docker/Dockerfile
+packages:
+  # qemu-utils:
+  # parted:
+  # psmisc:
+  # curl:
+  # unzip:
+  zsh:
+  # sudo:
+  # xz-utils:
+  # qemu-user-static:
+  # kpartx:
+  ca-certificates:
+  git:
+  # dosfstools:
+  # gdisk:
+  # libarchive-tools:
+  # python3:
+commands:
+  packer:
+    prefix: packer
+    version: version
+    help: -h
+    github: hashicorp/packer
+    site: https://www.packer.io
+    docs: https://www.packer.io/docs
+    guide: https://www.packer.io/guides
+  # vault:
+  #   prefix: vault
+  #   version: version
+  #   help: -h
+  tusk:
+    prefix: tusk
+    version: --version
+  goss:
+    prefix: goss
+    version: --version
+  zsh:
+    prefix: zsh
+    version: --version
+  # curl:
+  #   prefix: curl
+  #   version: --version
+  # unzip:
+  #   prefix: unzip
+  #   version: -v
+  # sudo:
+  #   prefix: sudo
+  #   version: -V
+  # xz-utils:
+  #   prefix: xz
+  #   version: --version

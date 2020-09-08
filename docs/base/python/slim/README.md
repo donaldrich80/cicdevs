@@ -54,3 +54,8 @@ donaldrich/base:python-slim
         ```sh
         docker pull donaldrich/base:python-slim && dive donaldrich/base:python-slim
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/base:python-slim && docker history donaldrich/base:python-slim
+        ```

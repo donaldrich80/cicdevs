@@ -38,3 +38,8 @@ donaldrich/docker:dind
         ```sh
         docker pull donaldrich/docker:dind && dive donaldrich/docker:dind
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/docker:dind && docker history donaldrich/docker:dind
+        ```

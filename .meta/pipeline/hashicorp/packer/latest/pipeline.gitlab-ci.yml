@@ -1,14 +1,14 @@
 packer:latest:
   stage: build
   trigger:
-    include: .meta/pipeline/hashicorp/packer/build.gitlab-ci.yml
+    include: .meta/pipeline/hashicorp/packer/latest/build.gitlab-ci.yml
     strategy: depend
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "hashicorp/packer/Dockerfile"
-      - "hashicorp/packer/goss.yaml"
-      - "hashicorp/packer/tusk.yml"
+      - "hashicorp/packer/latest/Dockerfile"
+      - "hashicorp/packer/latest/goss.yaml"
+      - "hashicorp/packer/latest/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

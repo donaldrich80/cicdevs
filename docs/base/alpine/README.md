@@ -38,3 +38,8 @@ donaldrich/base:alpine
         ```sh
         docker pull donaldrich/base:alpine && dive donaldrich/base:alpine
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/base:alpine && docker history donaldrich/base:alpine
+        ```

@@ -8,7 +8,7 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/lint/docker.yml
 
-build:packer:latest:
+build:packer:arm:
   extends:
     - .dockerhub:monoarch:push
 
@@ -23,14 +23,14 @@ stages:
   - notify
 
 variables:
-  DOCKER_BUILD_DIR: hashicorp/packer
+  DOCKER_BUILD_DIR: hashicorp/packer/arm
   IMAGE_NAME: packer
-  IMAGE_TAG: latest
+  IMAGE_TAG: arm
   DOCKERFILE: Dockerfile
-  DOCKER_BUILD_CONTEXT: hashicorp/packer
+  DOCKER_BUILD_CONTEXT: hashicorp/packer/arm
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
 
-docs:packer:latest:
+docs:packer:arm:
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
@@ -39,10 +39,15 @@ docs:packer:latest:
 #      command: ["--experimental"]
   retry: 2
   stage: documentation
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: /certs/client
+    DOCKER_TLS_CERTDIR: /certs
   script:
-    - docker pull donaldrich/packer:latest
-    - docker run --rm donaldrich/packer:latest config > $CI_PROJECT_DIR/.meta/snippets/config/packer-latest.md || true
-    - docker run --rm donaldrich/packer:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/packer-latest.md || true
-    - docker image inspect donaldrich/packer:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/packer-latest.md
-    - docker history donaldrich/packer:latest > $CI_PROJECT_DIR/.meta/snippets/layers/packer-latest.md || true
+    - docker pull donaldrich/packer:arm
+    - docker run --rm donaldrich/packer:arm config > $CI_PROJECT_DIR/.meta/snippets/config/packer-arm.md || true
+    - docker run --rm donaldrich/packer:arm validate > $CI_PROJECT_DIR/.meta/snippets/version/packer-arm.md || true
+    - docker image inspect donaldrich/packer:arm | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/packer-arm.md
+    - docker history donaldrich/packer:arm > $CI_PROJECT_DIR/.meta/snippets/layers/packer-arm.md || true
 

@@ -57,3 +57,8 @@ donaldrich/terraform:full
         ```sh
         docker pull donaldrich/terraform:full && dive donaldrich/terraform:full
         ```
+    === "See Layer Info"
+
+        ```sh
+        docker pull donaldrich/terraform:full && docker history donaldrich/terraform:full
+        ```
