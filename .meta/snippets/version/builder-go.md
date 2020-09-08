@@ -14,7 +14,6 @@
 [32mCommand: ruby: exit-status: matches expectation: [0][0m
 [32mCommand: ginstall.sh: exit-status: matches expectation: [0][0m
 
-
 Total Duration: 0.286s
 [32mCount: 15, Failed: 0, Skipped: 0
 [0m

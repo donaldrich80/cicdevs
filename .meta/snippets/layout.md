@@ -1,11 +1,11 @@
 .
 ├── ansible
 │   └── latest
-│       ├── Dockerfile
-│       ├── goss.yaml
-│       ├── tusk-docker.yml
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── goss.yaml
+│   ├── tusk-docker.yml
+│   ├── tusk.yml
+│   └── vars.yml
 ├── aws
 │   ├── cdk
 │   │   ├── Dockerfile
@@ -14,11 +14,11 @@
 │   │   ├── tusk.yml
 │   │   └── vars.yml
 │   └── latest
-│       ├── Dockerfile
-│       ├── goss.yaml
-│       ├── tusk-docker.yml
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── goss.yaml
+│   ├── tusk-docker.yml
+│   ├── tusk.yml
+│   └── vars.yml
 ├── base
 │   ├── alpine
 │   │   ├── Dockerfile
@@ -40,17 +40,17 @@
 │   │   │   ├── tusk.yml
 │   │   │   └── vars.yml
 │   │   └── slim
-│   │       ├── Dockerfile
-│   │       ├── goss.yaml
-│   │       ├── tusk-docker.yml
-│   │       ├── tusk.yml
-│   │       └── vars.yml
+│   │   ├── Dockerfile
+│   │   ├── goss.yaml
+│   │   ├── tusk-docker.yml
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   └── ubuntu
-│       ├── Dockerfile
-│       ├── goss.yaml
-│       ├── tusk-docker.yml
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── goss.yaml
+│   ├── tusk-docker.yml
+│   ├── tusk.yml
+│   └── vars.yml
 ├── builder
 │   ├── bazel
 │   │   ├── Dockerfile
@@ -90,11 +90,11 @@
 │   │   ├── tusk.yml
 │   │   └── vars.yml
 │   └── rust
-│       ├── Dockerfile
-│       ├── goss.yaml
-│       ├── tusk-docker.yml
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── goss.yaml
+│   ├── tusk-docker.yml
+│   ├── tusk.yml
+│   └── vars.yml
 ├── docker
 │   ├── bootstrap
 │   │   ├── Dockerfile
@@ -111,13 +111,13 @@
 │   │   ├── validate
 │   │   └── vars.yml
 │   └── latest
-│       ├── Dockerfile
-│       ├── config.json
-│       ├── docker-run.sh
-│       ├── goss.yaml
-│       ├── tusk-docker.yml
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── config.json
+│   ├── docker-run.sh
+│   ├── goss.yaml
+│   ├── tusk-docker.yml
+│   ├── tusk.yml
+│   └── vars.yml
 ├── hashicorp
 │   ├── packer
 │   │   ├── Dockerfile
@@ -133,19 +133,19 @@
 │   │   │   ├── tusk.yml
 │   │   │   └── vars.yml
 │   │   └── latest
-│   │       ├── Dockerfile
-│   │       ├── docker-run.sh
-│   │       ├── goss.yaml
-│   │       ├── tusk-docker.yml
-│   │       ├── tusk.yml
-│   │       └── vars.yml
+│   │   ├── Dockerfile
+│   │   ├── docker-run.sh
+│   │   ├── goss.yaml
+│   │   ├── tusk-docker.yml
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   └── vault
-│       ├── Dockerfile
-│       ├── goss.yaml
-│       ├── start.sh
-│       ├── tusk-docker.yml
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── goss.yaml
+│   ├── start.sh
+│   ├── tusk-docker.yml
+│   ├── tusk.yml
+│   └── vars.yml
 ├── misc
 │   ├── dev
 │   │   ├── Dockerfile
@@ -162,17 +162,17 @@
 │   │   ├── old-goss.yaml
 │   │   └── tusk.yml
 │   └── zsh
-│       ├── Dockerfile
-│       ├── goss.yaml
-│       ├── p10k.zsh
-│       ├── tusk-docker.yml
-│       ├── tusk.yml
-│       ├── vars.yml
-│       └── zshrc
+│   ├── Dockerfile
+│   ├── goss.yaml
+│   ├── p10k.zsh
+│   ├── tusk-docker.yml
+│   ├── tusk.yml
+│   ├── vars.yml
+│   └── zshrc
 ├── public
 │   ├── ansible
 │   │   └── latest
-│   │       └── index.html
+│   │   └── index.html
 │   ├── assets
 │   │   ├── images
 │   │   │   └── favicon.png
@@ -251,7 +251,7 @@
 │   │   ├── python
 │   │   │   └── index.html
 │   │   └── ubuntu
-│   │       └── index.html
+│   │   └── index.html
 │   ├── builder
 │   │   ├── bazel
 │   │   │   └── index.html
@@ -266,14 +266,14 @@
 │   │   ├── ruby
 │   │   │   └── index.html
 │   │   └── rust
-│   │       └── index.html
+│   │   └── index.html
 │   ├── docker
 │   │   ├── bootstrap
 │   │   │   └── index.html
 │   │   ├── dind
 │   │   │   └── index.html
 │   │   └── latest
-│   │       └── index.html
+│   │   └── index.html
 │   ├── hashicorp
 │   │   ├── packer
 │   │   │   └── index.html
@@ -281,21 +281,21 @@
 │   │   │   ├── full
 │   │   │   │   └── index.html
 │   │   │   └── latest
-│   │   │       └── index.html
+│   │   │   └── index.html
 │   │   └── vault
-│   │       └── index.html
+│   │   └── index.html
 │   ├── misc
 │   │   ├── runner
 │   │   │   └── index.html
 │   │   └── zsh
-│   │       └── index.html
+│   │   └── index.html
 │   ├── search
 │   │   └── search_index.json
 │   ├── security
 │   │   ├── lynis
 │   │   │   └── index.html
 │   │   └── sn1per
-│   │       └── index.html
+│   │   └── index.html
 │   ├── site-gen
 │   │   ├── docusaurus
 │   │   │   └── index.html
@@ -309,17 +309,17 @@
 │   │   │   ├── latest
 │   │   │   │   └── index.html
 │   │   │   └── slim
-│   │   │       └── index.html
+│   │   │   └── index.html
 │   │   ├── hugo
 │   │   │   ├── hello-friend
 │   │   │   │   └── index.html
 │   │   │   └── latest
-│   │   │       └── index.html
+│   │   │   └── index.html
 │   │   └── mkdocs
-│   │       ├── mkdocs
-│   │       │   └── index.html
-│   │       └── mkpdfs
-│   │           └── index.html
+│   │   ├── mkdocs
+│   │   │   └── index.html
+│   │   └── mkpdfs
+│   │   └── index.html
 │   ├── 404.html
 │   ├── index.html
 │   ├── sitemap.xml
@@ -333,11 +333,11 @@
 │   │   ├── tusk.yml
 │   │   └── vars.yml
 │   └── sn1per
-│       ├── Dockerfile
-│       ├── goss.yaml
-│       ├── tusk-docker.yml
-│       ├── tusk.yml
-│       └── vars.yml
+│   ├── Dockerfile
+│   ├── goss.yaml
+│   ├── tusk-docker.yml
+│   ├── tusk.yml
+│   └── vars.yml
 ├── site-gen
 │   ├── docusaurus
 │   │   ├── Dockerfile
@@ -372,11 +372,11 @@
 │   │   │   ├── tusk.yml
 │   │   │   └── vars.yml
 │   │   └── slim
-│   │       ├── Dockerfile
-│   │       ├── goss.yaml
-│   │       ├── tusk-docker.yml
-│   │       ├── tusk.yml
-│   │       └── vars.yml
+│   │   ├── Dockerfile
+│   │   ├── goss.yaml
+│   │   ├── tusk-docker.yml
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   ├── hugo
 │   │   ├── hello-friend
 │   │   │   ├── Dockerfile
@@ -385,24 +385,24 @@
 │   │   │   ├── tusk.yml
 │   │   │   └── vars.yml
 │   │   └── latest
-│   │       ├── Dockerfile
-│   │       ├── goss.yaml
-│   │       ├── tusk-docker.yml
-│   │       ├── tusk.yml
-│   │       └── vars.yml
+│   │   ├── Dockerfile
+│   │   ├── goss.yaml
+│   │   ├── tusk-docker.yml
+│   │   ├── tusk.yml
+│   │   └── vars.yml
 │   └── mkdocs
-│       ├── mkdocs
-│       │   ├── Dockerfile
-│       │   ├── goss.yaml
-│       │   ├── tusk-docker.yml
-│       │   ├── tusk.yml
-│       │   └── vars.yml
-│       └── mkpdfs
-│           ├── Dockerfile
-│           ├── goss.yaml
-│           ├── tusk-docker.yml
-│           ├── tusk.yml
-│           └── vars.yml
+│   ├── mkdocs
+│   │   ├── Dockerfile
+│   │   ├── goss.yaml
+│   │   ├── tusk-docker.yml
+│   │   ├── tusk.yml
+│   │   └── vars.yml
+│   └── mkpdfs
+│   ├── Dockerfile
+│   ├── goss.yaml
+│   ├── tusk-docker.yml
+│   ├── tusk.yml
+│   └── vars.yml
 ├── LICENSE
 ├── README.md
 ├── mkdocs.yml

@@ -10,21 +10,21 @@ source: base/alpine/Dockerfile
 
 ### Docker
 
-* [:fontawesome-brands-docker: Docker](https://github.com/hashicorp/packer)
+- [:fontawesome-brands-docker: Docker](https://github.com/hashicorp/packer)
 
-* [:octicons-book-16: Docs](hashicorp/packer)
+- [:octicons-book-16: Docs](hashicorp/packer)
 
-* [:octicons-mark-github-16: hashicorp/docker](https://github.com/hashicorp/docker)
+- [:octicons-mark-github-16: hashicorp/docker](https://github.com/hashicorp/docker)
 
 ### Packer
 
-* [:octicons-mark-github-16: hashicorp/packer](https://github.com/hashicorp/packer)
+- [:octicons-mark-github-16: hashicorp/packer](https://github.com/hashicorp/packer)
 
 ## Plugins
 
 ### Packer
 
-* [:octicons-mark-github-16: hashicorp/packer](https://github.com/hashicorp/packer)
+- [:octicons-mark-github-16: hashicorp/packer](https://github.com/hashicorp/packer)
 
 ## Usage
 

@@ -31,7 +31,7 @@ You can utilize a `.env` file at the root of you home directory to pass envirome
 If applicable, the default "Develop in Docker" command will use the ZSH prompt as the entrypoint. This brings functionality such as autocomplete, syntax highlighting, etc intended to add convienience to prompt usage.
 
 !!! info
-    This entrypoint can be modified if neccesary. and isn't added to containers which don't make sense to develop in.
+This entrypoint can be modified if neccesary. and isn't added to containers which don't make sense to develop in.
 
 ## Image Features
 
@@ -40,13 +40,13 @@ If applicable, the default "Develop in Docker" command will use the ZSH prompt a
 A task runner is integrated into these containers which adds unlimited functionality. Go to image description to see an example of how to accomplish this.
 
 !!! info
-    Custom task files can be bound to the containers to override the default tasks.
+Custom task files can be bound to the containers to override the default tasks.
 
 This functionality is implemented using tusk.
 
 ### Self-Validation
 
-These containers all incorporate goss as a way of testing the finished container as well as a in-build testing of the image during the build.  The build will literally fail if the container isn't functioning properly.  A very efficient and quick way to build containers.
+These containers all incorporate goss as a way of testing the finished container as well as a in-build testing of the image during the build. The build will literally fail if the container isn't functioning properly. A very efficient and quick way to build containers.
 
 This functionality is implemented using goss. Check out the [docs](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md).
 
@@ -70,17 +70,17 @@ This repository is tightly integrated with two of my other repositories.
 
 A collection of stackable, extendable templates for use in GitLab-CI. Those templates utilize these images as their runners.
 
-* [:fontawesome-brands-gitlab: GitLab](https://gitlab.com/donaldrich/modular-gitlab-ci)
+- [:fontawesome-brands-gitlab: GitLab](https://gitlab.com/donaldrich/modular-gitlab-ci)
 
-* [:octicons-book-16: Docs](https://donaldrich.gitlab.io/modular-gitlab-ci)
+- [:octicons-book-16: Docs](https://donaldrich.gitlab.io/modular-gitlab-ci)
 
 ### Function as a Container
 
 Lightweight docker images focused on the performance of specific tasks. Those images form the library of container layer building blocks used to bring various functionalities to these images.
 
-* [:fontawesome-brands-gitlab: GitLab](https://gitlab.com/donaldrich/function-as-a-container)
+- [:fontawesome-brands-gitlab: GitLab](https://gitlab.com/donaldrich/function-as-a-container)
 
-* [:octicons-book-16: Docs](https://donaldrich.gitlab.io/function-as-a-container)
+- [:octicons-book-16: Docs](https://donaldrich.gitlab.io/function-as-a-container)
 
 ## Repo File Tree
 

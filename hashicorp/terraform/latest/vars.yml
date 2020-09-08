@@ -97,7 +97,7 @@ links:
 file:
   /home/terraform/.terraform.d/plugins:
     exists: true
-#    mode: "0644"
+    #    mode: "0644"
     owner: terraform
     group: terraform
     filetype: directory

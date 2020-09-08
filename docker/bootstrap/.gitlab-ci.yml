@@ -1,5 +1,5 @@
 include:
-  - local: '/testing-scripts.yml'
+  - local: "/testing-scripts.yml"
 
 .bootstrap:vars:
   variables:
@@ -13,9 +13,9 @@ include:
 .bootstrap:rules:
   rules:
     # - if: '$CI_PIPELINE_SOURCE == "push"'
-      # changes:
-      # - "docker/dev/*"
-      # when: on_success
+    # changes:
+    # - "docker/dev/*"
+    # when: on_success
     - if: '$TRIGGER_VAR1 == "bootstrap"'
       when: never
     # - if: '$TRIGGER_VAR1 == $IMAGE_ALIAS && $TRIGGER_VAR2 == $IMAGE_TAG'
