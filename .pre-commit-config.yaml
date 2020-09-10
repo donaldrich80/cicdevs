@@ -14,7 +14,7 @@ repos:
   #         name: Check X
   #         entry: ./run-all.sh
   #         language: script
--   repo: local
+  - repo: local
     hooks:
       - id: gitleaks
         name: gitleaks
