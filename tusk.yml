@@ -87,6 +87,7 @@ tasks:
 
   repo-update:
     run:
+      - command: pre-commit run -a
       - command: git add .
       - command: git commit -m "repo template regenerate"
       - command: git push origin master

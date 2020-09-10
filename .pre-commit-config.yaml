@@ -14,6 +14,12 @@ repos:
   #         name: Check X
   #         entry: ./run-all.sh
   #         language: script
+-   repo: local
+    hooks:
+      - id: gitleaks
+        name: gitleaks
+        entry: docker run -it --rm --name=gitleaks -v $PWD:/code zricethezav/gitleaks -v --repo-path=/code
+        language: script
   # -   repo: local
   #     hooks:
   #       -   id: gitleaks
