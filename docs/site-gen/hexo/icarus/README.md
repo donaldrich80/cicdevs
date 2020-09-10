@@ -14,11 +14,11 @@ Container for generating Hexo
 
 ### Features
 
-* Hexo
+- Hexo
 
-* Node
+- Node
 
-* Alpine
+- Alpine
 
 ## Develop in Docker
 

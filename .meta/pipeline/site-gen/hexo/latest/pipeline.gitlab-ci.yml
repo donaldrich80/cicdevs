@@ -6,9 +6,9 @@ hexo:latest:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "site-gen/hexo/latest/Dockerfile"
-      - "site-gen/hexo/latest/goss.yaml"
-      - "site-gen/hexo/latest/tusk.yml"
+        - "site-gen/hexo/latest/Dockerfile"
+        - "site-gen/hexo/latest/goss.yaml"
+        - "site-gen/hexo/latest/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

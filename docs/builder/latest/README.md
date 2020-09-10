@@ -14,13 +14,13 @@ Image with general retrieval, extraction, and building utilities. Designed for u
 
 ### Features
 
-* ginstall.sh for easy install of certain applications
+- ginstall.sh for easy install of certain applications
 
-* Extract/Compress all formats
+- Extract/Compress all formats
 
-* CURL, wget, and git
+- CURL, wget, and git
 
-* UPX for binary compression
+- UPX for binary compression
 
 ## Develop in Docker
 
@@ -40,7 +40,7 @@ donaldrich/builder:latest
 
 ### Ginstall.Sh
 
-* [:octicons-mark-github-16: GitHub](https://github.com/whalehub/ginstall.sh)
+- [:octicons-mark-github-16: GitHub](https://github.com/whalehub/ginstall.sh)
 
 ## Inspect Container
 

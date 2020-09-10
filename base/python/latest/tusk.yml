@@ -6,19 +6,19 @@ tasks:
 
   image-validate:
     usage: build docker image
-    run: docker run -it --rm donaldrich/base:python-slim validate
+    run: docker run -it --rm donaldrich/base:python validate
 
   image-version:
     usage: build docker image
-    run: docker run -it --rm donaldrich/base:python-slim version
+    run: docker run -it --rm donaldrich/base:python version
 
   build:
     usage: build docker image
-    run: docker build --pull --rm -t donaldrich/base:python-slim .
+    run: docker build --pull --rm -t donaldrich/base:python .
 
   dive:
     usage: inspect docker image
-    run: dive donaldrich/base:python-slim
+    run: dive donaldrich/base:python
   version:
     usage: check package versions
     run:

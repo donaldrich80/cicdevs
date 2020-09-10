@@ -14,11 +14,11 @@ Container for generating Hugo with hello-friend theme
 
 ### Features
 
-* Inherits all features from donaldrich/hugo:latest
+- Inherits all features from donaldrich/hugo:latest
 
-* Has all dependencies for hugo-theme-hello-friend installed
+- Has all dependencies for hugo-theme-hello-friend installed
 
-* Slim
+- Slim
 
 ## Develop in Docker
 
@@ -38,15 +38,15 @@ donaldrich/hugo:hello-friend
 
 ### Hugo
 
-* [:octicons-book-16: Docs](https://gohugo.io)
+- [:octicons-book-16: Docs](https://gohugo.io)
 
-* [:octicons-mark-github-16: GitHub](https://github.com/gohugoio/hugo)
+- [:octicons-mark-github-16: GitHub](https://github.com/gohugoio/hugo)
 
 ## Plugins
 
 ### Hugo-Theme-Hello-Friend
 
-* [:octicons-mark-github-16: panr/hugo-theme-hello-friend](https://github.com/panr/hugo-theme-hello-friend)
+- [:octicons-mark-github-16: panr/hugo-theme-hello-friend](https://github.com/panr/hugo-theme-hello-friend)
 
 ## Inspect Container
 

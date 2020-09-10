@@ -1,5 +1,5 @@
 ---
-name: donaldrich/base:python-slim
+name: donaldrich/base:python
 usage: Image for use as lightweight Python base or sandbox
 
 tasks:

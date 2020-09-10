@@ -14,9 +14,9 @@ Builder container with bazel
 
 ### Features
 
-* inherits all capabilities of builder:latest
+- inherits all capabilities of builder:latest
 
-* layering reduces size of extra features
+- layering reduces size of extra features
 
 ## Develop in Docker
 
@@ -36,9 +36,9 @@ donaldrich/builder:bazel
 
 ### Bazel
 
-* [:octicons-book-16: Docs](https://docs.bazel.build)
+- [:octicons-book-16: Docs](https://docs.bazel.build)
 
-* [:octicons-mark-github-16: GitHub](https://github.com/bazelbuild/bazel)
+- [:octicons-mark-github-16: GitHub](https://github.com/bazelbuild/bazel)
 
 ## Inspect Container
 

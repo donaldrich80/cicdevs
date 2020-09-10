@@ -4,7 +4,6 @@ path: tree/master
 source: misc/zsh/Dockerfile
 ---
 
-
 # donaldrich/runner
 
 ## Description
@@ -15,13 +14,13 @@ Image for testing, developing, and efficiently packaging the ZSH shell bundle fo
 
 ### Features
 
-* ZSH
+- ZSH
 
-* Oh-my-zsh
+- Oh-my-zsh
 
-* Powerlevel 10k
+- Powerlevel 10k
 
-* Nano, with syntax highlighting
+- Nano, with syntax highlighting
 
 ## Develop in Docker
 
@@ -36,39 +35,40 @@ docker run -it --rm \
 --net="host" \
 donaldrich/runner:zsh
 ```
+
 ## Links
 
-* [:octicons-book-16: awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins)
+- [:octicons-book-16: awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins)
 
-* [:octicons-book-16: global-omz](https://stackoverflow.com/questions/31624649/how-can-i-get-a-secure-system-wide-oh-my-zsh-configuration)
+- [:octicons-book-16: global-omz](https://stackoverflow.com/questions/31624649/how-can-i-get-a-secure-system-wide-oh-my-zsh-configuration)
 
-* [:octicons-book-16: zsh-in-docker](https://github.com/deluan/zsh-in-docker)
+- [:octicons-book-16: zsh-in-docker](https://github.com/deluan/zsh-in-docker)
 
 ## Plugins
 
 ### Ansible-Zsh
 
-* [:octicons-mark-github-16: sparsick/ansible-zsh](https://github.com/sparsick/ansible-zsh)
+- [:octicons-mark-github-16: sparsick/ansible-zsh](https://github.com/sparsick/ansible-zsh)
 
 ### Zsh-Autosuggestions
 
-* [:octicons-mark-github-16: zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [:octicons-mark-github-16: zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
 ### Zsh-Completions
 
-* [:octicons-mark-github-16: zsh-users/zsh-completions](https://github.com/zsh-users/zsh-completions)
+- [:octicons-mark-github-16: zsh-users/zsh-completions](https://github.com/zsh-users/zsh-completions)
 
 ### Zsh-History-Substring-Search
 
-* [:octicons-mark-github-16: zsh-users/zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
+- [:octicons-mark-github-16: zsh-users/zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 
 ### Zsh-Interactive-Cd
 
-* [:octicons-mark-github-16: changyuheng/zsh-interactive-cd](https://github.com/changyuheng/zsh-interactive-cd)
+- [:octicons-mark-github-16: changyuheng/zsh-interactive-cd](https://github.com/changyuheng/zsh-interactive-cd)
 
 ### Zsh-Syntax-Highlighting
 
-* [:octicons-mark-github-16: zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [:octicons-mark-github-16: zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 ## Inspect Container
 

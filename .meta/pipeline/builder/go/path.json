@@ -1,1 +1,1 @@
-{ path : builder/go }
+{ "path": builder / go }

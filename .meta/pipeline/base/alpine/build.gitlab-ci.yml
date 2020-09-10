@@ -36,7 +36,7 @@ docs:base:alpine:
     entrypoint: [""]
   services:
     - name: docker:stable-dind
-#      command: ["--experimental"]
+  #      command: ["--experimental"]
   retry: 2
   stage: documentation
   variables:

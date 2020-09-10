@@ -1,4 +1,3 @@
-
 command:
   ansible:
     exit-status: 0

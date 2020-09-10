@@ -6,9 +6,9 @@ builder:bazel:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "builder/bazel/Dockerfile"
-      - "builder/bazel/goss.yaml"
-      - "builder/bazel/tusk.yml"
+        - "builder/bazel/Dockerfile"
+        - "builder/bazel/goss.yaml"
+        - "builder/bazel/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

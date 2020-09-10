@@ -6,9 +6,9 @@ builder:ruby:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "builder/ruby/Dockerfile"
-      - "builder/ruby/goss.yaml"
-      - "builder/ruby/tusk.yml"
+        - "builder/ruby/Dockerfile"
+        - "builder/ruby/goss.yaml"
+        - "builder/ruby/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

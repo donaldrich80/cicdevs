@@ -6,9 +6,9 @@ base:ubuntu:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "base/ubuntu/Dockerfile"
-      - "base/ubuntu/goss.yaml"
-      - "base/ubuntu/tusk.yml"
+        - "base/ubuntu/Dockerfile"
+        - "base/ubuntu/goss.yaml"
+        - "base/ubuntu/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
