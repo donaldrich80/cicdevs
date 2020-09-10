@@ -8,6 +8,9 @@ command:
   node:
     exit-status: 0
     exec: "npm version"
+  npm:
+    exit-status: 0
+    exec: "npm --version"
   zsh:
     exit-status: 0
     exec: "zsh --version"
