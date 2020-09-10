@@ -27,3 +27,7 @@ commands:
     prefix: nano
     help: -h
     version: -V
+  npm:
+    prefix: npm
+    help: help
+    version: --version
