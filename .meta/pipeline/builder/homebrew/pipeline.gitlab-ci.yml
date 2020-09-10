@@ -6,9 +6,9 @@ builder:homebrew:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "builder/homebrew/Dockerfile"
-      - "builder/homebrew/goss.yaml"
-      - "builder/homebrew/tusk.yml"
+        - "builder/homebrew/Dockerfile"
+        - "builder/homebrew/goss.yaml"
+        - "builder/homebrew/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

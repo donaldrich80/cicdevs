@@ -6,9 +6,9 @@ ansible:latest:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "ansible/latest/Dockerfile"
-      - "ansible/latest/goss.yaml"
-      - "ansible/latest/tusk.yml"
+        - "ansible/latest/Dockerfile"
+        - "ansible/latest/goss.yaml"
+        - "ansible/latest/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

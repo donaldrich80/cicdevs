@@ -6,9 +6,9 @@ builder:latest:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "builder/latest/Dockerfile"
-      - "builder/latest/goss.yaml"
-      - "builder/latest/tusk.yml"
+        - "builder/latest/Dockerfile"
+        - "builder/latest/goss.yaml"
+        - "builder/latest/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

@@ -27,6 +27,7 @@ include:
   - local: .meta/pipeline/base/node/slim/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/node/alpine/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/ubuntu/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/python/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/slim/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/alpine/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/alpine/pipeline.gitlab-ci.yml

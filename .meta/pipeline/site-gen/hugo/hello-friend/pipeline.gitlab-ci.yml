@@ -6,9 +6,9 @@ hugo:hello-friend:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "site-gen/hugo/hello-friend/Dockerfile"
-      - "site-gen/hugo/hello-friend/goss.yaml"
-      - "site-gen/hugo/hello-friend/tusk.yml"
+        - "site-gen/hugo/hello-friend/Dockerfile"
+        - "site-gen/hugo/hello-friend/goss.yaml"
+        - "site-gen/hugo/hello-friend/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

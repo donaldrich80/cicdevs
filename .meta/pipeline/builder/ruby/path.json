@@ -1,1 +1,1 @@
-{ path : builder/ruby }
+{ "path": builder / ruby }

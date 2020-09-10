@@ -14,11 +14,11 @@ Container for generating Hexo
 
 ### Features
 
-* Hexo
+- Hexo
 
-* Node
+- Node
 
-* Butterfly theme installed
+- Butterfly theme installed
 
 ## Develop in Docker
 

@@ -1,1 +1,1 @@
-{ path : base/python/alpine }
+{ "path": base / python / alpine }

@@ -14,11 +14,11 @@ Terraform image with extras
 
 ### Features
 
-* inherits all capabilities from donaldrich/terraform:latest
+- inherits all capabilities from donaldrich/terraform:latest
 
-* Docker
+- Docker
 
-* AWS cli
+- AWS cli
 
 ## Develop in Docker
 
@@ -35,9 +35,10 @@ docker run -it --rm \
 --net="host" \
 donaldrich/terraform:full
 ```
+
 ## Links
 
-* [:octicons-book-16: awesome-terraform](https://github.com/shuaibiyy/awesome-terraform)
+- [:octicons-book-16: awesome-terraform](https://github.com/shuaibiyy/awesome-terraform)
 
 ## Inspect Container
 

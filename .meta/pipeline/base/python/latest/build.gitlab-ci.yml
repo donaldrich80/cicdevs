@@ -1,0 +1,52 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:base:python:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: base/python/latest
+  IMAGE_NAME: base
+  IMAGE_TAG: python
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: base/python/latest
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
+
+docs:base:python:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  services:
+    - name: docker:stable-dind
+  #      command: ["--experimental"]
+  retry: 2
+  stage: documentation
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: /certs/client
+    DOCKER_TLS_CERTDIR: /certs
+  script:
+    - docker pull donaldrich/base:python
+    - docker run --rm donaldrich/base:python config > $CI_PROJECT_DIR/.meta/snippets/config/base-python.md || true
+    - docker run --rm donaldrich/base:python validate > $CI_PROJECT_DIR/.meta/snippets/version/base-python.md || true
+    - docker image inspect donaldrich/base:python | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/base-python.md
+    - docker history donaldrich/base:python > $CI_PROJECT_DIR/.meta/snippets/layers/base-python.md || true

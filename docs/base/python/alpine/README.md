@@ -14,13 +14,13 @@ Image for use as lightweight Python base or sandbox
 
 ### Features
 
-* python:alpine
+- python:alpine
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 
@@ -31,7 +31,7 @@ docker pull donaldrich/base:python-alpine
 docker run -it --rm \
 --hostname=base \
 -v "$(pwd)":"/work" -w "/work" \
---entrypoint="usr/bin/zsh" \
+--entrypoint="bin/zsh" \
 --net="host" \
 donaldrich/base:python-alpine
 ```

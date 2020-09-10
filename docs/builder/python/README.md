@@ -14,7 +14,7 @@ Builder image with Python and pip.
 
 ### Features
 
-* Python
+- Python
 
 ## Develop in Docker
 

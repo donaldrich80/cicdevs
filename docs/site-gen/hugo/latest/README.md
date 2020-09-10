@@ -4,7 +4,6 @@ path: tree/master
 source: site-gen/hugo/latest/Dockerfile
 ---
 
-
 # donaldrich/hugo
 
 ## Description
@@ -15,11 +14,11 @@ Container for generating Hugo sites
 
 ### Features
 
-* Hugo
+- Hugo
 
-* Node
+- Node
 
-* Alpine
+- Alpine
 
 ## Develop in Docker
 
@@ -39,9 +38,9 @@ donaldrich/hugo:latest
 
 ### Hugo
 
-* [:octicons-book-16: Docs](https://gohugo.io)
+- [:octicons-book-16: Docs](https://gohugo.io)
 
-* [:octicons-mark-github-16: GitHub](https://github.com/gohugoio/hugo)
+- [:octicons-mark-github-16: GitHub](https://github.com/gohugoio/hugo)
 
 ## Inspect Container
 

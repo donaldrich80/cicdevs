@@ -4,7 +4,6 @@ path: tree/master
 source: hashicorp/packer/arm/Dockerfile
 ---
 
-
 # donaldrich/packer
 
 ## Description
@@ -15,9 +14,9 @@ An image for cross-architechure Packer ARM builds
 
 ### Features
 
-* Packer
+- Packer
 
-* ZSH
+- ZSH
 
 ## Develop in Docker
 
@@ -39,30 +38,31 @@ donaldrich/packer:arm
 
 Packer is a tool for creating identical machine images for multiple platforms from a single source configuration.
 
-* [:octicons-book-16: Docs](https://www.packer.io/docs)
+- [:octicons-book-16: Docs](https://www.packer.io/docs)
 
-* [:octicons-mark-github-16: GitHub](https://github.com/hashicorp/packer)
+- [:octicons-mark-github-16: GitHub](https://github.com/hashicorp/packer)
 
-* [:octicons-browser-16: Site](https://www.packer.io)
+- [:octicons-browser-16: Site](https://www.packer.io)
+
 ## Links
 
-* [:octicons-book-16: awesome-packer](https://github.com/dawitnida/awesome-packer)
+- [:octicons-book-16: awesome-packer](https://github.com/dawitnida/awesome-packer)
 
 ## Plugins
 
 ### Packer-Builder-Arm
 
-* [:fontawesome-brands-docker: Docker](mkaczanowski/packer-builder-arm)
+- [:fontawesome-brands-docker: Docker](mkaczanowski/packer-builder-arm)
 
-* [:octicons-mark-github-16: mkaczanowski/packer-builder-arm](https://github.com/mkaczanowski/packer-builder-arm)
+- [:octicons-mark-github-16: mkaczanowski/packer-builder-arm](https://github.com/mkaczanowski/packer-builder-arm)
 
 ### Packer-Builder-Arm-Image
 
-* [:octicons-mark-github-16: solo-io/packer-builder-arm-image](https://github.com/solo-io/packer-builder-arm-image)
+- [:octicons-mark-github-16: solo-io/packer-builder-arm-image](https://github.com/solo-io/packer-builder-arm-image)
 
 ### Packer-Provisioner-Goss
 
-* [:octicons-mark-github-16: YaleUniversity/packer-provisioner-goss](https://github.com/YaleUniversity/packer-provisioner-goss)
+- [:octicons-mark-github-16: YaleUniversity/packer-provisioner-goss](https://github.com/YaleUniversity/packer-provisioner-goss)
 
 ## Inspect Container
 

@@ -14,9 +14,9 @@ A lightweight image for running Hashicorp Packer builds.
 
 ### Features
 
-* Packer
+- Packer
 
-* ZSH
+- ZSH
 
 ## Develop in Docker
 
@@ -38,20 +38,21 @@ donaldrich/packer:latest
 
 Packer is a tool for creating identical machine images for multiple platforms from a single source configuration.
 
-* [:octicons-book-16: Docs](https://www.packer.io/docs)
+- [:octicons-book-16: Docs](https://www.packer.io/docs)
 
-* [:octicons-mark-github-16: GitHub](https://github.com/hashicorp/packer)
+- [:octicons-mark-github-16: GitHub](https://github.com/hashicorp/packer)
 
-* [:octicons-browser-16: Site](https://www.packer.io)
+- [:octicons-browser-16: Site](https://www.packer.io)
+
 ## Links
 
-* [:octicons-book-16: awesome-packer](https://github.com/dawitnida/awesome-packer)
+- [:octicons-book-16: awesome-packer](https://github.com/dawitnida/awesome-packer)
 
 ## Plugins
 
 ### Packer-Provisioner-Goss
 
-* [:octicons-mark-github-16: YaleUniversity/packer-provisioner-goss](https://github.com/YaleUniversity/packer-provisioner-goss)
+- [:octicons-mark-github-16: YaleUniversity/packer-provisioner-goss](https://github.com/YaleUniversity/packer-provisioner-goss)
 
 ## Inspect Container
 
