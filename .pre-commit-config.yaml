@@ -7,18 +7,16 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: mixed-line-ending
-        args: ["--fix=no"]
-  # -   repo: local
-  #     hooks:
-  #     -   id: check-x
-  #         name: Check X
-  #         entry: ./run-all.sh
-  #         language: script
+        args: ["--fix=lf"]
   - repo: local
     hooks:
       - id: gitleaks
         name: gitleaks
-        entry: docker run -it --rm --name=gitleaks -v $PWD:/code zricethezav/gitleaks -v --repo-path=/code
+        entry: zricethezav/gitleaks --repo-path=/
+        language: docker_image
+      - id: check-x
+        name: Check X
+        entry: ./run-all.sh
         language: script
   # -   repo: local
   #     hooks:
