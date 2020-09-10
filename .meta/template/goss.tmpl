@@ -1,26 +1,21 @@
 {{- if has (datasource "data") "gossfile" }}
 {{- template "gossfile" -}}
 {{- end }}
-
 {{- if has (datasource "data") "packages" }}
 {{- template "packages" -}}
 {{- end }}
-
 {{- if has (datasource "data") "commands" }}
 {{- template "commands" -}}
 {{- end }}
-
 {{- if has (datasource "data") "user" }}
 {{- template "user" -}}
 {{- end }}
-
 {{- define "gossfile" }}
 gossfile:
 {{- range $i, $e := (datasource "data").gossfile }}
   {{ $i }}: {}
 {{- end }}
 {{- end }}
-
 {{- define "packages" }}
 package:
 {{- range $i, $e := (datasource "data").packages }}
@@ -28,7 +23,6 @@ package:
     installed: true
 {{- end }}
 {{- end }}
-
 {{- define "commands" }}
 command:
 {{- range $i, $e := (datasource "data").commands }}
@@ -42,10 +36,7 @@ command:
     exit-status: 0
     exec: "{{ .prefix }} {{ .version }}"
 {{- end }}
-
-
 {{- end }}
 {{- end }}
-
 {{- define "user" }}
 {{- end }}
