@@ -12,7 +12,7 @@ repos:
     hooks:
       - id: gitleaks
         name: gitleaks
-        entry: zricethezav/gitleaks --repo-path=/
+        entry: zricethezav/gitleaks
         language: docker_image
       - id: check-x
         name: Check X
