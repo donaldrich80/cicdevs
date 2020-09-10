@@ -1,14 +1,14 @@
 description: Image for use as lightweight Python base or sandbox
 features:
-  - "python:alpine"
+  - Python
   - zsh
   - nano
   - git
 image:
   name: base
-  tag: python-alpine
-  entrypoint: bin/zsh
-site_label: alpine
+  tag: python
+  entrypoint: /usr/bin/zsh
+site_label: python
 commands:
   zsh:
     prefix: zsh
