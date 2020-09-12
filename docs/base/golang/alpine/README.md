@@ -14,15 +14,15 @@ Alpine image for use as golang base or sandbox
 
 ### Features
 
-* golang
+- golang
 
-* alpine
+- alpine
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 
