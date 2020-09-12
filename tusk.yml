@@ -87,7 +87,7 @@ tasks:
 
   repo-update:
     run:
-      - command: pre-commit run -a
+      - command: pre-commit run -a || true
       - command: pre-commit run -a
       - command: git add .
       - command: git commit -m "repo template regenerate"
