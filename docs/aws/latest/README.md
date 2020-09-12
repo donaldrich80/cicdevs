@@ -1,10 +1,10 @@
 ---
-title: Aws
+title: Latest
 path: tree/master
 source: aws/latest/Dockerfile
 ---
 
-# donaldrich/aws
+# donaldrich/aws:latest
 
 ## Description
 
