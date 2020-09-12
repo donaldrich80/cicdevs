@@ -8,6 +8,7 @@ image:
   entrypoint: /usr/bin/zsh
   volumes:
     - okay
+site_label: cli
 commands:
   aws-cli:
     prefix: aws

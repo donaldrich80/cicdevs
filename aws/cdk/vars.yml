@@ -5,6 +5,7 @@ image:
   name: aws
   tag: cdk
   entrypoint: /usr/bin/zsh
+site_label: cdk
 commands:
   aws-cdk:
     prefix: cdk

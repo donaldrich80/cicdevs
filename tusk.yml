@@ -60,6 +60,7 @@ tasks:
     run:
       - command: rm -r .meta/pipeline | true
       - command: rm -r docs/ansible | true
+      - command: rm -r docs/aws | true
       - command: rm -r docs/base | true
       - command: rm -r docs/builder | true
       - command: rm -r docs/docker | true
