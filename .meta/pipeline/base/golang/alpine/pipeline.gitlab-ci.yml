@@ -6,9 +6,9 @@ base:golang.alpine:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "base/golang/alpine/Dockerfile"
-      - "base/golang/alpine/goss.yaml"
-      - "base/golang/alpine/tusk.yml"
+        - "base/golang/alpine/Dockerfile"
+        - "base/golang/alpine/goss.yaml"
+        - "base/golang/alpine/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
