@@ -5,7 +5,7 @@ git \
 zsh \
 nano
 
-ARG USERNAME golang
+ARG USERNAME=golang
 # RUN addgroup -g 1000 alpine
 
 RUN addgroup -S $USERNAME && adduser -u 1000 -S $USERNAME -G $USERNAME

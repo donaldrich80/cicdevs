@@ -5,7 +5,7 @@ git \
 zsh \
 nano
 
-ARG USERNAME alpine
+ARG USERNAME=alpine
 
 # RUN addgroup -g 1000 alpine
 
