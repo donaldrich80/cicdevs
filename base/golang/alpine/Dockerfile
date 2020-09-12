@@ -5,9 +5,10 @@ git \
 zsh \
 nano
 
+ARG USERNAME golang
 # RUN addgroup -g 1000 alpine
 
-RUN addgroup -S golang-alpine && adduser -u 1000 -S golang-alpine -G golang-alpine
+RUN addgroup -S $USERNAME && adduser -u 1000 -S $USERNAME -G $USERNAME
 # --gecos GECOS GECOS field
 # --shell SHELL Login shell named SHELL by example /bin/bash
 # --ingroup GRP Group (by name)
@@ -24,6 +25,8 @@ COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
 COPY ./goss.yaml ./goss.yaml
 COPY ./tusk-docker.yml ./tusk.yml
+
+USER ${USERNAME}
 
 RUN goss validate
 
