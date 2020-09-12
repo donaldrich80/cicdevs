@@ -2,3 +2,6 @@ command:
   bash:
     exit-status: 0
     exec: "bash -version"
+  go:
+    exit-status: 0
+    exec: "go version"

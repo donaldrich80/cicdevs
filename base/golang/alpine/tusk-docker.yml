@@ -1,5 +1,6 @@
 ---
-name: donaldrich/base:alpine
+name: donaldrich/base:golang.alpine
+usage: Alpine image for use as golang base or sandbox
 
 tasks:
   validate:
@@ -18,3 +19,6 @@ tasks:
       - command:
           exec: bash -version
           print: "\e[32mBash\e[0m"
+      - command:
+          exec: go version
+          print: "\e[32mGo\e[0m"
