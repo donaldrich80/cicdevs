@@ -33,14 +33,8 @@ COPY --from=donaldrich/function:goss          /usr/local/bin/goss /usr/local/bin
 COPY --from=donaldrich/function:task          /usr/local/bin/tusk /usr/local/bin/tusk
 COPY --from=donaldrich/function:vault /usr/local/bin/vault /usr/local/bin/vault
 COPY --from=donaldrich/function:vault /usr/local/bin/hashi-helper /usr/local/bin/hashi-helper
-COPY --from=donaldrich/function:vault /usr/local/bin/vault-sync /usr/local/bin/vault-sync
+# COPY --from=donaldrich/function:vault /usr/local/bin/vault-sync /usr/local/bin/vault-sync
 COPY --from=donaldrich/function:vault /usr/local/bin/vault-unseal /usr/local/bin/vault-unseal
-
-# CMD ["/bin/sh", "/vault-unseal.sh"]
-# CMD ["/bin/bash"]
-
-# ADD start.sh /
-# RUN chmod +x /start.sh
 
 COPY ./goss.yaml ./goss.yaml
 RUN goss validate

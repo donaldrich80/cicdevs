@@ -19,9 +19,9 @@ commands:
   vault:
     prefix: vault
     version: -version
-  vault-sync:
-    prefix: vault-sync
-    version: --version
+  # vault-sync:
+  #   prefix: vault-sync
+  #   version: --version
   hashi-helper:
     prefix: hashi-helper
     version: --version
