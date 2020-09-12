@@ -8,16 +8,15 @@ repos:
       - id: trailing-whitespace
       - id: mixed-line-ending
         args: ["--fix=lf"]
+      - id: check-added-large-files
+      - id: check-executables-have-shebangs
+      - id: detect-private-key
   - repo: local
     hooks:
       - id: gitleaks
         name: gitleaks
         entry: zricethezav/gitleaks
         language: docker_image
-      #     -   id: check-x
-  #         name: Check X
-  #         entry: ./run-all.sh
-  #         language: script
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
