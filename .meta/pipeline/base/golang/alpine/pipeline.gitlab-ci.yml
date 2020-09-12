@@ -1,0 +1,20 @@
+base:golang.alpine:
+  stage: build
+  trigger:
+    include: .meta/pipeline/base/golang/alpine/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+      - "base/golang/alpine/Dockerfile"
+      - "base/golang/alpine/goss.yaml"
+      - "base/golang/alpine/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "base" && $TRIGGER_VAR2 == "golang.alpine"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "base" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success
