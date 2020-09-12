@@ -1,0 +1,20 @@
+description: Alpine image for use as golang base or sandbox
+features:
+  - golang
+  - alpine
+  - zsh
+  - nano
+  - git
+image:
+  name: base
+  tag: golang.alpine
+  entrypoint: /bin/zsh
+site_label: alpine
+commands:
+  bash:
+    prefix: bash
+    version: -version
+  go:
+    prefix: go
+    help: help
+    version: version

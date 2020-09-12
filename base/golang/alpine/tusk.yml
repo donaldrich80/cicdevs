@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/base:alpine validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/base:alpine version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/base:alpine .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/base:alpine
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: bash -version
+          print: "\e[32mBash\e[0m"
