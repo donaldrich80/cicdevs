@@ -11,9 +11,18 @@ image:
   entrypoint: /bin/zsh
 site_label: alpine
 commands:
-  bash:
-    prefix: bash
-    version: -version
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  git:
+    prefix: git
+    version: version
+    help: help
+  nano:
+    prefix: nano
+    help: -h
+    version: -V
   go:
     prefix: go
     help: help
