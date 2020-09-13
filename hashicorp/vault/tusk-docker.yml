@@ -25,6 +25,3 @@ tasks:
       - command:
           exec: vault -version
           print: "\e[32mVault\e[0m"
-      - command:
-          exec: vault-sync --version
-          print: "\e[32mVault-Sync\e[0m"
