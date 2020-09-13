@@ -61,7 +61,7 @@ repos:
   #       language: docker_image
   #       entry: pipelinecomponents/ansible-lint ansible-lint
   #       args: ["*"]
-  #       types: [yaml]     
+  #       types: [yaml]
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
