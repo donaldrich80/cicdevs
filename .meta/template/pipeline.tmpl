@@ -6,9 +6,9 @@
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "{{ (datasource "path").path }}/Dockerfile"
-      - "{{ (datasource "path").path }}/goss.yaml"
-      - "{{ (datasource "path").path }}/tusk.yml"
+        - "{{ (datasource "path").path }}/Dockerfile"
+        - "{{ (datasource "path").path }}/goss.yaml"
+        - "{{ (datasource "path").path }}/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
