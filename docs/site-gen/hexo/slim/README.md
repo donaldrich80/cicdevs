@@ -64,7 +64,7 @@ donaldrich/hexo:slim
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/hexo:slim && dive donaldrich/hexo:slim
+        docker pull donaldrich/hexo:slim && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/hexo:slim
         ```
     === "See Layer Info"
 

@@ -44,7 +44,7 @@ donaldrich/lynis:latest
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/lynis:latest && dive donaldrich/lynis:latest
+        docker pull donaldrich/lynis:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/lynis:latest
         ```
     === "See Layer Info"
 

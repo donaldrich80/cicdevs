@@ -48,7 +48,7 @@ donaldrich/builder:rust
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/builder:rust && dive donaldrich/builder:rust
+        docker pull donaldrich/builder:rust && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/builder:rust
         ```
     === "See Layer Info"
 

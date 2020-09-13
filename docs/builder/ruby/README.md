@@ -48,7 +48,7 @@ donaldrich/builder:ruby
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/builder:ruby && dive donaldrich/builder:ruby
+        docker pull donaldrich/builder:ruby && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/builder:ruby
         ```
     === "See Layer Info"
 

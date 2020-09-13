@@ -42,7 +42,7 @@ donaldrich/docker:bootstrap
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/docker:bootstrap && dive donaldrich/docker:bootstrap
+        docker pull donaldrich/docker:bootstrap && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/docker:bootstrap
         ```
     === "See Layer Info"
 

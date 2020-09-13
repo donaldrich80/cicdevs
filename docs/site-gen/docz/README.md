@@ -52,7 +52,7 @@ donaldrich/docz:latest
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/docz:latest && dive donaldrich/docz:latest
+        docker pull donaldrich/docz:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/docz:latest
         ```
     === "See Layer Info"
 

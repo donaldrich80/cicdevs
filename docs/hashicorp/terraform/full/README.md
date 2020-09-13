@@ -56,7 +56,7 @@ donaldrich/terraform:full
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/terraform:full && dive donaldrich/terraform:full
+        docker pull donaldrich/terraform:full && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/terraform:full
         ```
     === "See Layer Info"
 

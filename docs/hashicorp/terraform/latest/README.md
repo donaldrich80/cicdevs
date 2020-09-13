@@ -107,7 +107,7 @@ Static analysis powered security scanner for your terraform code
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/terraform:latest && dive donaldrich/terraform:latest
+        docker pull donaldrich/terraform:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/terraform:latest
         ```
     === "See Layer Info"
 

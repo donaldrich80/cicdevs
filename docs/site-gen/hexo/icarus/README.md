@@ -50,7 +50,7 @@ donaldrich/hexo:icarus
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/hexo:icarus && dive donaldrich/hexo:icarus
+        docker pull donaldrich/hexo:icarus && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/hexo:icarus
         ```
     === "See Layer Info"
 

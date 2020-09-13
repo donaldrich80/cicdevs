@@ -36,7 +36,7 @@ donaldrich/sn1per:latest
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/sn1per:latest && dive donaldrich/sn1per:latest
+        docker pull donaldrich/sn1per:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/sn1per:latest
         ```
     === "See Layer Info"
 

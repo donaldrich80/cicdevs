@@ -86,7 +86,7 @@ donaldrich/runner:zsh
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/runner:zsh && dive donaldrich/runner:zsh
+        docker pull donaldrich/runner:zsh && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/runner:zsh
         ```
     === "See Layer Info"
 

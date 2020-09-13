@@ -50,7 +50,7 @@ donaldrich/hexo:butterfly
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/hexo:butterfly && dive donaldrich/hexo:butterfly
+        docker pull donaldrich/hexo:butterfly && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/hexo:butterfly
         ```
     === "See Layer Info"
 

@@ -56,7 +56,7 @@ donaldrich/builder:bazel
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/builder:bazel && dive donaldrich/builder:bazel
+        docker pull donaldrich/builder:bazel && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/builder:bazel
         ```
     === "See Layer Info"
 

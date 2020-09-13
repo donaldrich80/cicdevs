@@ -62,7 +62,7 @@ donaldrich/mkdocs:mkpdfs
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/mkdocs:mkpdfs && dive donaldrich/mkdocs:mkpdfs
+        docker pull donaldrich/mkdocs:mkpdfs && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/mkdocs:mkpdfs
         ```
     === "See Layer Info"
 

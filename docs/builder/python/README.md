@@ -46,7 +46,7 @@ donaldrich/builder:python
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/builder:python && dive donaldrich/builder:python
+        docker pull donaldrich/builder:python && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/builder:python
         ```
     === "See Layer Info"
 

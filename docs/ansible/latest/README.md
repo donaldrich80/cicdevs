@@ -92,7 +92,7 @@ Molecule aids in the development and testing of Ansible roles
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/ansible:latest && dive donaldrich/ansible:latest
+        docker pull donaldrich/ansible:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/ansible:latest
         ```
     === "See Layer Info"
 

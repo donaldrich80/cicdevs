@@ -52,7 +52,7 @@ donaldrich/base:python
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/base:python && dive donaldrich/base:python
+        docker pull donaldrich/base:python && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/base:python
         ```
     === "See Layer Info"
 
