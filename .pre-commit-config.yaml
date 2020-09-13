@@ -30,6 +30,12 @@ repos:
         entry: donaldrich/function:markdown markdownlint
         types: [markdown]
         exclude: .meta/snippets/layout.md
+      - id: yamllint
+        name: Lint yaml
+        description: yamllint
+        language: docker_image
+        entry: donaldrich/function:yaml yamllint
+        types: [yaml]
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
