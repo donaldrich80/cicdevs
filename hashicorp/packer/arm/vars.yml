@@ -1,4 +1,4 @@
-description: An image for cross-architechure Packer ARM builds
+description: An image for cross-architecture Packer ARM builds
 features:
   - Packer
   - ZSH

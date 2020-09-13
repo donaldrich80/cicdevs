@@ -12,7 +12,7 @@ source: hashicorp/packer/arm/Dockerfile
 
 ### Purpose
 
-An image for cross-architechure Packer ARM builds
+An image for cross-architecture Packer ARM builds
 
 ### Features
 

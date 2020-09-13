@@ -16,7 +16,7 @@ In addition to functioning as CI/CD executors, they images include tools that en
 
 ### Usage
 
-The "Develop in Docker" is a convienient copy-and-paste command used to enter the container and start working with all of the tools packaged inside of it.
+The "Develop in Docker" is a convenient copy-and-paste command used to enter the container and start working with all of the tools packaged inside of it.
 
 ### Working Directory
 
@@ -24,14 +24,14 @@ Your PWD is mounted as /work and that's the directory you start in to enable a s
 
 ### ENV variables
 
-You can utilize a `.env` file at the root of you home directory to pass enviromental variables to the container. Keep in mind, in a CI/CD role these variables will need to be passed via another method.
+You can utilize a `.env` file at the root of you home directory to pass environmental variables to the container. Keep in mind, in a CI/CD role these variables will need to be passed via another method.
 
 ### ZSH shell
 
 If applicable, the default "Develop in Docker" command will use the ZSH prompt as the entrypoint. This brings functionality such as autocomplete, syntax highlighting, etc intended to add convienience to prompt usage.
 
 !!! info
-This entrypoint can be modified if neccesary. and isn't added to containers which don't make sense to develop in.
+This entrypoint can be modified if necessary. and isn't added to containers which don't make sense to develop in.
 
 ## Image Features
 
