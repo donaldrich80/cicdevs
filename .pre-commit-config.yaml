@@ -15,14 +15,12 @@ repos:
     rev: master
     hooks:
       - id: lint-markdown-markdownlint
-  - repo: local
-    hooks:
-      - id: misspell
-        name: misspell
-        entry: --entrypoint misspell donaldrich/function:misspell
-        language: docker_image
-        args: ["."]
-        types: [markdown]
+      - id: lint-dockerfile-hadolint
+      - id: gitleaks
+        verbose: true
+  # - repo: local
+  #   hooks:
+
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
