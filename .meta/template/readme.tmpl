@@ -6,6 +6,7 @@ title: {{ strings.Title (datasource "data").image.name }}
 {{- end }}
 path: tree/master
 source: {{ (datasource "path").path }}/Dockerfile
+
 ---
 
 {{ if has (datasource "data") "site_label" -}}
@@ -13,6 +14,8 @@ source: {{ (datasource "path").path }}/Dockerfile
 {{- else }}
 # donaldrich/{{ (datasource "data").image.name }}
 {{- end }}
+
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/{{ (datasource "data").image.name }}/{{ (datasource "data").image.tag }}?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/{{ (datasource "data").image.name }}/{{ (datasource "data").image.tag }})
 
 {{- if has (datasource "data") "description" }}
 {{ template "description" }}
