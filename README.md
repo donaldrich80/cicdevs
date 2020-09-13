@@ -13,5 +13,3 @@ These containers all incorporate goss as a way of testing the finished container
 ### Fully Templated CI-CD and repository
 
 Every aspect of this repository is controlled and created using variable templating. The only files which aren't the outputs of templates are the Dockerfiles. Pipelines, testing, and even the documentation is created from a collection of YAML files.
-
-password = 12345
