@@ -27,4 +27,3 @@ repos:
     rev: master
     hooks:
       - id: prettier
-      
