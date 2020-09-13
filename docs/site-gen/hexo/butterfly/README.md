@@ -6,6 +6,8 @@ source: site-gen/hexo/butterfly/Dockerfile
 
 # donaldrich/hexo:butterfly
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/hexo/butterfly?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/hexo/butterfly)
+
 ## Description
 
 ### Purpose

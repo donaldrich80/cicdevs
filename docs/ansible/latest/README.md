@@ -6,6 +6,8 @@ source: ansible/latest/Dockerfile
 
 # donaldrich/ansible
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/ansible/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/ansible/latest)
+
 ## Description
 
 ### Purpose

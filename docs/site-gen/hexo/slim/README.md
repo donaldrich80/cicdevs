@@ -6,6 +6,8 @@ source: site-gen/hexo/slim/Dockerfile
 
 # donaldrich/hexo:slim
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/hexo/slim?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/hexo/slim)
+
 ## Description
 
 ### Purpose

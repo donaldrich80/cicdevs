@@ -6,6 +6,8 @@ source: builder/python/Dockerfile
 
 # donaldrich/builder:python
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/builder/python?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/builder/python)
+
 ## Description
 
 ### Purpose

@@ -6,6 +6,8 @@ source: site-gen/docz/Dockerfile
 
 # donaldrich/docz
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/docz/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/docz/latest)
+
 ## Description
 
 ### Purpose

@@ -6,6 +6,8 @@ source: security/sn1per/Dockerfile
 
 # donaldrich/sn1per
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/sn1per/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/sn1per/latest)
+
 ## Develop in Docker
 
 ### Command

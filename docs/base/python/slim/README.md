@@ -6,6 +6,8 @@ source: base/python/slim/Dockerfile
 
 # donaldrich/base:python-slim
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/python-slim?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/python-slim)
+
 ## Description
 
 ### Purpose

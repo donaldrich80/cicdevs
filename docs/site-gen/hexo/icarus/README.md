@@ -6,6 +6,8 @@ source: site-gen/hexo/icarus/Dockerfile
 
 # donaldrich/hexo:icarus
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/hexo/icarus?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/hexo/icarus)
+
 ## Description
 
 ### Purpose

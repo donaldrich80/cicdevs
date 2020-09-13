@@ -6,6 +6,8 @@ source: docker/bootstrap/Dockerfile
 
 # donaldrich/docker:bootstrap
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/docker/bootstrap?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/docker/bootstrap)
+
 ## Description
 
 ### Purpose

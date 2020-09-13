@@ -6,6 +6,8 @@ source: hashicorp/packer/arm/Dockerfile
 
 # donaldrich/packer
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/packer/arm?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/packer/arm)
+
 ## Description
 
 ### Purpose

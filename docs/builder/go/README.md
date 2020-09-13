@@ -6,6 +6,8 @@ source: builder/go/Dockerfile
 
 # donaldrich/builder:go
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/builder/go?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/builder/go)
+
 ## Description
 
 ### Purpose

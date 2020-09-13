@@ -6,6 +6,8 @@ source: site-gen/hugo/latest/Dockerfile
 
 # donaldrich/hugo
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/hugo/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/hugo/latest)
+
 ## Description
 
 ### Purpose

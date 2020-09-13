@@ -6,6 +6,8 @@ source: base/python/latest/Dockerfile
 
 # donaldrich/base:python
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/python?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/python)
+
 ## Description
 
 ### Purpose

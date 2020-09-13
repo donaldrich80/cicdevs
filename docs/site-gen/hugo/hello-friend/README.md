@@ -6,6 +6,8 @@ source: site-gen/hugo/hello-friend/Dockerfile
 
 # donaldrich/hugo:hello-friend
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/hugo/hello-friend?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/hugo/hello-friend)
+
 ## Description
 
 ### Purpose

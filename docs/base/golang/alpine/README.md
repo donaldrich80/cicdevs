@@ -6,6 +6,8 @@ source: base/golang/alpine/Dockerfile
 
 # donaldrich/base:golang.alpine
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/golang.alpine?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/golang.alpine)
+
 ## Description
 
 ### Purpose

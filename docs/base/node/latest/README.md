@@ -6,6 +6,8 @@ source: base/node/latest/Dockerfile
 
 # donaldrich/base:node
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/node?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/node)
+
 ## Description
 
 ### Purpose

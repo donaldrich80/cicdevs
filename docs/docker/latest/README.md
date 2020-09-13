@@ -6,6 +6,8 @@ source: docker/latest/Dockerfile
 
 # donaldrich/docker:latest
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/docker/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/docker/latest)
+
 ## Description
 
 ### Purpose

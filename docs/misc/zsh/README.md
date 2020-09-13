@@ -6,6 +6,8 @@ source: misc/zsh/Dockerfile
 
 # donaldrich/runner
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/runner/zsh?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/runner/zsh)
+
 ## Description
 
 ### Purpose

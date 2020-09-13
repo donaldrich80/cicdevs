@@ -6,6 +6,8 @@ source: base/python/alpine/Dockerfile
 
 # donaldrich/base:python-alpine
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/python-alpine?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/python-alpine)
+
 ## Description
 
 ### Purpose

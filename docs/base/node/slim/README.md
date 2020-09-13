@@ -6,6 +6,8 @@ source: base/node/slim/Dockerfile
 
 # donaldrich/base:node.slim
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/node.slim?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/node.slim)
+
 ## Description
 
 ### Purpose

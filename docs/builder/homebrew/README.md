@@ -6,6 +6,8 @@ source: builder/homebrew/Dockerfile
 
 # donaldrich/builder:homebrew
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/builder/homebrew?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/builder/homebrew)
+
 ## Description
 
 ### Purpose

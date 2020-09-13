@@ -6,6 +6,8 @@ source: base/alpine/Dockerfile
 
 # donaldrich/base:alpine
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/alpine?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/alpine)
+
 ## Develop in Docker
 
 ### Command

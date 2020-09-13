@@ -6,6 +6,8 @@ source: base/ubuntu/Dockerfile
 
 # donaldrich/base:ubuntu
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/ubuntu?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/ubuntu)
+
 ## Develop in Docker
 
 ### Command

@@ -6,6 +6,8 @@ source: site-gen/mkdocs/mkdocs/Dockerfile
 
 # donaldrich/mkdocs:latest
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/mkdocs/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/mkdocs/latest)
+
 ## Description
 
 ### Purpose

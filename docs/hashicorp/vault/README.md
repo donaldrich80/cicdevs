@@ -6,6 +6,8 @@ source: hashicorp/vault/Dockerfile
 
 # donaldrich/vault
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/vault/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/vault/latest)
+
 ## Description
 
 ### Purpose

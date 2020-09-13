@@ -6,6 +6,8 @@ source: aws/latest/Dockerfile
 
 # donaldrich/aws:latest
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/aws/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/aws/latest)
+
 ## Description
 
 ### Purpose

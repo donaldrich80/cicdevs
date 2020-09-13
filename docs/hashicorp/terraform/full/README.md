@@ -6,6 +6,8 @@ source: hashicorp/terraform/full/Dockerfile
 
 # donaldrich/terraform:full
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/terraform/full?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/terraform/full)
+
 ## Description
 
 ### Purpose

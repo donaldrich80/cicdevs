@@ -6,6 +6,8 @@ source: site-gen/hexo/latest/Dockerfile
 
 # donaldrich/hexo:latest
 
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/hexo/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/hexo/latest)
+
 ## Description
 
 ### Purpose
