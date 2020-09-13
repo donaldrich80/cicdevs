@@ -28,6 +28,7 @@ repos:
         description: lintmarkdown
         language: docker_image
         entry: donaldrich/function:markdown markdownlint
+        types: [markdown]
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
