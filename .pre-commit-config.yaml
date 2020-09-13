@@ -23,6 +23,11 @@ repos:
         language: docker_image
         entry: hadolint/hadolint hadolint
         files: Dockerfile
+      - id: markdownlint
+        name: Lint markdown
+        description: lintmarkdown
+        language: docker_image
+        entry: donaldrich/function:markdown markdownlint
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
