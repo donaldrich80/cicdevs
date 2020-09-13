@@ -42,8 +42,15 @@ repos:
         description: remark-lint
         language: docker_image
         entry: pipelinecomponents/remark-lint remark
-        args: ["--no-stdout --color ."]
+        args: ["."]
         types: [markdown]
+      - id: mdspell
+        name: mdspell
+        description: mdspell
+        language: docker_image
+        entry: pipelinecomponents/markdown-spellcheck mdspell
+        args: [--report '**/*.md']
+        types: [markdown]        
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
