@@ -4,7 +4,14 @@ RUN \
  apt-get update && \
   apt-get install --no-install-recommends \
   git zsh -y && \
- npm install -g hexo
+ npm install -g hexo \
+     && rm -rf /tmp/* /usr/share/doc/* \
+        /usr/share/locale/* /usr/share/man/* \
+        /var/cache/debconf/* /var/cache/apt/* \
+        /var/tmp/* /var/log/* /var/lib/apt/lists/* \
+            apt-get autoclean && \
+            apt-get autoremove --purge && \
+            apt-get clean
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc

@@ -5,8 +5,15 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y && apt-get update -y \
 git \
 zsh \
-nano
-
+nano \
+    && rm -rf /tmp/* /usr/share/doc/* \
+        /usr/share/locale/* /usr/share/man/* \
+        /var/cache/debconf/* /var/cache/apt/* \
+        /var/tmp/* /var/log/* /var/lib/apt/lists/* \
+            apt-get autoclean && \
+            apt-get autoremove --purge && \
+            apt-get clean
+            
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /root/.nanorc
