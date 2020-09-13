@@ -21,8 +21,8 @@ repos:
         name: prettier
         entry: donaldrich/function:prettier prettier
         language: docker_image
-        args: [--write --list-different --ignore-unknown]  
-  # - repo: https://github.com/prettier/prettier
-  #   rev: master
-  #   hooks:
-  #     - id: prettier
+        args: [--write, --list-different, --ignore-unknown]  
+  - repo: https://github.com/prettier/prettier
+    rev: master
+    hooks:
+      - id: prettier
