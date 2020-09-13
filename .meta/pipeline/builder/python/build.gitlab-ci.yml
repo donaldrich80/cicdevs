@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: builder/python
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:builder:python:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/builder:python
-    - docker run --rm donaldrich/builder:python config > $CI_PROJECT_DIR/.meta/snippets/config/builder-python.md || true
-    - docker run --rm donaldrich/builder:python validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-python.md || true
-    - docker image inspect donaldrich/builder:python | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-python.md
-    - docker history donaldrich/builder:python > $CI_PROJECT_DIR/.meta/snippets/layers/builder-python.md || true

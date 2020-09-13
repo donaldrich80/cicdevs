@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: site-gen/mkdocs/mkdocs
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:mkdocs:latest:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/mkdocs:latest
-    - docker run --rm donaldrich/mkdocs:latest config > $CI_PROJECT_DIR/.meta/snippets/config/mkdocs-latest.md || true
-    - docker run --rm donaldrich/mkdocs:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/mkdocs-latest.md || true
-    - docker image inspect donaldrich/mkdocs:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/mkdocs-latest.md
-    - docker history donaldrich/mkdocs:latest > $CI_PROJECT_DIR/.meta/snippets/layers/mkdocs-latest.md || true

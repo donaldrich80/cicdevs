@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: site-gen/hugo/latest
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:hugo:latest:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/hugo:latest
-    - docker run --rm donaldrich/hugo:latest config > $CI_PROJECT_DIR/.meta/snippets/config/hugo-latest.md || true
-    - docker run --rm donaldrich/hugo:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/hugo-latest.md || true
-    - docker image inspect donaldrich/hugo:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/hugo-latest.md
-    - docker history donaldrich/hugo:latest > $CI_PROJECT_DIR/.meta/snippets/layers/hugo-latest.md || true

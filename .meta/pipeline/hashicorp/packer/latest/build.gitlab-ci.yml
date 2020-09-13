@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: hashicorp/packer/latest
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:packer:latest:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/packer:latest
-    - docker run --rm donaldrich/packer:latest config > $CI_PROJECT_DIR/.meta/snippets/config/packer-latest.md || true
-    - docker run --rm donaldrich/packer:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/packer-latest.md || true
-    - docker image inspect donaldrich/packer:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/packer-latest.md
-    - docker history donaldrich/packer:latest > $CI_PROJECT_DIR/.meta/snippets/layers/packer-latest.md || true

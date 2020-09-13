@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: builder/bazel
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:builder:bazel:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/builder:bazel
-    - docker run --rm donaldrich/builder:bazel config > $CI_PROJECT_DIR/.meta/snippets/config/builder-bazel.md || true
-    - docker run --rm donaldrich/builder:bazel validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-bazel.md || true
-    - docker image inspect donaldrich/builder:bazel | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-bazel.md
-    - docker history donaldrich/builder:bazel > $CI_PROJECT_DIR/.meta/snippets/layers/builder-bazel.md || true

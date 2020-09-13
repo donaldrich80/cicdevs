@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: builder/homebrew
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:builder:homebrew:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/builder:homebrew
-    - docker run --rm donaldrich/builder:homebrew config > $CI_PROJECT_DIR/.meta/snippets/config/builder-homebrew.md || true
-    - docker run --rm donaldrich/builder:homebrew validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-homebrew.md || true
-    - docker image inspect donaldrich/builder:homebrew | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-homebrew.md
-    - docker history donaldrich/builder:homebrew > $CI_PROJECT_DIR/.meta/snippets/layers/builder-homebrew.md || true

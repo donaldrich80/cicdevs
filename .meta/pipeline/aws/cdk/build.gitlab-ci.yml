@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: aws/cdk
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:aws:cdk:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/aws:cdk
-    - docker run --rm donaldrich/aws:cdk config > $CI_PROJECT_DIR/.meta/snippets/config/aws-cdk.md || true
-    - docker run --rm donaldrich/aws:cdk validate > $CI_PROJECT_DIR/.meta/snippets/version/aws-cdk.md || true
-    - docker image inspect donaldrich/aws:cdk | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/aws-cdk.md
-    - docker history donaldrich/aws:cdk > $CI_PROJECT_DIR/.meta/snippets/layers/aws-cdk.md || true

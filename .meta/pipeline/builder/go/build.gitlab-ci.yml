@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: builder/go
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:builder:go:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/builder:go
-    - docker run --rm donaldrich/builder:go config > $CI_PROJECT_DIR/.meta/snippets/config/builder-go.md || true
-    - docker run --rm donaldrich/builder:go validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-go.md || true
-    - docker image inspect donaldrich/builder:go | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-go.md
-    - docker history donaldrich/builder:go > $CI_PROJECT_DIR/.meta/snippets/layers/builder-go.md || true

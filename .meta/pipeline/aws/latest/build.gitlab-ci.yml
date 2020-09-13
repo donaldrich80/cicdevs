@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: aws/latest
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:aws:latest:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/aws:latest
-    - docker run --rm donaldrich/aws:latest config > $CI_PROJECT_DIR/.meta/snippets/config/aws-latest.md || true
-    - docker run --rm donaldrich/aws:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/aws-latest.md || true
-    - docker image inspect donaldrich/aws:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/aws-latest.md
-    - docker history donaldrich/aws:latest > $CI_PROJECT_DIR/.meta/snippets/layers/aws-latest.md || true

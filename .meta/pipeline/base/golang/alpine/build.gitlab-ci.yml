@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: base/golang/alpine
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:base:golang.alpine:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/base:golang.alpine
-    - docker run --rm donaldrich/base:golang.alpine config > $CI_PROJECT_DIR/.meta/snippets/config/base-golang.alpine.md || true
-    - docker run --rm donaldrich/base:golang.alpine validate > $CI_PROJECT_DIR/.meta/snippets/version/base-golang.alpine.md || true
-    - docker image inspect donaldrich/base:golang.alpine | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/base-golang.alpine.md
-    - docker history donaldrich/base:golang.alpine > $CI_PROJECT_DIR/.meta/snippets/layers/base-golang.alpine.md || true

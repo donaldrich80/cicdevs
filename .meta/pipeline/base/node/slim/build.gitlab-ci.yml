@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: base/node/slim
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:base:node.slim:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/base:node.slim
-    - docker run --rm donaldrich/base:node.slim config > $CI_PROJECT_DIR/.meta/snippets/config/base-node.slim.md || true
-    - docker run --rm donaldrich/base:node.slim validate > $CI_PROJECT_DIR/.meta/snippets/version/base-node.slim.md || true
-    - docker image inspect donaldrich/base:node.slim | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/base-node.slim.md
-    - docker history donaldrich/base:node.slim > $CI_PROJECT_DIR/.meta/snippets/layers/base-node.slim.md || true

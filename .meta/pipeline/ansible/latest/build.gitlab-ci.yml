@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: ansible/latest
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:ansible:latest:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/ansible:latest
-    - docker run --rm donaldrich/ansible:latest config > $CI_PROJECT_DIR/.meta/snippets/config/ansible-latest.md || true
-    - docker run --rm donaldrich/ansible:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/ansible-latest.md || true
-    - docker image inspect donaldrich/ansible:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/ansible-latest.md
-    - docker history donaldrich/ansible:latest > $CI_PROJECT_DIR/.meta/snippets/layers/ansible-latest.md || true

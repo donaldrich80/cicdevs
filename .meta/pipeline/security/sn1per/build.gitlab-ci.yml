@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: security/sn1per
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:sn1per:latest:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/sn1per:latest
-    - docker run --rm donaldrich/sn1per:latest config > $CI_PROJECT_DIR/.meta/snippets/config/sn1per-latest.md || true
-    - docker run --rm donaldrich/sn1per:latest validate > $CI_PROJECT_DIR/.meta/snippets/version/sn1per-latest.md || true
-    - docker image inspect donaldrich/sn1per:latest | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/sn1per-latest.md
-    - docker history donaldrich/sn1per:latest > $CI_PROJECT_DIR/.meta/snippets/layers/sn1per-latest.md || true

@@ -29,24 +29,3 @@ variables:
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: builder/rust
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
-
-docs:builder:rust:
-  image:
-    name: donaldrich/docker:latest
-    entrypoint: [""]
-  services:
-    - name: docker:stable-dind
-  #      command: ["--experimental"]
-  retry: 2
-  stage: documentation
-  variables:
-    DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_VERIFY: 1
-    DOCKER_CERT_PATH: /certs/client
-    DOCKER_TLS_CERTDIR: /certs
-  script:
-    - docker pull donaldrich/builder:rust
-    - docker run --rm donaldrich/builder:rust config > $CI_PROJECT_DIR/.meta/snippets/config/builder-rust.md || true
-    - docker run --rm donaldrich/builder:rust validate > $CI_PROJECT_DIR/.meta/snippets/version/builder-rust.md || true
-    - docker image inspect donaldrich/builder:rust | jq . > $CI_PROJECT_DIR/.meta/snippets/image-info/builder-rust.md
-    - docker history donaldrich/builder:rust > $CI_PROJECT_DIR/.meta/snippets/layers/builder-rust.md || true
