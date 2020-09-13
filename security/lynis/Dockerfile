@@ -7,7 +7,7 @@ FROM ubuntu
 
 COPY --from=builder ./lynis ./lynis
 
-WORKDIR lynis
+WORKDIR /lynis
 
 RUN ./lynis show options
 
