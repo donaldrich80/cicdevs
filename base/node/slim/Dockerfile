@@ -13,7 +13,7 @@ nano \
             apt-get autoclean && \
             apt-get autoremove --purge && \
             apt-get clean
-            
+
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /root/.nanorc
