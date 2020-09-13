@@ -36,6 +36,7 @@ repos:
         language: docker_image
         entry: pipelinecomponents/yamllint yamllint
         args: ["."]
+        types: [yaml]
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
