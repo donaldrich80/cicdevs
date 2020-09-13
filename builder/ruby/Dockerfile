@@ -1,7 +1,7 @@
 FROM    donaldrich/builder:latest
 ENV DEBIAN_FRONTEND noninteractive
 RUN     apt-get update \
-        && apt-get -y install \
+        && apt-get -y install --no-install-recommends \
             ruby-full \
         && rm -rf /tmp/* /usr/share/doc/* \
             /usr/share/locale/* /usr/share/man/* \
