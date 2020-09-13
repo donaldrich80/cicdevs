@@ -11,53 +11,57 @@ repos:
       - id: mixed-line-ending
         args: ["--fix=lf"]
       - id: trailing-whitespace
-  - repo: local
+  - repo: https://gitlab.com/donaldrich/function-as-a-container
+    rev: master
     hooks:
-      - id: gitleaks
-        name: gitleaks
-        entry: zricethezav/gitleaks
-        language: docker_image
-      - id: hadolint
-        name: Lint Dockerfiles
-        description: Runs hadolint Docker image to lint Dockerfiles
-        language: docker_image
-        entry: hadolint/hadolint hadolint
-        files: Dockerfile
-      - id: markdownlint
-        name: Lint markdown
-        description: lintmarkdown
-        language: docker_image
-        entry: donaldrich/function:markdown markdownlint
-        types: [markdown]
-        exclude: .meta/snippets/layout.md
-      - id: yamllint
-        name: Lint yaml
-        description: yamllint
-        language: docker_image
-        entry: pipelinecomponents/yamllint yamllint
-        args: ["."]
-        types: [yaml]
-      - id: remark-lint
-        name: Lint markdown w remark
-        description: remark-lint
-        language: docker_image
-        entry: pipelinecomponents/remark-lint remark
-        args: ["."]
-        types: [markdown]
-      - id: mdspell
-        name: mdspell
-        description: mdspell
-        language: docker_image
-        entry: pipelinecomponents/markdown-spellcheck mdspell
-        args: [--report '**/*.md']
-        types: [markdown]
-      - id: ansible-lint
-        name: ansible-lint
-        description: ansible-lint
-        language: docker_image
-        entry: pipelinecomponents/ansible-lint ansible-lint
-        args: ["*"]
-        types: [yaml]     
+      - id: lint-markdown-markdownlint
+  # - repo: local
+  #   hooks:
+  #     - id: gitleaks
+  #       name: gitleaks
+  #       entry: zricethezav/gitleaks
+  #       language: docker_image
+  #     - id: hadolint
+  #       name: Lint Dockerfiles
+  #       description: Runs hadolint Docker image to lint Dockerfiles
+  #       language: docker_image
+  #       entry: hadolint/hadolint hadolint
+  #       files: Dockerfile
+  #     - id: markdownlint
+  #       name: Lint markdown
+  #       description: lintmarkdown
+  #       language: docker_image
+  #       entry: donaldrich/function:markdown markdownlint
+  #       types: [markdown]
+  #       exclude: .meta/snippets/layout.md
+  #     - id: yamllint
+  #       name: Lint yaml
+  #       description: yamllint
+  #       language: docker_image
+  #       entry: pipelinecomponents/yamllint yamllint
+  #       args: ["."]
+  #       types: [yaml]
+  #     - id: remark-lint
+  #       name: Lint markdown w remark
+  #       description: remark-lint
+  #       language: docker_image
+  #       entry: pipelinecomponents/remark-lint remark
+  #       args: ["."]
+  #       types: [markdown]
+  #     - id: mdspell
+  #       name: mdspell
+  #       description: mdspell
+  #       language: docker_image
+  #       entry: pipelinecomponents/markdown-spellcheck mdspell
+  #       args: [--report '**/*.md']
+  #       types: [markdown]
+  #     - id: ansible-lint
+  #       name: ansible-lint
+  #       description: ansible-lint
+  #       language: docker_image
+  #       entry: pipelinecomponents/ansible-lint ansible-lint
+  #       args: ["*"]
+  #       types: [yaml]     
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
