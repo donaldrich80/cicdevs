@@ -37,6 +37,13 @@ repos:
         entry: pipelinecomponents/yamllint yamllint
         args: ["."]
         types: [yaml]
+      - id: remark-lint
+        name: Lint markdown w remark
+        description: remark-lint
+        language: docker_image
+        entry: pipelinecomponents/remark-lint
+        args: ["--no-stdout --color  --use preset-lint-recommended ."]
+        types: [markdown]
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
