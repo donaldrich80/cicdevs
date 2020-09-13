@@ -29,6 +29,7 @@ repos:
         language: docker_image
         entry: donaldrich/function:markdown markdownlint
         types: [markdown]
+        exclude: .meta/snippets/layout.md
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
