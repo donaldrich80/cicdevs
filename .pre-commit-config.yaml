@@ -17,7 +17,14 @@ repos:
         name: gitleaks
         entry: zricethezav/gitleaks
         language: docker_image
+      - id: hadolint
+        name: Lint Dockerfiles
+        description: Runs hadolint Docker image to lint Dockerfiles
+        language: docker_image
+        entry: hadolint/hadolint hadolint
+        files: Dockerfile
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
       - id: prettier
+      
