@@ -50,7 +50,14 @@ repos:
         language: docker_image
         entry: pipelinecomponents/markdown-spellcheck mdspell
         args: [--report '**/*.md']
-        types: [markdown]        
+        types: [markdown]
+      - id: ansible-lint
+        name: ansible-lint
+        description: ansible-lint
+        language: docker_image
+        entry: pipelinecomponents/ansible-lint ansible-lint
+        args: [*]
+        types: [yaml]     
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
