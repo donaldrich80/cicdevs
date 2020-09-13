@@ -9,7 +9,7 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: mixed-line-ending
-        args: ["--fix=lf"]
+        # args: ["--fix=lf"]
       - id: trailing-whitespace
   - repo: https://gitlab.com/donaldrich/function-as-a-container
     rev: master
@@ -26,7 +26,7 @@ repos:
         name: misspell
         entry: donaldrich/function:misspell misspell
         language: docker_image
-        args: ["."]
+        # args: ["."]
         types: [markdown]
   - repo: https://github.com/prettier/prettier
     rev: master
