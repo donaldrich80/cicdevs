@@ -2,7 +2,6 @@
 title: Icarus
 path: tree/master
 source: site-gen/hexo/icarus/Dockerfile
-
 ---
 
 # donaldrich/hexo:icarus
@@ -17,11 +16,11 @@ Container for generating Hexo
 
 ### Features
 
-* Hexo
+- Hexo
 
-* Node
+- Node
 
-* Alpine
+- Alpine
 
 ## Develop in Docker
 

@@ -6,9 +6,9 @@ aws:cdk:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "aws/cdk/Dockerfile"
-      - "aws/cdk/goss.yaml"
-      - "aws/cdk/tusk.yml"
+        - "aws/cdk/Dockerfile"
+        - "aws/cdk/goss.yaml"
+        - "aws/cdk/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

@@ -6,9 +6,9 @@ hexo:slim:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "site-gen/hexo/slim/Dockerfile"
-      - "site-gen/hexo/slim/goss.yaml"
-      - "site-gen/hexo/slim/tusk.yml"
+        - "site-gen/hexo/slim/Dockerfile"
+        - "site-gen/hexo/slim/goss.yaml"
+        - "site-gen/hexo/slim/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

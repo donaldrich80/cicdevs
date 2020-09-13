@@ -6,9 +6,9 @@ builder:go:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "builder/go/Dockerfile"
-      - "builder/go/goss.yaml"
-      - "builder/go/tusk.yml"
+        - "builder/go/Dockerfile"
+        - "builder/go/goss.yaml"
+        - "builder/go/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

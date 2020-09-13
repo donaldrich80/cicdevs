@@ -6,9 +6,9 @@ base:python-slim:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-      - "base/python/slim/Dockerfile"
-      - "base/python/slim/goss.yaml"
-      - "base/python/slim/tusk.yml"
+        - "base/python/slim/Dockerfile"
+        - "base/python/slim/goss.yaml"
+        - "base/python/slim/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

@@ -2,7 +2,6 @@
 title: Dind
 path: tree/master
 source: docker/dind/Dockerfile
-
 ---
 
 # donaldrich/docker:dind

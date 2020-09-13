@@ -2,7 +2,6 @@
 title: Latest
 path: tree/master
 source: aws/latest/Dockerfile
-
 ---
 
 # donaldrich/aws:latest
@@ -17,7 +16,7 @@ Image for interacting with AWS
 
 ### Features
 
-* AWS command line interface
+- AWS command line interface
 
 ## Develop in Docker
 

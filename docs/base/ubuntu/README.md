@@ -2,7 +2,6 @@
 title: Ubuntu
 path: tree/master
 source: base/ubuntu/Dockerfile
-
 ---
 
 # donaldrich/base:ubuntu
