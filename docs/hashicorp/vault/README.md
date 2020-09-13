@@ -28,7 +28,7 @@ docker run -it --rm \
 --hostname=vault \
 -v "$(pwd)":"/work" -w "/work" \
 --env-file=$HOME/.env \
---entrypoint="/usr/bin/zsh" \
+--entrypoint="/bin/zsh" \
 --net="host" \
 donaldrich/vault:latest
 ```
@@ -75,7 +75,7 @@ donaldrich/vault:latest
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/vault:latest && dive donaldrich/vault:latest
+        docker pull donaldrich/vault:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/vault:latest
         ```
     === "See Layer Info"
 

@@ -46,7 +46,7 @@ donaldrich/aws:cdk
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/aws:cdk && dive donaldrich/aws:cdk
+        docker pull donaldrich/aws:cdk && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/aws:cdk
         ```
     === "See Layer Info"
 

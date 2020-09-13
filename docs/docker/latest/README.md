@@ -110,7 +110,7 @@ Dockerfile linter, validate inline bash, written in Haskell
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/docker:latest && dive donaldrich/docker:latest
+        docker pull donaldrich/docker:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/docker:latest
         ```
     === "See Layer Info"
 

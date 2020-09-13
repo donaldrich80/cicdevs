@@ -58,7 +58,7 @@ donaldrich/builder:homebrew
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/builder:homebrew && dive donaldrich/builder:homebrew
+        docker pull donaldrich/builder:homebrew && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/builder:homebrew
         ```
     === "See Layer Info"
 

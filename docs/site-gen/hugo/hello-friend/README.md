@@ -64,7 +64,7 @@ donaldrich/hugo:hello-friend
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/hugo:hello-friend && dive donaldrich/hugo:hello-friend
+        docker pull donaldrich/hugo:hello-friend && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/hugo:hello-friend
         ```
     === "See Layer Info"
 

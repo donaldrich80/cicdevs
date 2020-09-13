@@ -54,7 +54,7 @@ donaldrich/base:node.alpine
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/base:node.alpine && dive donaldrich/base:node.alpine
+        docker pull donaldrich/base:node.alpine && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/base:node.alpine
         ```
     === "See Layer Info"
 

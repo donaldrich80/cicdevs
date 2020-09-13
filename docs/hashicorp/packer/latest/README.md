@@ -70,7 +70,7 @@ Packer is a tool for creating identical machine images for multiple platforms fr
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/packer:latest && dive donaldrich/packer:latest
+        docker pull donaldrich/packer:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/packer:latest
         ```
     === "See Layer Info"
 

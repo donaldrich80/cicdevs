@@ -36,7 +36,7 @@ donaldrich/base:ubuntu
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/base:ubuntu && dive donaldrich/base:ubuntu
+        docker pull donaldrich/base:ubuntu && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/base:ubuntu
         ```
     === "See Layer Info"
 

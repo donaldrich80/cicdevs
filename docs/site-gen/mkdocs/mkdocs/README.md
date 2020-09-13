@@ -88,7 +88,7 @@ donaldrich/mkdocs:latest
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/mkdocs:latest && dive donaldrich/mkdocs:latest
+        docker pull donaldrich/mkdocs:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/mkdocs:latest
         ```
     === "See Layer Info"
 

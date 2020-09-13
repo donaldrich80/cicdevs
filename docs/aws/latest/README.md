@@ -46,7 +46,7 @@ donaldrich/aws:latest
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/aws:latest && dive donaldrich/aws:latest
+        docker pull donaldrich/aws:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/aws:latest
         ```
     === "See Layer Info"
 
