@@ -7,8 +7,6 @@ nano
 
 ARG USERNAME=alpine
 
-# RUN addgroup -g 1000 alpine
-
 RUN addgroup -S $USERNAME && adduser -u 1000 -S $USERNAME -G $USERNAME
 # --gecos GECOS GECOS field
 # --shell SHELL Login shell named SHELL by example /bin/bash

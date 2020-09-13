@@ -1,5 +1,5 @@
 # FROM ubuntu:focal
-FROM alpine
+FROM donaldrich/base:alpine
 
 ENV DEBIAN_FRONTEND noninteractive
 

@@ -5,7 +5,7 @@ features:
 image:
   name: vault
   tag: latest
-  entrypoint: /usr/bin/zsh
+  entrypoint: /bin/zsh
   env: .env
 references:
   vault:
