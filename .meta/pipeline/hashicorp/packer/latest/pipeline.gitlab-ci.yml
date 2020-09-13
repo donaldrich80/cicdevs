@@ -6,9 +6,9 @@ packer:latest:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "hashicorp/packer/latest/Dockerfile"
-        - "hashicorp/packer/latest/goss.yaml"
-        - "hashicorp/packer/latest/tusk.yml"
+      - "hashicorp/packer/latest/Dockerfile"
+      - "hashicorp/packer/latest/goss.yaml"
+      - "hashicorp/packer/latest/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

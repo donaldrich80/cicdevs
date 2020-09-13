@@ -6,9 +6,9 @@ packer:arm:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "hashicorp/packer/arm/Dockerfile"
-        - "hashicorp/packer/arm/goss.yaml"
-        - "hashicorp/packer/arm/tusk.yml"
+      - "hashicorp/packer/arm/Dockerfile"
+      - "hashicorp/packer/arm/goss.yaml"
+      - "hashicorp/packer/arm/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

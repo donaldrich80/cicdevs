@@ -6,9 +6,9 @@ terraform:latest:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "hashicorp/terraform/latest/Dockerfile"
-        - "hashicorp/terraform/latest/goss.yaml"
-        - "hashicorp/terraform/latest/tusk.yml"
+      - "hashicorp/terraform/latest/Dockerfile"
+      - "hashicorp/terraform/latest/goss.yaml"
+      - "hashicorp/terraform/latest/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

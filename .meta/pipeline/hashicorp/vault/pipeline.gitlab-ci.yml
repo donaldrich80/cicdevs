@@ -6,9 +6,9 @@ vault:latest:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "hashicorp/vault/Dockerfile"
-        - "hashicorp/vault/goss.yaml"
-        - "hashicorp/vault/tusk.yml"
+      - "hashicorp/vault/Dockerfile"
+      - "hashicorp/vault/goss.yaml"
+      - "hashicorp/vault/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

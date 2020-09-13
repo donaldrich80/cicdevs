@@ -6,9 +6,9 @@ base:python-alpine:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "base/python/alpine/Dockerfile"
-        - "base/python/alpine/goss.yaml"
-        - "base/python/alpine/tusk.yml"
+      - "base/python/alpine/Dockerfile"
+      - "base/python/alpine/goss.yaml"
+      - "base/python/alpine/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

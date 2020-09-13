@@ -6,9 +6,9 @@ base:node:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "base/node/latest/Dockerfile"
-        - "base/node/latest/goss.yaml"
-        - "base/node/latest/tusk.yml"
+      - "base/node/latest/Dockerfile"
+      - "base/node/latest/goss.yaml"
+      - "base/node/latest/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

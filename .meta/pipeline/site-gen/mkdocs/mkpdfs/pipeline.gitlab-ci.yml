@@ -6,9 +6,9 @@ mkdocs:mkpdfs:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "site-gen/mkdocs/mkpdfs/Dockerfile"
-        - "site-gen/mkdocs/mkpdfs/goss.yaml"
-        - "site-gen/mkdocs/mkpdfs/tusk.yml"
+      - "site-gen/mkdocs/mkpdfs/Dockerfile"
+      - "site-gen/mkdocs/mkpdfs/goss.yaml"
+      - "site-gen/mkdocs/mkpdfs/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

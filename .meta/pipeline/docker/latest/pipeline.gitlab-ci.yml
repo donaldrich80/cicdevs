@@ -6,9 +6,9 @@ docker:latest:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "docker/latest/Dockerfile"
-        - "docker/latest/goss.yaml"
-        - "docker/latest/tusk.yml"
+      - "docker/latest/Dockerfile"
+      - "docker/latest/goss.yaml"
+      - "docker/latest/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

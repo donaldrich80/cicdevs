@@ -6,9 +6,9 @@ runner:latest:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "misc/runner/Dockerfile"
-        - "misc/runner/goss.yaml"
-        - "misc/runner/tusk.yml"
+      - "misc/runner/Dockerfile"
+      - "misc/runner/goss.yaml"
+      - "misc/runner/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

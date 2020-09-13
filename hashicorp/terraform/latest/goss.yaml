@@ -1,3 +1,4 @@
+
 command:
   curl:
     exit-status: 0

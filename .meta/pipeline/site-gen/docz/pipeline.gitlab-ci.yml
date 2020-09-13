@@ -6,9 +6,9 @@ docz:latest:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "site-gen/docz/Dockerfile"
-        - "site-gen/docz/goss.yaml"
-        - "site-gen/docz/tusk.yml"
+      - "site-gen/docz/Dockerfile"
+      - "site-gen/docz/goss.yaml"
+      - "site-gen/docz/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

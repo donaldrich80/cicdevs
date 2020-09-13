@@ -6,9 +6,9 @@ hugo:latest:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "site-gen/hugo/latest/Dockerfile"
-        - "site-gen/hugo/latest/goss.yaml"
-        - "site-gen/hugo/latest/tusk.yml"
+      - "site-gen/hugo/latest/Dockerfile"
+      - "site-gen/hugo/latest/goss.yaml"
+      - "site-gen/hugo/latest/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

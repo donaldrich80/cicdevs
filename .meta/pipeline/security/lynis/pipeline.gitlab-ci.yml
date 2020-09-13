@@ -6,9 +6,9 @@ lynis:latest:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "security/lynis/Dockerfile"
-        - "security/lynis/goss.yaml"
-        - "security/lynis/tusk.yml"
+      - "security/lynis/Dockerfile"
+      - "security/lynis/goss.yaml"
+      - "security/lynis/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
