@@ -41,7 +41,7 @@ repos:
         name: Lint markdown w remark
         description: remark-lint
         language: docker_image
-        entry: pipelinecomponents/remark-lint
+        entry: pipelinecomponents/remark-lint remark
         args: ["."]
         types: [markdown]
   - repo: https://github.com/prettier/prettier
