@@ -50,7 +50,7 @@ repos:
         language: docker_image
         entry: pipelinecomponents/markdown-spellcheck mdspell
         args: [--report '**/*.md']
-        types: [markdown]        
+        types: [markdown]
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
