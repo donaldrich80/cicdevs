@@ -17,11 +17,17 @@ repos:
       - id: lint-markdown-markdownlint     
   - repo: local
     hooks:
-      - id: prettier
-        name: prettier
-        entry: donaldrich/function:prettier prettier
+      # - id: prettier
+      #   name: prettier
+      #   entry: donaldrich/function:prettier prettier
+      #   language: docker_image
+      #   args: [--write, --list-different, --ignore-unknown] 
+      - id: misspell
+        name: misspell
+        entry: donaldrich/function:misspell misspell
         language: docker_image
-        args: [--write, --list-different, --ignore-unknown]  
+        args: ["*"]
+        types: [markdown]
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
