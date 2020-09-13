@@ -36,6 +36,7 @@ repos:
         language: docker_image
         entry: donaldrich/function:yaml yamllint
         types: [yaml]
+        args: ["--format colored --no-warnings ."]
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
