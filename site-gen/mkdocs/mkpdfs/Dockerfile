@@ -1,6 +1,6 @@
 FROM donaldrich/mkdocs
 
-RUN apk --update --upgrade add gcc musl-dev jpeg-dev zlib-dev libffi-dev cairo-dev pango-dev gdk-pixbuf-dev git nano
+RUN apk --update --upgrade --no-cache add gcc musl-dev jpeg-dev zlib-dev libffi-dev cairo-dev pango-dev gdk-pixbuf-dev git nano
 
 RUN apk add --no-cache msttcorefonts-installer fontconfig
 RUN update-ms-fonts

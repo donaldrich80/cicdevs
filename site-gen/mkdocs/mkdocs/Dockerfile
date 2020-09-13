@@ -26,13 +26,8 @@ RUN pip install --no-cache-dir \
     mkdocs-markdownextradata-plugin \
     mkdocs-mermaid2-plugin \
     mkdocs-diagrams \
-  #  mkdocs-pdf-export-plugin \
-   # git+https://github.com/SivagiriVisakan/mkdocs-replace-plugin.git \
-    # mkdocs-table-reader-plugin \
     mkdocs-git-revision-date-localized-plugin \
     mkdocs-simple-plugin
-    # mkdocs-pdf-export-plugin
-    # mkdocs-toc-sidebar-plugin
 # (https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
 
 COPY --from=donaldrich/function:goss      /usr/local/bin/goss /usr/local/bin/goss

@@ -2,10 +2,9 @@ FROM node:slim
 
 RUN \
  apt-get update && \
-  apt-get install \
+  apt-get install --no-install-recommends \
   git zsh -y && \
  npm install -g hexo
- # npm install -g hexo-cli
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc
