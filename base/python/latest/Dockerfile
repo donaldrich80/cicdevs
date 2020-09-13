@@ -1,6 +1,6 @@
 FROM python
 
-RUN apt update -y && apt install -y \
+RUN apt-get update -y && apt-get install -y \
 git \
 zsh \
 nano
