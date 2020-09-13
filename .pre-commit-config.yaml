@@ -34,9 +34,8 @@ repos:
         name: Lint yaml
         description: yamllint
         language: docker_image
-        entry: donaldrich/function:yaml yamllint
-        types: [yaml]
-        args: ["--format colored --no-warnings ."]
+        entry: pipelinecomponents/yamllint yamllint
+        args: ["."]
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
