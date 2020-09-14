@@ -30,6 +30,7 @@ include:
   - local: .meta/pipeline/base/ubuntu/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/slim/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/python/opensuse/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/alpine/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/alpine/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/sn1per/pipeline.gitlab-ci.yml
