@@ -1,8 +1,8 @@
-FROM opensuse:python
+FROM opensuse/python
 
-RUN zypper addrepo https://download.opensuse.org/repositories/shells/openSUSE_Leap_15.2/shells.repo
+# RUN zypper addrepo https://download.opensuse.org/repositories/shells/openSUSE_Leap_15.2/shells.repo
 RUN zypper refresh
-RUN zypper install zsh
+RUN zypper -n install zsh git nano
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc
