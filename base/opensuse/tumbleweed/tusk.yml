@@ -6,19 +6,19 @@ tasks:
 
   image-validate:
     usage: build docker image
-    run: docker run -it --rm donaldrich/base:python.opensuse validate
+    run: docker run -it --rm donaldrich/base:opensuse.tumbleweed validate
 
   image-version:
     usage: build docker image
-    run: docker run -it --rm donaldrich/base:python.opensuse version
+    run: docker run -it --rm donaldrich/base:opensuse.tumbleweed version
 
   build:
     usage: build docker image
-    run: docker build --pull --rm -t donaldrich/base:python.opensuse .
+    run: docker build --pull --rm -t donaldrich/base:opensuse.tumbleweed .
 
   dive:
     usage: inspect docker image
-    run: dive donaldrich/base:python.opensuse
+    run: dive donaldrich/base:opensuse.tumbleweed
   version:
     usage: check package versions
     run:

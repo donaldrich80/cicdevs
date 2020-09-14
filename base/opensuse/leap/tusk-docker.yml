@@ -1,6 +1,6 @@
 ---
-name: donaldrich/base:python.opensuse
-usage: Image for use as lightweight Opensuse Python base or sandbox
+name: donaldrich/base:opensuse.leap
+usage: Image for use as lightweight Opensuse Leap base or sandbox
 
 tasks:
   validate:

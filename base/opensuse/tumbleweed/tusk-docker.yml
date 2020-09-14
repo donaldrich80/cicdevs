@@ -1,5 +1,5 @@
 ---
-name: donaldrich/base:python.opensuse
+name: donaldrich/base:opensuse.tumbleweed
 usage: Image for use as lightweight Opensuse Python base or sandbox
 
 tasks:

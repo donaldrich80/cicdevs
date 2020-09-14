@@ -1,0 +1,31 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:base:opensuse.tumbleweed:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: base/opensuse/tumbleweed
+  IMAGE_NAME: base
+  IMAGE_TAG: opensuse.tumbleweed
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: base/opensuse/tumbleweed
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
