@@ -18,8 +18,6 @@ Image for use as CentOS base or sandbox
 
 - CentOS
 
-- Node
-
 - zsh
 
 - nano
@@ -35,7 +33,7 @@ docker pull donaldrich/base:centos
 docker run -it --rm \
 --hostname=base \
 -v "$(pwd)":"/work" -w "/work" \
---entrypoint="/bin/sh" \
+--entrypoint="/usr/bin/zsh" \
 --net="host" \
 donaldrich/base:centos
 ```

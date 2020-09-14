@@ -33,7 +33,7 @@ docker pull donaldrich/base:debian
 docker run -it --rm \
 --hostname=base \
 -v "$(pwd)":"/work" -w "/work" \
---entrypoint="/bin/zsh" \
+--entrypoint="/usr/bin/zsh" \
 --net="host" \
 donaldrich/base:debian
 ```

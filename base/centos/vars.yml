@@ -1,14 +1,13 @@
 description: Image for use as CentOS base or sandbox
 features:
   - CentOS
-  - Node
   - zsh
   - nano
   - git
 image:
   name: base
   tag: centos
-  entrypoint: /bin/sh
+  entrypoint: /usr/bin/zsh
 site_label: latest
 commands:
   zsh:

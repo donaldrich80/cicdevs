@@ -7,7 +7,7 @@ features:
 image:
   name: base
   tag: debian
-  entrypoint: /bin/zsh
+  entrypoint: /usr/bin/zsh
 site_label: latest
 commands:
   zsh:
