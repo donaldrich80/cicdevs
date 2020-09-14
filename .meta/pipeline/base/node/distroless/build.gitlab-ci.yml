@@ -1,0 +1,31 @@
+include:
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/docker/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/lint/docker.yml
+
+build:base:node.distroless:
+  extends:
+    - .dockerhub:monoarch:push
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
+  - notify
+
+variables:
+  DOCKER_BUILD_DIR: base/node/distroless
+  IMAGE_NAME: base
+  IMAGE_TAG: node.distroless
+  DOCKERFILE: Dockerfile
+  DOCKER_BUILD_CONTEXT: base/node/distroless
+  PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG

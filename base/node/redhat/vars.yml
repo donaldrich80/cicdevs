@@ -11,10 +11,10 @@ image:
   entrypoint: /bin/zsh
 site_label: latest
 commands:
-  zsh:
-    prefix: zsh
-    version: --version
-    help: --help
+  # zsh:
+  #   prefix: zsh
+  #   version: --version
+  #   help: --help
   node:
     prefix: npm
     version: version

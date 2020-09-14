@@ -8,7 +8,7 @@ features:
 image:
   name: base
   tag: golang.redhat
-  entrypoint: /bin/zsh
+  entrypoint: /bin/sh
 site_label: alpine
 commands:
   zsh:

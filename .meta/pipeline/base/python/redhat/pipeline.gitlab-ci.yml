@@ -1,4 +1,4 @@
-base:python-alpine:
+base:python.redhat:
   stage: build
   trigger:
     include: .meta/pipeline/base/python/redhat/build.gitlab-ci.yml
@@ -12,7 +12,7 @@ base:python-alpine:
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "base" && $TRIGGER_VAR2 == "python-alpine"'
+    - if: '$TRIGGER_VAR1 == "base" && $TRIGGER_VAR2 == "python.redhat"'
       when: on_success
     - if: '$TRIGGER_VAR1 == "base" && $TRIGGER_VAR2 == "all"'
       when: on_success

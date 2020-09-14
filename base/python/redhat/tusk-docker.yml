@@ -1,5 +1,5 @@
 ---
-name: donaldrich/base:python-alpine
+name: donaldrich/base:python.redhat
 usage: Image for use as lightweight Python base or sandbox
 
 tasks:
@@ -22,6 +22,3 @@ tasks:
       - command:
           exec: nano -V
           print: "\e[32mNano\e[0m"
-      - command:
-          exec: zsh --version
-          print: "\e[32mZsh\e[0m"

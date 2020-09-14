@@ -1,13 +1,12 @@
 ---
-title: Python-Alpine
+title: Python.Redhat
 path: tree/master
 source: base/python/redhat/Dockerfile
-
 ---
 
-# donaldrich/base:python-alpine
+# donaldrich/base:python.redhat
 
-[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/python-alpine?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/python-alpine)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/python.redhat?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/python.redhat)
 
 ## Description
 
@@ -17,26 +16,26 @@ Image for use as lightweight Python base or sandbox
 
 ### Features
 
-* python:alpine
+- python:redhat
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 
 ### Command
 
 ```sh
-docker pull donaldrich/base:python-alpine
+docker pull donaldrich/base:python.redhat
 docker run -it --rm \
 --hostname=base \
 -v "$(pwd)":"/work" -w "/work" \
 --entrypoint="bin/zsh" \
 --net="host" \
-donaldrich/base:python-alpine
+donaldrich/base:python.redhat
 ```
 
 ## Inspect Container
@@ -45,20 +44,20 @@ donaldrich/base:python-alpine
 
     === "Validate Services"
         ```sh
-        docker pull donaldrich/base:python-alpine && docker run -it --rm --entrypoint="tusk" donaldrich/base:python-alpine validate
+        docker pull donaldrich/base:python.redhat && docker run -it --rm --entrypoint="tusk" donaldrich/base:python.redhat validate
         ```
 
     === "Check Versions"
         ```sh
-        docker pull donaldrich/base:python-alpine && docker run -it --rm --entrypoint="tusk" donaldrich/base:python-alpine version
+        docker pull donaldrich/base:python.redhat && docker run -it --rm --entrypoint="tusk" donaldrich/base:python.redhat version
         ```
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/base:python-alpine && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/base:python-alpine
+        docker pull donaldrich/base:python.redhat && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/base:python.redhat
         ```
     === "See Layer Info"
 
         ```sh
-        docker pull donaldrich/base:python-alpine && docker history donaldrich/base:python-alpine
+        docker pull donaldrich/base:python.redhat && docker history donaldrich/base:python.redhat
         ```

@@ -1,0 +1,32 @@
+description: Image for use as Node base or sandbox
+features:
+  - Node
+  - zsh
+  - nano
+  - git
+image:
+  name: base
+  tag: node.distroless
+  entrypoint: /bin/zsh
+site_label: distroless
+commands:
+  # zsh:
+  #   prefix: zsh
+  #   version: --version
+  #   help: --help
+  node:
+    prefix: npm
+    version: version
+    help: help
+  # git:
+  #   prefix: git
+  #   version: version
+  #   help: help
+  # nano:
+  #   prefix: nano
+  #   help: -h
+  #   version: -V
+  npm:
+    prefix: npm
+    help: help
+    version: --version

@@ -1,19 +1,19 @@
 description: Image for use as lightweight Python base or sandbox
 features:
-  - "python:alpine"
+  - "python:redhat"
   - zsh
   - nano
   - git
 image:
   name: base
-  tag: python-alpine
+  tag: python.redhat
   entrypoint: bin/zsh
-site_label: alpine
+site_label: redhat
 commands:
-  zsh:
-    prefix: zsh
-    version: --version
-    help: --help
+  # zsh:
+  #   prefix: zsh
+  #   version: --version
+  #   help: --help
   git:
     prefix: git
     version: version

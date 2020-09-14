@@ -1,8 +1,24 @@
+description: Image for use as Ubuntu
+features:
+  - Ubuntu
+  - zsh
+  - nano
+  - git
 image:
   name: base
   tag: ubuntu
+  entrypoint: /bin/zsh
 site_label: ubuntu
 commands:
-  bash:
-    prefix: bash
-    version: -version
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  git:
+    prefix: git
+    version: version
+    help: help
+  nano:
+    prefix: nano
+    help: -h
+    version: -V

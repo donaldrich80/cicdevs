@@ -1,0 +1,8 @@
+
+command:
+  git:
+    exit-status: 0
+    exec: "git version"
+  nano:
+    exit-status: 0
+    exec: "nano -V"

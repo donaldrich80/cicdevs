@@ -8,6 +8,22 @@ source: base/ubuntu/Dockerfile
 
 [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/ubuntu?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/ubuntu)
 
+## Description
+
+### Purpose
+
+Image for use as Ubuntu
+
+### Features
+
+- Ubuntu
+
+- zsh
+
+- nano
+
+- git
+
 ## Develop in Docker
 
 ### Command
@@ -17,7 +33,7 @@ docker pull donaldrich/base:ubuntu
 docker run -it --rm \
 --hostname=base \
 -v "$(pwd)":"/work" -w "/work" \
---entrypoint="/bin/sh" \
+--entrypoint="/bin/zsh" \
 --net="host" \
 donaldrich/base:ubuntu
 ```

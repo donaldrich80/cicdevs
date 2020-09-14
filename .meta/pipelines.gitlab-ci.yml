@@ -25,19 +25,23 @@ include:
   - local: .meta/pipeline/builder/homebrew/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/golang/redhat/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/golang/alpine/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/node/distroless/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/node/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/node/redhat/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/node/slim/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/node/alpine/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/ubuntu/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/minimal/redhat/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/minimal/alpine/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/redhat/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/slim/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/opensuse/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/alpine/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/redhat/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/opensuse/leap/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/opensuse/tumbleweed/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/alpine/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/google/ubuntu/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/sn1per/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/lynis/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/ansible/latest/pipeline.gitlab-ci.yml

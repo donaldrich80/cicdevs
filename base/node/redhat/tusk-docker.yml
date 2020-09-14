@@ -28,6 +28,3 @@ tasks:
       - command:
           exec: npm --version
           print: "\e[32mNpm\e[0m"
-      - command:
-          exec: zsh --version
-          print: "\e[32mZsh\e[0m"

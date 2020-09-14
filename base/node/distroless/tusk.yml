@@ -1,0 +1,30 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/base:node.distroless validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/base:node.distroless version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/base:node.distroless .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/base:node.distroless
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: npm version
+          print: "\e[32mNpm\e[0m"
+      - command:
+          exec: npm --version
+          print: "\e[32mNpm\e[0m"

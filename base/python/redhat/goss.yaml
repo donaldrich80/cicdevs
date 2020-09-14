@@ -1,4 +1,3 @@
-
 command:
   git:
     exit-status: 0
@@ -6,6 +5,3 @@ command:
   nano:
     exit-status: 0
     exec: "nano -V"
-  zsh:
-    exit-status: 0
-    exec: "zsh --version"

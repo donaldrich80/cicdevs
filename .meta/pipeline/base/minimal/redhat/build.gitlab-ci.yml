@@ -8,7 +8,7 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/lint/docker.yml
 
-build:base:alpine:
+build:base:minimal.redhat:
   extends:
     - .dockerhub:monoarch:push
 
@@ -23,9 +23,9 @@ stages:
   - notify
 
 variables:
-  DOCKER_BUILD_DIR: base/alpine
+  DOCKER_BUILD_DIR: base/minimal/redhat
   IMAGE_NAME: base
-  IMAGE_TAG: alpine
+  IMAGE_TAG: minimal.redhat
   DOCKERFILE: Dockerfile
-  DOCKER_BUILD_CONTEXT: base/alpine
+  DOCKER_BUILD_CONTEXT: base/minimal/redhat
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG

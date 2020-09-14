@@ -1,5 +1,6 @@
 ---
 name: donaldrich/base:ubuntu
+usage: Image for use as Ubuntu
 
 tasks:
   validate:
@@ -16,5 +17,11 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: bash -version
-          print: "\e[32mBash\e[0m"
+          exec: git version
+          print: "\e[32mGit\e[0m"
+      - command:
+          exec: nano -V
+          print: "\e[32mNano\e[0m"
+      - command:
+          exec: zsh --version
+          print: "\e[32mZsh\e[0m"

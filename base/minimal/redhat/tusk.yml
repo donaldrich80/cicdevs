@@ -1,0 +1,24 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/base:minimal.redhat validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/base:minimal.redhat version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/base:minimal.redhat .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/base:minimal.redhat
+  version:
+    usage: check package versions
+    run:
