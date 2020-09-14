@@ -1,0 +1,24 @@
+description: Image for use as lightweight Opensuse Python base or sandbox
+features:
+  - Opensuse
+  - zsh
+  - nano
+  - git
+image:
+  name: base
+  tag: opensuse.tumbleweed
+  entrypoint: /usr/bin/zsh
+site_label: tumbleweed
+commands:
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  git:
+    prefix: git
+    version: version
+    help: help
+  nano:
+    prefix: nano
+    help: -h
+    version: -V

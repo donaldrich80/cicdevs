@@ -2,7 +2,6 @@
 title: Home
 description: Docker Images for CICD tasks
 path: tree/master/docs
-
 ---
 
 # CICDevs
@@ -41,7 +40,7 @@ This entrypoint can be modified if necessary. and isn't added to containers whic
 A task runner is integrated into these containers which adds unlimited functionality. Go to image description to see an example of how to accomplish this.
 
 !!! info
-    Custom task files can be bound to the containers to override the default tasks.
+Custom task files can be bound to the containers to override the default tasks.
 
 This functionality is implemented using tusk.
 
@@ -56,7 +55,7 @@ This functionality is implemented using goss. Check out the [docs](https://githu
 with the exception of the `base` images. Default users for these images is non-root user with UID = 1000.
 
 !!! info
-    Declarable UID may be in future release.
+Declarable UID may be in future release.
 
 ## Repository Fun Facts
 

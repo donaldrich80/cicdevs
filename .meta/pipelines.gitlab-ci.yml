@@ -32,6 +32,8 @@ include:
   - local: .meta/pipeline/base/python/slim/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/opensuse/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/python/alpine/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/opensuse/leap/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/opensuse/tumbleweed/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/alpine/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/sn1per/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/lynis/pipeline.gitlab-ci.yml

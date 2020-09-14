@@ -1,0 +1,33 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/base:opensuse.tumbleweed validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/base:opensuse.tumbleweed version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/base:opensuse.tumbleweed .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/base:opensuse.tumbleweed
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: git version
+          print: "\e[32mGit\e[0m"
+      - command:
+          exec: nano -V
+          print: "\e[32mNano\e[0m"
+      - command:
+          exec: zsh --version
+          print: "\e[32mZsh\e[0m"
