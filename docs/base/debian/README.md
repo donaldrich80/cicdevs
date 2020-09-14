@@ -2,7 +2,6 @@
 title: Debian
 path: tree/master
 source: base/debian/Dockerfile
-
 ---
 
 # donaldrich/base:debian
@@ -17,13 +16,13 @@ Image for use as Ubuntu
 
 ### Features
 
-* Debian
+- Debian
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 
