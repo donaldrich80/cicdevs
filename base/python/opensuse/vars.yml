@@ -1,0 +1,24 @@
+description: Image for use as lightweight Opensuse Python base or sandbox
+features:
+  - Python
+  - zsh
+  - nano
+  - git
+image:
+  name: base
+  tag: python.opensuse
+  entrypoint: /usr/bin/zsh
+site_label: opensuse
+commands:
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  git:
+    prefix: git
+    version: version
+    help: help
+  nano:
+    prefix: nano
+    help: -h
+    version: -V
