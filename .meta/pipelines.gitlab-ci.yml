@@ -30,6 +30,8 @@ include:
   - local: .meta/pipeline/base/node/redhat/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/node/slim/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/node/alpine/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/debian/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/centos/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/ubuntu/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/minimal/redhat/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/minimal/alpine/pipeline.gitlab-ci.yml

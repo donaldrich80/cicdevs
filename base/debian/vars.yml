@@ -1,20 +1,19 @@
-description: Image for use as Node base or sandbox
+description: Image for use as Ubuntu
 features:
-  - Redhat
-  - Node
+  - Debian
   - zsh
   - nano
   - git
 image:
   name: base
-  tag: redhat
+  tag: debian
   entrypoint: /bin/zsh
 site_label: latest
 commands:
-  # zsh:
-  #   prefix: zsh
-  #   version: --version
-  #   help: --help
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
   git:
     prefix: git
     version: version

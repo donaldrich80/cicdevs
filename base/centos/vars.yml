@@ -1,20 +1,20 @@
-description: Image for use as Node base or sandbox
+description: Image for use as CentOS base or sandbox
 features:
-  - Redhat
+  - CentOS
   - Node
   - zsh
   - nano
   - git
 image:
   name: base
-  tag: redhat
-  entrypoint: /bin/zsh
+  tag: centos
+  entrypoint: /bin/sh
 site_label: latest
 commands:
-  # zsh:
-  #   prefix: zsh
-  #   version: --version
-  #   help: --help
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
   git:
     prefix: git
     version: version
@@ -23,3 +23,4 @@ commands:
     prefix: nano
     help: -h
     version: -V
+
