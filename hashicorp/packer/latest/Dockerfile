@@ -3,23 +3,12 @@ FROM ubuntu AS base
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y \
         && apt-get install -y --no-install-recommends \
-            # qemu-utils \
-            # parted \
-            # psmisc \
             # curl \
-            # unzip \
             zsh \
             sudo \
             nano \
-            # xz-utils \
-            # qemu-user-static \
-            # kpartx \
             ca-certificates \
             git \
-            # dosfstools \
-            # gdisk \
-            # libarchive-tools \
-            # python3 \
             # openssl \
         && rm -rf /tmp/* /usr/share/doc/* \
         /usr/share/locale/* /usr/share/man/* \

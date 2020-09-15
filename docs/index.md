@@ -46,9 +46,11 @@ This functionality is implemented using tusk.
 
 ### Self-Validation
 
-These containers all incorporate goss as a way of testing the finished container as well as a in-build testing of the image during the build. The build will literally fail if the container isn't functioning properly. A very efficient and quick way to build containers.
+One of the biggest challenges of maintaining a continually updated docker image is ensuring that updates don't break things, while not having to invest too much effort in testing.
 
-This functionality is implemented using goss. Check out the [docs](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md).
+The cleanest way I've found to address this challenge is by integrating [goss](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md) testing into the dockerfile. The build will literally fail if any part of the container isn't functioning properly. I've found it to be a very efficient and easy way to maintain working images.
+
+Included in the docs for each image is the command line to see the goss specs which it's validated against.
 
 ### Non-Root User
 
