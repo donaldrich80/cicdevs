@@ -13,9 +13,6 @@ command:
   nano:
     exit-status: 0
     exec: "nano --version"
-  sudo:
-    exit-status: 0
-    exec: "sudo --version"
   terraform:
     exit-status: 0
     exec: "terraform version"

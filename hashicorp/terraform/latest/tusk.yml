@@ -35,9 +35,6 @@ tasks:
           exec: nano --version
           print: "\e[32mNano\e[0m"
       - command:
-          exec: sudo --version
-          print: "\e[32mSudo\e[0m"
-      - command:
           exec: terraform version
           print: "\e[32mTerraform\e[0m"
       - command:
