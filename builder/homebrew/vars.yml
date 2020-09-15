@@ -1,6 +1,6 @@
 description: Builder container with Homebrew
 features:
-  - inherits all capabilities of builder:latest
+  - inherits all functionality of builder:latest
   - layering reduces size of extra features
 site_label: homebrew
 image:
