@@ -1,3 +1,5 @@
+gossfile:
+  goss2.yaml: {}
 command:
   curl:
     exit-status: 0

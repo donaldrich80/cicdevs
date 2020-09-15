@@ -14,6 +14,8 @@ image:
   user: terraform
   entrypoint: /usr/bin/zsh
   env: .env
+gossfile:
+  goss2.yaml: {}
 references:
   terraform:
     description: "Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned."

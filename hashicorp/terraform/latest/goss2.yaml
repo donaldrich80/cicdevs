@@ -1,0 +1,16 @@
+user:
+  terraform:
+    exists: true
+    uid: 1000
+    gid: 1000
+    groups:
+      - terraform
+    home: /home/terraform
+    skip: false
+file:
+  /home/terraform/.terraform.d/plugins:
+    exists: true
+    #    mode: "0644"
+    owner: terraform
+    group: terraform
+    filetype: directory

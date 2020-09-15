@@ -38,6 +38,8 @@ COPY --from=donaldrich/function:jq /usr/local/bin/jq /usr/local/bin/jq
 COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
 COPY ./goss.yaml ./goss.yaml
+COPY ./goss2.yaml ./goss2.yaml
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk-docker.yml ./tusk.yml
 
 USER ${USERNAME}

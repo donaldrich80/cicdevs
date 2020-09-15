@@ -16,7 +16,7 @@ Builder container with Homebrew
 
 ### Features
 
-- inherits all capabilities of builder:latest
+- inherits all functionality of builder:latest
 
 - layering reduces size of extra features
 
