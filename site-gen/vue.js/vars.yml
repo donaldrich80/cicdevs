@@ -1,0 +1,26 @@
+description: Container for generating Vue.js
+features:
+  - Vue.js
+  - Node
+  - Alpine
+image:
+  name: vue.js
+  tag: latest
+  entrypoint: /bin/zsh
+commands:
+  vue:
+    prefix: vue
+    version: --version
+    help: --help
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  node:
+    prefix: npm
+    version: version
+    help: help
+# references:
+#   hugo:
+#     docs: https://gohugo.io
+#     github: gohugoio/hugo
