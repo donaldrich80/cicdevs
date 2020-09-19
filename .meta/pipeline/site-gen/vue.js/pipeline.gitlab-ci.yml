@@ -1,0 +1,20 @@
+vue.js:latest:
+  stage: build
+  trigger:
+    include: .meta/pipeline/site-gen/vue.js/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+        - "site-gen/vue.js/Dockerfile"
+        - "site-gen/vue.js/goss.yaml"
+        - "site-gen/vue.js/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "vue.js" && $TRIGGER_VAR2 == "latest"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "vue.js" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

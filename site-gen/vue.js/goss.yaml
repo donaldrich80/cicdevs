@@ -1,0 +1,11 @@
+
+command:
+  node:
+    exit-status: 0
+    exec: "npm version"
+  vue:
+    exit-status: 0
+    exec: "vue --version"
+  zsh:
+    exit-status: 0
+    exec: "zsh --version"
