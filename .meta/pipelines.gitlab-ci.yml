@@ -9,6 +9,7 @@ include:
   - local: .meta/pipeline/site-gen/hexo/icarus/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/site-gen/hexo/slim/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/site-gen/hexo/butterfly/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/vue.js/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/site-gen/hugo/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/site-gen/hugo/hello-friend/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/site-gen/docz/pipeline.gitlab-ci.yml
