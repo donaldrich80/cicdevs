@@ -22,14 +22,14 @@ COPY --from=donaldrich/runner:zsh /root/.zshrc /home/terraform/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/terraform/.nanorc
 
 
-COPY --from=donaldrich/function:vault /usr/local/bin/vault  /usr/local/bin/vault
+COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
+COPY --from=hashicorp/terraform /bin/terraform /usr/local/bin/terraform
 
 COPY --from=donaldrich/function:terraform /usr/local/bin/gitlab-terraform /usr/local/bin/gitlab-terraform
 COPY --from=donaldrich/function:terraform /usr/local/bin/terrahelp  /usr/local/bin/terrahelp
 COPY --from=donaldrich/function:terraform /usr/local/bin/terraform-docs /usr/local/bin/terraform-docs
 COPY --from=donaldrich/function:terraform /usr/local/bin/tfsec /usr/local/bin/tfsec
 COPY --from=donaldrich/function:terraform /usr/local/bin/tflint /usr/local/bin/tflint
-COPY --from=donaldrich/function:terraform /usr/local/bin/terraform /usr/local/bin/terraform
 COPY --from=donaldrich/function:terraform /usr/local/bin/terragrunt /usr/local/bin/terragrunt
 COPY --from=donaldrich/function:terraform /.terraform.d/plugins/terraform-provider-proxmox /home/${USERNAME}/.terraform.d/plugins/terraform-provider-proxmox
 COPY --from=donaldrich/function:terraform /.terraform.d/plugins/terraform-provisioner-proxmox /home/${USERNAME}/.terraform.d/plugins/terraform-provisioner-proxmox

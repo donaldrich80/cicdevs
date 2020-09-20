@@ -51,7 +51,7 @@ COPY --from=donaldrich/function:packer /usr/local/bin/packer-builder-arm-image /
 COPY --from=donaldrich/function:packer /usr/local/bin/packer-builder-arm /usr/local/bin/packer-builder-arm
 COPY --from=multiarch/qemu-user-static:register /register /register
 COPY --from=multiarch/qemu-user-static:register /qemu-binfmt-conf.sh /qemu-binfmt-conf.sh
-COPY --from=donaldrich/function:packer /usr/local/bin/packer /usr/local/bin/packer
+COPY --from=hashicorp/packer /bin/packer /usr/local/bin/packer
 COPY --from=donaldrich/function:packer /usr/local/bin/packer-provisioner-goss /home/packer/.packer.d/plugins/packer-provisioner-goss
 COPY --from=donaldrich/function:vault /usr/local/bin/vault /usr/local/bin/vault
 
