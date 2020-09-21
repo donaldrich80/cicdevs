@@ -1,0 +1,14 @@
+user:
+  vault:
+    exists: true
+    uid: 1000
+    gid: 1000
+    groups:
+      - vault
+    home: /home/vault
+ #   shell: /bin/bash
+    skip: false
+group:
+  vault:
+    exists: true
+    gid: 1000

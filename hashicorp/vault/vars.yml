@@ -2,6 +2,9 @@ description: An image to read and write secrets from Hashicorp Vault
 features:
   - Vault
   - ZSH
+  - git
+  - nano
+  - curl
 image:
   name: vault
   tag: latest
@@ -12,6 +15,8 @@ references:
     github: hashicorp/vault
     docs: https://www.vaultproject.io
     dockerfile: hashicorp/docker-vault
+gossfile:
+  goss2.yaml: {}
 commands:
   bash:
     prefix: bash
@@ -19,6 +24,7 @@ commands:
   vault:
     prefix: vault
     version: -version
+    help: -h
   # vault-sync:
   #   prefix: vault-sync
   #   version: --version
@@ -26,6 +32,22 @@ commands:
     prefix: hashi-helper
     version: --version
     help: --help
+  nano:
+    prefix: nano
+    version: --version
+    help: --help
+  curl:
+    prefix: curl
+    version: --version
+    help: --help
+  zsh:
+    prefix: zsh
+    version: --version
+    help: --help
+  git:
+    prefix: git
+    version: version
+    help: help
 plugins:
   vault-sync:
     github: cloudwatt/vault-sync
