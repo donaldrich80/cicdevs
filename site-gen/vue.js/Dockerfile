@@ -5,7 +5,7 @@ RUN apk add --no-cache \
 git \
 zsh \
 nano \
-&& npm install -g @vue/cli
+&& npm install -g @vue/cli @vue/cli-service-global
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc
