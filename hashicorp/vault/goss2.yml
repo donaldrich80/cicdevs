@@ -6,7 +6,7 @@ user:
     groups:
       - vault
     home: /home/vault
- #   shell: /bin/bash
+    #   shell: /bin/bash
     skip: false
 group:
   vault:

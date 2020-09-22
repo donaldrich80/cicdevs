@@ -20,8 +20,20 @@ tasks:
           exec: bash -version
           print: "\e[32mBash\e[0m"
       - command:
+          exec: curl --version
+          print: "\e[32mCurl\e[0m"
+      - command:
+          exec: git version
+          print: "\e[32mGit\e[0m"
+      - command:
           exec: hashi-helper --version
           print: "\e[32mHashi-Helper\e[0m"
       - command:
+          exec: nano --version
+          print: "\e[32mNano\e[0m"
+      - command:
           exec: vault -version
           print: "\e[32mVault\e[0m"
+      - command:
+          exec: zsh --version
+          print: "\e[32mZsh\e[0m"

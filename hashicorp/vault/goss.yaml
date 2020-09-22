@@ -1,10 +1,24 @@
+gossfile:
+  goss2.yaml: {}
 command:
   bash:
     exit-status: 0
     exec: "bash -version"
+  curl:
+    exit-status: 0
+    exec: "curl --version"
+  git:
+    exit-status: 0
+    exec: "git version"
   hashi-helper:
     exit-status: 0
     exec: "hashi-helper --version"
+  nano:
+    exit-status: 0
+    exec: "nano --version"
   vault:
     exit-status: 0
     exec: "vault -version"
+  zsh:
+    exit-status: 0
+    exec: "zsh --version"

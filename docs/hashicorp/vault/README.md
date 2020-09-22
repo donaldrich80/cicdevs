@@ -20,6 +20,12 @@ An image to read and write secrets from Hashicorp Vault
 
 - ZSH
 
+- git
+
+- nano
+
+- curl
+
 ## Develop in Docker
 
 ### Command
