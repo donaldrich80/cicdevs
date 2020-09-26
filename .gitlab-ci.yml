@@ -32,7 +32,9 @@ variables:
 
 
 fetch-semantic-version:
-  image: donaldrich/function:semantic-release
+  image:
+    name: donaldrich/function:semantic-release
+    entrypoint: [""]
   stage: fetch-version
   only:
     refs:
@@ -69,7 +71,9 @@ build:
 
 
 release:
-  image: donaldrich/function:semantic-release
+  image:
+    name: donaldrich/function:semantic-release
+    entrypoint: [""]
   stage: release
   only:
     refs:
