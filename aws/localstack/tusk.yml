@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/aws:localstack validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/aws:localstack version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/aws:localstack .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/aws:localstack
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: localstack --version
+          print: "\e[32mLocalstack\e[0m"

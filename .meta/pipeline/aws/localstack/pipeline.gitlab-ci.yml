@@ -1,0 +1,20 @@
+aws:localstack:
+  stage: build
+  trigger:
+    include: .meta/pipeline/aws/localstack/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+        - "aws/localstack/Dockerfile"
+        - "aws/localstack/goss.yaml"
+        - "aws/localstack/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "aws" && $TRIGGER_VAR2 == "localstack"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "aws" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

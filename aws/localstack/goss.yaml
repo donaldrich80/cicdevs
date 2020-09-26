@@ -1,0 +1,5 @@
+
+command:
+  localstack:
+    exit-status: 0
+    exec: "localstack --version"

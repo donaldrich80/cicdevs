@@ -1,3 +1,5 @@
+gossfile:
+  goss2.yaml: {}
 command:
   ansible:
     exit-status: 0

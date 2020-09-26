@@ -1,5 +1,6 @@
 include:
   - local: .meta/pipeline/aws/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/aws/localstack/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/aws/cdk/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/docker/dind/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/docker/latest/pipeline.gitlab-ci.yml

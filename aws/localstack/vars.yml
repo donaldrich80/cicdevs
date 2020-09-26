@@ -1,0 +1,24 @@
+description: Image for interacting with AWS
+features:
+  - AWS command line interface
+image:
+  name: aws
+  tag: localstack
+  user: aws
+  entrypoint: /usr/bin/zsh
+site_label: localstack
+commands:
+  localstack:
+    prefix: localstack
+    help: help
+    version: --version
+    github: localstack/localstack
+# user:
+#   aws:
+#     exists: true
+#     uid: 1000
+#     gid: 1000
+#     groups:
+#       - aws
+#     home: /home/aws
+#     skip: false
