@@ -30,6 +30,9 @@ references:
   terraform-docs:
     description: "Generate documentation from Terraform modules in various output formats"
     github: terraform-docs/terraform-docs
+  terragrunt:
+    github: gruntwork-io/terragrunt
+    docs: https://terragrunt.gruntwork.io
   terrahelp:
     description: "Terraform helper. Terrahelp is as a command line utility written in Go and is aimed at providing supplementary functionality which can sometimes prove useful when working with Terraform."
     github: opencredo/terrahelp
@@ -82,10 +85,13 @@ commands:
     prefix: terraform
     version: version
     help: -h
-  # terragrunt:
-  #   prefix: terragrunt
-  #   help: --help
-  #   version: --version
+  ssh:
+    prefix: ssh
+    version: -V
+  terragrunt:
+    prefix: terragrunt
+    help: --help
+    version: --version
   #   github: gruntwork-io/terragrunt
   #   docs: https://terragrunt.gruntwork.io
   #   download: https://github.com/gruntwork-io/terragrunt/releases/download/v0.23.36/terragrunt_linux_amd64
