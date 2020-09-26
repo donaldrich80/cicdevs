@@ -1,0 +1,13 @@
+file:
+  /root/.zshrc:
+    exists: true
+    #    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+  /root/.nanorc:
+    exists: true
+    #    mode: "0644"
+    owner: root
+    group: root
+    filetype: file

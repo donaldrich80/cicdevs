@@ -1,6 +1,7 @@
 FROM python:slim
 
 ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     software-properties-common \
@@ -30,7 +31,7 @@ RUN pip install virtualenv --no-cache-dir \
 # RUN pip install --no-cache-dir ansigenome
 COPY --from=donaldrich/function:goss      /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
-# COPY --from=donaldrich/function:mitogen /mitogen/ /mitogen/
+
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /root/.nanorc
@@ -39,11 +40,11 @@ ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false
 ENV ANSIBLE_RETRY_FILES_ENABLED false
 ENV ANSIBLE_FORCE_COLOR true
-# ENV ANSIBLE_STRATEGY mitogen_linear
 
 ENV DEBIAN_FRONTEND=dialog
 
 COPY ./goss.yaml ./goss.yaml
+COPY ./goss2.yaml ./goss2.yaml
 RUN goss validate
 
 COPY ./tusk-docker.yml ./tusk.yml

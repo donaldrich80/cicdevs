@@ -9,6 +9,8 @@ image:
   name: ansible
   tag: latest
   entrypoint: /usr/bin/zsh
+gossfile:
+  goss2.yaml: {}
 commands:
   bash:
     prefix: bash
