@@ -35,8 +35,14 @@ tasks:
           exec: nano --version
           print: "\e[32mNano\e[0m"
       - command:
+          exec: ssh -V
+          print: "\e[32mSsh\e[0m"
+      - command:
           exec: terraform version
           print: "\e[32mTerraform\e[0m"
+      - command:
+          exec: terragrunt --version
+          print: "\e[32mTerragrunt\e[0m"
       - command:
           exec: terrahelp --version
           print: "\e[32mTerrahelp\e[0m"

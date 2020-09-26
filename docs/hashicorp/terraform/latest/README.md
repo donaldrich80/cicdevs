@@ -69,6 +69,12 @@ Generate documentation from Terraform modules in various output formats
 
 - [:octicons-mark-github-16: GitHub](https://github.com/terraform-docs/terraform-docs)
 
+### Terragrunt
+
+- [:octicons-book-16: Docs](https://terragrunt.gruntwork.io)
+
+- [:octicons-mark-github-16: GitHub](https://github.com/gruntwork-io/terragrunt)
+
 ### Terrahelp
 
 Terraform helper. Terrahelp is as a command line utility written in Go and is aimed at providing supplementary functionality which can sometimes prove useful when working with Terraform.

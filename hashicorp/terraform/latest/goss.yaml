@@ -13,9 +13,15 @@ command:
   nano:
     exit-status: 0
     exec: "nano --version"
+  ssh:
+    exit-status: 0
+    exec: "ssh -V"
   terraform:
     exit-status: 0
     exec: "terraform version"
+  terragrunt:
+    exit-status: 0
+    exec: "terragrunt --version"
   terrahelp:
     exit-status: 0
     exec: "terrahelp --version"

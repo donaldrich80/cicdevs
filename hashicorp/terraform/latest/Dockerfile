@@ -9,7 +9,7 @@ ENV HOME=/home/$USERNAME
 RUN groupadd --gid $USER_GID $USERNAME
 RUN useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
 
-RUN apt-get update && apt-get -y install --no-install-recommends openssl ca-certificates zsh nano curl git && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get -y install --no-install-recommends openssl ca-certificates zsh nano curl git openssh-client && rm -rf /var/lib/apt/lists/*
 
 # RUN apk add --update bash openssh zsh nano curl git
 # RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME
