@@ -2,6 +2,7 @@
 title: Homebrew
 path: tree/master
 source: builder/homebrew/Dockerfile
+
 ---
 
 # donaldrich/builder:homebrew
@@ -16,9 +17,9 @@ Builder container with Homebrew
 
 ### Features
 
-- inherits all functionality of builder:latest
+* inherits all functionality of builder:latest
 
-- layering reduces size of extra features
+* layering reduces size of extra features
 
 ## Develop in Docker
 
@@ -38,11 +39,11 @@ donaldrich/builder:homebrew
 
 ### Homebrew
 
-- [:octicons-book-16: Docs](https://docs.brew.sh)
+* [:octicons-book-16: Docs](https://docs.brew.sh)
 
-- [:octicons-mark-github-16: GitHub](https://github.com/Homebrew/brew)
+* [:octicons-mark-github-16: GitHub](https://github.com/Homebrew/brew)
 
-- [:octicons-browser-16: Site](https://brew.sh)
+* [:octicons-browser-16: Site](https://brew.sh)
 
 ## Inspect Container
 

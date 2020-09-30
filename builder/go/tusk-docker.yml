@@ -17,5 +17,8 @@ tasks:
     usage: check package versions
     run:
       - command:
+          exec: glide -v
+          print: "\e[32mGlide\e[0m"
+      - command:
           exec: go version
           print: "\e[32mGo\e[0m"

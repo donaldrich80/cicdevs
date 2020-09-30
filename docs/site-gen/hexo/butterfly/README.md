@@ -2,6 +2,7 @@
 title: Butterfly
 path: tree/master
 source: site-gen/hexo/butterfly/Dockerfile
+
 ---
 
 # donaldrich/hexo:butterfly
@@ -16,11 +17,11 @@ Container for generating Hexo
 
 ### Features
 
-- Hexo
+* Hexo
 
-- Node
+* Node
 
-- Butterfly theme installed
+* Butterfly theme installed
 
 ## Develop in Docker
 

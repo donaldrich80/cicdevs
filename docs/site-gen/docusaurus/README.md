@@ -2,6 +2,7 @@
 title: Latest
 path: tree/master
 source: site-gen/docusaurus/Dockerfile
+
 ---
 
 # donaldrich/docusaurus:latest
@@ -16,7 +17,7 @@ Container for generating Docusaurus
 
 ### Features
 
-- Docusaurus
+* Docusaurus
 
 ## Develop in Docker
 
@@ -36,11 +37,11 @@ donaldrich/docusaurus:latest
 
 ### Docusaurus
 
-- [:octicons-book-16: Docs](https://docusaurus.io/docs/en/installation)
+* [:octicons-book-16: Docs](https://docusaurus.io/docs/en/installation)
 
-- [:octicons-mark-github-16: GitHub](https://github.com/facebook/docusaurus)
+* [:octicons-mark-github-16: GitHub](https://github.com/facebook/docusaurus)
 
-- [:octicons-browser-16: Site](https://docusaurus.io/en)
+* [:octicons-browser-16: Site](https://docusaurus.io/en)
 
 ## Inspect Container
 

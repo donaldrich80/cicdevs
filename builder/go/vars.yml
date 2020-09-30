@@ -12,5 +12,11 @@ commands:
     prefix: go
     version: version
     help: help
+  glide:
+    prefix: glide
+    help: -h
+    version: -v
+    github: Masterminds/glide
+    docs: https://glide.sh
 gossfile:
   goss-base.yaml: {}

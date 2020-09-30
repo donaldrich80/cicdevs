@@ -14,12 +14,12 @@ repos:
     rev: master
     hooks:
       - id: prettier
-  - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: master
-    hooks:
-      - id: lint-markdown-markdownlint
-      - id: lint-dockerfile-hadolint
-      - id: gitleaks
-        verbose: true
+  # - repo: https://gitlab.com/donaldrich/function-as-a-container
+  #   rev: master
+  #   hooks:
+  #     - id: lint-markdown-markdownlint
+  #     - id: lint-dockerfile-hadolint
+  #     - id: gitleaks
+  #       verbose: true
   # - repo: local
   #   hooks:
