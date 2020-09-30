@@ -31,4 +31,3 @@ variables:
   DISABLE_SAST: "true"
   DISABLE_GOSS: "true"
   PUSHOVER_ID: $CI_PROJECT_TITLE
-

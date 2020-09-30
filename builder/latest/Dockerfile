@@ -22,6 +22,7 @@ RUN     apt-get update \
             openssh-client \
             musl-dev \
             zip \
+            gnupg \
         && rm -rf /tmp/* /usr/share/doc/* \
             /usr/share/locale/* /usr/share/man/* \
             /var/cache/debconf/* /var/cache/apt/* \

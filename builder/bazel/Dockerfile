@@ -1,4 +1,4 @@
-FROM donaldrich/builder
+FROM donaldrich/builder:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -

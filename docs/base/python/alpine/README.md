@@ -2,7 +2,6 @@
 title: Python-Alpine
 path: tree/master
 source: base/python/alpine/Dockerfile
-
 ---
 
 # donaldrich/base:python-alpine
@@ -17,13 +16,13 @@ Image for use as lightweight Python base or sandbox
 
 ### Features
 
-* python:alpine
+- python:alpine
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 

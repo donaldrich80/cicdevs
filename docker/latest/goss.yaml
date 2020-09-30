@@ -1,4 +1,3 @@
-
 command:
   buildx:
     exit-status: 0

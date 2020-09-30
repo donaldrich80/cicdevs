@@ -2,7 +2,6 @@
 title: Rust
 path: tree/master
 source: builder/rust/Dockerfile
-
 ---
 
 # donaldrich/builder:rust
@@ -17,9 +16,9 @@ Builder container with Rust added
 
 ### Features
 
-* inherits all capabilities of builder:latest
+- inherits all capabilities of builder:latest
 
-* layering reduces size of extra features.
+- layering reduces size of extra features.
 
 ## Develop in Docker
 

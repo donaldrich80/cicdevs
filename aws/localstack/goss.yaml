@@ -1,4 +1,3 @@
-
 command:
   localstack:
     exit-status: 0
