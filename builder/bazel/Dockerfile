@@ -16,7 +16,7 @@ RUN apt-get update && apt-get -y install --no-install-recommends bazel gnupg \
 RUN mv ./goss.yaml ./goss-base.yaml
 
 COPY ./goss.yaml ./goss.yaml
-# RUN goss validate
+RUN goss validate
 
 COPY ./tusk-docker.yml ./tusk.yml
 
