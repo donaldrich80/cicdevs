@@ -10,16 +10,28 @@ repos:
       - id: end-of-file-fixer
       - id: mixed-line-ending
       - id: trailing-whitespace
+
   - repo: https://github.com/prettier/prettier
     rev: master
     hooks:
       - id: prettier
-  # - repo: https://gitlab.com/donaldrich/function-as-a-container
-  #   rev: master
-  #   hooks:
-  #     - id: lint-markdown-markdownlint
-  #     - id: lint-dockerfile-hadolint
-  #     - id: gitleaks
-  #       verbose: true
-  # - repo: local
-  #   hooks:
+
+  - repo: https://gitlab.com/donaldrich/function-as-a-container
+    rev: d2cd61867e4f24e19090b21ad5eb61f4a01730ef
+    hooks:
+      # - id: shell-lint-shellcheck
+      #   stages: [commit]
+      # - id: shell-lint-shfmt
+      #   stages: [commit]
+      #   verbose: true
+      # - id: shell-lint-bashate
+      #   stages: [commit]
+      #   verbose: true
+      - id: secrets-detect-secrets
+        stages: [commit]
+      - id: secrets-gitleaks
+        stages: [commit]
+      - id: yaml-lint-yamllint
+        stages: [commit]
+      - id: docker-lint-hadolint
+        exclude: Dockerfile.tmpl.*
