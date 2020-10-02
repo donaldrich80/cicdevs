@@ -31,11 +31,13 @@ RUN     apt-get update \
         apt-get autoremove --purge && \
         apt-get clean
 
-COPY ./extract.sh /usr/local/bin/extract
-COPY --from=donaldrich/function:goss      /usr/local/bin/goss /usr/local/bin/goss
-COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
-COPY --from=donaldrich/function:upx      /usr/local/bin/upx /usr/local/bin/upx
-COPY --from=donaldrich/function:ginstall.sh /usr/local/bin/ginstall.sh /usr/local/bin/ginstall.sh
+
+COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
+COPY --from=donaldrich/function:task  /usr/local/bin/tusk /usr/local/bin/tusk
+COPY --from=donaldrich/function:files /usr/local/bin/upx /usr/local/bin/upx
+COPY --from=donaldrich/function:files /usr/local/bin/extract /usr/local/bin/extract
+COPY --from=donaldrich/function:files /usr/local/bin/gget /usr/local/bin/gget
+COPY --from=donaldrich/function:files /usr/local/bin/ginstall.sh /usr/local/bin/ginstall.sh
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc

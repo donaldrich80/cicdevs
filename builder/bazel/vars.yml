@@ -17,5 +17,6 @@ references:
   bazel:
     docs: https://docs.bazel.build
     github: bazelbuild/bazel
+    link: https://jin.github.io/awesome-bazel
 gossfile:
   goss-base.yaml: {}

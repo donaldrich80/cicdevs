@@ -42,6 +42,8 @@ donaldrich/builder:bazel
 
 - [:octicons-mark-github-16: GitHub](https://github.com/bazelbuild/bazel)
 
+- [\$name](https://jin.github.io/awesome-bazel)
+
 ## Inspect Container
 
 ???+ info "Container Check"
