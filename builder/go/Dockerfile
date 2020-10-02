@@ -9,6 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV GOPATH=/root/go
 ENV GOBIN=$GOPATH/bin
 ENV PATH=$PATH:/usr/local/go/bin:$GOBIN
+# GOROOT
 
 RUN mkdir -p /root/go
 RUN mkdir -p /root/go/bin
