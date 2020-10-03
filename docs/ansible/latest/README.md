@@ -2,7 +2,9 @@
 title: Ansible
 path: tree/master
 source: ansible/latest/Dockerfile
+
 ---
+
 
 # donaldrich/ansible
 
@@ -16,15 +18,15 @@ Image for developing and executing Ansible playbooks
 
 ### Features
 
-- Ansible
+* Ansible
 
-- Ansible-lint
+* Ansible-lint
 
-- Develop and test roles with Molecule
+* Develop and test roles with Molecule
 
-- Retrieve Hashicorp Vault secrets in playbooks
+* Retrieve Hashicorp Vault secrets in playbooks
 
-- SSH capable
+* SSH capable
 
 ## Develop in Docker
 
@@ -44,39 +46,38 @@ donaldrich/ansible:latest
 
 ### Ansible
 
-- [:octicons-book-16: Docs](https://docs.ansible.com/ansible/latest/index.html)
+* [:octicons-book-16: Docs](https://docs.ansible.com/ansible/latest/index.html)
 
 ### Ansible-Lint
 
 Best practices checker for Ansible
 
-- [:octicons-book-16: Docs](https://ansible-lint.readthedocs.io)
+* [:octicons-book-16: Docs](https://ansible-lint.readthedocs.io)
 
-- [:octicons-mark-github-16: GitHub](https://github.com/ansible/ansible-lint)
+* [:octicons-mark-github-16: GitHub](https://github.com/ansible/ansible-lint)
 
 ### Mitogen
 
-- [:octicons-book-16: Docs](https://mitogen.networkgenomics.com/ansible_detailed.html)
+* [:octicons-book-16: Docs](https://mitogen.networkgenomics.com/ansible_detailed.html)
 
-- [:octicons-mark-github-16: GitHub](https://github.com/dw/mitogen)
+* [:octicons-mark-github-16: GitHub](https://github.com/dw/mitogen)
 
 ### Molecule
 
 Molecule aids in the development and testing of Ansible roles
 
-- [:octicons-book-16: Docs](https://molecule.readthedocs.io)
+* [:octicons-book-16: Docs](https://molecule.readthedocs.io)
 
-- [:octicons-mark-github-16: GitHub](https://github.com/ansible-community/molecule)
-
+* [:octicons-mark-github-16: GitHub](https://github.com/ansible-community/molecule)
 ## Links
 
-- [:octicons-book-16: writing-ansible-playbooks-for-new-terraform-servers](https://victorops.com/blog/writing-ansible-playbooks-for-new-terraform-servers)
+* [:octicons-book-16: writing-ansible-playbooks-for-new-terraform-servers](https://victorops.com/blog/writing-ansible-playbooks-for-new-terraform-servers)
 
 ## Plugins
 
 ### Ansible-Modules-Hashivault
 
-- [:octicons-mark-github-16: ansible-modules-hashivault](https://github.com/ansible-modules-hashivault)
+* [:octicons-mark-github-16: ansible-modules-hashivault](https://github.com/ansible-modules-hashivault)
 
 ## Inspect Container
 

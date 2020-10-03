@@ -1,3 +1,4 @@
+
 command:
   bash:
     exit-status: 0
@@ -5,6 +6,12 @@ command:
   curl:
     exit-status: 0
     exec: "curl --version"
+  fetch:
+    exit-status: 0
+    exec: "fetch --version"
+  gget:
+    exit-status: 0
+    exec: "gget --version"
   ginstall.sh:
     exit-status: 0
     exec: "ginstall.sh --version"
@@ -17,6 +24,9 @@ command:
   less:
     exit-status: 0
     exec: "less -V"
+  magicpak:
+    exit-status: 0
+    exec: "magicpak --version"
   make:
     exit-status: 0
     exec: "make --version"

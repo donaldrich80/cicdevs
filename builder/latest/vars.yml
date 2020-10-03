@@ -67,6 +67,24 @@ commands:
     prefix: openssl
     version: version
     help: help
+  gget:
+    prefix: gget
+    help: --help
+    version: --version
+    github: dpb587/gget
+    docs: https://gget.io/
+  magicpak:
+    prefix: magicpak
+    help: --help
+    version: --version
+    github: coord-e/magicpak
+    download: https://github.com/coord-e/magicpak/releases/latest/download/magicpak-x86_64-unknown-linux-musl
+  fetch:
+    prefix: fetch
+    help: --help
+    version: --version
+    github: gruntwork-io/fetch
+    download: https://github.com/gruntwork-io/fetch/releases/download/v0.3.10/fetch_linux_amd64
 references:
   ginstall.sh:
     github: whalehub/ginstall.sh

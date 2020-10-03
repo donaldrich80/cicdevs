@@ -31,10 +31,13 @@ RUN     apt-get update \
         apt-get clean
 
 COPY ./extract.sh /usr/local/bin/extract
-COPY --from=donaldrich/function:goss      /usr/local/bin/goss /usr/local/bin/goss
-COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
-COPY --from=donaldrich/function:upx      /usr/local/bin/upx /usr/local/bin/upx
-COPY --from=donaldrich/function:ginstall.sh /usr/local/bin/ginstall.sh /usr/local/bin/ginstall.sh
+COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
+COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
+COPY --from=donaldrich/function:files /usr/local/bin/upx /usr/local/bin/upx
+COPY --from=donaldrich/function:files /usr/local/bin/gget /usr/local/bin/gget
+COPY --from=donaldrich/function:files /usr/local/bin/ginstall.sh /usr/local/bin/ginstall.sh
+COPY --from=donaldrich/function:files /usr/local/bin/magicpak /usr/local/bin/magicpak
+COPY --from=donaldrich/function:files /usr/local/bin/fetch  /usr/local/bin/fetch
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc
@@ -44,13 +47,6 @@ COPY --from=donaldrich/runner:zsh /zsh/.nanorc /root/.nanorc
 
 RUN ginstall.sh --first-run
 # RUN ginstall.sh --self-update
-
-# ENV RUSTUP_HOME=/usr/local/rustup \
-#     CARGO_HOME=/usr/local/cargo \
-#     PATH=/usr/local/cargo/bin:$PATH
-# ENV PATH="/root/.cargo/bin:${PATH}"
-
-# RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 

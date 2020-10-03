@@ -2,6 +2,7 @@
 title: Opensuse.Leap
 path: tree/master
 source: base/opensuse/leap/Dockerfile
+
 ---
 
 # donaldrich/base:opensuse.leap
@@ -16,13 +17,13 @@ Image for use as lightweight Opensuse Leap base or sandbox
 
 ### Features
 
-- Opensuse Leap
+* Opensuse Leap
 
-- zsh
+* zsh
 
-- nano
+* nano
 
-- git
+* git
 
 ## Develop in Docker
 

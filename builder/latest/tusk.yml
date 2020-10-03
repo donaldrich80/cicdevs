@@ -29,6 +29,12 @@ tasks:
           exec: curl --version
           print: "\e[32mCurl\e[0m"
       - command:
+          exec: fetch --version
+          print: "\e[32mFetch\e[0m"
+      - command:
+          exec: gget --version
+          print: "\e[32mGget\e[0m"
+      - command:
           exec: ginstall.sh --version
           print: "\e[32mGinstall.Sh\e[0m"
       - command:
@@ -40,6 +46,9 @@ tasks:
       - command:
           exec: less -V
           print: "\e[32mLess\e[0m"
+      - command:
+          exec: magicpak --version
+          print: "\e[32mMagicpak\e[0m"
       - command:
           exec: make --version
           print: "\e[32mMake\e[0m"
