@@ -2,6 +2,9 @@
 gossfile:
   goss-base.yaml: {}
 command:
+  glide:
+    exit-status: 0
+    exec: "glide -v"
   go:
     exit-status: 0
     exec: "go version"

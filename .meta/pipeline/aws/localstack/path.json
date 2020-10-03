@@ -1,1 +1,1 @@
-{ path : aws/localstack }
+{ "path": aws / localstack }
