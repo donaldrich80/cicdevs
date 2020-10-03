@@ -1,0 +1,6 @@
+### [1.1.2](https://gitlab.com/donaldrich/cicdevs/compare/v1.1.1...v1.1.2) (2020-10-03)
+
+
+### Bug Fixes
+
+* **ci:** removed auto-push ([f68fa8f](https://gitlab.com/donaldrich/cicdevs/commit/f68fa8f06781f8ebc868848015604347946522e6))
