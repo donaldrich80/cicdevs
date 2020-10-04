@@ -2,7 +2,6 @@
 title: Node.Alpine
 path: tree/master
 source: base/node/alpine/Dockerfile
-
 ---
 
 # donaldrich/base:node.alpine
@@ -17,15 +16,15 @@ Image for use as Node base or sandbox
 
 ### Features
 
-* Node
+- Node
 
-* alpine
+- alpine
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 

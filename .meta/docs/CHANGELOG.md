@@ -1,9 +1,8 @@
 ### [1.1.1](https://gitlab.com/donaldrich/cicdevs/compare/v1.1.0...v1.1.1) (2020-10-03)
 
-
 ### Bug Fixes
 
-* builder:go ([ba9d003](https://gitlab.com/donaldrich/cicdevs/commit/ba9d003175946ffb94878c8adc5b664d39c1ddf4))
+- builder:go ([ba9d003](https://gitlab.com/donaldrich/cicdevs/commit/ba9d003175946ffb94878c8adc5b664d39c1ddf4))
 
 ## [1.1.0](https://gitlab.com/donaldrich/cicdevs/compare/v1.0.1...v1.1.0) (2020-10-01)
 

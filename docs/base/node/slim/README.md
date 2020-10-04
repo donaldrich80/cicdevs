@@ -2,7 +2,6 @@
 title: Node.Slim
 path: tree/master
 source: base/node/slim/Dockerfile
-
 ---
 
 # donaldrich/base:node.slim
@@ -17,15 +16,15 @@ Image for use as Node base or sandbox
 
 ### Features
 
-* Node
+- Node
 
-* slim
+- slim
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 

@@ -2,7 +2,6 @@
 title: Python-Slim
 path: tree/master
 source: base/python/slim/Dockerfile
-
 ---
 
 # donaldrich/base:python-slim
@@ -17,13 +16,13 @@ Image for use as lightweight Python base or sandbox
 
 ### Features
 
-* python:slim
+- python:slim
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 

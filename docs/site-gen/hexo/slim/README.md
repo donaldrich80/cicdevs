@@ -2,7 +2,6 @@
 title: Slim
 path: tree/master
 source: site-gen/hexo/slim/Dockerfile
-
 ---
 
 # donaldrich/hexo:slim
@@ -17,11 +16,11 @@ Container for generating Hexo
 
 ### Features
 
-* Hexo
+- Hexo
 
-* Node
+- Node
 
-* Slim
+- Slim
 
 ## Develop in Docker
 
@@ -41,14 +40,15 @@ donaldrich/hexo:slim
 
 ### Hexo
 
-* [:octicons-book-16: Docs](https://hexo.io/docs)
+- [:octicons-book-16: Docs](https://hexo.io/docs)
 
-* [:octicons-mark-github-16: GitHub](https://github.com/hexojs/hexo)
+- [:octicons-mark-github-16: GitHub](https://github.com/hexojs/hexo)
 
-* [:octicons-browser-16: Site](https://hexo.io)
+- [:octicons-browser-16: Site](https://hexo.io)
+
 ## Links
 
-* [:octicons-book-16: awesome-hexo-themes](https://awesomeopensource.com/projects/hexo-theme)
+- [:octicons-book-16: awesome-hexo-themes](https://awesomeopensource.com/projects/hexo-theme)
 
 ## Inspect Container
 

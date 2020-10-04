@@ -2,7 +2,6 @@
 title: Python.Opensuse
 path: tree/master
 source: base/python/opensuse/Dockerfile
-
 ---
 
 # donaldrich/base:python.opensuse
@@ -17,13 +16,13 @@ Image for use as lightweight Opensuse Python base or sandbox
 
 ### Features
 
-* Python
+- Python
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 

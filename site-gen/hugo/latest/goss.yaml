@@ -1,4 +1,3 @@
-
 command:
   hugo:
     exit-status: 0

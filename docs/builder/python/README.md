@@ -2,7 +2,6 @@
 title: Python
 path: tree/master
 source: builder/python/Dockerfile
-
 ---
 
 # donaldrich/builder:python
@@ -17,7 +16,7 @@ Builder image with Python and pip.
 
 ### Features
 
-* Python
+- Python
 
 ## Develop in Docker
 

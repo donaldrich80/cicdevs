@@ -2,9 +2,7 @@
 title: Runner
 path: tree/master
 source: misc/runner/Dockerfile
-
 ---
-
 
 # donaldrich/runner
 
@@ -18,15 +16,15 @@ A simple, lightweight Alpine image for performing simple CI tasks
 
 ### Features
 
-* git
+- git
 
-* curl
+- curl
 
-* Hashicorp Vault
+- Hashicorp Vault
 
-* ssh
+- ssh
 
-* rsync
+- rsync
 
 ## Develop in Docker
 
