@@ -1,4 +1,4 @@
-FROM pdonaldrich/builder:latest
+FROM donaldrich/builder:latest
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
