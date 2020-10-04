@@ -1,1 +1,1 @@
-{ "path": hashicorp / packer / arm }
+{ path : hashicorp/packer/arm }

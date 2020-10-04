@@ -2,7 +2,9 @@
 title: Docz
 path: tree/master
 source: site-gen/docz/Dockerfile
+
 ---
+
 
 # donaldrich/docz
 
@@ -32,11 +34,11 @@ donaldrich/docz:latest
 
 ### Docz
 
-- [:octicons-book-16: Docs](https://www.docz.site/docs/getting-started)
+* [:octicons-book-16: Docs](https://www.docz.site/docs/getting-started)
 
-- [:octicons-mark-github-16: GitHub](https://github.com/hexojs/hexo)
+* [:octicons-mark-github-16: GitHub](https://github.com/hexojs/hexo)
 
-- [:octicons-browser-16: Site](https://www.docz.site/)
+* [:octicons-browser-16: Site](https://www.docz.site/)
 
 ## Inspect Container
 

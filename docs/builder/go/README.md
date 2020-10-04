@@ -2,6 +2,7 @@
 title: Go
 path: tree/master
 source: builder/go/Dockerfile
+
 ---
 
 # donaldrich/builder:go
@@ -16,9 +17,9 @@ Builder container with goland
 
 ### Features
 
-- inherits all capabilities of builder:latest
+* inherits all capabilities of builder:latest
 
-- layering reduces size of extra features
+* layering reduces size of extra features
 
 ## Develop in Docker
 

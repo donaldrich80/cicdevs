@@ -2,6 +2,7 @@
 title: Localstack
 path: tree/master
 source: aws/localstack/Dockerfile
+
 ---
 
 # donaldrich/aws:localstack
@@ -16,7 +17,7 @@ Image for interacting with AWS
 
 ### Features
 
-- AWS command line interface
+* AWS command line interface
 
 ## Develop in Docker
 

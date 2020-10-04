@@ -2,6 +2,7 @@
 title: Latest
 path: tree/master
 source: docker/latest/Dockerfile
+
 ---
 
 # donaldrich/docker:latest
@@ -16,19 +17,19 @@ Image primarily intentended for developing Dockerfiles, building images, and run
 
 ### Features
 
-- BuildX
+* BuildX
 
-- Docker-compose
+* Docker-compose
 
-- Hashicorp Vault
+* Hashicorp Vault
 
-- Notary
+* Notary
 
-- Dockerfile linting
+* Dockerfile linting
 
-- Gomplate templating
+* Gomplate templating
 
-- CURL, jq, git, SSH
+* CURL, jq, git, SSH
 
 ## Develop in Docker
 
@@ -52,49 +53,48 @@ donaldrich/docker:latest
 
 Docker CLI plugin for extended build capabilities with BuildKit
 
-- [:octicons-book-16: Docs](https://docs.docker.com/buildx)
+* [:octicons-book-16: Docs](https://docs.docker.com/buildx)
 
-- [:octicons-mark-github-16: GitHub](https://github.com/docker/buildx)
+* [:octicons-mark-github-16: GitHub](https://github.com/docker/buildx)
 
 ### Dive
 
 A tool for exploring each layer in a docker image
 
-- [:octicons-mark-github-16: GitHub](https://github.com/wagoodman/dive)
+* [:octicons-mark-github-16: GitHub](https://github.com/wagoodman/dive)
 
 ### Docker-Compose
 
 Define and run multi-container applications with Docker
 
-- [:octicons-book-16: Docs](https://docs.docker.com/compose)
+* [:octicons-book-16: Docs](https://docs.docker.com/compose)
 
-- [:octicons-mark-github-16: GitHub](https://github.com/docker/compose)
+* [:octicons-mark-github-16: GitHub](https://github.com/docker/compose)
 
 ### Docker-Slim
 
 Minify and Secure Docker containers
 
-- [:octicons-mark-github-16: GitHub](https://github.com/docker-slim/docker-slim)
+* [:octicons-mark-github-16: GitHub](https://github.com/docker-slim/docker-slim)
 
 ### Dockfmt
 
-- [:octicons-mark-github-16: GitHub](https://github.com/jessfraz/dockfmt)
+* [:octicons-mark-github-16: GitHub](https://github.com/jessfraz/dockfmt)
 
 ### Hadolint
 
 Dockerfile linter, validate inline bash, written in Haskell
 
-- [:octicons-mark-github-16: GitHub](https://github.com/hadolint/hadolint)
+* [:octicons-mark-github-16: GitHub](https://github.com/hadolint/hadolint)
 
 ### Notary
 
-- [:octicons-book-16: Docs](https://docs.docker.com/notary)
+* [:octicons-book-16: Docs](https://docs.docker.com/notary)
 
-- [:octicons-mark-github-16: GitHub](https://github.com/theupdateframework/notary)
-
+* [:octicons-mark-github-16: GitHub](https://github.com/theupdateframework/notary)
 ## Links
 
-- [:octicons-book-16: awesome-docker](https://awesome-docker.netlify.app)
+* [:octicons-book-16: awesome-docker](https://awesome-docker.netlify.app)
 
 ## Inspect Container
 
