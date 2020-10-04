@@ -1,6 +1,6 @@
 FROM ubuntu AS builder
 
-RUN apt-get update -y && apt-get -y --no-install-recommends install locales libcap2 zsh zsh-common wget nano unzip tree bat less \
+RUN apt-get update -y && apt-get -y --no-install-recommends install locales libcap2 zsh zsh-common wget nano unzip curl tree bat less ca-certificates \
     && rm -rf /tmp/* /usr/share/doc/* \
         /usr/share/locale/* /usr/share/man/* \
         /var/cache/debconf/* /var/cache/apt/* \
