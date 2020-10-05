@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ARG USERNAME=vault
 
 RUN addgroup $USERNAME && \
-adduser -S -G $USERNAME $USERNAME
+adduser -S -u 1000 -G $USERNAME $USERNAME
 
 RUN apk add --no-cache \
             bash \
