@@ -24,5 +24,3 @@ USER builder
 RUN goss validate
 
 ENV DEBIAN_FRONTEND dialog
-
-
