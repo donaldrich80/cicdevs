@@ -1,5 +1,7 @@
 FROM golang AS golang-builder
 
+USER root
+
 FROM donaldrich/builder:go AS glide-builder
 RUN curl https://glide.sh/get | sh
 
@@ -19,8 +21,9 @@ COPY --from=glide-builder /root/go/bin/glide /root/go/bin/glide
 
 RUN mv ./goss.yaml ./goss-base.yaml
 COPY ./goss.yaml ./goss.yaml
-RUN goss validate
-
 COPY ./tusk-docker.yml ./tusk.yml
+
+USER builder
+RUN goss validate
 
 # ENTRYPOINT ["tusk"]

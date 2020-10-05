@@ -1,5 +1,8 @@
 FROM    donaldrich/builder:latest
 ENV DEBIAN_FRONTEND noninteractive
+
+USER root
+
 RUN     apt-get update \
         && apt-get -y install --no-install-recommends \
             ruby-full \
@@ -14,6 +17,8 @@ RUN     apt-get update \
 
 RUN mv ./goss.yaml ./goss-base.yaml
 COPY ./goss.yaml ./goss.yaml
-RUN goss validate
-
 COPY ./tusk-docker.yml ./tusk.yml
+
+USER builder
+
+RUN goss validate
