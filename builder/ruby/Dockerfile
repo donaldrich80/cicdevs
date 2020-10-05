@@ -1,7 +1,7 @@
 FROM    donaldrich/builder:latest
 ENV DEBIAN_FRONTEND noninteractive
 
-USER root
+# USER root
 
 RUN     apt-get update \
         && apt-get -y install --no-install-recommends \
@@ -19,6 +19,6 @@ RUN mv ./goss.yaml ./goss-base.yaml
 COPY ./goss.yaml ./goss.yaml
 COPY ./tusk-docker.yml ./tusk.yml
 
-USER builder
+# USER builder
 
 RUN goss validate

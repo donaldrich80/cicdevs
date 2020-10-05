@@ -2,7 +2,7 @@ FROM homebrew/brew AS brew-builder
 
 FROM donaldrich/builder
 
-USER root
+# USER root
 
 ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
 
@@ -13,7 +13,7 @@ RUN mv ./goss.yaml ./goss-base.yaml
 COPY ./goss.yaml ./goss.yaml
 COPY ./tusk-docker.yml ./tusk.yml
 
-USER builder
+# USER builder
 RUN goss validate
 
 # ENTRYPOINT ["tusk"]

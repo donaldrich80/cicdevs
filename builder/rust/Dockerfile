@@ -1,6 +1,6 @@
 FROM donaldrich/builder:latest
 
-USER root
+# USER root
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
@@ -13,7 +13,7 @@ RUN mv ./goss.yaml ./goss-base.yaml
 COPY ./goss.yaml ./goss.yaml
 COPY ./tusk-docker.yml ./tusk.yml
 
-USER builder
+# USER builder
 
 RUN goss validate
 
