@@ -40,9 +40,23 @@ donaldrich/builder:latest
 
 ## References
 
+### Fetch
+
+- [:octicons-mark-github-16: GitHub](https://github.com/gruntwork-io/fetch)
+
+### Gget
+
+- [:octicons-book-16: Docs](https://gget.io/)
+
+- [:octicons-mark-github-16: GitHub](https://github.com/dpb587/gget)
+
 ### Ginstall.Sh
 
 - [:octicons-mark-github-16: GitHub](https://github.com/whalehub/ginstall.sh)
+
+### Magicpak
+
+- [:octicons-mark-github-16: GitHub](https://github.com/coord-e/magicpak)
 
 ## Inspect Container
 
