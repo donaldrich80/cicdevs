@@ -2,7 +2,6 @@
 title: Python
 path: tree/master
 source: base/python/latest/Dockerfile
-
 ---
 
 # donaldrich/base:python
@@ -17,13 +16,13 @@ Image for use as lightweight Python base or sandbox
 
 ### Features
 
-* Python
+- Python
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 

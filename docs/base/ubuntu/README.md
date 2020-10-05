@@ -2,7 +2,6 @@
 title: Ubuntu
 path: tree/master
 source: base/ubuntu/Dockerfile
-
 ---
 
 # donaldrich/base:ubuntu
@@ -17,13 +16,13 @@ Image for use as Ubuntu
 
 ### Features
 
-* Ubuntu
+- Ubuntu
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 

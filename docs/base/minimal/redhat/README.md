@@ -2,7 +2,6 @@
 title: Minimal.Redhat
 path: tree/master
 source: base/minimal/redhat/Dockerfile
-
 ---
 
 # donaldrich/base:minimal.redhat
@@ -17,15 +16,15 @@ Image for use as Node base or sandbox
 
 ### Features
 
-* Redhat
+- Redhat
 
-* Node
+- Node
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 

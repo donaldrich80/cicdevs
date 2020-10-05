@@ -6,10 +6,9 @@ user:
     groups:
       - builder
     home: /home/builder
-#    shell: /bin/bash
+    #    shell: /bin/bash
     skip: false
 group:
   builder:
     exists: true
     gid: 1000
-    

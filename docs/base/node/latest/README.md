@@ -2,7 +2,6 @@
 title: Node
 path: tree/master
 source: base/node/latest/Dockerfile
-
 ---
 
 # donaldrich/base:node
@@ -17,13 +16,13 @@ Image for use as Node base or sandbox
 
 ### Features
 
-* Node
+- Node
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 

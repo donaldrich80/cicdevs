@@ -2,9 +2,7 @@
 title: Vue.Js
 path: tree/master
 source: site-gen/vue.js/Dockerfile
-
 ---
-
 
 # donaldrich/vue.js
 
@@ -18,11 +16,11 @@ Container for generating Vue.js
 
 ### Features
 
-* Vue.js
+- Vue.js
 
-* Node
+- Node
 
-* Alpine
+- Alpine
 
 ## Develop in Docker
 

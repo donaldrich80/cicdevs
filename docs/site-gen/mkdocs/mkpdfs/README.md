@@ -2,7 +2,6 @@
 title: Mkpdfs
 path: tree/master
 source: site-gen/mkdocs/mkpdfs/Dockerfile
-
 ---
 
 # donaldrich/mkdocs:mkpdfs
@@ -17,9 +16,9 @@ Container for generating a pdf from site
 
 ### Features
 
-* mkpdfs
+- mkpdfs
 
-* mkdocs
+- mkdocs
 
 ## Develop in Docker
 
@@ -39,15 +38,15 @@ donaldrich/mkdocs:mkpdfs
 
 ### Mkdocs
 
-* [:octicons-book-16: Docs](https://www.mkdocs.org)
+- [:octicons-book-16: Docs](https://www.mkdocs.org)
 
-* [:octicons-mark-github-16: GitHub](https://github.com/mkdocs/mkdocs)
+- [:octicons-mark-github-16: GitHub](https://github.com/mkdocs/mkdocs)
 
 ### Mkpdfs
 
-* [:octicons-book-16: Docs](https://comwes.github.io/mkpdfs-mkdocs-plugin)
+- [:octicons-book-16: Docs](https://comwes.github.io/mkpdfs-mkdocs-plugin)
 
-* [:octicons-mark-github-16: GitHub](https://github.com/comwes/mkpdfs-mkdocs-plugin)
+- [:octicons-mark-github-16: GitHub](https://github.com/comwes/mkpdfs-mkdocs-plugin)
 
 ## Inspect Container
 

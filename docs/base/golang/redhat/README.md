@@ -2,7 +2,6 @@
 title: Golang.Redhat
 path: tree/master
 source: base/golang/redhat/Dockerfile
-
 ---
 
 # donaldrich/base:golang.redhat
@@ -17,15 +16,15 @@ Redhat UBI image for use as golang base or sandbox
 
 ### Features
 
-* golang
+- golang
 
-* alpine
+- alpine
 
-* zsh
+- zsh
 
-* nano
+- nano
 
-* git
+- git
 
 ## Develop in Docker
 

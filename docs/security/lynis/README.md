@@ -2,9 +2,7 @@
 title: Lynis
 path: tree/master
 source: security/lynis/Dockerfile
-
 ---
-
 
 # donaldrich/lynis
 
@@ -28,9 +26,9 @@ donaldrich/lynis:latest
 
 ### Lynis
 
-* [:octicons-book-16: Docs](https://cisofy.com/lynis)
+- [:octicons-book-16: Docs](https://cisofy.com/lynis)
 
-* [:octicons-mark-github-16: GitHub](https://github.com/CISOfy/lynis)
+- [:octicons-mark-github-16: GitHub](https://github.com/CISOfy/lynis)
 
 ## Inspect Container
 
