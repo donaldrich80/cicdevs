@@ -1,5 +1,13 @@
 FROM    ubuntu:bionic
 ENV DEBIAN_FRONTEND noninteractive
+
+ARG USERNAME=builder
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+ENV HOME=/home/$USERNAME
+RUN groupadd --gid $USER_GID $USERNAME
+RUN useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
+
 RUN     apt-get update \
         && apt-get -y install --no-install-recommends \
             dialog \
@@ -51,11 +59,15 @@ RUN ginstall.sh --first-run
 
 RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 
-ENV DEBIAN_FRONTEND dialog
-
 COPY ./goss.yaml ./goss.yaml
-RUN goss validate
-
+COPY ./goss2.yaml ./goss2.yaml
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk-docker.yml ./tusk.yml
+
+USER ${USERNAME}
+
+ENV DEBIAN_FRONTEND=dialog
+
+RUN goss validate
 
 # ENTRYPOINT ["tusk"]

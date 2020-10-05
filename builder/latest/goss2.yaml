@@ -1,0 +1,15 @@
+user:
+  builder:
+    exists: true
+    uid: 1000
+    gid: 1000
+    groups:
+      - builder
+    home: /home/builder
+#    shell: /bin/bash
+    skip: false
+group:
+  builder:
+    exists: true
+    gid: 1000
+    

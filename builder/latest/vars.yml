@@ -9,6 +9,8 @@ image:
   tag: latest
   entrypoint: /usr/bin/zsh
 site_label: latest
+gossfile:
+  goss2.yaml: {}
 commands:
   bash:
     prefix: bash
