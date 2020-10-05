@@ -2,6 +2,7 @@
 title: Node.Redhat
 path: tree/master
 source: base/node/redhat/Dockerfile
+
 ---
 
 # donaldrich/base:node.redhat
@@ -16,15 +17,15 @@ Image for use as Node base or sandbox
 
 ### Features
 
-- Redhat
+* Redhat
 
-- Node
+* Node
 
-- zsh
+* zsh
 
-- nano
+* nano
 
-- git
+* git
 
 ## Develop in Docker
 

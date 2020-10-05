@@ -1,1 +1,1 @@
-{ "path": builder / python }
+{ path : builder/python }

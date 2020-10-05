@@ -2,6 +2,7 @@
 title: Python.Redhat
 path: tree/master
 source: base/python/redhat/Dockerfile
+
 ---
 
 # donaldrich/base:python.redhat
@@ -16,13 +17,13 @@ Image for use as lightweight Python base or sandbox
 
 ### Features
 
-- python:redhat
+* python:redhat
 
-- zsh
+* zsh
 
-- nano
+* nano
 
-- git
+* git
 
 ## Develop in Docker
 

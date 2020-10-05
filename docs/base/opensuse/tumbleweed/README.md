@@ -2,6 +2,7 @@
 title: Opensuse.Tumbleweed
 path: tree/master
 source: base/opensuse/tumbleweed/Dockerfile
+
 ---
 
 # donaldrich/base:opensuse.tumbleweed
@@ -16,13 +17,13 @@ Image for use as lightweight Opensuse Python base or sandbox
 
 ### Features
 
-- Opensuse
+* Opensuse
 
-- zsh
+* zsh
 
-- nano
+* nano
 
-- git
+* git
 
 ## Develop in Docker
 

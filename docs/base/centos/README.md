@@ -2,6 +2,7 @@
 title: Centos
 path: tree/master
 source: base/centos/Dockerfile
+
 ---
 
 # donaldrich/base:centos
@@ -16,13 +17,13 @@ Image for use as CentOS base or sandbox
 
 ### Features
 
-- CentOS
+* CentOS
 
-- zsh
+* zsh
 
-- nano
+* nano
 
-- git
+* git
 
 ## Develop in Docker
 
