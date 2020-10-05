@@ -2,10 +2,10 @@ FROM node:alpine
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ARG USERNAME=semver
+# ARG USERNAME=semver
 
-RUN addgroup $USERNAME && \
-  adduser -S -u 1000 -G $USERNAME $USERNAME
+# RUN addgroup $USERNAME && \
+#   adduser -S -u 1000 -G $USERNAME $USERNAME
 
 RUN apk --update --no-cache add \
 ca-certificates \
@@ -37,15 +37,15 @@ RUN npm install -g --save-dev \
   # standard-version
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh /root/.zshrc /home/semver/.zshrc
-COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/semver/.nanorc
+COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc
+COPY --from=donaldrich/runner:zsh /zsh/.nanorc /root/.nanorc
 COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
 
 COPY ./tusk-docker.yml ./tusk.yml
 COPY ./goss.yaml ./goss.yaml
 
-USER ${USERNAME}
+# USER ${USERNAME}
 
 RUN goss validate
 
