@@ -1,0 +1,5 @@
+
+command:
+  semantic-release:
+    exit-status: 0
+    exec: "semantic-release -v"

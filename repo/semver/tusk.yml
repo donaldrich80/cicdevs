@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/semver:latest validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/semver:latest version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/semver:latest .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/semver:latest
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: semantic-release -v
+          print: "\e[32mSemantic-Release\e[0m"

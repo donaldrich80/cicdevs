@@ -3,15 +3,13 @@ features:
   - semantic-release
 site_label: latest
 image:
-  name: semvar
+  name: semver
   tag: latest
 commands:
   semantic-release:
     prefix: semantic-release
     help: -h
     version: -v
-    github: semantic-release/semantic-release
-    docs: https://semantic-release.gitbook.io/semantic-release
 references:
   semantic-release:
     github: semantic-release/semantic-release

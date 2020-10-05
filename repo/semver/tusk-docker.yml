@@ -1,0 +1,21 @@
+---
+name: donaldrich/semver:latest
+usage: Container semantic-release
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: semantic-release -v
+          print: "\e[32mSemantic-Release\e[0m"
