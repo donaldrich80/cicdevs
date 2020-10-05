@@ -1,5 +1,3 @@
-gossfile:
-  goss2.yaml: {}
 command:
   bash:
     exit-status: 0

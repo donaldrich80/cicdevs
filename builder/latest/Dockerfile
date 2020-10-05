@@ -60,7 +60,7 @@ RUN ginstall.sh --first-run
 RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 
 COPY ./goss.yaml ./goss.yaml
-COPY ./goss2.yaml ./goss2.yaml
+# COPY ./goss2.yaml ./goss2.yaml
 COPY ./Dockerfile ./Dockerfile
 COPY ./tusk-docker.yml ./tusk.yml
 
