@@ -1,3 +1,10 @@
+### [1.2.1](https://gitlab.com/donaldrich/cicdevs/compare/v1.2.0...v1.2.1) (2020-10-05)
+
+
+### Bug Fixes
+
+* go builder ([d40f948](https://gitlab.com/donaldrich/cicdevs/commit/d40f9488be11d0a29a603e0f13550bb059880422))
+
 ## [1.2.0](https://gitlab.com/donaldrich/cicdevs/compare/v1.1.7...v1.2.0) (2020-10-05)
 
 
