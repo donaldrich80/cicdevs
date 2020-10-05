@@ -1,3 +1,15 @@
+## [1.2.0](https://gitlab.com/donaldrich/cicdevs/compare/v1.1.7...v1.2.0) (2020-10-05)
+
+
+### Features
+
+* semver ([7627cfe](https://gitlab.com/donaldrich/cicdevs/commit/7627cfedc8bb719ffb62aa52f3e757ef7fae6697))
+
+
+### Bug Fixes
+
+* semver ([95d24e9](https://gitlab.com/donaldrich/cicdevs/commit/95d24e9b06af51bde72550bca6e91a3a71ed7a80))
+
 ### [1.1.7](https://gitlab.com/donaldrich/cicdevs/compare/v1.1.6...v1.1.7) (2020-10-05)
 
 
