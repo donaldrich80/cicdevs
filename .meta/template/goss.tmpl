@@ -2,15 +2,15 @@
 {{- template "gossfile" -}}
 {{- end }}
 {{- if has (datasource "data") "packages" }}
-{{- template "packages" -}}
+{{- template "packages" }}
 {{- end }}
 {{- if has (datasource "data") "commands" }}
 {{- template "commands" -}}
 {{- end }}
 {{- if has (datasource "data") "user" }}
-{{- template "user" -}}
+{{- template "user" }}
 {{- end }}
-{{- define "gossfile" }}
+{{- define "gossfile" -}}
 gossfile:
 {{- range $i, $e := (datasource "data").gossfile }}
   {{ $i }}: {}

@@ -2,7 +2,6 @@
 title: Latest
 path: tree/master
 source: repo/semver/Dockerfile
-
 ---
 
 # donaldrich/semver:latest
@@ -17,7 +16,7 @@ Container semantic-release
 
 ### Features
 
-* semantic-release
+- semantic-release
 
 ## Develop in Docker
 
@@ -37,9 +36,9 @@ donaldrich/semver:latest
 
 ### Semantic-Release
 
-* [:octicons-book-16: Docs](https://semantic-release.gitbook.io/semantic-release)
+- [:octicons-book-16: Docs](https://semantic-release.gitbook.io/semantic-release)
 
-* [:octicons-mark-github-16: GitHub](https://github.com/semantic-release/semantic-release)
+- [:octicons-mark-github-16: GitHub](https://github.com/semantic-release/semantic-release)
 
 ## Inspect Container
 

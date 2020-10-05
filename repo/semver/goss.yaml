@@ -1,4 +1,3 @@
-
 command:
   semantic-release:
     exit-status: 0

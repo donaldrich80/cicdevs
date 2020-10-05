@@ -102,32 +102,32 @@ donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag
 {{- end}}
 {{- if eq $name "github"}}
 
-* [:octicons-mark-github-16: GitHub](https://github.com/{{$links}})
+- [:octicons-mark-github-16: GitHub](https://github.com/{{$links}})
 
 {{- end}}
 {{- if eq $name "docs"}}
 
-* [:octicons-book-16: Docs]({{$links}})
+- [:octicons-book-16: Docs]({{$links}})
 
 {{- end}}
 {{- if eq $name "docker"}}
 
-* [:fontawesome-brands-docker: Docker]({{$links}})
+- [:fontawesome-brands-docker: Docker]({{$links}})
 
 {{- end}}
 {{- if eq $name "quay"}}
 
-* [:fontawesome-brands-docker: Quay](https://quay.io/{{$links}})
+- [:fontawesome-brands-docker: Quay](https://quay.io/{{$links}})
 
 {{- end}}
 {{- if eq $name "site"}}
 
-* [:octicons-browser-16: Site]({{$links}})
+- [:octicons-browser-16: Site]({{$links}})
 
 {{- end}}
 {{- if eq $name "link"}}
 
-* [$name]({{$links}})
+- [$name]({{$links}})
 
 {{- end}}
 {{- end}}
@@ -145,22 +145,22 @@ donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag
 {{- range $name, $links := $links}}
 {{- if eq $name "github"}}
 
-* [:octicons-mark-github-16: {{$links}}](https://github.com/{{$links}})
+- [:octicons-mark-github-16: {{$links}}](https://github.com/{{$links}})
 
 {{- end}}
 {{- if eq $name "docs"}}
 
-* [:octicons-book-16: Docs]({{$links}})
+- [:octicons-book-16: Docs]({{$links}})
 
 {{- end}}
 {{- if eq $name "docker"}}
 
-* [:fontawesome-brands-docker: Docker]({{$links}})
+- [:fontawesome-brands-docker: Docker]({{$links}})
 
 {{- end}}
 {{- if eq $name "link"}}
 
-* [$name]({{$links}})
+- [$name]({{$links}})
 
 {{- end}}
 {{- end}}
@@ -179,7 +179,7 @@ donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag
 ### Features
 {{- range (datasource "data").features }}
 
-* {{.}}
+- {{.}}
 
 {{- end }}
 {{- end }}
@@ -188,7 +188,7 @@ donaldrich/{{ (datasource "data").image.name }}:{{ (datasource "data").image.tag
 
 {{- range $name, $links := (datasource "data").links }}
 
-* [:octicons-book-16: {{$name}}]({{$links}})
+- [:octicons-book-16: {{$name}}]({{$links}})
 
 {{- end }}
 {{- end }}
