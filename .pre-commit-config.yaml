@@ -33,5 +33,5 @@ repos:
         stages: [commit]
       - id: yaml-lint-yamllint
         stages: [commit]
-      - id: docker-lint-hadolint
+      - id: docker-hadolint
         exclude: Dockerfile.tmpl.*
