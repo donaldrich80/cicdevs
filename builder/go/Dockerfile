@@ -18,10 +18,5 @@ COPY ./goss.yaml ./goss.yaml
 COPY ./tusk-docker.yml ./tusk.yml
 
 # USER builder
-
-
-
-
 RUN goss validate
-
-# ENTRYPOINT ["tusk"]
+ENV DEBIAN_FRONTEND=dialog
