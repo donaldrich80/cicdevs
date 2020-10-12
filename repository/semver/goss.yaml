@@ -2,3 +2,6 @@ command:
   semantic-release:
     exit-status: 0
     exec: "semantic-release -v"
+  standard-version:
+    exit-status: 0
+    exec: "standard-version --version"

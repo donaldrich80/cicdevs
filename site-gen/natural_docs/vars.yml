@@ -1,0 +1,16 @@
+description: naturaldocs
+features:
+  - naturaldocs
+image:
+  name: naturaldocs
+  tag: latest
+  entrypoint: /bin/zsh
+commands:
+  naturaldocs:
+    prefix: mono NaturalDocs.exe
+    help: --help
+    version: --version
+references:
+  naturaldocs:
+    docs: https://www.naturaldocs.org/reference
+    site: https://www.naturaldocs.org

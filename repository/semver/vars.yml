@@ -21,4 +21,3 @@ references:
     docs: https://semantic-release.gitbook.io/semantic-release
   standard-version:
     github: conventional-changelog/standard-version
-

@@ -25,3 +25,6 @@ tasks:
       - command:
           exec: semantic-release -v
           print: "\e[32mSemantic-Release\e[0m"
+      - command:
+          exec: standard-version --version
+          print: "\e[32mStandard-Version\e[0m"

@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/naturaldocs:latest validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/naturaldocs:latest version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/naturaldocs:latest .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/naturaldocs:latest
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: mono NaturalDocs.exe --version
+          print: "\e[32mMono NaturalDocs.Exe\e[0m"

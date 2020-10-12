@@ -1,0 +1,5 @@
+
+command:
+  naturaldocs:
+    exit-status: 0
+    exec: "mono NaturalDocs.exe --version"

@@ -1,6 +1,6 @@
 ---
-name: donaldrich/semver:latest
-usage: Image for semantic versioning via CI/CD
+name: donaldrich/naturaldocs:latest
+usage: naturaldocs
 
 tasks:
   validate:
@@ -17,8 +17,5 @@ tasks:
     usage: check package versions
     run:
       - command:
-          exec: semantic-release -v
-          print: "\e[32mSemantic-Release\e[0m"
-      - command:
-          exec: standard-version --version
-          print: "\e[32mStandard-Version\e[0m"
+          exec: mono NaturalDocs.exe --version
+          print: "\e[32mMono NaturalDocs.Exe\e[0m"

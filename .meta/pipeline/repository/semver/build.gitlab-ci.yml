@@ -23,9 +23,9 @@ stages:
   - notify
 
 variables:
-  DOCKER_BUILD_DIR: repo/semver
+  DOCKER_BUILD_DIR: repository/semver
   IMAGE_NAME: semver
   IMAGE_TAG: latest
   DOCKERFILE: Dockerfile
-  DOCKER_BUILD_CONTEXT: repo/semver
+  DOCKER_BUILD_CONTEXT: repository/semver
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG
