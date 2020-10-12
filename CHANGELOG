@@ -1,3 +1,10 @@
+### [1.2.4](https://gitlab.com/donaldrich/cicdevs/compare/v1.2.3...v1.2.4) (2020-10-12)
+
+
+### Bug Fixes
+
+* docker bootstrap ([fe39b2f](https://gitlab.com/donaldrich/cicdevs/commit/fe39b2f17e8a6a49949f6e75502dc7adac436b30))
+
 ### [1.2.3](https://gitlab.com/donaldrich/cicdevs/compare/v1.2.2...v1.2.3) (2020-10-06)
 
 
