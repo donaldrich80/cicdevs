@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/ubi8
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN yum install -y nano git
+RUN yum install -y nano git && yum clean all
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc

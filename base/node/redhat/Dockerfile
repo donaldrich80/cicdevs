@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 USER root
 
-RUN yum install -y nano git
+RUN yum install -y nano git && yum clean all
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc

@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+    rev: v3.2.0
     hooks:
       - id: check-added-large-files
       - id: check-executables-have-shebangs
@@ -12,12 +12,12 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/prettier/prettier
-    rev: master
+    rev: 2.1.2
     hooks:
       - id: prettier
 
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: d2cd61867e4f24e19090b21ad5eb61f4a01730ef
+    rev: v1.8.1
     hooks:
       # - id: shell-lint-shellcheck
       #   stages: [commit]

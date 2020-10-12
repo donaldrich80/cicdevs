@@ -9,7 +9,7 @@ ignored:
   - DL3013 # Pin versions in pip. Instead of `pip install <package>` use `pip install <package>==<>`
   - DL3022 # DL3022 COPY --from should reference a previously defined FROM alias
   - DL3028 # DL3028 Pin versions in gem install
-
+  - DL3033 # Specify version with `yum install -y <package>-<version>`
   # temp
   - DL4001 # Either use Wget or Curl but not both
   - DL4006 # Set the SHELL option -o pipefail before RUN with a pipe in it. If you are using /bin/sh in an alpine image or if your shell is symlinked to busybox then consider explicitly setting your SHELL to /bin/ash, or disable this check

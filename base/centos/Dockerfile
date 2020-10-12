@@ -2,7 +2,7 @@ FROM centos
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN yum install -y nano git zsh
+RUN yum install -y nano git zsh && yum clean all
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc

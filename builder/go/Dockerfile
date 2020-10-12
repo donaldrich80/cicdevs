@@ -6,10 +6,9 @@ FROM donaldrich/builder:latest
 ENV DEBIAN_FRONTEND noninteractive
 # USER root
 ENV GOPATH=/go
-ENV PATH $GOPATH/bin:$PATH
+ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 # ENV GOBIN=$GOPATH/bin
-# ENV PATH=$PATH:/usr/local/go/bin:$GOBIN
 # GOROOT=$HOME/bin/go
 # GOBIN=$GOROOT/bin
 # GOPATH=$HOME/golang

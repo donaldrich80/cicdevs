@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/ubi8/python-36
 
 USER root
 
-RUN yum install -y nano git
+RUN yum install -y nano git && yum clean all
 
 # ARG USERNAME=python
 
