@@ -1,3 +1,11 @@
+### [1.2.5](https://gitlab.com/donaldrich/cicdevs/compare/v1.2.4...v1.2.5) (2020-10-12)
+
+
+### Bug Fixes
+
+* base linting ([d3093f4](https://gitlab.com/donaldrich/cicdevs/commit/d3093f478d1df1b0069989a0feef20d6e3db9d05))
+* go builder ([cff6f55](https://gitlab.com/donaldrich/cicdevs/commit/cff6f5512cec55b1cefeb682cddba075b89361f0))
+
 ### [1.2.4](https://gitlab.com/donaldrich/cicdevs/compare/v1.2.3...v1.2.4) (2020-10-12)
 
 
