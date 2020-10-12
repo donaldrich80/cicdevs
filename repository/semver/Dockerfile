@@ -26,7 +26,7 @@ RUN npm install -g --save-dev \
   semantic-release-docker@latest \
   @semantic-release/apm-config@latest \
   @semantic-release/gitlab-config@latest \
-  conventional-changelog-conventionalcommits
+  conventional-changelog-conventionalcommits \
   # @commitlint/config-conventional@latest \
   # @commitlint/cli@latest \
   # @commitlint/prompt@latest \
@@ -34,7 +34,7 @@ RUN npm install -g --save-dev \
   # commitizen@latest \
   # cz-conventional-changelog@latest \
   # cz-customizable@latest \
-  # standard-version
+  standard-version
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc

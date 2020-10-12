@@ -31,6 +31,7 @@ RUN     apt-get update \
             musl-dev \
             zip \
             gnupg \
+            ncdu \
         && rm -rf /tmp/* /usr/share/doc/* \
             /usr/share/locale/* /usr/share/man/* \
             /var/cache/debconf/* /var/cache/apt/* \

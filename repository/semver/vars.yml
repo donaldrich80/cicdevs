@@ -1,7 +1,8 @@
-description: Container semantic-release
+description: Image for semantic versioning via CI/CD
 features:
   - semantic-release
-site_label: latest
+  - standard-version
+site_label: semver
 image:
   name: semver
   tag: latest
@@ -10,8 +11,14 @@ commands:
     prefix: semantic-release
     help: -h
     version: -v
+  standard-version:
+    prefix: standard-version
+    help: --help
+    version: --version
 references:
   semantic-release:
     github: semantic-release/semantic-release
     docs: https://semantic-release.gitbook.io/semantic-release
-extra: ""
+  standard-version:
+    github: conventional-changelog/standard-version
+
