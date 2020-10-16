@@ -48,6 +48,7 @@ include:
   - local: .meta/pipeline/base/opensuse/tumbleweed/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/base/google/ubuntu/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/repository/semver/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/repository/commit/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/sn1per/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/lynis/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/ansible/latest/pipeline.gitlab-ci.yml

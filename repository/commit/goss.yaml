@@ -1,0 +1,8 @@
+
+command:
+  commitizen:
+    exit-status: 0
+    exec: "cz --version"
+  commitlint:
+    exit-status: 0
+    exec: "commitlint -v"

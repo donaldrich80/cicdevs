@@ -2,6 +2,7 @@
 title: Minimal.Redhat
 path: tree/master
 source: base/minimal/redhat/Dockerfile
+
 ---
 
 # donaldrich/base:minimal.redhat

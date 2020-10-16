@@ -2,6 +2,7 @@
 title: Latest
 path: tree/master
 source: docker/latest/Dockerfile
+
 ---
 
 # donaldrich/docker:latest
@@ -91,7 +92,6 @@ Dockerfile linter, validate inline bash, written in Haskell
 - [:octicons-book-16: Docs](https://docs.docker.com/notary)
 
 - [:octicons-mark-github-16: GitHub](https://github.com/theupdateframework/notary)
-
 ## Links
 
 - [:octicons-book-16: awesome-docker](https://awesome-docker.netlify.app)

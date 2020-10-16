@@ -2,6 +2,7 @@
 title: Full
 path: tree/master
 source: hashicorp/terraform/full/Dockerfile
+
 ---
 
 # donaldrich/terraform:full
@@ -37,7 +38,6 @@ docker run -it --rm \
 --net="host" \
 donaldrich/terraform:full
 ```
-
 ## Links
 
 - [:octicons-book-16: awesome-terraform](https://github.com/shuaibiyy/awesome-terraform)

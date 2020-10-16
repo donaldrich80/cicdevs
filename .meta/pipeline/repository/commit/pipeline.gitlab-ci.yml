@@ -1,0 +1,20 @@
+commit:latest:
+  stage: build
+  trigger:
+    include: .meta/pipeline/repository/commit/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+        - "repository/commit/Dockerfile"
+        - "repository/commit/goss.yaml"
+        - "repository/commit/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "commit" && $TRIGGER_VAR2 == "latest"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "commit" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

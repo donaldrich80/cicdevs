@@ -1,0 +1,30 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/commit:latest validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/commit:latest version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/commit:latest .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/commit:latest
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: cz --version
+          print: "\e[32mCz\e[0m"
+      - command:
+          exec: commitlint -v
+          print: "\e[32mCommitlint\e[0m"
