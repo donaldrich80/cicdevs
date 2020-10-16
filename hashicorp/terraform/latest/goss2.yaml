@@ -38,10 +38,10 @@ file:
     # owner: root
     # group: root
     filetype: file
-  /home/terraform/.terraform.d/plugins/terraform-provisioner-proxmox:
-    exists: true
-    # mode: "0644"
-    # size: 2118 # in bytes
-    # owner: root
-    # group: root
-    filetype: file
+  # /home/terraform/.terraform.d/plugins/terraform-provisioner-proxmox:
+  #   exists: true
+  #   # mode: "0644"
+  #   # size: 2118 # in bytes
+  #   # owner: root
+  #   # group: root
+  #   filetype: file
