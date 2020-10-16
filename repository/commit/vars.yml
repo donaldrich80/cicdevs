@@ -1,0 +1,23 @@
+description: Image for git commit
+features:
+  - commitizen
+  - commitlint
+site_label: commit
+image:
+  name: commit
+  tag: latest
+commands:
+  commitlint:
+    prefix: commitlint
+    help: -h
+    version: -v
+  commitizen:
+    prefix: cz
+    help: --help
+    version: --version
+references:
+  commitlint:
+    github: conventional-changelog/commitlint
+  commitizen:
+    github: commitizen-tools/commitizen
+    docs: https://commitizen-tools.github.io/commitizen

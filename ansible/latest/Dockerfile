@@ -41,11 +41,15 @@ ENV ANSIBLE_HOST_KEY_CHECKING false
 ENV ANSIBLE_RETRY_FILES_ENABLED false
 ENV ANSIBLE_FORCE_COLOR true
 
-ENV DEBIAN_FRONTEND=dialog
 
-COPY ./goss.yaml ./goss.yaml
-COPY ./goss2.yaml ./goss2.yaml
-RUN goss validate
 
 COPY ./tusk-docker.yml ./tusk.yml
-RUN tusk
+COPY ./goss.yaml ./goss.yaml
+COPY ./goss2.yaml ./goss2.yaml
+
+ENV DEBIAN_FRONTEND=dialog
+
+RUN goss validate
+
+
+
