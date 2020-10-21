@@ -1,4 +1,3 @@
-
 command:
   aws-cli:
     exit-status: 0

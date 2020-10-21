@@ -1,4 +1,3 @@
-
 command:
   commitizen:
     exit-status: 0

@@ -2,7 +2,6 @@
 title: Centos
 path: tree/master
 source: base/centos/Dockerfile
-
 ---
 
 # donaldrich/base:centos

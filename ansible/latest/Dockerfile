@@ -50,6 +50,3 @@ COPY ./goss2.yaml ./goss2.yaml
 ENV DEBIAN_FRONTEND=dialog
 
 RUN goss validate
-
-
-

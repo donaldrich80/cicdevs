@@ -2,9 +2,7 @@
 title: Vault
 path: tree/master
 source: hashicorp/vault/Dockerfile
-
 ---
-
 
 # donaldrich/vault
 
@@ -50,6 +48,7 @@ donaldrich/vault:latest
 - [:octicons-book-16: Docs](https://www.vaultproject.io)
 
 - [:octicons-mark-github-16: GitHub](https://github.com/hashicorp/vault)
+
 ## Links
 
 - [:octicons-book-16: gites/awesome-vault-tools](https://github.com/gites/awesome-vault-tools)

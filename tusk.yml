@@ -58,16 +58,12 @@ tasks:
   clean:
     usage: template
     run:
-      - command: rm -r .meta/pipeline | true
-      - command: rm -r docs/ansible | true
-      - command: rm -r docs/aws | true
-      - command: rm -r docs/base | true
-      - command: rm -r docs/builder | true
-      - command: rm -r docs/docker | true
-      - command: rm -r docs/hashicorp | true
-      - command: rm -r docs/misc | true
-      - command: rm -r docs/security | true
-      - command: rm -r docs/site-gen | true
+      - command: rm -r docs | true
+      - command: rm -r .meta/pipelines | true
+      - command: mkdir docs | true
+      - command: cp .meta/docs/index.md docs
+      - command: cp -r .meta/docs/about docs
+      - command: cp CHANGELOG docs/about
 
   dependency:
     usage: template

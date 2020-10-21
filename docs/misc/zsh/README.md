@@ -2,9 +2,7 @@
 title: Runner
 path: tree/master
 source: misc/zsh/Dockerfile
-
 ---
-
 
 # donaldrich/runner
 
@@ -39,6 +37,7 @@ docker run -it --rm \
 --net="host" \
 donaldrich/runner:zsh
 ```
+
 ## Links
 
 - [:octicons-book-16: awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins)

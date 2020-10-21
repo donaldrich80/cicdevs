@@ -2,7 +2,6 @@
 title: Latest
 path: tree/master
 source: repository/commit/Dockerfile
-
 ---
 
 # donaldrich/commit:latest

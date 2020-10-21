@@ -2,7 +2,6 @@
 title: Hello-Friend
 path: tree/master
 source: site-gen/hugo/hello-friend/Dockerfile
-
 ---
 
 # donaldrich/hugo:hello-friend

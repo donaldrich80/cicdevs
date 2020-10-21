@@ -2,7 +2,6 @@
 title: Node
 path: tree/master
 source: base/node/latest/Dockerfile
-
 ---
 
 # donaldrich/base:node

@@ -2,7 +2,6 @@
 title: Go
 path: tree/master
 source: builder/go/Dockerfile
-
 ---
 
 # donaldrich/builder:go

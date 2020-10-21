@@ -2,7 +2,6 @@
 title: Latest
 path: tree/master
 source: site-gen/docusaurus/Dockerfile
-
 ---
 
 # donaldrich/docusaurus:latest
