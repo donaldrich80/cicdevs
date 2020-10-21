@@ -1,3 +1,10 @@
+### [1.1.1](https://gitlab.com/donaldrich/cicdevs/compare/v1.1.0...v1.1.1) (2020-10-21)
+
+
+### Performance Improvements
+
+* **builder:** added gget ([6fa5ec7](https://gitlab.com/donaldrich/cicdevs/commit/6fa5ec7304c873c77ff6a7ca99d46320ff878609))
+
 ## [1.1.0](https://gitlab.com/donaldrich/cicdevs/compare/v1.0.0...v1.1.0) (2020-10-21)
 
 
