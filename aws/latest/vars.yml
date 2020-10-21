@@ -14,6 +14,11 @@ commands:
     prefix: aws
     help: help
     version: --version
+  aws-shell:
+    prefix: aws-shell
+    help: -h
+    version: -h
+    github: awslabs/aws-shell
 user:
   aws:
     exists: true

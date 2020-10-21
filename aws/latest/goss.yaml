@@ -3,3 +3,6 @@ command:
   aws-cli:
     exit-status: 0
     exec: "aws --version"
+  aws-shell:
+    exit-status: 0
+    exec: "aws-shell -h"

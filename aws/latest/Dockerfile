@@ -13,16 +13,10 @@ RUN useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
 
 # RUN addgroup -S aws && adduser -S aws -G aws
 
-# RUN apk update && apk add --no-cache \
-# git \
-# zsh \
-# nano \
-# sudo \
-# awscli
-
 RUN apt-get update \
   && apt-get -y install --no-install-recommends sudo zsh awscli nano \
   && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir aws-shell
 RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME
 RUN chmod 0440 /etc/sudoers.d/$USERNAME
 

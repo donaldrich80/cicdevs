@@ -19,3 +19,6 @@ tasks:
       - command:
           exec: aws --version
           print: "\e[32mAws\e[0m"
+      - command:
+          exec: aws-shell -h
+          print: "\e[32mAws-Shell\e[0m"
