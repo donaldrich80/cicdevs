@@ -8,9 +8,13 @@ sed 's/^.\{2\}//' pre2.txt >pre3.txt
 sed 's/.$//' pre3.txt >ci-paths.txt
 rm pre1.txt pre2.txt pre3.txt
 
-cat ci-paths.txt | while read line; do
+# cat ci-paths.txt | while read -r line; do
+# 	./run.sh "$line"
+# done
+
+while read -r line; do
 	./run.sh "$line"
-done
+done <ci-paths.txt
 
 find . -name \*pipeline.gitlab-ci.yml >pipe1.txt
 

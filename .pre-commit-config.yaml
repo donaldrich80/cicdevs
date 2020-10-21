@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: v3.3.0
     hooks:
       - id: check-added-large-files
       - id: check-executables-have-shebangs
@@ -17,21 +17,21 @@ repos:
       - id: prettier
 
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: master
+    rev: v1.0.0
     hooks:
-      # - id: shell-lint-shellcheck
+      # - id: shell-shellcheck
       #   stages: [commit]
-      # - id: shell-lint-shfmt
+      # - id: shell-shfmt
       #   stages: [commit]
       #   verbose: true
-      # - id: shell-lint-bashate
+      # - id: shell-bashate
       #   stages: [commit]
       #   verbose: true
       - id: secrets-detect-secrets
         stages: [commit]
       - id: secrets-gitleaks
         stages: [commit]
-      - id: yaml-lint-yamllint
+      - id: yaml-yamllint
         stages: [commit]
       - id: docker-hadolint
         exclude: Dockerfile.tmpl.*
