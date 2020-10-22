@@ -91,7 +91,7 @@ tasks:
     run:
       - command: git add .
       - command: 'git commit -m "chore(repo): maintenance"'
-      - command: git push origin master
+      # - command: git push origin master
 
   repo:
     usage: check package versions
