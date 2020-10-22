@@ -11,25 +11,27 @@ plugins:
           release: minor
         - type: ci
           release: minor
+        - type: chore
+          release: false
   - - "@semantic-release/release-notes-generator"
     - preset: conventionalcommits
       presetConfig:
         types:
-          - type: test
-            section: TESTING
+          - type: fixed
+            section: Fixed
           - type: fix
             section: Bug Fixes
           - type: added
             section: Added
-          - type: fixed
-            section: Fixed
+          - type: feat
+            section: Features
           - type: changed
             section: Changed
           - type: removed
             section: Removed
           - type: ci
             section: Continuous Integration
-            # hidden: true
+            hidden: true
           - type: build
             section: Build System
             hidden: true
@@ -39,16 +41,14 @@ plugins:
           - type: improved
             section: Improved
           - type: chore
-            section: Improved
+            section: Maintainence
             hidden: true
     # { type: 'feat', section: 'Features' },
     # { type: 'feature', section: 'Features' },
-    # { type: 'fix', section: 'Bug Fixes' },
     # { type: 'perf', section: 'Performance Improvements' },
     # { type: 'revert', section: 'Reverts' },
     # { type: 'docs', section: 'Documentation', hidden: true },
     # { type: 'style', section: 'Styles', hidden: true },
-    # { type: 'chore', section: 'Miscellaneous Chores', hidden: true },
     # { type: 'refactor', section: 'Code Refactoring', hidden: true },
 
   - "@semantic-release/gitlab"
