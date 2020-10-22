@@ -13,32 +13,32 @@ plugins:
     - preset: conventionalcommits
       presetConfig:
         types:
-        - type: test
-          section: TESTING
-        - type: fix
-          section: Bug Fixes
-        - type: added
-          section: Added
-        - type: fixed
-          section: Fixed
-        - type: changed
-          section: Changed
-        - type: removed
-          section: Removed
-        - type: ci
-          section: Continuous Integration
-          # hidden: true
-        - type: build
-          section: Build System
-          hidden: true
-        - type: test
-          section: Tests
-          hidden: true
-        - type: improved
-          section: Improved
-        - type: chore
-          section: Improved
-          hidden: true
+          - type: test
+            section: TESTING
+          - type: fix
+            section: Bug Fixes
+          - type: added
+            section: Added
+          - type: fixed
+            section: Fixed
+          - type: changed
+            section: Changed
+          - type: removed
+            section: Removed
+          - type: ci
+            section: Continuous Integration
+            # hidden: true
+          - type: build
+            section: Build System
+            hidden: true
+          - type: test
+            section: Tests
+            hidden: true
+          - type: improved
+            section: Improved
+          - type: chore
+            section: Improved
+            hidden: true
     # { type: 'feat', section: 'Features' },
     # { type: 'feature', section: 'Features' },
     # { type: 'fix', section: 'Bug Fixes' },
