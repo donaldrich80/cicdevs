@@ -13,21 +13,34 @@ plugins:
           release: minor
         - type: chore
           release: false
+        - type: feat
+          release: minor
+        - type: fix
+          release: patch
+        - type: change
+          release: patch
+        - type: remove
+          release: patch
+        - scope: improve
+          release: minor
+      parserOpts:
+        noteKeywords:
+          - BREAKING CHANGE
+          - BREAKING CHANGES
+          - BREAKING
   - - "@semantic-release/release-notes-generator"
     - preset: conventionalcommits
       presetConfig:
         types:
-          - type: fixed
-            section: Fixed
           - type: fix
             section: Bug Fixes
-          - type: added
+          - type: add
             section: Added
           - type: feat
             section: Features
-          - type: changed
+          - type: change
             section: Changed
-          - type: removed
+          - type: remove
             section: Removed
           - type: ci
             section: Continuous Integration
@@ -38,58 +51,22 @@ plugins:
           - type: test
             section: Tests
             hidden: true
-          - type: improved
-            section: Improved
+          - type: improve
+            section: Improvements
           - type: chore
-            section: Maintainence
+            section: Maintenance
             hidden: true
-    # { type: 'feat', section: 'Features' },
-    # { type: 'feature', section: 'Features' },
-    # { type: 'perf', section: 'Performance Improvements' },
-    # { type: 'revert', section: 'Reverts' },
-    # { type: 'docs', section: 'Documentation', hidden: true },
-    # { type: 'style', section: 'Styles', hidden: true },
-    # { type: 'refactor', section: 'Code Refactoring', hidden: true },
-
+          - type: docs
+            section: Documentation
+      parserOpts:
+        noteKeywords:
+          - BREAKING CHANGE
+          - BREAKING CHANGES
+          - BREAKING
   - "@semantic-release/gitlab"
   - - "@semantic-release/changelog"
     - changelogFile: CHANGELOG
   - - "@semantic-release/git"
     - assets:
         - CHANGELOG
-# plugins:
-#   - - "@semantic-release/commit-analyzer"
-#     - preset: conventionalcommits
-#       releaseRules:
-#         - type: added
-#           release: minor
-#         - type: fixed
-#           release: patch
-#         - type: changed
-#           release: patch
-#         - type: removed
-#           release: minor
-#         - type: ci
-#           release: patch
-#         - scope: improved
-#           release: patch
-#         - type: chore
-#           release: false
-
-#       parserOpts:
-#         noteKeywords:
-#           - BREAKING CHANGE
-#           - BREAKING CHANGES
-#           - BREAKING
-#       parserOpts:
-#         noteKeywords:
-#           - BREAKING CHANGE
-#           - BREAKING CHANGES
-#           - BREAKING
-#   - "@semantic-release/gitlab"
-#   - - "@semantic-release/changelog"
-#     - changelogFile: CHANGELOG
-#   - - "@semantic-release/git"
-#     - assets:
-#         - CHANGELOG
 #       message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"

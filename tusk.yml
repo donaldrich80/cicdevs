@@ -90,7 +90,7 @@ tasks:
   commit:
     run:
       - command: git add .
-      - command: git commit -m "repo template regenerate"
+      - command: 'git commit -m "chore(repo): maintenance"'
       - command: git push origin master
 
   repo:
