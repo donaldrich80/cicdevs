@@ -9,6 +9,8 @@ plugins:
       releaseRules:
         - type: test
           release: minor
+        - type: ci
+          release: minor
   - - "@semantic-release/release-notes-generator"
     - preset: conventionalcommits
       presetConfig:
@@ -79,23 +81,6 @@ plugins:
 #           - BREAKING CHANGE
 #           - BREAKING CHANGES
 #           - BREAKING
-#   - - "@semantic-release/release-notes-generator"
-#     - preset: conventionalcommits
-#       types:
-#         - type: added
-#           section: Added
-#         - type: fixed
-#           section: Fixed
-#         - type: changed
-#           section: Changed
-#         - type: removed
-#           section: Removed
-#         - type: ci
-#           section: CI
-#         - type: improved
-#           section: Improved
-#         - type: chore
-#           hidden: true
 #       parserOpts:
 #         noteKeywords:
 #           - BREAKING CHANGE
