@@ -17,7 +17,6 @@ nano
 
 RUN npm install -g --save-dev \
   semantic-release@latest \
-  # @semantic-release/apm@latest \
   @semantic-release/changelog@latest \
   @semantic-release/exec@latest \
   @semantic-release/git@latest \
@@ -25,7 +24,6 @@ RUN npm install -g --save-dev \
   @semantic-release/gitlab@latest \
   semantic-release-docker@latest \
   @google/semantic-release-replace-plugin@latest \
-  @semantic-release/apm-config@latest \
   @semantic-release/gitlab-config@latest \
   conventional-changelog-conventionalcommits \
   @semantic-release/github@latest \

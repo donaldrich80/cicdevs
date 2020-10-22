@@ -11,9 +11,12 @@ plugins:
           release: minor
   - - "@semantic-release/release-notes-generator"
     - preset: conventionalcommits
-      types:
+      presetConfig:
+        types:
         - type: test
-          section: TEST
+          section: TESTING
+        - type: fix
+          section: Bug Fixes
   - "@semantic-release/gitlab"
   - - "@semantic-release/changelog"
     - changelogFile: CHANGELOG
