@@ -30,6 +30,7 @@ COPY --from=donaldrich/function:terraform /usr/local/bin/terrahelp  /usr/local/b
 COPY --from=donaldrich/function:terraform /usr/local/bin/terraform-docs /usr/local/bin/terraform-docs
 COPY --from=donaldrich/function:terraform /usr/local/bin/tfsec /usr/local/bin/tfsec
 COPY --from=donaldrich/function:terraform /usr/local/bin/tflint /usr/local/bin/tflint
+COPY --from=donaldrich/function:terraform /usr/local/bin/tfmigrate /usr/local/bin/tfmigrate
 COPY --from=donaldrich/function:terraform /usr/local/bin/terragrunt /usr/local/bin/terragrunt
 COPY --from=donaldrich/function:terraform /.terraform.d/plugins/terraform-provider-proxmox /home/${USERNAME}/.terraform.d/plugins/terraform-provider-proxmox
 # COPY --from=donaldrich/function:terraform /.terraform.d/plugins/terraform-provisioner-proxmox /home/${USERNAME}/.terraform.d/plugins/terraform-provisioner-proxmox
