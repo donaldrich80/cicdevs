@@ -1,6 +1,5 @@
 branches:
   - "master"
-
 tagFormat: v${version}
 repositoryUrl: https://gitlab.com/donaldrich/cicdevs.git
 plugins:
@@ -69,4 +68,4 @@ plugins:
   - - "@semantic-release/git"
     - assets:
         - CHANGELOG
-#       message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"
+      message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"
