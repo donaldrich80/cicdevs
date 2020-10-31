@@ -65,7 +65,7 @@ plugins:
   - "@semantic-release/gitlab"
   - - "@semantic-release/changelog"
     - changelogFile: CHANGELOG
-  - - "@semantic-release/git"
-    - assets:
-        - CHANGELOG
-      message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"
+  # - - "@semantic-release/git"
+  #   - assets:
+  #       - CHANGELOG
+      # message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"

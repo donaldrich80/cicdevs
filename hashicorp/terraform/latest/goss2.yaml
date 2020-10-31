@@ -28,7 +28,6 @@ file:
   /home/terraform/.terraform.d/plugins/registry.example.com/telmate/proxmox/1.0.0/linux_amd64/terraform-provider-proxmox:
     exists: true
     # mode: "0644"
-    # size: 2118 # in bytes
     # owner: root
     # group: root
     filetype: file
