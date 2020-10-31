@@ -15,15 +15,9 @@ group:
 file:
   /home/terraform/.zshrc:
     exists: true
-    #    mode: "0644"
-    # owner: terraform
-    # group: terraform
     filetype: file
   /home/terraform/.nanorc:
     exists: true
-    #    mode: "0644"
-    # owner: terraform
-    # group: terraform
     filetype: file
   /home/terraform/.terraform.d/plugins:
     exists: true
@@ -31,7 +25,7 @@ file:
     owner: terraform
     group: terraform
     filetype: directory
-  /home/terraform/.terraform.d/plugins/terraform-provider-proxmox:
+  /home/terraform/.terraform.d/plugins/registry.example.com/telmate/proxmox/1.0.0/linux_amd64/terraform-provider-proxmox:
     exists: true
     # mode: "0644"
     # size: 2118 # in bytes
