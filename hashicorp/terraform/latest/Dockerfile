@@ -31,10 +31,10 @@ COPY --from=donaldrich/function:terraform /usr/local/bin/tfsec /usr/local/bin/tf
 COPY --from=donaldrich/function:terraform /usr/local/bin/tflint /usr/local/bin/tflint
 COPY --from=donaldrich/function:terraform /usr/local/bin/tfmigrate /usr/local/bin/tfmigrate
 COPY --from=donaldrich/function:terraform /usr/local/bin/terragrunt /usr/local/bin/terragrunt
-COPY --from=donaldrich/function:terraform /.terraform.d/plugins/terraform-provider-proxmox /home/${USERNAME}/registry.example.com/telmate/proxmox/1.0.0/linux_amd64/terraform-provider-proxmox
+COPY --from=donaldrich/function:terraform /.terraform.d/plugins/terraform-provider-proxmox /home/${USERNAME}/.terraform.d/plugins/registry.example.com/telmate/proxmox/1.0.0/linux_amd64/terraform-provider-proxmox
 # COPY --from=donaldrich/function:terraform /.terraform.d/plugins/terraform-provisioner-proxmox /home/${USERNAME}/.terraform.d/plugins/terraform-provisioner-proxmox
-COPY --from=donaldrich/function:json2hcl  /usr/local/bin/json2hcl /usr/local/bin/json2hcl
-COPY --from=donaldrich/function:jq /usr/local/bin/jq /usr/local/bin/jq
+COPY --from=donaldrich/function:syntax-tools /usr/local/bin/json2hcl /usr/local/bin/json2hcl
+COPY --from=donaldrich/function:syntax-tools /usr/local/bin/jq /usr/local/bin/jq
 
 COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
