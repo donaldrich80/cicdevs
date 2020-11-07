@@ -44,16 +44,22 @@ RUN chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.packer.d
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /home/packer/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/packer/.nanorc
+
+COPY --from=hashicorp/vault /bin/vault /usr/local/bin/vault
+COPY --from=hashicorp/packer /bin/packer /usr/local/bin/packer
+COPY --from=donaldrich/function:docker /usr/local/bin/docker /usr/local/bin/docker
+
 COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
-COPY --from=donaldrich/function:docker /usr/local/bin/docker /usr/local/bin/docker
+
 COPY --from=donaldrich/function:packer /usr/local/bin/packer-builder-arm-image /usr/local/bin/packer-builder-arm-image
 COPY --from=donaldrich/function:packer /usr/local/bin/packer-builder-arm /usr/local/bin/packer-builder-arm
+COPY --from=donaldrich/function:packer /usr/local/bin/packer-provisioner-goss /home/packer/.packer.d/plugins/packer-provisioner-goss
+
 COPY --from=multiarch/qemu-user-static:register /register /register
 COPY --from=multiarch/qemu-user-static:register /qemu-binfmt-conf.sh /qemu-binfmt-conf.sh
-COPY --from=hashicorp/packer /bin/packer /usr/local/bin/packer
-COPY --from=donaldrich/function:packer /usr/local/bin/packer-provisioner-goss /home/packer/.packer.d/plugins/packer-provisioner-goss
-COPY --from=donaldrich/function:vault /usr/local/bin/vault /usr/local/bin/vault
+
+
 
 ENV PACKER /usr/local/bin/packer
 # ENV PACKER_PLUGIN_PATH /usr/local/bin/
@@ -75,5 +81,3 @@ RUN goss validate
 COPY ./tusk-docker.yml ./tusk.yml
 
 ENV DEBIAN_FRONTEND dialog
-
-# ENTRYPOINT ["tusk"]

@@ -12,8 +12,3 @@ commands:
     prefix: docker buildx
     version: version
     help: --help
-# [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/docker/latest?color=blue&label=docker&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/docker)
-
-# [![Docker Pulls](https://img.shields.io/docker/pulls/donaldrich/docker?color=blue&label=docker%20pulls&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/docker)
-
-# [![hh](https://img.shields.io/docker/stars/donaldrich/docker.svg?style=flat-square&logo=docker)](https://hub.docker.com/r/donaldrich/docker)
