@@ -1,21 +1,21 @@
 FROM ubuntu AS base
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update -y &&
+RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
-        \
-        zsh \
-        sudo \
-        nano \
-        ca-certificates \
-        git && # curl \
+    \
+    zsh \
+    sudo \
+    nano \
+    ca-certificates \
+    git && # curl \
     # openssl \
     rm -rf /tmp/* /usr/share/doc/* \
-        /usr/share/locale/* /usr/share/man/* \
-        /var/cache/debconf/* /var/cache/apt/* \
-        /var/tmp/* /var/log/* /var/lib/apt/lists/* \
-        apt-get autoclean &&
-    apt-get autoremove --purge &&
+    /usr/share/locale/* /usr/share/man/* \
+    /var/cache/debconf/* /var/cache/apt/* \
+    /var/tmp/* /var/log/* /var/lib/apt/lists/* \
+    apt-get autoclean && \
+    apt-get autoremove --purge && \
     apt-get clean
 # && pip3 install --no-cache ansible
 
