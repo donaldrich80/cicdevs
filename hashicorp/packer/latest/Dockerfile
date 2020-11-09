@@ -7,15 +7,19 @@ RUN apt-get update -y && \
     sudo \
     nano \
     sshpass \
-    openssh \
+    openssh-client \
     ca-certificates \
     git \
     curl \
-    # openssl \
-    && rm -rf /tmp/* /usr/share/doc/* \
-    /usr/share/locale/* /usr/share/man/* \
-    /var/cache/debconf/* /var/cache/apt/* \
-    /var/tmp/* /var/log/* /var/lib/apt/lists/* \
+    && rm -rf /tmp/* \
+    /usr/share/doc/* \
+    /usr/share/locale/* \
+    /usr/share/man/* \
+    /var/cache/debconf/* \
+    /var/cache/apt/* \
+    /var/tmp/* \
+    /var/log/* \
+    /var/lib/apt/lists/* \
     apt-get autoclean && \
     apt-get autoremove --purge && \
     apt-get clean
