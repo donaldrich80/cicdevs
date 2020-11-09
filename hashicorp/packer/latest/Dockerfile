@@ -3,14 +3,14 @@ FROM ubuntu AS base
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
-    \
     zsh \
     sudo \
     nano \
     ca-certificates \
-    git && # curl \
+    git \
+    curl \
     # openssl \
-    rm -rf /tmp/* /usr/share/doc/* \
+    && rm -rf /tmp/* /usr/share/doc/* \
     /usr/share/locale/* /usr/share/man/* \
     /var/cache/debconf/* /var/cache/apt/* \
     /var/tmp/* /var/log/* /var/lib/apt/lists/* \
