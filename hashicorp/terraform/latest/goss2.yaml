@@ -25,8 +25,8 @@ file:
     owner: terraform
     group: terraform
     filetype: directory
-  /home/terraform/.terraform.d/plugins/registry.example.com/telmate/proxmox/1.0.0/linux_amd64/terraform-provider-proxmox:
-    exists: true
+  ? /home/terraform/.terraform.d/plugins/registry.example.com/telmate/proxmox/1.0.0/linux_amd64/terraform-provider-proxmox
+  : exists: true
     # mode: "0644"
     # owner: root
     # group: root

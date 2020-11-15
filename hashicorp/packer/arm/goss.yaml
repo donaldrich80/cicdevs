@@ -1,3 +1,4 @@
+
 package:
   ca-certificates:
     installed: true

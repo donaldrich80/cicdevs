@@ -2,6 +2,7 @@
 title: Bazel
 path: tree/master
 source: builder/bazel/Dockerfile
+
 ---
 
 # donaldrich/builder:bazel
@@ -42,7 +43,7 @@ donaldrich/builder:bazel
 
 - [:octicons-mark-github-16: GitHub](https://github.com/bazelbuild/bazel)
 
-- [\$name](https://jin.github.io/awesome-bazel)
+- [$name](https://jin.github.io/awesome-bazel)
 
 ## Inspect Container
 

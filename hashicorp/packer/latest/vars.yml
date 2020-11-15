@@ -51,10 +51,7 @@ commands:
     prefix: packer
     version: version
     help: -h
-    github: hashicorp/packer
-    site: https://www.packer.io
-    docs: https://www.packer.io/docs
-    guide: https://www.packer.io/guides
+
   # vault:
   #   prefix: vault
   #   version: version
@@ -80,3 +77,17 @@ commands:
   # xz-utils:
   #   prefix: xz
   #   version: --version
+  pip:
+    prefix: pip
+    version: --version
+    help: --help
+  python:
+    prefix: python
+    version: --version
+    help: --help
+  ansible:
+    prefix: ansible
+    version: --version
+    help: --help
+    timeout: 5000
+    docs: https://docs.ansible.com/ansible/latest/index.html

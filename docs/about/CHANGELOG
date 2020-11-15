@@ -1,3 +1,16 @@
+### [1.4.1](https://gitlab.com/donaldrich/cicdevs/compare/v1.4.0...v1.4.1) (2020-10-31)
+
+
+### Bug Fixes
+
+* terraform-provider-proxmox ([567970d](https://gitlab.com/donaldrich/cicdevs/commit/567970d73e3f082db436df96ed2cc20d51fcac52))
+* terraform-provider-proxmox ([26ddc35](https://gitlab.com/donaldrich/cicdevs/commit/26ddc35375aafdc88a3b568f43af21ddd0b2d351))
+
+
+### Improvements
+
+* versioning ([b44a6b3](https://gitlab.com/donaldrich/cicdevs/commit/b44a6b3bd4fc511a5376f61f3d96d5b3a0aeb5fa))
+
 ## [1.4.0](https://gitlab.com/donaldrich/cicdevs/compare/v1.3.0...v1.4.0) (2020-10-22)
 
 

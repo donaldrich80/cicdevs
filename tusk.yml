@@ -59,7 +59,7 @@ tasks:
     usage: template
     run:
       - command: rm -r docs | true
-      - command: rm -r .meta/pipelines | true
+      - command: rm -r .meta/pipeline | true
       - command: mkdir docs | true
       - command: cp .meta/docs/index.md docs
       - command: cp -r .meta/docs/about docs

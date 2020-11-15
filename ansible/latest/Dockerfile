@@ -14,6 +14,7 @@ RUN apt-get update \
     rsync \
     zsh \
     nano \
+    sudo \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
@@ -42,8 +43,8 @@ COPY --from=donaldrich/function:goss      /usr/local/bin/goss /usr/local/bin/gos
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc
-COPY --from=donaldrich/runner:zsh /zsh/.nanorc /root/.nanorc
+COPY --from=donaldrich/runner:zsh /root/.zshrc /home/ansible/.zshrc
+COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/ansible/.nanorc
 
 ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false

@@ -1,0 +1,16 @@
+description: Image for pentesting
+features:
+  - decker
+  - kali Linux
+image:
+  name: decker
+  tag: latest
+  entrypoint: /usr/bin/zsh
+# commands:
+#   bash:
+#     prefix: bash
+#     version: -version
+#     help: -help
+references:
+  decker:
+    github: stevenaldinger/decker

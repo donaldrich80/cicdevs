@@ -12,6 +12,7 @@ RUN apt-get update -y && \
     git \
     curl \
     python3 \
+    python3-pip \
     && rm -rf /tmp/* \
     /usr/share/doc/* \
     /usr/share/locale/* \
@@ -68,7 +69,3 @@ USER ${USERNAME}
 
 ENV DEBIAN_FRONTEND dialog
 RUN goss validate
-
-
-
-

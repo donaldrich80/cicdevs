@@ -1,3 +1,4 @@
+
 package:
   ca-certificates:
     installed: true
@@ -6,12 +7,22 @@ package:
   zsh:
     installed: true
 command:
+  ansible:
+    exit-status: 0
+    exec: "ansible --version"
+    timeout: 5000
   goss:
     exit-status: 0
     exec: "goss --version"
   packer:
     exit-status: 0
     exec: "packer version"
+  pip:
+    exit-status: 0
+    exec: "pip --version"
+  python:
+    exit-status: 0
+    exec: "python --version"
   tusk:
     exit-status: 0
     exec: "tusk --version"

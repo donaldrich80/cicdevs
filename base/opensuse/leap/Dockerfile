@@ -2,7 +2,7 @@ FROM opensuse/leap
 
 # RUN zypper addrepo https://download.opensuse.org/repositories/shells/openSUSE_Leap_15.2/shells.repo
 RUN zypper refresh
-RUN zypper -n install zsh git nano
+RUN zypper -n install zsh git nano && zypper clean
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc

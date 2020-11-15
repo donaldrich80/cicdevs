@@ -1,0 +1,15 @@
+---
+name: donaldrich/decker:latest
+usage: Image for pentesting
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"

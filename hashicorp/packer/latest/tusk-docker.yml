@@ -17,11 +17,20 @@ tasks:
     usage: check package versions
     run:
       - command:
+          exec: ansible --version
+          print: "\e[32mAnsible\e[0m"
+      - command:
           exec: goss --version
           print: "\e[32mGoss\e[0m"
       - command:
           exec: packer version
           print: "\e[32mPacker\e[0m"
+      - command:
+          exec: pip --version
+          print: "\e[32mPip\e[0m"
+      - command:
+          exec: python --version
+          print: "\e[32mPython\e[0m"
       - command:
           exec: tusk --version
           print: "\e[32mTusk\e[0m"
