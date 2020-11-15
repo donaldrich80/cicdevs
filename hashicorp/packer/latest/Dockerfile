@@ -11,6 +11,7 @@ RUN apt-get update -y && \
     ca-certificates \
     git \
     curl \
+    python3 \
     && rm -rf /tmp/* \
     /usr/share/doc/* \
     /usr/share/locale/* \
@@ -22,8 +23,8 @@ RUN apt-get update -y && \
     /var/lib/apt/lists/* \
     apt-get autoclean && \
     apt-get autoremove --purge && \
-    apt-get clean
-# && pip3 install --no-cache ansible
+    apt-get clean \
+    && pip3 install --no-cache ansible
 
 ARG USERNAME=packer
 ARG USER_UID=1000
