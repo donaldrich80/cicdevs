@@ -6,19 +6,20 @@ ENV DEBIAN_FRONTEND noninteractive
 ARG USERNAME=vault
 
 RUN addgroup $USERNAME && \
-adduser -S -u 1000 -G $USERNAME $USERNAME
+  adduser -S -u 1000 -G $USERNAME $USERNAME
 
 RUN apk add --no-cache \
-            bash \
-            curl \
-            zsh \
-            git \
-            nano \
-            ca-certificates
+  bash \
+  curl \
+  zsh \
+  git \
+  nano \
+  ca-certificates \
+  openssh-client \
 
 
-# zsh
-COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
+  # zsh
+  COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /home/vault/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/vault/.nanorc
 

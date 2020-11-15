@@ -61,11 +61,14 @@ ENV TERM=xterm-256color
 # RUN  usermod --shell /bin/zsh root
 # RUN echo "${UNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
+COPY ./tusk-docker.yml ./tusk.yml
+COPY ./goss.yaml ./goss.yaml
+
 USER ${USERNAME}
 
-COPY ./goss.yaml ./goss.yaml
+ENV DEBIAN_FRONTEND dialog
 RUN goss validate
 
-COPY ./tusk-docker.yml ./tusk.yml
 
-ENV DEBIAN_FRONTEND dialog
+
+

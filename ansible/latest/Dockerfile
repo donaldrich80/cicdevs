@@ -18,6 +18,15 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
 
+ARG USERNAME=ansible
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+ENV HOME=/home/$USERNAME
+RUN groupadd --gid $USER_GID $USERNAME
+RUN useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
+RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL >/etc/sudoers.d/$USERNAME
+RUN chmod 0440 /etc/sudoers.d/$USERNAME
+
 RUN pip install virtualenv --no-cache-dir \
     ansible \
     ansible-cmdb \
@@ -46,6 +55,8 @@ ENV ANSIBLE_FORCE_COLOR true
 COPY ./tusk-docker.yml ./tusk.yml
 COPY ./goss.yaml ./goss.yaml
 COPY ./goss2.yaml ./goss2.yaml
+
+USER ${USERNAME}
 
 ENV DEBIAN_FRONTEND=dialog
 
