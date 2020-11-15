@@ -40,7 +40,6 @@ COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /home/packer/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/packer/.nanorc
 
-# COPY --from=donaldrich/function:vault /usr/local/bin/vault /usr/local/bin/vault
 COPY --from=donaldrich/function:docker /usr/local/bin/docker /usr/local/bin/docker
 COPY --from=hashicorp/packer /bin/packer /usr/local/bin/packer
 COPY --from=hashicorp/vault /bin/vault /usr/local/bin/vault
