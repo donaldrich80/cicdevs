@@ -17,10 +17,10 @@ command:
   packer:
     exit-status: 0
     exec: "packer version"
-  pip:
+  pip3:
     exit-status: 0
     exec: "pip3 --version"
-  python:
+  python3:
     exit-status: 0
     exec: "python3 --version"
   tusk:
