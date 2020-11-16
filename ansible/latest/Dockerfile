@@ -56,7 +56,7 @@ ENV ANSIBLE_FORCE_COLOR true
 COPY ./tusk-docker.yml ./tusk.yml
 COPY ./goss.yaml ./goss.yaml
 COPY ./goss2.yaml ./goss2.yaml
-
+COPY ./Dockerfile ./Dockerfile
 USER ${USERNAME}
 
 ENV DEBIAN_FRONTEND=dialog

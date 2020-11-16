@@ -34,7 +34,7 @@ ENV DOCKER_BUILDKIT=1
 # ENV DOCKER_TLS_CERTDIR /certs
 
 # RUN docker buildx install
-
+COPY ./Dockerfile ./Dockerfile
 COPY ./goss.yaml ./goss.yaml
 RUN goss validate
 

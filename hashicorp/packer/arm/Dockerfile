@@ -2,33 +2,33 @@ FROM ubuntu AS base
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y \
-        && apt-get install -y --no-install-recommends \
-            qemu-utils \
-            parted \
-            psmisc \
-            curl \
-            unzip \
-            zsh \
-            sudo \
-            nano \
-            xz-utils \
-            qemu-user-static \
-            kpartx \
-            ca-certificates \
-            git \
-            dosfstools \
-            gdisk \
-            libarchive-tools \
-            python3 \
-            # openssl \
-        && rm -rf /tmp/* /usr/share/doc/* \
-        /usr/share/locale/* /usr/share/man/* \
-        /var/cache/debconf/* /var/cache/apt/* \
-        /var/tmp/* /var/log/* /var/lib/apt/lists/* \
-            apt-get autoclean && \
-            apt-get autoremove --purge && \
-            apt-get clean
-            # && pip3 install --no-cache ansible
+    && apt-get install -y --no-install-recommends \
+    qemu-utils \
+    parted \
+    psmisc \
+    curl \
+    unzip \
+    zsh \
+    sudo \
+    nano \
+    xz-utils \
+    qemu-user-static \
+    kpartx \
+    ca-certificates \
+    git \
+    dosfstools \
+    gdisk \
+    libarchive-tools \
+    python3 \
+    # openssl \
+    && rm -rf /tmp/* /usr/share/doc/* \
+    /usr/share/locale/* /usr/share/man/* \
+    /var/cache/debconf/* /var/cache/apt/* \
+    /var/tmp/* /var/log/* /var/lib/apt/lists/* \
+    apt-get autoclean && \
+    apt-get autoremove --purge && \
+    apt-get clean
+# && pip3 install --no-cache ansible
 
 ARG USERNAME=packer
 ARG USER_UID=1000
@@ -77,7 +77,7 @@ USER ${USERNAME}
 
 COPY ./goss.yaml ./goss.yaml
 RUN goss validate
-
+COPY ./Dockerfile ./Dockerfile
 COPY ./tusk-docker.yml ./tusk.yml
 
 ENV DEBIAN_FRONTEND dialog

@@ -12,7 +12,7 @@ COPY --from=brew-builder /root/.bundle /root/.bundle
 RUN mv ./goss.yaml ./goss-base.yaml
 COPY ./goss.yaml ./goss.yaml
 COPY ./tusk-docker.yml ./tusk.yml
-
+COPY ./Dockerfile ./Dockerfile
 # USER builder
 RUN goss validate
 

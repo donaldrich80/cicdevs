@@ -19,7 +19,7 @@ COPY --from=golang-builder /go/bin/glide /go/bin/glide
 RUN mv ./goss.yaml ./goss-base.yaml
 COPY ./goss.yaml ./goss.yaml
 COPY ./tusk-docker.yml ./tusk.yml
-
+COPY ./Dockerfile ./Dockerfile
 # USER builder
 RUN goss validate
 ENV DEBIAN_FRONTEND=dialog

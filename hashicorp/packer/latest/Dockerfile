@@ -64,6 +64,7 @@ ENV TERM=xterm-256color
 
 COPY ./tusk-docker.yml ./tusk.yml
 COPY ./goss.yaml ./goss.yaml
+COPY ./Dockerfile ./Dockerfile
 
 USER ${USERNAME}
 
