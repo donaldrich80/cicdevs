@@ -1,0 +1,5 @@
+# ENV DOTFILE_DIR=$HOME/.dotfiles
+# RUN useradd --uid ${UID} --create-home -d /build -s /usr/bin/zsh --user-group ${UNAME}
+# && echo "${UNAME}:${UNAME}" | chpasswd && adduser ${UNAME} sudo
+# RUN  usermod --shell /bin/zsh root
+# RUN echo "${UNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers

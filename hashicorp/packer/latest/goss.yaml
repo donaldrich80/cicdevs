@@ -19,10 +19,10 @@ command:
     exec: "packer version"
   pip:
     exit-status: 0
-    exec: "pip --version"
+    exec: "pip3 --version"
   python:
     exit-status: 0
-    exec: "python --version"
+    exec: "python3 --version"
   tusk:
     exit-status: 0
     exec: "tusk --version"

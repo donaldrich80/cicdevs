@@ -42,7 +42,7 @@ COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /home/packer/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/packer/.nanorc
 
-COPY --from=donaldrich/function:docker /usr/local/bin/docker /usr/local/bin/docker
+COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
 COPY --from=hashicorp/packer /bin/packer /usr/local/bin/packer
 COPY --from=hashicorp/vault /bin/vault /usr/local/bin/vault
 
@@ -51,23 +51,17 @@ COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
 COPY --from=donaldrich/function:packer /usr/local/bin/packer-provisioner-goss /home/packer/.packer.d/plugins/packer-provisioner-goss
 
+COPY ./tusk-docker.yml ./tusk.yml
+COPY ./goss.yaml ./goss.yaml
+COPY ./Dockerfile ./Dockerfile
+
 ENV PACKER /usr/local/bin/packer
 # ENV PACKER_PLUGIN_PATH /usr/local/bin/
 # ENV PACKER_LOG=1
 # ENV PACKER_LOG_PATH="/work/packer.log"
 ENV TERM=xterm-256color
-
-# ENV DOTFILE_DIR=$HOME/.dotfiles
-# RUN useradd --uid ${UID} --create-home -d /build -s /usr/bin/zsh --user-group ${UNAME}
-# && echo "${UNAME}:${UNAME}" | chpasswd && adduser ${UNAME} sudo
-# RUN  usermod --shell /bin/zsh root
-# RUN echo "${UNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
-COPY ./tusk-docker.yml ./tusk.yml
-COPY ./goss.yaml ./goss.yaml
-COPY ./Dockerfile ./Dockerfile
+ENV DEBIAN_FRONTEND dialog
 
 USER ${USERNAME}
 
-ENV DEBIAN_FRONTEND dialog
 RUN goss validate

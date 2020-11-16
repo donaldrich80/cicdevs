@@ -26,11 +26,11 @@ tasks:
           exec: packer version
           print: "\e[32mPacker\e[0m"
       - command:
-          exec: pip --version
-          print: "\e[32mPip\e[0m"
+          exec: pip3 --version
+          print: "\e[32mPip3\e[0m"
       - command:
-          exec: python --version
-          print: "\e[32mPython\e[0m"
+          exec: python3 --version
+          print: "\e[32mPython3\e[0m"
       - command:
           exec: tusk --version
           print: "\e[32mTusk\e[0m"

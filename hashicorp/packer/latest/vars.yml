@@ -77,12 +77,12 @@ commands:
   # xz-utils:
   #   prefix: xz
   #   version: --version
-  pip:
-    prefix: pip
+  pip3:
+    prefix: pip3
     version: --version
     help: --help
-  python:
-    prefix: python
+  python3:
+    prefix: python3
     version: --version
     help: --help
   ansible:
