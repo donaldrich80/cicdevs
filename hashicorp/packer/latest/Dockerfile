@@ -46,6 +46,7 @@ COPY --from=donaldrich/function:docker /usr/local/bin/docker /usr/local/bin/dock
 COPY --from=hashicorp/packer /bin/packer /usr/local/bin/packer
 COPY --from=hashicorp/vault /bin/vault /usr/local/bin/vault
 
+COPY --from=donaldrich/function:container /usr/local/bin/converge /usr/local/bin/converge
 COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
 COPY --from=donaldrich/function:packer /usr/local/bin/packer-provisioner-goss /home/packer/.packer.d/plugins/packer-provisioner-goss
