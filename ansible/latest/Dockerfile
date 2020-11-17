@@ -33,7 +33,8 @@ RUN pip install --no-cache-dir \
     ansible-cmdb \
     hvac \
     molecule \
-    docker \
+    # docker \
+    jmespath \
     "hvac[parser]" \
     ansible-lint \
     ansible-modules-hashivault \
