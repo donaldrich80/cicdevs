@@ -28,17 +28,17 @@ RUN useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
 RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL >/etc/sudoers.d/$USERNAME
 RUN chmod 0440 /etc/sudoers.d/$USERNAME
 
-RUN pip install virtualenv --no-cache-dir \
+RUN pip install --no-cache-dir \
     ansible \
     ansible-cmdb \
     hvac \
     molecule \
+    docker \
     "hvac[parser]" \
     ansible-lint \
     ansible-modules-hashivault \
     ansible-autodoc
 
-# RUN pip install --no-cache-dir ansigenome
 COPY --from=donaldrich/function:goss      /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 
