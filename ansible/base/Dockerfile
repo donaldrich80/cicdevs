@@ -29,7 +29,7 @@ RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL >/etc/sudoers.d/$USERNAME
 RUN chmod 0440 /etc/sudoers.d/$USERNAME
 
 RUN pip install --no-cache-dir \
-    ansible \
+    ansible-base \
     ansible-cmdb \
     ansible-runner \
     ansible-ara \
@@ -37,7 +37,6 @@ RUN pip install --no-cache-dir \
     ansible-test \
     hvac \
     molecule \
-    # docker \
     jmespath \
     "hvac[parser]" \
     ansible-lint \
