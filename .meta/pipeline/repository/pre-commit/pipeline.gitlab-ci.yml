@@ -1,0 +1,20 @@
+pre-commit:latest:
+  stage: build
+  trigger:
+    include: .meta/pipeline/repository/pre-commit/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+        - "repository/pre-commit/Dockerfile"
+        - "repository/pre-commit/goss.yaml"
+        - "repository/pre-commit/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "pre-commit" && $TRIGGER_VAR2 == "latest"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "pre-commit" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

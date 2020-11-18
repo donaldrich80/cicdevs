@@ -15,6 +15,10 @@ RUN apt-get update \
     zsh \
     nano \
     sudo \
+    #new
+    gcc \
+    python3-dev \
+    #end-new
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
@@ -28,23 +32,21 @@ RUN useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
 RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL >/etc/sudoers.d/$USERNAME
 RUN chmod 0440 /etc/sudoers.d/$USERNAME
 
-RUN pip install --no-cache-dir \
+RUN pip3 install --no-cache-dir \
     ansible \
     ansible-cmdb \
     ansible-runner \
-    ansible-ara \
     ansible-builder \
     ansible-test \
     hvac \
     molecule \
-    # docker \
     jmespath \
     "hvac[parser]" \
     ansible-lint \
     ansible-modules-hashivault \
     ansible-autodoc
 
-COPY --from=donaldrich/function:goss      /usr/local/bin/goss /usr/local/bin/goss
+COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
@@ -55,8 +57,6 @@ ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false
 ENV ANSIBLE_RETRY_FILES_ENABLED false
 ENV ANSIBLE_FORCE_COLOR true
-
-
 
 COPY ./tusk-docker.yml ./tusk.yml
 COPY ./goss.yaml ./goss.yaml

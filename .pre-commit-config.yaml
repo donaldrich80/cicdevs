@@ -17,7 +17,7 @@ repos:
       - id: prettier
 
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: v1.0.0
+    rev: v2.2.0
     hooks:
       # - id: shell-shellcheck
       #   stages: [commit]

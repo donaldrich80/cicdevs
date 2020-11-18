@@ -15,6 +15,10 @@ RUN apt-get update \
     zsh \
     nano \
     sudo \
+    #new
+    gcc \
+    python3-dev \
+    #end-new
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
@@ -32,7 +36,6 @@ RUN pip install --no-cache-dir \
     ansible-base \
     ansible-cmdb \
     ansible-runner \
-    ansible-ara \
     ansible-builder \
     ansible-test \
     hvac \
@@ -43,7 +46,7 @@ RUN pip install --no-cache-dir \
     ansible-modules-hashivault \
     ansible-autodoc
 
-COPY --from=donaldrich/function:goss      /usr/local/bin/goss /usr/local/bin/goss
+COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/

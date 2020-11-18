@@ -1,5 +1,5 @@
 ---
-name: donaldrich/ansible:latest
+name: donaldrich/ansible:base
 usage: Image for developing and executing Ansible playbooks
 
 tasks:

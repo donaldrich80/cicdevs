@@ -47,10 +47,12 @@ include:
   - local: .meta/pipeline/base/google/ubuntu/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/repository/semver/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/repository/commit/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/repository/pre-commit/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/decker/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/sn1per/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/lynis/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/ansible/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/ansible/base/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/hashicorp/vault/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/hashicorp/packer/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/hashicorp/packer/arm/pipeline.gitlab-ci.yml

@@ -1,0 +1,21 @@
+---
+name: donaldrich/pre-commit:latest
+usage: Image for pre-commit hooks
+
+tasks:
+  validate:
+    usage: goss validation of installed packages
+    run: goss validate --color --format documentation
+
+  environment:
+    usage: print env variables
+    run:
+      - command:
+          exec: printenv
+          print: "\e[32mprintenv\e[0m"
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: pre-commit -v
+          print: "\e[32mPre-Commit\e[0m"

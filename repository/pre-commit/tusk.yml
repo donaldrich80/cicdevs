@@ -1,0 +1,27 @@
+---
+tasks:
+  validate:
+    usage: validate image
+    run: goss validate --color --format documentation
+
+  image-validate:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/pre-commit:latest validate
+
+  image-version:
+    usage: build docker image
+    run: docker run -it --rm donaldrich/pre-commit:latest version
+
+  build:
+    usage: build docker image
+    run: docker build --pull --rm -t donaldrich/pre-commit:latest .
+
+  dive:
+    usage: inspect docker image
+    run: dive donaldrich/pre-commit:latest
+  version:
+    usage: check package versions
+    run:
+      - command:
+          exec: pre-commit -v
+          print: "\e[32mPre-Commit\e[0m"

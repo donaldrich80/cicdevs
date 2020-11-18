@@ -1,0 +1,5 @@
+
+command:
+  pre-commit:
+    exit-status: 0
+    exec: "pre-commit -v"
