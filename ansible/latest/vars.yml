@@ -67,6 +67,14 @@ links:
 references:
   ansible:
     docs: https://docs.ansible.com/ansible/latest/index.html
+  ansible-runner:
+    description: "a stable and consistent interface abstraction to Ansible"
+    github: ansible/ansible-runner
+    docs: https://ansible-runner.readthedocs.io
+  ansible-builder:
+    description: "An Ansible execution environment builder"
+    github: ansible/ansible-builder
+    docs: https://ansible-builder.readthedocs.io
   ansible-lint:
     description: "Best practices checker for Ansible"
     github: ansible/ansible-lint

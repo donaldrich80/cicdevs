@@ -1,0 +1,16 @@
+description: Image for pre-commit hooks
+features:
+  - pre-commit
+site_label: pre-commit
+image:
+  name: pre-commit
+  tag: latest
+commands:
+  pre-commit:
+    prefix: pre-commit
+    help: -h
+    version: -v
+references:
+  pre-commit:
+    github: pre-commit/pre-commit
+    site: https://pre-commit.com
