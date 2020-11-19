@@ -41,3 +41,6 @@ command:
   ssh:
     exit-status: 0
     exec: "ssh -V"
+  vault:
+    exit-status: 0
+    exec: "vault -version"

@@ -52,3 +52,6 @@ tasks:
       - command:
           exec: ssh -V
           print: "\e[32mSsh\e[0m"
+      - command:
+          exec: vault -version
+          print: "\e[32mVault\e[0m"

@@ -62,6 +62,10 @@ commands:
     prefix: rsync
     version: --version
     help: --help
+  vault:
+    prefix: vault
+    version: -version
+    help: -h
 links:
   writing-ansible-playbooks-for-new-terraform-servers: https://victorops.com/blog/writing-ansible-playbooks-for-new-terraform-servers
 references:

@@ -46,6 +46,7 @@ RUN pip3 install --no-cache-dir \
     ansible-modules-hashivault \
     ansible-autodoc
 
+COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
 COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 

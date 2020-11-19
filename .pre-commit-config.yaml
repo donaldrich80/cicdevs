@@ -11,10 +11,10 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
 
-  - repo: https://github.com/prettier/prettier
-    rev: 2.1.2
-    hooks:
-      - id: prettier
+  # - repo: https://github.com/prettier/prettier
+  #   rev: 2.1.2
+  #   hooks:
+  #     - id: prettier
 
   - repo: https://gitlab.com/donaldrich/function-as-a-container
     rev: v2.2.0
