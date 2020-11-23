@@ -6,10 +6,10 @@ features:
   - nano
   - git
 image:
-  name: base
-  tag: node.alpine
+  name: node
+  tag: latest
   entrypoint: /bin/zsh
-site_label: alpine
+site_label: node
 commands:
   zsh:
     prefix: zsh

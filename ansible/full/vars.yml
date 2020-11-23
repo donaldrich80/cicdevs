@@ -7,8 +7,9 @@ features:
   - SSH capable
 image:
   name: ansible
-  tag: latest
+  tag: full
   entrypoint: /usr/bin/zsh
+site_label: full
 gossfile:
   goss2.yaml: {}
 commands:
