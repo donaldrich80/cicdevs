@@ -52,6 +52,7 @@ include:
   - local: .meta/pipeline/security/decker/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/sn1per/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/lynis/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/ansible/full/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/ansible/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/ansible/base/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/hashicorp/vault/pipeline.gitlab-ci.yml

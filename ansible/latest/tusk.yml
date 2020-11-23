@@ -26,12 +26,6 @@ tasks:
           exec: ansible --version
           print: "\e[32mAnsible\e[0m"
       - command:
-          exec: ansible-cmdb --version
-          print: "\e[32mAnsible-Cmdb\e[0m"
-      - command:
-          exec: ansible-console --version
-          print: "\e[32mAnsible-Console\e[0m"
-      - command:
           exec: ansible-lint --version
           print: "\e[32mAnsible-Lint\e[0m"
       - command:
@@ -43,9 +37,6 @@ tasks:
       - command:
           exec: git version
           print: "\e[32mGit\e[0m"
-      - command:
-          exec: molecule --version
-          print: "\e[32mMolecule\e[0m"
       - command:
           exec: pip3 -V
           print: "\e[32mPip3\e[0m"
