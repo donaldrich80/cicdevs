@@ -15,10 +15,10 @@ RUN apt-get update \
     zsh \
     nano \
     sudo \
-    # #new
-    # gcc \
-    # python3-dev \
-    # #end-new
+    #new
+    gcc \
+    python3-dev \
+    #end-new
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
@@ -34,17 +34,17 @@ RUN chmod 0440 /etc/sudoers.d/$USERNAME
 
 RUN pip3 install --no-cache-dir \
     ansible \
-    # ansible-cmdb \
-    # ansible-runner \
-    # ansible-builder \
-    # ansible-test \
+    ansible-cmdb \
+    ansible-runner \
+    ansible-builder \
+    ansible-test \
     hvac \
-    # molecule \
+    molecule \
     jmespath \
     "hvac[parser]" \
     ansible-lint \
     ansible-modules-hashivault \
-    # ansible-autodoc
+    ansible-autodoc
 
 COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
 COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/goss
