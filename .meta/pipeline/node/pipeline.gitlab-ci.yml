@@ -1,4 +1,4 @@
-base:node.alpine:
+node:latest:
   stage: build
   trigger:
     include: .meta/pipeline/node/build.gitlab-ci.yml
@@ -12,9 +12,9 @@ base:node.alpine:
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "base" && $TRIGGER_VAR2 == "node.alpine"'
+    - if: '$TRIGGER_VAR1 == "node" && $TRIGGER_VAR2 == "latest"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "base" && $TRIGGER_VAR2 == "all"'
+    - if: '$TRIGGER_VAR1 == "node" && $TRIGGER_VAR2 == "all"'
       when: on_success
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: on_success

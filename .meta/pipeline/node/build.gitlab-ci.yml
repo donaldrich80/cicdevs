@@ -8,7 +8,7 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/lint/docker.yml
 
-build:base:node.alpine:
+build:node:latest:
   extends:
     - .dockerhub:monoarch:push
 
@@ -24,8 +24,8 @@ stages:
 
 variables:
   DOCKER_BUILD_DIR: node
-  IMAGE_NAME: base
-  IMAGE_TAG: node.alpine
+  IMAGE_NAME: node
+  IMAGE_TAG: latest
   DOCKERFILE: Dockerfile
   DOCKER_BUILD_CONTEXT: node
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG

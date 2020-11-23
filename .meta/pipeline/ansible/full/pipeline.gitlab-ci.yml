@@ -1,4 +1,4 @@
-ansible:latest:
+ansible:full:
   stage: build
   trigger:
     include: .meta/pipeline/ansible/full/build.gitlab-ci.yml
@@ -12,7 +12,7 @@ ansible:latest:
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success
-    - if: '$TRIGGER_VAR1 == "ansible" && $TRIGGER_VAR2 == "latest"'
+    - if: '$TRIGGER_VAR1 == "ansible" && $TRIGGER_VAR2 == "full"'
       when: on_success
     - if: '$TRIGGER_VAR1 == "ansible" && $TRIGGER_VAR2 == "all"'
       when: on_success

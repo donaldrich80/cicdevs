@@ -1,13 +1,13 @@
 ---
-title: Node.Alpine
+title: Latest
 path: tree/master
 source: node/Dockerfile
 
 ---
 
-# donaldrich/base:node.alpine
+# donaldrich/node:latest
 
-[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/base/node.alpine?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/base/node.alpine)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/node/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/node/latest)
 
 ## Description
 
@@ -32,13 +32,13 @@ Image for use as Node base or sandbox
 ### Command
 
 ```sh
-docker pull donaldrich/base:node.alpine
+docker pull donaldrich/node:latest
 docker run -it --rm \
---hostname=base \
+--hostname=node \
 -v "$(pwd)":"/work" -w "/work" \
 --entrypoint="/bin/zsh" \
 --net="host" \
-donaldrich/base:node.alpine
+donaldrich/node:latest
 ```
 
 ## Inspect Container
@@ -47,20 +47,20 @@ donaldrich/base:node.alpine
 
     === "Validate Services"
         ```sh
-        docker pull donaldrich/base:node.alpine && docker run -it --rm --entrypoint="tusk" donaldrich/base:node.alpine validate
+        docker pull donaldrich/node:latest && docker run -it --rm --entrypoint="tusk" donaldrich/node:latest validate
         ```
 
     === "Check Versions"
         ```sh
-        docker pull donaldrich/base:node.alpine && docker run -it --rm --entrypoint="tusk" donaldrich/base:node.alpine version
+        docker pull donaldrich/node:latest && docker run -it --rm --entrypoint="tusk" donaldrich/node:latest version
         ```
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/base:node.alpine && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/base:node.alpine
+        docker pull donaldrich/node:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/node:latest
         ```
     === "See Layer Info"
 
         ```sh
-        docker pull donaldrich/base:node.alpine && docker history donaldrich/base:node.alpine
+        docker pull donaldrich/node:latest && docker history donaldrich/node:latest
         ```

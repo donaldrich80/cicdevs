@@ -6,19 +6,19 @@ tasks:
 
   image-validate:
     usage: build docker image
-    run: docker run -it --rm donaldrich/ansible:latest validate
+    run: docker run -it --rm donaldrich/ansible:full validate
 
   image-version:
     usage: build docker image
-    run: docker run -it --rm donaldrich/ansible:latest version
+    run: docker run -it --rm donaldrich/ansible:full version
 
   build:
     usage: build docker image
-    run: docker build --pull --rm -t donaldrich/ansible:latest .
+    run: docker build --pull --rm -t donaldrich/ansible:full .
 
   dive:
     usage: inspect docker image
-    run: dive donaldrich/ansible:latest
+    run: dive donaldrich/ansible:full
   version:
     usage: check package versions
     run:

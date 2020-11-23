@@ -1,14 +1,13 @@
 ---
-title: Ansible
+title: Full
 path: tree/master
 source: ansible/full/Dockerfile
 
 ---
 
+# donaldrich/ansible:full
 
-# donaldrich/ansible
-
-[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/ansible/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/ansible/latest)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/ansible/full?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/ansible/full)
 
 ## Description
 
@@ -33,13 +32,13 @@ Image for developing and executing Ansible playbooks
 ### Command
 
 ```sh
-docker pull donaldrich/ansible:latest
+docker pull donaldrich/ansible:full
 docker run -it --rm \
 --hostname=ansible \
 -v "$(pwd)":"/work" -w "/work" \
 --entrypoint="/usr/bin/zsh" \
 --net="host" \
-donaldrich/ansible:latest
+donaldrich/ansible:full
 ```
 
 ## References
@@ -107,20 +106,20 @@ Molecule aids in the development and testing of Ansible roles
 
     === "Validate Services"
         ```sh
-        docker pull donaldrich/ansible:latest && docker run -it --rm --entrypoint="tusk" donaldrich/ansible:latest validate
+        docker pull donaldrich/ansible:full && docker run -it --rm --entrypoint="tusk" donaldrich/ansible:full validate
         ```
 
     === "Check Versions"
         ```sh
-        docker pull donaldrich/ansible:latest && docker run -it --rm --entrypoint="tusk" donaldrich/ansible:latest version
+        docker pull donaldrich/ansible:full && docker run -it --rm --entrypoint="tusk" donaldrich/ansible:full version
         ```
 
     === "Inspect Layers"
         ```sh
-        docker pull donaldrich/ansible:latest && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/ansible:latest
+        docker pull donaldrich/ansible:full && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest donaldrich/ansible:full
         ```
     === "See Layer Info"
 
         ```sh
-        docker pull donaldrich/ansible:latest && docker history donaldrich/ansible:latest
+        docker pull donaldrich/ansible:full && docker history donaldrich/ansible:full
         ```

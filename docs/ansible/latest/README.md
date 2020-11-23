@@ -1,12 +1,11 @@
 ---
-title: Ansible
+title: Latest
 path: tree/master
 source: ansible/latest/Dockerfile
 
 ---
 
-
-# donaldrich/ansible
+# donaldrich/ansible:latest
 
 [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donaldrich/ansible/latest?color=blue&label=size&logo=docker&style=flat-square)](https://hub.docker.com/r/donaldrich/ansible/latest)
 
