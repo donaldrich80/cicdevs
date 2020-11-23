@@ -43,7 +43,7 @@ RUN pip3 install --no-cache-dir \
     jmespath \
     "hvac[parser]" \
     ansible-lint \
-    ansible-modules-hashivault \
+    ansible-modules-hashivault
     # ansible-autodoc
 
 COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
