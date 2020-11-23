@@ -5,13 +5,6 @@ command:
     exit-status: 0
     exec: "ansible --version"
     timeout: 30000
-  ansible-cmdb:
-    exit-status: 0
-    exec: "ansible-cmdb --version"
-  ansible-console:
-    exit-status: 0
-    exec: "ansible-console --version"
-    timeout: 30000
   ansible-lint:
     exit-status: 0
     exec: "ansible-lint --version"
@@ -25,10 +18,6 @@ command:
   git:
     exit-status: 0
     exec: "git version"
-  molecule:
-    exit-status: 0
-    exec: "molecule --version"
-    timeout: 30000
   pip:
     exit-status: 0
     exec: "pip3 -V"
