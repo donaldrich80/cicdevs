@@ -5,6 +5,7 @@ include:
   - local: .meta/pipeline/docker/dind/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/docker/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/docker/bootstrap/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/node/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/site-gen/docusaurus/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/site-gen/hexo/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/site-gen/hexo/icarus/pipeline.gitlab-ci.yml
