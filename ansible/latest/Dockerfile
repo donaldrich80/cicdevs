@@ -23,7 +23,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
 
-ARG USERNAME=ansible
+ARG USERNAME=non-root
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 ENV HOME=/home/$USERNAME
@@ -51,8 +51,8 @@ COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/gos
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh /root/.zshrc /home/ansible/.zshrc
-COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/ansible/.nanorc
+COPY --from=donaldrich/runner:zsh /root/.zshrc /home/non-root/.zshrc
+COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/non-root/.nanorc
 
 ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false
@@ -63,6 +63,7 @@ COPY ./tusk-docker.yml ./tusk.yml
 COPY ./goss.yaml ./goss.yaml
 COPY ./goss2.yaml ./goss2.yaml
 COPY ./Dockerfile ./Dockerfile
+
 USER ${USERNAME}
 
 ENV DEBIAN_FRONTEND=dialog
