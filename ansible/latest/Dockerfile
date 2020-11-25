@@ -51,8 +51,8 @@ COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/gos
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh /root/.zshrc /home/non-root/.zshrc
-COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/non-root/.nanorc
+COPY --from=donaldrich/runner:zsh --chown=non-root:non-root /root/.zshrc /home/non-root/.zshrc
+COPY --from=donaldrich/runner:zsh --chown=non-root:non-root /zsh/.nanorc /home/non-root/.nanorc
 
 ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false
