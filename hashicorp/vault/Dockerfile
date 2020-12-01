@@ -15,11 +15,11 @@ RUN apk add --no-cache \
   git \
   nano \
   ca-certificates \
-  openssh-client \
+  openssh-client
 
 
   # zsh
-  COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
+COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /home/vault/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/vault/.nanorc
 
