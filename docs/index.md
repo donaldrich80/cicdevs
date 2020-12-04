@@ -8,9 +8,9 @@ path: tree/master/docs
 
 ## About
 
-Docker containers built for use as CI/CD runners. These containers are designed to be lightweight, but packed with useful task-relevant utilitities.
+Docker containers built for use as CI/CD runners. These containers are designed to be lightweight, but packed with useful task-relevant packages.
 
-In addition to functioning as CI/CD executors, they images include tools that enable seamless development and easy CLI functionality. If your project files and commands work inside the container, they will work in the build pipeline as well.
+In addition to functioning as CI/CD executors, they images include tools that enable seamless development and easy CLI functionality. Build and refine your workflows in containers knowing they will function as desired in the CI pipeline.
 
 ## In-Container Development and building
 

@@ -11,10 +11,10 @@ commands:
     prefix: commitlint
     help: -h
     version: -v
-  commitizen:
-    prefix: cz
-    help: --help
-    version: --version
+  # commitizen:
+  #   prefix: cz
+  #   help: --help
+  #   version: --version
 references:
   commitlint:
     github: conventional-changelog/commitlint
