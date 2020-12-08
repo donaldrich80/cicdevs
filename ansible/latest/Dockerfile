@@ -40,6 +40,7 @@ RUN pip3 install --no-cache-dir \
     # ansible-test \
     hvac \
     # molecule \
+    dnspython \
     jmespath \
     "hvac[parser]" \
     ansible-lint \

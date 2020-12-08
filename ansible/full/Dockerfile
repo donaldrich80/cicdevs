@@ -44,6 +44,7 @@ RUN pip3 install --no-cache-dir \
     "hvac[parser]" \
     ansible-lint \
     ansible-modules-hashivault \
+    dnspython \
     ansible-autodoc
 
 COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
