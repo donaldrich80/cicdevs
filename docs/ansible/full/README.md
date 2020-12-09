@@ -13,7 +13,7 @@ source: ansible/full/Dockerfile
 
 ### Purpose
 
-Image for developing and executing Ansible playbooks
+Image for developing and executing Ansible playbooks, including tools only needed for development
 
 ### Features
 

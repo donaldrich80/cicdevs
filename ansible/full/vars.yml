@@ -1,4 +1,4 @@
-description: Image for developing and executing Ansible playbooks
+description: Image for developing and executing Ansible playbooks, including tools only needed for development
 features:
   - Ansible
   - Ansible-lint
@@ -67,6 +67,10 @@ commands:
     prefix: vault
     version: -version
     help: -h
+  docker:
+    prefix: docker
+    version: help
+    help: help
 links:
   writing-ansible-playbooks-for-new-terraform-servers: https://victorops.com/blog/writing-ansible-playbooks-for-new-terraform-servers
 references:

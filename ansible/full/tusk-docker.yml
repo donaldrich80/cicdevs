@@ -1,6 +1,6 @@
 ---
 name: donaldrich/ansible:full
-usage: Image for developing and executing Ansible playbooks
+usage: Image for developing and executing Ansible playbooks, including tools only needed for development
 
 tasks:
   validate:
@@ -34,6 +34,9 @@ tasks:
       - command:
           exec: curl --version
           print: "\e[32mCurl\e[0m"
+      - command:
+          exec: docker help
+          print: "\e[32mDocker\e[0m"
       - command:
           exec: git version
           print: "\e[32mGit\e[0m"

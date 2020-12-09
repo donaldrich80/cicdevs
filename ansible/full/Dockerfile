@@ -13,6 +13,7 @@ RUN apt-get update \
     curl \
     rsync \
     zsh \
+    less \
     nano \
     sudo \
     #new
@@ -48,6 +49,7 @@ RUN pip3 install --no-cache-dir \
     ansible-autodoc
 
 COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
+COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
 COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 

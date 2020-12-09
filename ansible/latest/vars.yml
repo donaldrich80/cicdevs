@@ -58,6 +58,10 @@ commands:
   ssh:
     prefix: ssh
     version: -V
+  docker:
+    prefix: docker
+    version: help
+    help: help
   rsync:
     prefix: rsync
     version: --version

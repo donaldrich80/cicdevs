@@ -30,7 +30,7 @@ RUN chmod 0440 /etc/sudoers.d/$USERNAME
 #     rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install AWS ELASTIC BEANSTALK CLI
-RUN pip install awsebcli --upgrade
+RUN pip install --no-cache-dir awsebcli --upgrade
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /root/.zshrc /home/aws/.zshrc

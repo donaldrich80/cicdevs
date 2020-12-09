@@ -31,7 +31,7 @@ repos:
         stages: [commit]
       - id: secrets-gitleaks
         stages: [commit]
-      - id: yaml-yamllint
-        stages: [commit]
+      # - id: yaml-yamllint
+      #   stages: [commit]
       - id: docker-hadolint
         exclude: Dockerfile.tmpl.*

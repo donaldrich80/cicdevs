@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir \
 # mkpdfs-mkdocs \
 weasyprint
 
-RUN pip install -e git+https://github.com/jwaschkau/mkpdfs-mkdocs-plugin.git#egg=mkpdfs-mkdocs-plugin
+RUN pip install --no-cache-dir -e git+https://github.com/jwaschkau/mkpdfs-mkdocs-plugin.git#egg=mkpdfs-mkdocs-plugin
 
 RUN mv ./goss.yaml ./goss-base.yaml
 COPY ./goss.yaml ./goss.yaml

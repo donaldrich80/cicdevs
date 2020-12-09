@@ -15,6 +15,7 @@ RUN apt-get update \
     zsh \
     nano \
     sudo \
+    less \
     # #new
     # gcc \
     # python3-dev \
@@ -48,6 +49,7 @@ RUN pip3 install --no-cache-dir \
     # ansible-autodoc
 
 COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
+COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
 COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 
@@ -59,6 +61,11 @@ ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false
 ENV ANSIBLE_RETRY_FILES_ENABLED false
 ENV ANSIBLE_FORCE_COLOR true
+
+RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment
+RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+RUN echo "LANG=en_US.UTF-8" > /etc/locale.conf
+RUN locale-gen en_US.UTF-8
 
 COPY ./tusk-docker.yml ./tusk.yml
 COPY ./goss.yaml ./goss.yaml

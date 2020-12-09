@@ -23,5 +23,3 @@ USER non-root
 ENV DEBIAN_FRONTEND=dialog
 
 RUN goss validate
-
-
