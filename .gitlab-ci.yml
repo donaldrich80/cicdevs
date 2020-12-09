@@ -1,6 +1,6 @@
 include:
-  # - project: donaldrich/modular-gitlab-ci
-  #   file: templates/default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: templates/default.yml
   - local: .meta/pipelines.gitlab-ci.yml
   # - project: donaldrich/modular-gitlab-ci
   #   file: function/repo/auto-push.yml
