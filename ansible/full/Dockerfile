@@ -61,6 +61,7 @@ ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false
 ENV ANSIBLE_RETRY_FILES_ENABLED false
 ENV ANSIBLE_FORCE_COLOR true
+ENV GOSS_FMT documentation
 
 COPY ./tusk-docker.yml ./tusk.yml
 COPY ./goss.yaml ./goss.yaml
