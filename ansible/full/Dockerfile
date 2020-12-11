@@ -42,6 +42,7 @@ RUN pip3 install --no-cache-dir \
     hvac \
     molecule \
     jmespath \
+    certifi \
     "hvac[parser]" \
     ansible-lint \
     ansible-modules-hashivault \

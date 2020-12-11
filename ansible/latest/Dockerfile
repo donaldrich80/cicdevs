@@ -44,6 +44,7 @@ RUN pip3 install --no-cache-dir \
     dnspython \
     jmespath \
     "hvac[parser]" \
+    certifi \
     ansible-lint \
     ansible-modules-hashivault
     # ansible-autodoc
