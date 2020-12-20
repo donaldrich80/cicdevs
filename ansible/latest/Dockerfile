@@ -39,6 +39,7 @@ RUN pip3 install --no-cache-dir \
     # ansible-runner \
     # ansible-builder \
     # ansible-test \
+    ara \
     hvac \
     # molecule \
     dnspython \
@@ -55,7 +56,7 @@ COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/gos
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh --chown=non-root:non-root /root/.zshrc /home/non-root/.zshrc
+COPY --from=donaldrich/runner:zsh --chown=non-root:non-root /zsh/.zshrc /home/non-root/.zshrc
 COPY --from=donaldrich/runner:zsh --chown=non-root:non-root /zsh/.nanorc /home/non-root/.nanorc
 
 ENV ANSIBLE_GATHERING smart
@@ -63,6 +64,10 @@ ENV ANSIBLE_HOST_KEY_CHECKING false
 ENV ANSIBLE_RETRY_FILES_ENABLED false
 ENV ANSIBLE_FORCE_COLOR true
 ENV GOSS_FMT documentation
+
+ENV ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)"
+ENV ARA_API_CLIENT="http"
+ENV ARA_API_SERVER="http://192.168.1.101:8734"
 
 RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen

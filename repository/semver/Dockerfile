@@ -30,7 +30,7 @@ RUN npm install -g --save-dev \
   standard-version
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc
+COPY --from=donaldrich/runner:zsh /zsh/.zshrc /root/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /root/.nanorc
 COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
