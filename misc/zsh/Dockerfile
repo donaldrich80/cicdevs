@@ -42,7 +42,7 @@ WORKDIR /zsh/LS_COLORS
 RUN sh install.sh
 
 
-RUN echo "include /zsh/.nano/*.nanorc" >> ~/.nanorc
+RUN echo "include /zsh/.nano/*.nanorc" >> /zsh/.nanorc
 
 # RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment
 # RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
@@ -55,6 +55,6 @@ ENV DEBIAN_FRONTEND dialog
 
 ENV HOME /root
 
-COPY ./zshrc /root/.zshrc
+COPY /zsh/.nanorc /root/.zshrc
 
 # RUN mkdir -p /zsh
