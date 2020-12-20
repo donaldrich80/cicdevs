@@ -84,6 +84,14 @@ references:
     description: "An Ansible execution environment builder"
     github: ansible/ansible-builder
     docs: https://ansible-builder.readthedocs.io
+  ansible-doctor:
+    description: "Annotation based documentation for your Ansible roles"
+    github: thegeeklab/ansible-doctor
+    docs: https://ansible-doctor.geekdocs.de
+  ansible-later:
+    description: "Another best practice scanner for Ansible roles and playbooks"
+    github: thegeeklab/ansible-later
+    docs: https://ansible-later.geekdocs.de
   ansible-test:
     description: "An Ansible Testing Framework for Humans"
     github: nylas/ansible-test
