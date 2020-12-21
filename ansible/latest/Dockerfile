@@ -24,7 +24,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
 
-ARG USERNAME=non-root
+ARG USERNAME=ansible
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 ENV HOME=/home/$USERNAME
