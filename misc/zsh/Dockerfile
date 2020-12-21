@@ -9,7 +9,7 @@ RUN apt-get update -y && apt-get -y --no-install-recommends install locales libc
             apt-get autoremove --purge && \
             apt-get clean
 
-RUN wget https://github.com/sharkdp/bat/releases/download/v0.17.0/bat_0.17.0_amd64.deb           
+RUN wget https://github.com/sharkdp/bat/releases/download/v0.17.1/bat_0.17.1_amd64.deb           
 RUN dpkg -i bat_0.17.1_amd64.deb        
             
 ENV HOME /zsh
