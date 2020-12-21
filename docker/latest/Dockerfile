@@ -7,7 +7,7 @@ COPY ./config.json /root/.docker/
 COPY --from=donaldrich/function:goss      /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:goss      /usr/local/bin/dgoss /usr/local/bin/dgoss
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
-COPY --from=donaldrich/function:hashicorp /usr/local/bin/vault /usr/local/bin/vault
+COPY --from=hashicorp/vault /bin/vault /usr/local/bin/vault
 COPY --from=donaldrich/function:hadolint  /usr/local/bin/hadolint /usr/local/bin/hadolint
 COPY --from=donaldrich/function:shellcheck /usr/local/bin/shellcheck  /usr/local/bin/shellcheck
 COPY --from=donaldrich/function:gitleaks   /usr/local/bin/gitleaks    /usr/local/bin/gitleaks
@@ -20,8 +20,9 @@ COPY --from=donaldrich/function:docker /usr/local/bin/dockfmt /usr/local/bin/doc
 COPY --from=donaldrich/function:docker /usr/local/bin/notary /usr/local/bin/notary
 COPY --from=donaldrich/function:gomplate /usr/local/bin/gomplate /usr/local/bin/gomplate
 COPY --from=donaldrich/function:jq /usr/local/bin/jq /usr/local/bin/jq
+
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh /root/.zshrc /root/.zshrc
+COPY --from=donaldrich/runner:zsh /zsh/.zshrc /root/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /root/.nanorc
 
 ENV DOCKER_CLI_EXPERIMENTAL enabled
@@ -36,9 +37,13 @@ ENV DOCKER_BUILDKIT=1
 # RUN docker buildx install
 COPY ./Dockerfile ./Dockerfile
 COPY ./goss.yaml ./goss.yaml
+COPY ./tusk-docker.yml ./tusk.yml
+
+ENV GOSS_FMT documentation
+ENV GOSS_COLOR true
 RUN goss validate
 
-COPY ./tusk-docker.yml ./tusk.yml
+
 
 # ENTRYPOINT ["tusk"]
 # CMD ["validate"]

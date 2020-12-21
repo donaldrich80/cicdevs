@@ -19,5 +19,6 @@ COPY ./goss.yaml ./goss.yaml
 RUN goss validate
 
 COPY ./tusk-docker.yml ./tusk.yml
-
+ENV GOSS_FMT documentation
+ENV GOSS_COLOR true
 ENV DEBIAN_FRONTEND=dialog

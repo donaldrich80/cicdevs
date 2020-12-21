@@ -37,9 +37,11 @@ COPY --from=donaldrich/runner:zsh /root/.zshrc /home/aws/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/aws/.nanorc
 
 COPY ./goss.yaml ./goss.yaml
-RUN goss validate
+
 
 COPY ./tusk-docker.yml ./tusk.yml
-
+ENV GOSS_FMT documentation
+ENV GOSS_COLOR true
 ENV DEBIAN_FRONTEND=dialog
 # ENTRYPOINT [ "tusk" ]
+RUN goss validate

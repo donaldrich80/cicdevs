@@ -72,12 +72,14 @@ ENV TERM=xterm-256color
 # && echo "${UNAME}:${UNAME}" | chpasswd && adduser ${UNAME} sudo
 # RUN  usermod --shell /bin/zsh root
 # RUN echo "${UNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+COPY ./goss.yaml ./goss.yaml
+COPY ./Dockerfile ./Dockerfile
+COPY ./tusk-docker.yml ./tusk.yml
 
 USER ${USERNAME}
 
-COPY ./goss.yaml ./goss.yaml
+ENV GOSS_FMT documentation
+ENV GOSS_COLOR true
 RUN goss validate
-COPY ./Dockerfile ./Dockerfile
-COPY ./tusk-docker.yml ./tusk.yml
 
 ENV DEBIAN_FRONTEND dialog

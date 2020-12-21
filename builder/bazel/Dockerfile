@@ -22,7 +22,8 @@ COPY ./Dockerfile ./Dockerfile
 COPY ./tusk-docker.yml ./tusk.yml
 
 # USER builder
-
+ENV GOSS_FMT documentation
+ENV GOSS_COLOR true
 RUN goss validate
 
 # ENTRYPOINT ["tusk"]

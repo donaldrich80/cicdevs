@@ -12,10 +12,14 @@ COPY --from=donaldrich/function:docker /usr/local/bin/docker /usr/local/bin/dock
 
 RUN mv ./goss.yaml ./goss-base.yaml
 COPY ./goss.yaml ./goss.yaml
-RUN goss validate
+
 
 COPY ./tusk-docker.yml ./tusk.yml
 
 ENV DEBIAN_FRONTEND=dialog
 
 USER ${USERNAME}
+
+ENV GOSS_FMT documentation
+ENV GOSS_COLOR true
+RUN goss validate

@@ -1,28 +1,29 @@
-FROM python:slim
+# FROM python:slim
+FROM donaldrich/ansible:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    software-properties-common \
-    openssh-client \
-    sshpass \
-    locales \
-    bash \
-    git \
-    curl \
-    rsync \
-    zsh \
-    less \
-    nano \
-    sudo \
-    #new
-    gcc \
-    python3-dev \
-    #end-new
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
+# RUN apt-get update \
+#     && apt-get install -y --no-install-recommends \
+#     software-properties-common \
+#     openssh-client \
+#     sshpass \
+#     locales \
+#     bash \
+#     git \
+#     curl \
+#     rsync \
+#     zsh \
+#     less \
+#     nano \
+#     sudo \
+#     #new
+#     gcc \
+#     python3-dev \
+#     #end-new
+#     && apt-get clean \
+#     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+#     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
 
 ARG USERNAME=ansible
 ARG USER_UID=1000
@@ -65,6 +66,7 @@ ENV ANSIBLE_HOST_KEY_CHECKING false
 ENV ANSIBLE_RETRY_FILES_ENABLED false
 ENV ANSIBLE_FORCE_COLOR true
 ENV GOSS_FMT documentation
+ENV GOSS_COLOR true
 
 COPY ./tusk-docker.yml ./tusk.yml
 COPY ./goss.yaml ./goss.yaml

@@ -66,9 +66,10 @@ COPY ./Dockerfile ./Dockerfile
 COPY ./tusk-docker.yml ./tusk.yml
 
 # USER ${USERNAME}
-ENV GOSS_FMT documentation
-ENV DEBIAN_FRONTEND=dialog
 
+ENV DEBIAN_FRONTEND=dialog
+ENV GOSS_FMT documentation
+ENV GOSS_COLOR true
 RUN goss validate
 
 # ENTRYPOINT ["tusk"]

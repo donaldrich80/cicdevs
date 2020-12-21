@@ -64,4 +64,6 @@ ENV DEBIAN_FRONTEND dialog
 
 USER ${USERNAME}
 
+ENV GOSS_FMT documentation
+ENV GOSS_COLOR true
 RUN goss validate

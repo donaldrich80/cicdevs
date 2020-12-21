@@ -8,6 +8,7 @@ RUN apt-get update \
     openssh-client \
     sshpass \
     locales \
+    # bat \
     bash \
     git \
     curl \
@@ -54,20 +55,22 @@ COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
 COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
 COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY --from=donaldrich/function:syntax-tools /usr/local/bin/jq /usr/local/bin/jq
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh --chown=non-root:non-root /zsh/.zshrc /home/non-root/.zshrc
-COPY --from=donaldrich/runner:zsh --chown=non-root:non-root /zsh/.nanorc /home/non-root/.nanorc
+COPY --from=donaldrich/runner:zsh --chown=ansible:ansible /zsh/.zshrc /home/ansible/.zshrc
+COPY --from=donaldrich/runner:zsh --chown=ansible:ansible /zsh/.nanorc /home/ansible/.nanorc
 
 ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false
 ENV ANSIBLE_RETRY_FILES_ENABLED false
 ENV ANSIBLE_FORCE_COLOR true
 ENV GOSS_FMT documentation
+ENV GOSS_COLOR true
 
-ENV ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)"
-ENV ARA_API_CLIENT="http"
-ENV ARA_API_SERVER="http://192.168.1.101:8734"
+# ENV ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)"
+# ENV ARA_API_CLIENT="http"
+# ENV ARA_API_SERVER="http://192.168.1.101:8734"
 
 RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
@@ -79,7 +82,7 @@ COPY ./goss.yaml ./goss.yaml
 COPY ./goss2.yaml ./goss2.yaml
 COPY ./Dockerfile ./Dockerfile
 
-USER ${USERNAME}
+# USER ${USERNAME}
 
 ENV DEBIAN_FRONTEND=dialog
 
