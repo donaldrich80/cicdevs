@@ -43,7 +43,7 @@ RUN sh install.sh
 
 
 RUN echo "include /zsh/.nano/*.nanorc" >> /zsh/.nanorc
-
+RUN echo "include /zsh/.nano/*.nanorc" >> /root/.nanorc
 # RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment
 # RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 # RUN echo "LANG=en_US.UTF-8" > /etc/locale.conf
@@ -55,6 +55,6 @@ ENV DEBIAN_FRONTEND dialog
 
 ENV HOME /root
 
-COPY /zsh/.nanorc /root/.zshrc
-
+COPY ./zshrc /root/.zshrc
+COPY ./zshrc /zsh/.zshrc
 # RUN mkdir -p /zsh

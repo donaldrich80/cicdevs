@@ -39,6 +39,8 @@ RUN pip3 install --no-cache-dir \
     ansible-runner \
     ansible-builder \
     ansible-test \
+    ansible-doctor \
+    ansible-later \
     hvac \
     molecule \
     jmespath \
