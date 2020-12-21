@@ -21,10 +21,10 @@ references:
     description: Define and run multi-container applications with Docker
     github: docker/compose
     docs: https://docs.docker.com/compose
-  buildx:
-    description: Docker CLI plugin for extended build capabilities with BuildKit
-    github: docker/buildx
-    docs: https://docs.docker.com/buildx
+  # buildx:
+  #   description: Docker CLI plugin for extended build capabilities with BuildKit
+  #   github: docker/buildx
+  #   docs: https://docs.docker.com/buildx
   notary:
     github: theupdateframework/notary
     docs: https://docs.docker.com/notary

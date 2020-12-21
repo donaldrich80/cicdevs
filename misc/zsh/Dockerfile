@@ -9,6 +9,9 @@ RUN apt-get update -y && apt-get -y --no-install-recommends install locales libc
             apt-get autoremove --purge && \
             apt-get clean
 
+RUN wget https://github.com/sharkdp/bat/releases/download/v0.17.0/bat_0.17.0_amd64.deb           
+RUN dpkg -i bat_0.17.1_amd64.deb        
+            
 ENV HOME /zsh
 
 RUN wget https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh -O- | sh
@@ -41,6 +44,7 @@ RUN mkdir /zsh/LS_COLORS && curl -L https://api.github.com/repos/trapd00r/LS_COL
 WORKDIR /zsh/LS_COLORS
 RUN sh install.sh
 
+# https://github.com/eth-p/bat-extras/archive/v2020.10.05.tar.gz
 
 RUN echo "include /zsh/.nano/*.nanorc" >> /zsh/.nanorc
 RUN echo "include /zsh/.nano/*.nanorc" >> /root/.nanorc

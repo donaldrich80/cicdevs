@@ -1,8 +1,8 @@
 
 command:
-  buildx:
-    exit-status: 0
-    exec: "docker buildx version"
+  # buildx:
+  #   exit-status: 0
+  #   exec: "docker buildx version"
   curl:
     exit-status: 0
     exec: "curl --version"

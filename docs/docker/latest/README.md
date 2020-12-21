@@ -49,14 +49,6 @@ donaldrich/docker:latest
 
 ## References
 
-### Buildx
-
-Docker CLI plugin for extended build capabilities with BuildKit
-
-- [:octicons-book-16: Docs](https://docs.docker.com/buildx)
-
-- [:octicons-mark-github-16: GitHub](https://github.com/docker/buildx)
-
 ### Dive
 
 A tool for exploring each layer in a docker image
