@@ -7,11 +7,6 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/repo/semantic-release.yml
 
-cache:
-  untracked: true
-  paths:
-    - .meta/snippets
-
 stages:
   - pre
   - lint

@@ -1,4 +1,4 @@
-FROM    ubuntu:bionic
+FROM ubuntu
 ENV DEBIAN_FRONTEND noninteractive
 
 # ARG USERNAME=builder
@@ -66,7 +66,7 @@ COPY ./Dockerfile ./Dockerfile
 COPY ./tusk-docker.yml ./tusk.yml
 
 # USER ${USERNAME}
-
+ENV GOSS_FMT documentation
 ENV DEBIAN_FRONTEND=dialog
 
 RUN goss validate

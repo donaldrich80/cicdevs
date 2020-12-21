@@ -18,7 +18,7 @@ RUN mkdir -p /home/${USERNAME}/.terraform.d/plugins
 RUN chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.terraform.d
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh /root/.zshrc /home/terraform/.zshrc
+COPY --from=donaldrich/runner:zsh /zsh/.zshrc /home/terraform/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/terraform/.nanorc
 
 COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault

@@ -15,14 +15,16 @@ RUN apk --update --no-cache add \
   zsh \
   nano
 
-RUN npm install -g --save-dev \
+# RUN npm install -g --save-dev \
+RUN npm install -g \
+  npm@7.3.0 \
   semantic-release@latest \
   @semantic-release/changelog@latest \
   @semantic-release/exec@latest \
   @semantic-release/git@latest \
   @semantic-release/commit-analyzer@latest \
   @semantic-release/gitlab@latest \
-  semantic-release-docker@latest \
+  # semantic-release-docker@latest \
   @google/semantic-release-replace-plugin@latest \
   @semantic-release/gitlab-config@latest \
   conventional-changelog-conventionalcommits \
@@ -39,9 +41,9 @@ COPY ./tusk-docker.yml ./tusk.yml
 COPY ./goss.yaml ./goss.yaml
 COPY ./Dockerfile ./Dockerfile
 # USER ${USERNAME}
-
+ENV DEBIAN_FRONTEND dialog
+ENV GOSS_FMT documentation
 RUN goss validate
 
-ENV DEBIAN_FRONTEND dialog
 
-# RUN echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+

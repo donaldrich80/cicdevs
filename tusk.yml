@@ -15,10 +15,6 @@ tasks:
     usage: analyze built image
     run: dive donaldrich/function:test
 
-  prune:
-    usage: analyze built image
-    run: docker system prune --all --force
-
   test:
     usage: image requirements goss
     options:
@@ -62,7 +58,6 @@ tasks:
       - command: rm -r .meta/pipeline | true
       - command: mkdir docs | true
       - command: cp .meta/docs/index.md docs
-      - command: cp -r .meta/docs/about docs
       - command: cp CHANGELOG docs/about
 
   dependency:

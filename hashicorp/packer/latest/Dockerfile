@@ -39,7 +39,7 @@ RUN mkdir -p /home/${USERNAME}/.packer.d/plugins
 RUN chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.packer.d
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh /root/.zshrc /home/packer/.zshrc
+COPY --from=donaldrich/runner:zsh /zsh/.zshrc /home/packer/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/packer/.nanorc
 
 COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker

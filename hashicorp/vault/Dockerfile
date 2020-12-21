@@ -20,7 +20,7 @@ RUN apk add --no-cache \
 
   # zsh
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh /root/.zshrc /home/vault/.zshrc
+COPY --from=donaldrich/runner:zsh /zsh/.zshrc /home/vault/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/vault/.nanorc
 
 COPY --from=donaldrich/function:goss          /usr/local/bin/goss /usr/local/bin/goss
