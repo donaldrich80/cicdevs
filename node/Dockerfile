@@ -19,7 +19,7 @@ COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
 COPY ./goss.yaml ./goss.yaml
 COPY ./tusk-docker.yml ./tusk.yml
 
-USER non-root
+USER node
 
 ENV DEBIAN_FRONTEND=dialog
 
