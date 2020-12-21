@@ -45,6 +45,9 @@ COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/packer/.nanorc
 COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
 COPY --from=hashicorp/packer /bin/packer /usr/local/bin/packer
 COPY --from=hashicorp/vault /bin/vault /usr/local/bin/vault
+COPY --from=hashicorp/envconsul /bin/envconsul /usr/local/bin/envconsul
+COPY --from=hashicorp/consul-template /consul-template /usr/local/bin/consul-template
+
 
 COPY --from=donaldrich/function:container /usr/local/bin/converge /usr/local/bin/converge
 COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss

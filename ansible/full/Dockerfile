@@ -52,6 +52,9 @@ RUN pip3 install --no-cache-dir \
     dnspython \
     ansible-autodoc
 
+COPY --from=hashicorp/consul-template /consul-template /usr/local/bin/consul-template
+
+COPY --from=hashicorp/envconsul /bin/envconsul /usr/local/bin/envconsul
 COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
 COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
 COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/goss

@@ -16,16 +16,18 @@ RUN apk add --no-cache \
   nano \
   ca-certificates \
   openssh-client
-
-
+  
   # zsh
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /zsh/.zshrc /home/vault/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/vault/.nanorc
 
-COPY --from=donaldrich/function:goss          /usr/local/bin/goss /usr/local/bin/goss
-COPY --from=donaldrich/function:task          /usr/local/bin/tusk /usr/local/bin/tusk
+COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
+COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
 # hashicorp/vault
+COPY --from=hashicorp/consul-template /consul-template /usr/local/bin/consul-template
+
+COPY --from=hashicorp/envconsul /bin/envconsul /usr/local/bin/envconsul
 COPY --from=hashicorp/vault /bin/vault /usr/local/bin/vault
 # donaldrich/function:vault
 COPY --from=donaldrich/function:vault /usr/local/bin/hashi-helper /usr/local/bin/hashi-helper

@@ -3,11 +3,13 @@ FROM docker
 RUN apk add --no-cache curl git ca-certificates openssh-client zsh
 
 # COPY ./config.json /root/.docker/
+COPY --from=hashicorp/consul-template /consul-template /usr/local/bin/consul-template
 
 COPY --from=donaldrich/function:goss      /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:goss      /usr/local/bin/dgoss /usr/local/bin/dgoss
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 COPY --from=hashicorp/vault /bin/vault /usr/local/bin/vault
+COPY --from=hashicorp/envconsul /bin/envconsul /usr/local/bin/envconsul
 COPY --from=donaldrich/function:hadolint  /usr/local/bin/hadolint /usr/local/bin/hadolint
 COPY --from=donaldrich/function:shellcheck /usr/local/bin/shellcheck  /usr/local/bin/shellcheck
 COPY --from=donaldrich/function:gitleaks   /usr/local/bin/gitleaks    /usr/local/bin/gitleaks

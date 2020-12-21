@@ -21,8 +21,10 @@ COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /zsh/.zshrc /home/terraform/.zshrc
 COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/terraform/.nanorc
 
+COPY --from=hashicorp/envconsul /bin/envconsul /usr/local/bin/envconsul
 COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
 COPY --from=hashicorp/terraform /bin/terraform /usr/local/bin/terraform
+COPY --from=hashicorp/consul-template /consul-template /usr/local/bin/consul-template
 
 COPY --from=donaldrich/function:terraform /usr/local/bin/gitlab-terraform /usr/local/bin/gitlab-terraform
 COPY --from=donaldrich/function:terraform /usr/local/bin/terrahelp  /usr/local/bin/terrahelp
