@@ -17,7 +17,7 @@ RUN apk --update --no-cache add \
 
 # RUN npm install -g --save-dev \
 RUN npm install -g \
-  npm@7.3.0 \
+  # npm@7.3.0 \
   semantic-release@latest \
   @semantic-release/changelog@latest \
   @semantic-release/exec@latest \
