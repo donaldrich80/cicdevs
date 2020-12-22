@@ -23,12 +23,16 @@ RUN sh -c "$(wget -O- https://raw.githubusercontent.com/deluan/zsh-in-docker/mas
     -p ansible \
     -p docker \
     -p docker-compose \
+    -p vault \
+    -p zsh-interactive-cd \
+    -p zsh-navigation-tools \
+    -p sudo \
     -p https://github.com/zsh-users/zsh-autosuggestions \
     -p https://github.com/zsh-users/zsh-completions \
     -p https://github.com/sparsick/ansible-zsh \
     -p https://github.com/zsh-users/zsh-history-substring-search \
     -p https://github.com/zsh-users/zsh-syntax-highlighting \
-    -p https://github.com/changyuheng/zsh-interactive-cd \
+#    -p https://github.com/changyuheng/zsh-interactive-cd \
     -p https://github.com/supercrabtree/k
 
 COPY --from=donaldrich/function:fzf /usr/local/bin/fzf /usr/local/bin/fzf
