@@ -3,7 +3,8 @@ FROM golang:alpine
 RUN apk add --no-cache \
 git \
 zsh \
-nano
+nano \
+sudo
 
 ARG USERNAME=golang
 # RUN addgroup -g 1000 alpine
