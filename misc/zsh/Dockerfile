@@ -1,16 +1,22 @@
+# syntax = docker/dockerfile:1.2
 FROM ubuntu AS builder
+RUN rm -f /etc/apt/apt.conf.d/docker-clean; echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
+RUN --mount=type=cache,target=/var/cache/apt --mount=type=cache,target=/var/lib/apt \
+    apt-get update && apt-get --no-install-recommends install -y \
+    locales \
+    libcap2 \
+    zsh \
+    zsh-common \
+    wget nano unzip curl tree bat less ca-certificates
+    # && rm -rf /tmp/* /usr/share/doc/* \
+    #     /usr/share/locale/* /usr/share/man/* \
+    #     /var/cache/debconf/* /var/cache/apt/* \
+    #     /var/tmp/* /var/log/* /var/lib/apt/lists/* \
+    #         apt-get autoclean && \
+    #         apt-get autoremove --purge && \
+    #         apt-get clean
 
-RUN apt-get update -y && apt-get -y --no-install-recommends install locales libcap2 zsh zsh-common wget nano unzip curl tree bat less ca-certificates \
-    && rm -rf /tmp/* /usr/share/doc/* \
-        /usr/share/locale/* /usr/share/man/* \
-        /var/cache/debconf/* /var/cache/apt/* \
-        /var/tmp/* /var/log/* /var/lib/apt/lists/* \
-            apt-get autoclean && \
-            apt-get autoremove --purge && \
-            apt-get clean
-
-RUN wget https://github.com/sharkdp/bat/releases/download/v0.17.1/bat_0.17.1_amd64.deb
-RUN dpkg -i bat_0.17.1_amd64.deb
+RUN wget https://github.com/sharkdp/bat/releases/download/v0.17.1/bat_0.17.1_amd64.deb && dpkg -i bat_0.17.1_amd64.deb
 
 ENV HOME /zsh
 
@@ -55,7 +61,7 @@ RUN echo "include /zsh/.nano/*.nanorc" >> /root/.nanorc
 # RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment
 # RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 # RUN echo "LANG=en_US.UTF-8" > /etc/locale.conf
-# RUN locale-gen en_US.UTF-8
+RUN locale-gen --purge en_US.UTF-8
 
 COPY ./p10k.zsh /zsh/.p10k.zsh
 
