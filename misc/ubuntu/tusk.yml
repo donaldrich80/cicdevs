@@ -1,5 +1,0 @@
----
-tasks:
-  validate:
-    usage: validate
-    run: goss validate --color --format documentation

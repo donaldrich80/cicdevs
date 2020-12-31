@@ -1,0 +1,18 @@
+version: 2
+updates:
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "docker"
+    directory: "ansible/full"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "docker"
+    directory: "ansible/latest"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"

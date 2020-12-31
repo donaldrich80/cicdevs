@@ -58,6 +58,8 @@ COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
 COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
 COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/goss
 COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY --from=donaldrich/function:task      /usr/local/bin/task /usr/local/bin/task
+COPY --from=donaldrich/function:task      /usr/local/bin/variant /usr/local/bin/variant
 COPY --from=donaldrich/function:syntax-tools /usr/local/bin/jq /usr/local/bin/jq
 
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
