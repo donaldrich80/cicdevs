@@ -1,4 +1,4 @@
-FROM    donaldrich/builder:latest
+FROM donaldrich/builder:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 # USER root

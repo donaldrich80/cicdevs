@@ -25,14 +25,14 @@ ENV DEBIAN_FRONTEND noninteractive
 #     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 #     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man
 
-ARG USERNAME=ansible
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
-ENV HOME=/home/$USERNAME
-RUN groupadd --gid $USER_GID $USERNAME
-RUN useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
-RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL >/etc/sudoers.d/$USERNAME
-RUN chmod 0440 /etc/sudoers.d/$USERNAME
+# ARG USERNAME=ansible
+# ARG USER_UID=1000
+# ARG USER_GID=$USER_UID
+# ENV HOME=/home/$USERNAME
+# RUN groupadd --gid $USER_GID $USERNAME
+# RUN useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
+# RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL >/etc/sudoers.d/$USERNAME
+# RUN chmod 0440 /etc/sudoers.d/$USERNAME
 
 RUN pip3 install --no-cache-dir \
     ansible \
@@ -52,17 +52,17 @@ RUN pip3 install --no-cache-dir \
     dnspython \
     ansible-autodoc
 
-COPY --from=hashicorp/consul-template /consul-template /usr/local/bin/consul-template
+# COPY --from=hashicorp/consul-template /consul-template /usr/local/bin/consul-template
 
-COPY --from=hashicorp/envconsul /bin/envconsul /usr/local/bin/envconsul
-COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
-COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
-COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/goss
-COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+# COPY --from=hashicorp/envconsul /bin/envconsul /usr/local/bin/envconsul
+# COPY --from=hashicorp/vault /bin/vault  /usr/local/bin/vault
+# COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
+# COPY --from=donaldrich/function:container /usr/local/bin/goss /usr/local/bin/goss
+# COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
 
-COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
-COPY --from=donaldrich/runner:zsh /root/.zshrc /home/ansible/.zshrc
-COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/ansible/.nanorc
+# COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
+# COPY --from=donaldrich/runner:zsh /root/.zshrc /home/ansible/.zshrc
+# COPY --from=donaldrich/runner:zsh /zsh/.nanorc /home/ansible/.nanorc
 
 ENV ANSIBLE_GATHERING smart
 ENV ANSIBLE_HOST_KEY_CHECKING false

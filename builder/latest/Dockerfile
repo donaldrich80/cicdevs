@@ -42,7 +42,9 @@ RUN     apt-get update \
 
 COPY ./extract.sh /usr/local/bin/extract
 COPY --from=donaldrich/function:goss /usr/local/bin/goss /usr/local/bin/goss
-COPY --from=donaldrich/function:task /usr/local/bin/tusk /usr/local/bin/tusk
+COPY --from=donaldrich/function:task      /usr/local/bin/tusk /usr/local/bin/tusk
+COPY --from=donaldrich/function:task      /usr/local/bin/task /usr/local/bin/task
+COPY --from=donaldrich/function:task      /usr/local/bin/variant /usr/local/bin/variant
 COPY --from=donaldrich/function:files /usr/local/bin/upx /usr/local/bin/upx
 COPY --from=donaldrich/function:files /usr/local/bin/gget /usr/local/bin/gget
 COPY --from=donaldrich/function:files /usr/local/bin/ginstall.sh /usr/local/bin/ginstall.sh

@@ -1,8 +1,0 @@
-image:
-  name: docker
-  tag: dind
-site_label: dind
-commands:
-  bash:
-    prefix: bash
-    version: -version
