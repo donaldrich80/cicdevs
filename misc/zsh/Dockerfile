@@ -23,6 +23,7 @@ RUN sh -c "$(wget -O- https://raw.githubusercontent.com/deluan/zsh-in-docker/mas
     -p ansible \
     -p docker \
     -p docker-compose \
+    -p terraform \
     -p vault \
     -p zsh-interactive-cd \
     -p zsh-navigation-tools \
@@ -52,10 +53,7 @@ RUN sh install.sh
 
 RUN echo "include /zsh/.nano/*.nanorc" >> /zsh/.nanorc
 RUN echo "include /zsh/.nano/*.nanorc" >> /root/.nanorc
-# RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment
-# RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-# RUN echo "LANG=en_US.UTF-8" > /etc/locale.conf
-# RUN locale-gen en_US.UTF-8
+RUN autoload -U compinit && compinit
 
 COPY ./p10k.zsh /zsh/.p10k.zsh
 
@@ -63,6 +61,7 @@ ENV DEBIAN_FRONTEND dialog
 
 ENV HOME /root
 
+COPY /zsh/.local/share/lscolors.sh /zsh/lscolors.sh
 COPY ./zshrc /root/.zshrc
 COPY ./zshrc /zsh/.zshrc
 # RUN mkdir -p /zsh
