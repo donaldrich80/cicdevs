@@ -1,14 +1,14 @@
 base:alpine:
   stage: build
   trigger:
-    include: .meta/pipeline/base/minimal/alpine/build.gitlab-ci.yml
+    include: .meta/pipeline/base/alpine/build.gitlab-ci.yml
     strategy: depend
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push"'
       changes:
-        - "base/minimal/alpine/Dockerfile"
-        - "base/minimal/alpine/goss.yaml"
-        - "base/minimal/alpine/tusk.yml"
+        - "base/alpine/Dockerfile"
+        - "base/alpine/goss.yaml"
+        - "base/alpine/tusk.yml"
       when: on_success
     - if: '$TRIGGER_VAR1 == "all"'
       when: on_success

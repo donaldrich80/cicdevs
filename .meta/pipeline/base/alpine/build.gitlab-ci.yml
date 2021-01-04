@@ -8,7 +8,7 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/lint/docker.yml
 
-build:docker:dind:
+build:base:alpine:
   extends:
     - .dockerhub:monoarch:push
 
@@ -23,9 +23,9 @@ stages:
   - notify
 
 variables:
-  DOCKER_BUILD_DIR: docker/dind
-  IMAGE_NAME: docker
-  IMAGE_TAG: dind
+  DOCKER_BUILD_DIR: base/alpine
+  IMAGE_NAME: base
+  IMAGE_TAG: alpine
   DOCKERFILE: Dockerfile
-  DOCKER_BUILD_CONTEXT: docker/dind
+  DOCKER_BUILD_CONTEXT: base/alpine
   PUSHOVER_ID: $IMAGE_NAME:$IMAGE_TAG

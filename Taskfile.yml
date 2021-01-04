@@ -15,8 +15,8 @@ tasks:
     cmds:
       - mkdir docs | true
       - cp .meta/docs/index.md docs
-      - cp -r .meta/docs/about docs
-      - cp CHANGELOG docs/about
+      - cp -r .meta/docs/about.md docs
+      # - cp CHANGELOG docs/about
       - ./run-all.sh
 
   test:
@@ -31,10 +31,10 @@ tasks:
   clean:
     cmds:
       - rm -r docs | true
-      - rm -r .meta/pipelines | true
+      - rm -r .meta/pipeline | true
     status:
       - "-f docs"
-      - "-f .meta/pipelines"
+      - "-f .meta/pipeline"
 
   deps:
     cmds:

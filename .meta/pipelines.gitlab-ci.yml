@@ -1,62 +1,60 @@
 include:
+  - local: .meta/pipeline/site-gen/natural_docs/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/docz/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/hugo/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/hugo/hello-friend/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/mkdocs/mkpdfs/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/mkdocs/mkdocs/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/vue.js/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/docusaurus/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/hexo/icarus/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/hexo/butterfly/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/hexo/slim/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/site-gen/hexo/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/lynis/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/security/sn1per/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/security/decker/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/node/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/node/redhat/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/node/slim/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/node/alpine/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/node/latest/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/redhat/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/debian/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/opensuse/leap/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/opensuse/tumbleweed/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/centos/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/python/redhat/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/python/slim/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/python/opensuse/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/python/alpine/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/python/latest/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/ubuntu/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/google/ubuntu/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/golang/redhat/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/golang/alpine/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/base/minimal/alpine/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/misc/zsh/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/misc/runner/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/repository/semver/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/repository/commit/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/repository/pre-commit/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/builder/ruby/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/opensuse/leap/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/opensuse/tumbleweed/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/ubuntu/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/alpine/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/python/opensuse/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/python/slim/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/python/alpine/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/python/redhat/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/python/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/google/ubuntu/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/centos/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/redhat/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/golang/alpine/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/golang/redhat/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/debian/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/node/slim/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/node/alpine/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/node/redhat/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/base/node/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/builder/bazel/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/builder/python/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/builder/latest/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/builder/homebrew/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/builder/go/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/builder/rust/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/aws/cdk/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/aws/latest/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/aws/localstack/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/hashicorp/packer/arm/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/hashicorp/packer/latest/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/hashicorp/vault/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/hashicorp/terraform/full/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/hashicorp/terraform/latest/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/docker/bootstrap/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/docker/dind/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/docker/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/builder/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/builder/go/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/builder/ruby/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/builder/homebrew/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/ansible/full/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/ansible/base/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/ansible/latest/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/vue.js/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/docusaurus/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/hugo/hello-friend/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/hugo/latest/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/hexo/icarus/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/hexo/slim/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/hexo/latest/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/hexo/butterfly/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/natural_docs/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/docz/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/mkdocs/mkdocs/pipeline.gitlab-ci.yml
-  - local: .meta/pipeline/site-gen/mkdocs/mkpdfs/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/aws/localstack/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/aws/cdk/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/aws/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/misc/runner/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/misc/zsh/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/node/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/docker/bootstrap/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/docker/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/hashicorp/vault/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/hashicorp/terraform/full/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/hashicorp/terraform/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/hashicorp/packer/arm/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/hashicorp/packer/latest/pipeline.gitlab-ci.yml
