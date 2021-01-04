@@ -70,8 +70,6 @@ commands:
     prefix: vault
     version: -version
     help: -h
-links:
-  writing-ansible-playbooks-for-new-terraform-servers: https://victorops.com/blog/writing-ansible-playbooks-for-new-terraform-servers
 references:
   ansible:
     docs: https://docs.ansible.com/ansible/latest/index.html
