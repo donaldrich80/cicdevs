@@ -7,7 +7,8 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/repo/semantic-release.yml
   # - local: bot.yml
-
+  - project: donaldrich/modular-gitlab-ci
+    file: function/analysis/secrets/default.yml
 stages:
   - pre
   - lint
