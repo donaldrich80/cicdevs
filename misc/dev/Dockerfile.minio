@@ -1,5 +1,5 @@
 FROM minio/minio:RELEASE.2020-01-25T02-50-51Z as minio
-FROM hashicorp/terraform:0.12.20 as terraform
+FROM hashicorp/terraform:0.14.4 as terraform
 FROM golang:1
 
 # Avoid warnings by switching to noninteractive
