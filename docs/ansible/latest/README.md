@@ -44,9 +44,6 @@ donaldrich/ansible:latest
 ### Ansible
 
 - [:octicons-book-16: Docs](https://docs.ansible.com/ansible/latest/index.html)
-## Links
-
-- [:octicons-book-16: writing-ansible-playbooks-for-new-terraform-servers](https://victorops.com/blog/writing-ansible-playbooks-for-new-terraform-servers)
 
 ## Plugins
 
