@@ -1,0 +1,14 @@
+description: EC2 Amazonlinux image
+features:
+  - EC2 Amazonlinux image
+image:
+  name: amazonlinux
+  tag: latest
+  entrypoint: /usr/bin/zsh
+site_label: amazonlinux
+commands:
+  bash:
+    prefix: bash
+    help: -h
+    version: -h
+    github: amazonlinux/container-images
