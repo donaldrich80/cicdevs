@@ -17,6 +17,7 @@ stages:
   - build
   - release
   - push
+  - test
   - deploy
   - documentation
   - post
