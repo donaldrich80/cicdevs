@@ -2,9 +2,7 @@
 title: Hugo
 path: tree/master
 source: site-gen/hugo/latest/Dockerfile
-
 ---
-
 
 # donaldrich/hugo
 

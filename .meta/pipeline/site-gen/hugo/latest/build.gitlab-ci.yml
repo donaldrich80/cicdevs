@@ -6,7 +6,7 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/notifications/healthchecks/docker-build.yml
   - project: donaldrich/modular-gitlab-ci
-    file: function/lint/docker.yml
+    file: function/docker/lint.yml
 
 build:hugo:latest:
   extends:

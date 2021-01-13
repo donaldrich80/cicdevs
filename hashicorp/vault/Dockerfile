@@ -16,7 +16,7 @@ RUN apk add --no-cache \
   nano \
   ca-certificates \
   openssh-client
-  
+
   # zsh
 COPY --from=donaldrich/runner:zsh /zsh/ /zsh/
 COPY --from=donaldrich/runner:zsh /zsh/.zshrc /home/vault/.zshrc

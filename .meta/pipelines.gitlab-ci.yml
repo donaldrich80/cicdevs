@@ -44,6 +44,7 @@ include:
   - local: .meta/pipeline/builder/homebrew/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/ansible/full/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/ansible/latest/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/aws/amazonlinux/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/aws/localstack/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/aws/cdk/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/aws/latest/pipeline.gitlab-ci.yml

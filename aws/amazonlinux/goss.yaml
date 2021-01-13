@@ -1,0 +1,4 @@
+command:
+  bash:
+    exit-status: 0
+    exec: "bash -h"

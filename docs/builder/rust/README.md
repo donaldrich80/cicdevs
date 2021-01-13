@@ -2,7 +2,6 @@
 title: Rust
 path: tree/master
 source: builder/rust/Dockerfile
-
 ---
 
 # donaldrich/builder:rust

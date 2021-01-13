@@ -2,7 +2,6 @@
 title: Opensuse.Leap
 path: tree/master
 source: base/opensuse/leap/Dockerfile
-
 ---
 
 # donaldrich/base:opensuse.leap

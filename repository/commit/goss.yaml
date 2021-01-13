@@ -1,4 +1,3 @@
-
 command:
   commitlint:
     exit-status: 0

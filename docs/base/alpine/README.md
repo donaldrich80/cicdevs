@@ -2,7 +2,6 @@
 title: Alpine
 path: tree/master
 source: base/alpine/Dockerfile
-
 ---
 
 # donaldrich/base:alpine

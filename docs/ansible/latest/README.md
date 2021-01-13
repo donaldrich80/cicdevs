@@ -2,7 +2,6 @@
 title: Latest
 path: tree/master
 source: ansible/latest/Dockerfile
-
 ---
 
 # donaldrich/ansible:latest

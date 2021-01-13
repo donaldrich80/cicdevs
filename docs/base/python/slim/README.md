@@ -2,7 +2,6 @@
 title: Python-Slim
 path: tree/master
 source: base/python/slim/Dockerfile
-
 ---
 
 # donaldrich/base:python-slim

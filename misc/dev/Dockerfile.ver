@@ -7,4 +7,3 @@ RUN     wget "https://github.com/docker/machine/releases/download/v${DOCKER_MACH
   && chmod +x /usr/local/bin/docker-machine \
   && upx /usr/local/bin/docker-machine
 ddd
-

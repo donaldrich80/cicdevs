@@ -44,6 +44,3 @@ COPY ./Dockerfile ./Dockerfile
 ENV DEBIAN_FRONTEND dialog
 ENV GOSS_FMT documentation
 RUN goss validate
-
-
-

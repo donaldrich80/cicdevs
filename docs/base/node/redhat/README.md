@@ -2,7 +2,6 @@
 title: Node.Redhat
 path: tree/master
 source: base/node/redhat/Dockerfile
-
 ---
 
 # donaldrich/base:node.redhat

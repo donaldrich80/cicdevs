@@ -2,7 +2,6 @@
 title: Localstack
 path: tree/master
 source: aws/localstack/Dockerfile
-
 ---
 
 # donaldrich/aws:localstack

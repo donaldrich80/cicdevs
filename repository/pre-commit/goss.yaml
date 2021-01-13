@@ -1,4 +1,3 @@
-
 command:
   pre-commit:
     exit-status: 0

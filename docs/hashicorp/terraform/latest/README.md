@@ -2,7 +2,6 @@
 title: Latest
 path: tree/master
 source: hashicorp/terraform/latest/Dockerfile
-
 ---
 
 # donaldrich/terraform:latest
@@ -93,6 +92,7 @@ TFLint is a Terraform linter focused on possible errors, best practices, etc. (T
 Static analysis powered security scanner for your terraform code
 
 - [:octicons-mark-github-16: GitHub](https://github.com/liamg/tfsec)
+
 ## Links
 
 - [:octicons-book-16: awesome-terraform](https://github.com/shuaibiyy/awesome-terraform)

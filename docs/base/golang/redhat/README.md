@@ -2,7 +2,6 @@
 title: Golang.Redhat
 path: tree/master
 source: base/golang/redhat/Dockerfile
-
 ---
 
 # donaldrich/base:golang.redhat

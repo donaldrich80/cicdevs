@@ -2,9 +2,7 @@
 title: Vue.Js
 path: tree/master
 source: site-gen/vue.js/Dockerfile
-
 ---
-
 
 # donaldrich/vue.js
 

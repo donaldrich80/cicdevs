@@ -1,0 +1,20 @@
+amazonlinux:latest:
+  stage: build
+  trigger:
+    include: .meta/pipeline/aws/amazonlinux/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+        - "aws/amazonlinux/Dockerfile"
+        - "aws/amazonlinux/goss.yaml"
+        - "aws/amazonlinux/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "amazonlinux" && $TRIGGER_VAR2 == "latest"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "amazonlinux" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

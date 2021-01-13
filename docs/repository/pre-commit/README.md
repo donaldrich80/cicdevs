@@ -2,7 +2,6 @@
 title: Latest
 path: tree/master
 source: repository/pre-commit/Dockerfile
-
 ---
 
 # donaldrich/pre-commit:latest

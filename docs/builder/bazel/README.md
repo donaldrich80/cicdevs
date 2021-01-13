@@ -2,7 +2,6 @@
 title: Bazel
 path: tree/master
 source: builder/bazel/Dockerfile
-
 ---
 
 # donaldrich/builder:bazel

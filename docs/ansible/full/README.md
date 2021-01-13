@@ -2,7 +2,6 @@
 title: Full
 path: tree/master
 source: ansible/full/Dockerfile
-
 ---
 
 # donaldrich/ansible:full
@@ -106,6 +105,7 @@ Molecule aids in the development and testing of Ansible roles
 - [:octicons-book-16: Docs](https://molecule.readthedocs.io)
 
 - [:octicons-mark-github-16: GitHub](https://github.com/ansible-community/molecule)
+
 ## Links
 
 - [:octicons-book-16: writing-ansible-playbooks-for-new-terraform-servers](https://victorops.com/blog/writing-ansible-playbooks-for-new-terraform-servers)

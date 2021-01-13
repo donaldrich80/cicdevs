@@ -2,9 +2,7 @@
 title: Lynis
 path: tree/master
 source: security/lynis/Dockerfile
-
 ---
-
 
 # donaldrich/lynis
 

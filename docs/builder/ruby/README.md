@@ -2,7 +2,6 @@
 title: Ruby
 path: tree/master
 source: builder/ruby/Dockerfile
-
 ---
 
 # donaldrich/builder:ruby

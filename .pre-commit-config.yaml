@@ -11,27 +11,27 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
 
-  # - repo: https://github.com/prettier/prettier
-  #   rev: 2.1.2
-  #   hooks:
-  #     - id: prettier
-
-  - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: v2.7.1
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.2.1
     hooks:
-      # - id: shell-shellcheck
-      #   stages: [commit]
-      # - id: shell-shfmt
-      #   stages: [commit]
-      #   verbose: true
-      # - id: shell-bashate
-      #   stages: [commit]
-      #   verbose: true
-      - id: secrets-detect-secrets
-        stages: [commit]
-      - id: secrets-gitleaks
-        stages: [commit]
-      # - id: yaml-yamllint
-      #   stages: [commit]
-      - id: docker-hadolint
-        exclude: Dockerfile.tmpl.*
+      - id: prettier
+
+  # - repo: https://gitlab.com/donaldrich/function-as-a-container
+  #   rev: v2.7.1
+  #   hooks:
+  # - id: shell-shellcheck
+  #   stages: [commit]
+  # - id: shell-shfmt
+  #   stages: [commit]
+  #   verbose: true
+  # - id: shell-bashate
+  #   stages: [commit]
+  #   verbose: true
+  # - id: secrets-detect-secrets
+  #   stages: [commit]
+  # - id: secrets-gitleaks
+  #   stages: [commit]
+  # - id: yaml-yamllint
+  #   stages: [commit]
+  # - id: docker-hadolint
+  #   exclude: Dockerfile.tmpl.*
