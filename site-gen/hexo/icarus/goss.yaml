@@ -1,4 +1,0 @@
-command:
-  hexo:
-    exit-status: 0
-    exec: "hexo version"
