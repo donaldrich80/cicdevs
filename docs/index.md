@@ -31,7 +31,7 @@ You can utilize a `.env` file at the root of you home directory to pass environm
 If applicable, the default "Develop in Docker" command will use the ZSH prompt as the entrypoint. This brings functionality such as autocomplete, syntax highlighting, etc intended to add convienience to prompt usage.
 
 !!! info
-    This entrypoint can be modified if necessary. and isn't added to containers which don't make sense to develop in.
+This entrypoint can be modified if necessary. and isn't added to containers which don't make sense to develop in.
 
 ## Image Features
 
@@ -40,7 +40,7 @@ If applicable, the default "Develop in Docker" command will use the ZSH prompt a
 A task runner is integrated into these containers which adds unlimited functionality. Go to image description to see an example of how to accomplish this.
 
 !!! info
-    Custom task files can be bound to the containers to override the default tasks.
+Custom task files can be bound to the containers to override the default tasks.
 
 This functionality is implemented using tusk.
 
@@ -57,7 +57,7 @@ Included in the docs for each image is the command line to see the goss specs wh
 with the exception of the `base` images. Default users for these images is non-root user with UID = 1000.
 
 !!! info
-    Declarable UID may be in future release.
+Declarable UID may be in future release.
 
 ## Repository Fun Facts
 
