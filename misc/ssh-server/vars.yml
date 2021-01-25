@@ -1,0 +1,12 @@
+description: SSH Server
+features:
+  - ZSH
+  - ssh server
+image:
+  name: ssh-server
+  tag: latest
+  entrypoint: /usr/bin/zsh
+commands:
+  zsh:
+    prefix: zsh
+    version: --version
