@@ -1,0 +1,20 @@
+ssh-server:latest:
+  stage: build
+  trigger:
+    include: .meta/pipeline/misc/ssh-server/build.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+      changes:
+        - "misc/ssh-server/Dockerfile"
+        - "misc/ssh-server/goss.yaml"
+        - "misc/ssh-server/tusk.yml"
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "all"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "ssh-server" && $TRIGGER_VAR2 == "latest"'
+      when: on_success
+    - if: '$TRIGGER_VAR1 == "ssh-server" && $TRIGGER_VAR2 == "all"'
+      when: on_success
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: on_success

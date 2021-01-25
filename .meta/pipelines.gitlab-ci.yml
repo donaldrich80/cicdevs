@@ -47,6 +47,7 @@ include:
   - local: .meta/pipeline/aws/latest/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/misc/runner/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/misc/zsh/pipeline.gitlab-ci.yml
+  - local: .meta/pipeline/misc/ssh-server/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/node/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/docker/bootstrap/pipeline.gitlab-ci.yml
   - local: .meta/pipeline/docker/latest/pipeline.gitlab-ci.yml
